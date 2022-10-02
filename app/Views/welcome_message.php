@@ -1,3 +1,4 @@
+<?php $p_session = session() ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -215,6 +216,9 @@
             <li class="menu-item hidden"><a
                     href="https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md" target="_blank">Contribute</a>
             </li>
+            <?php if($p_session->has('loged_user')):  ?>
+             <li class="menu-item hidden"><a href="<?= base_url().'/login/logout'?>">Logout</a></li>
+            <?php endif?>
         </ul>
     </div>
 
