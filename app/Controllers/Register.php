@@ -14,6 +14,9 @@ class Register extends Controller
 	}
 	public function index()
 	{
+		if(session()->has('loged_user')) {
+			return redirect()->to(base_url().'/home');
+		}
 		$data['validation'] = NULL;
 		$data['smg'] = NUll;
 		if($this->request->getMethod() == "post") {
