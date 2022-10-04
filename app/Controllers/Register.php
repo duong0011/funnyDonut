@@ -91,7 +91,7 @@ class Register extends Controller
 		$builder->set(['status' => 'active']);
 		$builder->where('unitid', $unitid);
 		if(count($builder->get()->getResultArray())) {
-			if(count($builder->where('status !=', 'active')->where('unitid', $unitid)->get()->getResultArray())) {
+			if(count($builder->where('status ==', 'inactive')->where('unitid', $unitid)->get()->getResultArray())) {
 				$builder->update();
 				$this->session->set('success','Activation complete');
 				return redirect()->to(base_url().'/login');

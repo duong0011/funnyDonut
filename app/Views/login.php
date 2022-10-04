@@ -58,6 +58,11 @@
                     <?php endif?>
                     <input type="text" class="form-input login-name" placeholder="Enter username" name = "username">
                     <input type="password" class="form-input login-password" placeholder="Enter password" name = "password">
+                    <?php if(isset($loginButton)): ?>
+                        <div>
+                            <a href="<?php echo $loginButton ?>">Login with FB</a>
+                        </div>
+                    <?php endif ?>
                     <a href="" class="login-pass-forget">Forget password?</a>
                     <input type="submit" class="btn form-btn" value="Login">
                 </form>

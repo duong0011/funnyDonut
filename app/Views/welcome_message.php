@@ -23,7 +23,7 @@
                 <!-- navbar -->
                 <nav class="header__navbar hide-on-mobile-tablet">
                     <ul class="header__nav-list">
-                        <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Welcome <?= $fullname ?>!</li>
+                        <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Welcome <?php if(session()->has('loged_user')) echo $fullname ?>!</li>
                         <!-- <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Trở thành Người bán Shopee</li>
                         <li class="header__nav-item header__nav-item--hover header__nav-item--separate header__show-qr">
                             Tải ứng dụng

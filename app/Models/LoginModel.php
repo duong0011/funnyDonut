@@ -16,4 +16,11 @@ class LoginModel extends Model
    		$result = $builder->where('username', $username)->get();
    		return (count($result->getResultArray())) ? $result->getRowArray() : false;
    	}
+   	public function user_exists($id)
+   	{
+   		$builder= $this->db->table('user_of_shop');
+   		$builder->select('username');
+   		$result = $builder->where('username', $id)->get();
+   		return (count($result->getResultArray())) ? true : false;
+   	}
 }
