@@ -33,7 +33,11 @@ class Email extends BaseConfig
      *
      * @var string
      */
+<<<<<<< HEAD
     public $protocol = 'mail';
+=======
+    public $protocol = 'smtp';
+>>>>>>> 6472ee85aa62242c71ae22d6e751b0934c5906cd
 
     /**
      * The server path to Sendmail.
@@ -47,28 +51,44 @@ class Email extends BaseConfig
      *
      * @var string
      */
+<<<<<<< HEAD
     public $SMTPHost;
+=======
+    public $SMTPHost =  'smtp.googlemail.com';
+>>>>>>> 6472ee85aa62242c71ae22d6e751b0934c5906cd
 
     /**
      * SMTP Username
      *
      * @var string
      */
+<<<<<<< HEAD
     public $SMTPUser;
+=======
+    public $SMTPUser ='duongtruong2022003@gmail.com';
+>>>>>>> 6472ee85aa62242c71ae22d6e751b0934c5906cd
 
     /**
      * SMTP Password
      *
      * @var string
      */
+<<<<<<< HEAD
     public $SMTPPass;
+=======
+    public $SMTPPass = 'hynamisbemuznhoy';
+>>>>>>> 6472ee85aa62242c71ae22d6e751b0934c5906cd
 
     /**
      * SMTP Port
      *
      * @var int
      */
+<<<<<<< HEAD
     public $SMTPPort = 25;
+=======
+    public $SMTPPort = 465;
+>>>>>>> 6472ee85aa62242c71ae22d6e751b0934c5906cd
 
     /**
      * SMTP Timeout (in seconds)
@@ -89,7 +109,11 @@ class Email extends BaseConfig
      *
      * @var string
      */
+<<<<<<< HEAD
     public $SMTPCrypto = 'tls';
+=======
+    public $SMTPCrypto = 'ssl';
+>>>>>>> 6472ee85aa62242c71ae22d6e751b0934c5906cd
 
     /**
      * Enable word-wrap
@@ -110,7 +134,11 @@ class Email extends BaseConfig
      *
      * @var string
      */
+<<<<<<< HEAD
     public $mailType = 'text';
+=======
+    public $mailType = 'html';
+>>>>>>> 6472ee85aa62242c71ae22d6e751b0934c5906cd
 
     /**
      * Character set (utf-8, iso-8859-1, etc.)
