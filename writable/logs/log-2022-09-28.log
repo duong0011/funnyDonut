@@ -1,0 +1,157 @@
+CRITICAL - 2022-09-28 09:46:26 --> The framework needs the following extension(s) installed and loaded: intl.
+in SYSTEMPATH\CodeIgniter.php on line 219.
+ 1 SYSTEMPATH\CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+ 2 SYSTEMPATH\CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+ 3 FCPATH\index.php(55): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2022-09-28 09:46:39 --> The framework needs the following extension(s) installed and loaded: intl.
+in SYSTEMPATH\CodeIgniter.php on line 219.
+ 1 SYSTEMPATH\CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+ 2 SYSTEMPATH\CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+ 3 FCPATH\index.php(55): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2022-09-28 09:47:18 --> The framework needs the following extension(s) installed and loaded: intl.
+in SYSTEMPATH\CodeIgniter.php on line 219.
+ 1 SYSTEMPATH\CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+ 2 SYSTEMPATH\CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+ 3 FCPATH\index.php(55): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2022-09-28 03:01:24 --> Call to undefined function App\Controllers\Views()
+in APPPATH\Controllers\Signup.php on line 9.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Signup->index()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Signup))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-09-28 03:01:36 --> Call to undefined function App\Controllers\views()
+in APPPATH\Controllers\Signup.php on line 9.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Signup->index()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Signup))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-09-28 03:01:50 --> Call to undefined function App\Controllers\views()
+in APPPATH\Controllers\Signup.php on line 9.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Signup->index()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Signup))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-09-28 03:43:30 --> Undefined property: CodeIgniter\HTTP\IncomingRequest::$getMethod
+in APPPATH\Controllers\Signup.php on line 13.
+ 1 APPPATH\Controllers\Signup.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\HTTP\\IncomingRequest::$getMethod', 'APPPATH\\Controllers\\Signup.php', 13)
+ 2 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Signup->index()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Signup))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-09-28 04:00:36 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\Signup.php on line 15.
+ 1 SYSTEMPATH\Router\Router.php(499): CodeIgniter\Router\AutoRouter->getRoute('/signup')
+ 2 SYSTEMPATH\Router\Router.php(205): CodeIgniter\Router\Router->autoRoute('/signup')
+ 3 SYSTEMPATH\CodeIgniter.php(782): CodeIgniter\Router\Router->handle('/signup')
+ 4 SYSTEMPATH\CodeIgniter.php(406): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-09-28 04:01:02 --> Call to undefined function App\Controllers\validata()
+in APPPATH\Controllers\Signup.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Signup->index()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Signup))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-09-28 04:01:24 --> Call to undefined function App\Controllers\validate()
+in APPPATH\Controllers\Signup.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Signup->index()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Signup))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-09-28 04:02:37 --> Undefined variable $rules
+in APPPATH\Controllers\Signup.php on line 15.
+ 1 APPPATH\Controllers\Signup.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rules', 'APPPATH\\Controllers\\Signup.php', 15)
+ 2 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Signup->index()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Signup))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-09-28 04:40:09 --> syntax error, unexpected token "endif", expecting end of file
+in APPPATH\Views\signup-view.php on line 27.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1142): CodeIgniter\View\View->render('signup-view', [], true)
+ 3 APPPATH\Controllers\Signup.php(33): view('signup-view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Signup->index()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Signup))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-09-28 04:40:21 --> syntax error, unexpected token "endif", expecting end of file
+in APPPATH\Views\signup-view.php on line 27.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1142): CodeIgniter\View\View->render('signup-view', [], true)
+ 3 APPPATH\Controllers\Signup.php(33): view('signup-view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Signup->index()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Signup))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-09-28 04:40:23 --> Array to string conversion
+in APPPATH\Views\signup-view.php on line 24.
+ 1 APPPATH\Views\signup-view.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Views\\signup-view.php', 24)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\signup-view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1142): CodeIgniter\View\View->render('signup-view', [], true)
+ 5 APPPATH\Controllers\Signup.php(33): view('signup-view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Signup->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Signup))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-09-28 04:40:44 --> Array to string conversion
+in APPPATH\Views\signup-view.php on line 24.
+ 1 APPPATH\Views\signup-view.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Views\\signup-view.php', 24)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\signup-view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1142): CodeIgniter\View\View->render('signup-view', [], true)
+ 5 APPPATH\Controllers\Signup.php(33): view('signup-view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Signup->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Signup))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-09-28 04:51:44 --> Call to undefined function checkError()
+in APPPATH\Views\signup-view.php on line 19.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1142): CodeIgniter\View\View->render('signup-view', [], true)
+ 4 APPPATH\Controllers\Signup.php(33): view('signup-view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Signup->index()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Signup))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-09-28 04:53:13 --> syntax error, unexpected token "public", expecting end of file
+in APPPATH\Helpers\form_helper.php on line 2.
+ 1 APPPATH\Controllers\Signup.php(9): helper([...])
+ 2 SYSTEMPATH\CodeIgniter.php(869): App\Controllers\Signup->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-09-28 05:06:01 --> Undefined variable $validation
+in APPPATH\Views\signup-view.php on line 19.
+ 1 APPPATH\Views\signup-view.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $validation', 'APPPATH\\Views\\signup-view.php', 19)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\signup-view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1142): CodeIgniter\View\View->render('signup-view', [], true)
+ 5 APPPATH\Controllers\Signup.php(33): view('signup-view', [])
+ 6 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Signup->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Signup))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-09-28 05:07:55 --> Undefined variable $validation
+in APPPATH\Views\signup-view.php on line 19.
+ 1 APPPATH\Views\signup-view.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $validation', 'APPPATH\\Views\\signup-view.php', 19)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\signup-view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1142): CodeIgniter\View\View->render('signup-view', [], true)
+ 5 APPPATH\Controllers\Signup.php(33): view('signup-view', [])
+ 6 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Signup->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Signup))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-09-28 05:11:06 --> Undefined variable $validation
+in APPPATH\Views\signup-view.php on line 13.
+ 1 APPPATH\Views\signup-view.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $validation', 'APPPATH\\Views\\signup-view.php', 13)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\signup-view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1142): CodeIgniter\View\View->render('signup-view', [], true)
+ 5 APPPATH\Controllers\Signup.php(33): view('signup-view', [])
+ 6 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Signup->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Signup))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
