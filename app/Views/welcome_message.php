@@ -23,8 +23,8 @@
                 <!-- navbar -->
                 <nav class="header__navbar hide-on-mobile-tablet">
                     <ul class="header__nav-list">
-                        <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Welcome <?php if(session()->has('loged_user')) echo $fullname ?>!</li>
-                        <li class="header__nav-item header__nav-item--hover header__nav-item--separate"><a href="" style="text-decoration: none; color: white;">Become seller</a></li>
+                        <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Welcome <?php if(session()->has('loged_user')) echo $user['fullname']; ?>!</li>
+                        <li class="header__nav-item header__nav-item--hover header__nav-item--separate"><a href="<?= base_url().'/PushProduct' ?>" style="text-decoration: none; color: white;">Become seller</a></li>
                         <div class="header__qrcode">
                             <img src="./assets/img/qr/qr-code.png" class="header__qr">
                             <div class="header__apps">
@@ -154,12 +154,12 @@
                             </li>
                         <?php }else{ ?>
                             <li class="header__nav-item header__nav-user">
-                                <?php if(!isset($image)): ?>
-                                    <img src="./assets/img/non-avatar.png" class="header__nav-user-avt">
+                                <?php if(isset($user['avatar'])): ?>
+                                    <img src="data:image/jpeg;base64,<?=$user['avatar']?>" class="header__nav-user-avt">
                                 <?php else: ?>
                                     <img src="./assets/img/user.png" class="header__nav-user-avt">
                                 <?php endif ?>
-                                <a href="#" class="header__nav-item-link header__nav-item--bold"><?= $fullname ?></a>
+                                <a href="#" class="header__nav-item-link header__nav-item--bold"><?=  $user['fullname'];?></a>
                                 <ul class="header__nav-user-menu">
                                     <li class="header__nav-user-item">
                                         <a href="#">Tài khoản của tôi</a>
@@ -444,7 +444,8 @@
                                 <i class="category-heading-icon fas fa-list-ul"></i>
                                 Menu
                             </h3>
-                            <div class="category-group">
+                            <form action="" method="">
+                                <div class="category-group">
                                 <div class="category-group-title">Product categories</div>
                                 <ul class="category-group-list">
                                     <li class="category-group-item">
@@ -522,6 +523,7 @@
                                 </div>
                                 <button class="btn btn--brown category-group-filter-btn">APPLY</button>
                             </div>
+                            </form>
                             <!-- <div class="category-group">
                                 <div class="category-group-title">Loại Shop</div>
                                 <ul class="category-group-list">
@@ -727,14 +729,15 @@
                             </nav>
                             <div id="list-product" class="row sm-gutter"></div>
                             <div id="list-product" class="row sm-gutter">
-                                <div class="col l-2-4 m-3 c-6 home-product-item">
+                                <?php foreach ($products as $product): ?>
+                                    <div class="col l-2-4 m-3 c-6 home-product-item">
                                     <a class="home-product-item-link" href="#">
-                                        <div class="home-product-item__img" style="background-image: url(./assets/img/home/1.PNG);"></div>
+                                        <div class="home-product-item__img" style="background-image:url('data:image/jpeg;base64,<?=$product['image']?>')"></div>
                                         <div class="home-product-item__info">
-                                            <h4 class="home-product-item__name">Ổ đĩa flash USB2.0 2TB Hp kim loại chống thấm nước</h4>
+                                            <h4 class="home-product-item__name"><?= $product['nameproduct']; ?></h4>
                                             <div class="home-product-item__price">
-                                                <p class="home-product-item__price-old">180USD</p>
-                                                <p class="home-product-item__price-new">200USD</p>
+                                                <p class="home-product-item__price-old"><?= $product['price']?>USD</p>
+                                                <p class="home-product-item__price-new"><?=$product['price']-$product['price']*$product['discount']/100?>USD</p>
                                                 <i class="home-product-item__ship fas fa-shipping-fast"></i>
                                             </div>
                                             <div class="home-product-item__footer">
@@ -749,20 +752,13 @@
                                                     <i class="star-checked far fa-star"></i>
                                                     <i class="star-checked far fa-star"></i>
                                                 </div>
-                                                <div class="home-product-item__saled">Sold 3,8k</div>
+                                                <div class="home-product-item__saled"><?= $product['sold']?></div>
                                             </div>
-                                            <div class="home-product-item__origin">Saint Peterburg</div>
-                                            <div class="home-product-item__favourite">
-                                                Yêu thích
-                                            </div>
-                                            <div class="home-product-item__sale-off">
-                                                <div class="home-product-item__sale-off-value">40%</div>
-                                                <div class="home-product-item__sale-off-label">GIẢM</div>
-                                            </div>
+                                            <div class="home-product-item__origin"><?= $product['address']?></div>
                                         </div>
-                                        <div class="home-product-item-footer">Tìm sản phẩm tương tự</div>
                                     </a>
                                 </div>
+                                <?php endforeach ?>
                                 <div class="col l-2-4 m-3 c-6 home-product-item">
                                     <a class="home-product-item-link" href="#">
                                         <!-- <div class="home-product-item__img" style="background-image: url(./assets/img/slide home/1.jpg);"></div> -->

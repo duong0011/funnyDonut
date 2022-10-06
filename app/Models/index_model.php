@@ -14,4 +14,8 @@ class Index_model extends Model
    		$builder = $this->db->table('user_of_shop')->where('unitid', $unitid)->get();
    		return (count($builder->getResultArray()) == 1) ? $builder->getRowArray() : false;
    	}
+    public function getProduct()
+    {
+        return $this->db->table('product')->get()->getResultArray();
+    }
 }

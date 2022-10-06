@@ -75,12 +75,14 @@ class Login extends Controller
 				$gdata = $google_service->userinfo->get();
 				if(!$this->db->user_exists($gdata['id'])) {
 					$unitid = md5(str_shuffle('qwertyuiopasdfghjklzxcvbnm'));
+					$hex = base64_encode(file_get_contents('./assets/img/non-avatar.png'));
 					$ndata = [
 						'fullname' => $gdata['family_name'].' '.$gdata['given_name'],
 						'username' => $gdata['id'],
 						'email' => $gdata['email'],
 						'status' => 'social_user',
 						'unitid' => $unitid,
+						'avatar' => $hex
 					];
 					$this->db2->save($ndata);
 					session()->set('loged_user', $unitid);

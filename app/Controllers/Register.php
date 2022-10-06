@@ -45,7 +45,7 @@ class Register extends Controller
 					'rules' => 'required|min_length[10]',
 					'label' => 'mobile number',
 					'errors' => [
-						'min_length' => 'Incorrect telephone number'R
+						'min_length' => 'Incorrect telephone number'
 					]
 				]
 			];
@@ -57,13 +57,16 @@ class Register extends Controller
 					return view('Register', $data);
 				}
 				$unitid = md5(str_shuffle('qwertyuiopasdfghjklzxcvbnm'));
+				$hex = base64_encode(file_get_contents('./assets/img/non-avatar.png'));
 				$tdata = [
        				'fullname' => $this->request->getVar('fullname', FILTER_UNSAFE_RAW),
        				'username' => $this->request->getVar('username', FILTER_UNSAFE_RAW),
        				'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
        				'email' => $this->request->getVar('email', FILTER_UNSAFE_RAW),
        				'phonenumber' => $this->request->getVar('phonenumber', FILTER_UNSAFE_RAW),
-       				'unitid' => $unitid
+       				'unitid' => $unitid,
+       				'avatar' => $hex,
+
        			];
        			if($this->db->where('username', $tdata['username'])->countAllResults()) {
        				$data['smg'] = "This user name have been used!";

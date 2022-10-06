@@ -14,8 +14,9 @@ class Home extends BaseController
     {   
         $data = [];
         if(session()->has('loged_user')) {
-            $data = $this->model->getInfoUser(session()->get('loged_user'));
+            $data['user'] = $this->model->getInfoUser(session()->get('loged_user'));
         }
+        $data['products'] = $this->model->getProduct();
         return view('welcome_message', $data);
     }
     
