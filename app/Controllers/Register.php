@@ -2,6 +2,7 @@
 
 use CodeIgniter\Controller;
 use App\Models\userModel;
+
 class Register extends Controller
 {
 	private $db;

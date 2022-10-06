@@ -444,20 +444,20 @@
                                 <i class="category-heading-icon fas fa-list-ul"></i>
                                 Menu
                             </h3>
-                            <form action="" method="">
+                            <form action="" method="get">
                                 <div class="category-group">
                                 <div class="category-group-title">Product categories</div>
                                 <ul class="category-group-list">
                                     <li class="category-group-item">
-                                        <input type="checkbox" class="category-group-item-check">
+                                        <input type="checkbox" class="category-group-item-check" name = "type[]" value = "Bread">
                                         Bread
                                     </li>
                                     <li class="category-group-item">
-                                        <input type="checkbox" class="category-group-item-check">
+                                        <input type="checkbox" class="category-group-item-check" name = "type[]" value = "Candy">
                                         Candy
                                     </li>
                                     <li class="category-group-item">
-                                        <input type="checkbox" class="category-group-item-check">
+                                        <input type="checkbox" class="category-group-item-check" name = "type[]" value = "Cake">
                                         Cake
                                     </li>
                                     

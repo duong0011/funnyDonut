@@ -16,6 +16,7 @@ class Index_model extends Model
    	}
     public function getProduct()
     {
+        
         return $this->db->table('product')->get()->getResultArray();
     }
 }
