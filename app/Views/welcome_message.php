@@ -24,11 +24,7 @@
                 <nav class="header__navbar hide-on-mobile-tablet">
                     <ul class="header__nav-list">
                         <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Welcome <?php if(session()->has('loged_user')) echo $fullname ?>!</li>
-                        <!-- <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Trở thành Người bán Shopee</li>
-                        <li class="header__nav-item header__nav-item--hover header__nav-item--separate header__show-qr">
-                            Tải ứng dụng
-                        </li> -->
-                        <!-- qr code -->
+                        <li class="header__nav-item header__nav-item--hover header__nav-item--separate"><a href="" style="text-decoration: none; color: white;">Become seller</a></li>
                         <div class="header__qrcode">
                             <img src="./assets/img/qr/qr-code.png" class="header__qr">
                             <div class="header__apps">
@@ -158,7 +154,11 @@
                             </li>
                         <?php }else{ ?>
                             <li class="header__nav-item header__nav-user">
-                                <img src="./assets/img/user.png" class="header__nav-user-avt">
+                                <?php if(!isset($image)): ?>
+                                    <img src="./assets/img/non-avatar.png" class="header__nav-user-avt">
+                                <?php else: ?>
+                                    <img src="./assets/img/user.png" class="header__nav-user-avt">
+                                <?php endif ?>
                                 <a href="#" class="header__nav-item-link header__nav-item--bold"><?= $fullname ?></a>
                                 <ul class="header__nav-user-menu">
                                     <li class="header__nav-user-item">
@@ -184,7 +184,7 @@
                     
                     <div class="header__logo">
                         
-                        <a href="#" class="header__logo-link">
+                        <a href="<?php base_url().'/home' ?>" class="header__logo-link">
                             <img src="./assets/img/logo/logo.png" class="header__logo-img">
                         </a>
                     </div>
