@@ -448,36 +448,25 @@
                                 <div class="category-group">
                                 <div class="category-group-title">Product categories</div>
                                 <ul class="category-group-list">
-                                    <li class="category-group-item">
-                                        <input type="checkbox" class="category-group-item-check" name = "type[]" value = "Bread">
-                                        Bread
-                                    </li>
-                                    <li class="category-group-item">
-                                        <input type="checkbox" class="category-group-item-check" name = "type[]" value = "Candy">
-                                        Candy
-                                    </li>
-                                    <li class="category-group-item">
-                                        <input type="checkbox" class="category-group-item-check" name = "type[]" value = "Cake">
-                                        Cake
-                                    </li>
+                                    <?php foreach ($menuType as  $value): ?>
+                                        <li class="category-group-item">
+                                            <input type="checkbox" class="category-group-item-check" name = "type[]" value = "<?= $value['type']?>">
+                                               <?= $value['type']?>
+                                        </li>
+                                    <?php endforeach ?>
                                     
                                 </ul>
                             </div>
                             <div class="category-group">
                                 <div class="category-group-title">Place of sale</div>
                                 <ul class="category-group-list">
-                                    <li class="category-group-item">
-                                        <input type="checkbox" class="category-group-item-check">
-                                        Moscow
-                                    </li>
-                                    <li class="category-group-item">
-                                        <input type="checkbox" class="category-group-item-check">
-                                        Saint Peterburg
-                                    </li>
-                                    <li class="category-group-item">
-                                        <input type="checkbox" class="category-group-item-check">
-                                        Kazan
-                                    </li>
+                                     <?php foreach ($menuAddress as  $value): ?>
+                                        <li class="category-group-item">
+                                        <input type="checkbox" class="category-group-item-check" name = "address[]" value = "<?= $value['address'] ?>">
+                                            <?= $value['address']; ?>
+                                        </li>
+                                    <?php endforeach ?>
+                                    
                                 </ul>
                             </div>
                             <!-- <div class="category-group">
@@ -517,10 +506,14 @@
                             <div class="category-group">
                                 <div class="category-group-title">Price Range</div>
                                 <div class="category-group-filter">
-                                    <input type="number" placeholder="From" class="category-group-filter-input">
+                                    <input type="number" placeholder="From" class="category-group-filter-input" name = "minprice">
                                     <i class="fas fa-arrow-right"></i>
-                                    <input type="number" placeholder="to" class="category-group-filter-input">
+                                    <input type="number" placeholder="to" class="category-group-filter-input" name = 'maxprice'>
                                 </div>
+                                 <?php if (session()->has('smg')){ ?>
+                                    <div class="text-danger" style="font-size: 15px;"><?= session()->get('smg');?></div>
+                                    <?php session()->remove('smg')?>
+                                 <?php }?>
                                 <button class="btn btn--brown category-group-filter-btn">APPLY</button>
                             </div>
                             </form>

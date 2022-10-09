@@ -70,7 +70,8 @@ class PushProduct extends Controller
        				'price' => $this->request->getVar('price', FILTER_UNSAFE_RAW),
        				'image'	=> $hex,
        				'owner' => session()->get('loged_user'),
-       				'type' => $this->request->getVar('type', FILTER_UNSAFE_RAW)
+       				'type' => $this->request->getVar('type', FILTER_UNSAFE_RAW),
+       				'address' => $this->request->getVar('address', FILTER_UNSAFE_RAW),
 
        			];
        			$this->db->save($tdata);

@@ -40,10 +40,15 @@
 	                    	<?= loadError($validation, 'info') ?>
 	                    </div>
 	                </div>
+	                <div class="form-group">
+	                    <label for="">Thông tin ngắn</label>
+	                    <textarea rows = "8" cols = "100" name = "address" class="form-control"><?php echo set_value('address')?></textarea>
+	                	
+	                </div>
 	                <div class = "form-group col-md-4">
 		                <label for = "inputState">State</label>
 		                <select id = "inputState" class = "form-control" name="type">
-		                    <option selected disabled>Select State</option>
+		                    <!-- <option selected disabled>Select State</option> -->
 		                    <option value = 'Bread'>Bread</option>
 		                    <option value = 'Candy'>Candy</option>
 		                    <option value = 'Cake'>Cake</option>
