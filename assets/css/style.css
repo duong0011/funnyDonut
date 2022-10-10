@@ -1498,3 +1498,11 @@ border-color: red green blue yellow */
 .other-footer-more {
     margin: 8px 10px 0;
 }
+.home-filter-btn a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.btn--brown a {
+    color: var(--white-color);
+}

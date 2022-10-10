@@ -21,11 +21,11 @@ class Index_model extends Model
     }
     public function getMenuType()   
     {
-        return $this->db->table('product')->select('type')->distinct()->get()->getResultArray();
+        return $this->db->table('product')->select('type')->distinct()->orderBy('type')->get()->getResultArray();
     }
     public function getMenuAddress()   
     {
-        return $this->db->table('product')->select('address')->distinct()->get()->getResultArray();
+        return $this->db->table('product')->select('address')->distinct()->orderBy('address')->get()->getResultArray();
     }   
     public function getProductByQuery($type, $address, $minprice, $maxprice)
     {
@@ -34,6 +34,10 @@ class Index_model extends Model
         if($type) $result = $result->whereIn('type', $type);
         if($minprice) $result = $result->where('price >=', $minprice);
         if($maxprice) $result = $result->where('price <=', $maxprice);
-        return $result->get()->getResultArray();
+        return $result;
+    }
+    public function sortQuery($data ,$attribute, $method = "ASC")
+    {
+       return $data->orderBy($attribute, $method);
     }
 }
