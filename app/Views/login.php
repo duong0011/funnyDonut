@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funny Donut</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="./assets/css/login-base.css">
-    <link rel="stylesheet" href="./assets/css/login-main.css">
-    <link rel="stylesheet" href="./assets/font/fontawesome-free-6.2.0-web/css/all.min.css">
+    <link rel="stylesheet" href=" <?= base_url()?>./assets/css/login-base.css">
+    <link rel="stylesheet" href=" <?= base_url()?>./assets/css/login-main.css">
+    <link rel="stylesheet" href=" <?= base_url()?>./assets/font/fontawesome-free-6.2.0-web/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
                 <div class="header__navbar">
                     <div class="logo">
                         <a href="<?= base_url().'/home' ?>" class="logo-link">
-                            <img src="./assets/img/logo-no-color.png" alt="" class="logo-img">
+                            <img src=" <?= base_url()?>./assets/img/logo-no-color.png" alt="" class="logo-img">
                         </a>
                     </div>
                     <div class="navbar__item">
