@@ -445,7 +445,7 @@
                                 <i class="category-heading-icon fas fa-list-ul"></i>
                                 Menu
                             </h3>
-                            <form action="" method="get">
+                            <form action="<?= base_url().'/home/showByRequset' ?>" method="get">
                                 <div class="category-group">
                                 <div class="category-group-title">Product categories</div>
                                 <ul class="category-group-list">
@@ -473,9 +473,10 @@
                                 <div class="category-group">
                                     <div class="category-group-title">Price Range</div>
                                     <div class="category-group-filter">
-                                        <input type="number" placeholder="From" class="category-group-filter-input" name = "minprice" value = "<?= set_value('minprice')?>">
+                                        <input type="number" placeholder="From" class="category-group-filter-input" name = 'minprice' value="<?= set_value('minprice') ?>">
                                         <i class="fas fa-arrow-right"></i>
-                                        <input type="number" placeholder="To" class="category-group-filter-input" name = "maxprice" value = "<?= set_value('maxprice') ?>">
+                                        <input type="number" placeholder="To" class="category-group-filter-input" name ="maxprice" value = "<?= set_value('maxprice') ?>">
+                                        
                                     </div>
                                     <div><?= loadError($validation,'maxprice');?></div>
                                 </div>
@@ -689,7 +690,8 @@
                             </nav>
                             <div id="list-product" class="row sm-gutter"></div>
                             <div id="list-product" class="row sm-gutter">
-                                <?php foreach ($products as $product): ?>
+                               <?php if (isset($products)): ?>
+                                    <?php foreach ($products as $product): ?>
                                     <div class="col l-2-4 m-3 c-6 home-product-item">
                                     <a class="home-product-item-link" href="#">
                                         <div class="home-product-item__img" style="background-image:url('data:image/jpeg;base64,<?=$product['image']?>')"></div>
@@ -717,21 +719,32 @@
                                             <div class="home-product-item__origin"><?= $product['address']?></div>
                                         </div>
                                     </a>
-                                </div>
-                                <?php endforeach ?>
+                                    </div>
+                                    <?php endforeach ?>
+                                <?php else: ?>
+                                    <div class="col l-10">
+                                        <div class="home__filter-error">
+                                            <i class="home__filter-error-icon fa-regular fa-file-excel"></i>
+                                            <p>Hix. No products. Did you try to turn off the filter condition and find it again?</p>
+                                            <span>or</span>
+                                            <button class="btn btn--brown home-filter-btn">
+                                                <a href="<?=base_url().'/home' ?>">
+                                                    Clear filter
+                                                </a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                <?php endif ?>
                             </div>
                         </div>
                         <!-- pagination -->
-                        <ul class="pagination home-product-pagination">
-                            <li class="pagination-item">
-                                <a href="#" class="pagination-item-link pagination-item-link--disable">
-                                    <i class="fas fa-chevron-left"></i>
-                                </a>
-                            </li>
-                            <li class="pagination-item pagination-item--active">
+                       <?php if (isset($products)): ?>
+                            <ul class="pagination home-product-pagination">
+                            
+                           <!--  <li class="pagination-item">
                                 <a href="#" class="pagination-item-link">1</a>
                             </li>
-                            <li class="pagination-item">
+                            <li class="pagination-item pagination-item--active">
                                 <a href="#" class="pagination-item-link">2</a>
                             </li>
                             <li class="pagination-item">
@@ -739,16 +752,52 @@
                             </li>
                             <li class="pagination-item">
                                 <a class="pagination-item-link pagination-item-link--disable">. . .</a>
+                            </li> -->
+                             <?php if ($pageStart != 1): ?>
+                                <li class="pagination-item">
+                                <a href="<?= convertLink(base_url(uri_string()).'?'.$_SERVER['QUERY_STRING'],$pageStart-1)?>" class="pagination-item-link pagination-item-link--disable">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            <?php endif ?>
+                            <?php if ($pageStart >= 3): ?>
+                                <li class="pagination-item">
+                                    <a href="<?= convertLink(base_url(uri_string()).'?'.$_SERVER['QUERY_STRING'], 1)?>" class="pagination-item-link"><?= 1 ?></a>
+                                </li>
+                            <?php endif ?>
+                            <?php if ($pageStart != 1): ?>
+                                <li class="pagination-item">
+                                    <a class="pagination-item-link pagination-item-link--disable">. . .</a>
+                                </li>
+                            <?php endif ?>
+                             <li class="pagination-item pagination-item--active">
+                                <a href="<?= convertLink(base_url(uri_string()).'?'.$_SERVER['QUERY_STRING'], $pageStart)?>" class="pagination-item-link "><?= $pageStart ?></a>
                             </li>
-                            <li class="pagination-item">
-                                <a href="#" class="pagination-item-link">8</a>
-                            </li>
-                            <li class="pagination-item">
-                                <a href="#" class="pagination-item-link">
+                            <?php for ($i = $pageStart+1; $i <= min($pageEnd-1,$pageStart+2); $i++): ?>
+                                <li class="pagination-item">
+                                    <a href="<?= convertLink(base_url(uri_string()).'?'.$_SERVER['QUERY_STRING'],$i)?>" class="pagination-item-link"><?= $i ?></a>
+                                </li>
+                            <?php endfor ?>
+                            <?php if ($pageEnd-1 > $pageStart+2): ?>
+                                 <li class="pagination-item">
+                                    <a class="pagination-item-link pagination-item-link--disable">. . .</a>
+                                </li>
+                                <li class="pagination-item">
+                                    <a href="<?= convertLink(base_url(uri_string()).'?'.$_SERVER['QUERY_STRING'],$pageEnd)?>" class="pagination-item-link"><?=$pageEnd?></a>
+                                 </li>
+                            <?php elseif($pageEnd > $pageStart): ?>
+                                 <li class="pagination-item">
+                                    <a href="<?= convertLink(base_url(uri_string()).'?'.$_SERVER['QUERY_STRING'],$pageEnd)?>" class="pagination-item-link"><?=$pageEnd?></a>
+                                 </li>
+                            <?php endif ?>
+                            <?php if ($pageEnd > $pageStart): ?>
+                                 <li class="pagination-item">
+                                <a href="<?= convertLink(base_url(uri_string()).'?'.$_SERVER['QUERY_STRING'],$pageStart+1)?>" class="pagination-item-link">
                                     <i class="fas fa-chevron-right"></i>
                                 </a>
                             </li>
+                            <?php endif ?>
                         </ul>
+                       <?php endif ?>
                     </div>
                 </div>
             </div>

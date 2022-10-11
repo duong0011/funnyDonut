@@ -16,8 +16,7 @@ class Index_model extends Model
    	}
     public function getProduct()
     {
-        
-        return $this->db->table('product')->orderBy('sold')->get()->getResultArray();
+        return $this->db->table('product')->orderBy('sold');
     }
     public function getMenuType()   
     {
@@ -29,15 +28,24 @@ class Index_model extends Model
     }   
     public function getProductByQuery($type, $address, $minprice, $maxprice)
     {
-        $result = $this->db->table('product');
-        if($address)  $result = $result->whereIn('address', $address);
-        if($type) $result = $result->whereIn('type', $type);
-        if($minprice) $result = $result->where('price >=', $minprice);
-        if($maxprice) $result = $result->where('price <=', $maxprice);
-        return $result;
+        $builder = $this->db->table('product');
+        if($address) $builder->whereIn('address', $address);
+
+        if($type) $builder->whereIn('type', $type);
+        if($minprice && $maxprice) {
+            $builder->where('price >', $minprice)->where('price <', $maxprice);
+            return $builder;
+        }
+        if($maxprice) $builder->where('price >=', $minprice);
+        if($minprice) $builder->where('price <=', $maxprice);
+        return $builder;
     }
     public function sortQuery($data ,$attribute, $method = "ASC")
     {
        return $data->orderBy($attribute, $method);
+    }
+    public function getDataByPage($data, $page = 1)
+    {
+        return (($page == 1) ? $data->get(15, ($page-1)*15) : $data->get(15, ($page-1)*15+1))->getResultArray();
     }
 }

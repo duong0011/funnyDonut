@@ -1506,3 +1506,21 @@ border-color: red green blue yellow */
 .btn--brown a {
     color: var(--white-color);
 }
+.home__filter-error {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__filter-error p,
+.home__filter-error span {
+    font-size: 2rem;
+}
+
+.home__filter-error span {
+    margin-bottom: 15px;
+    color: #999;
+}
