@@ -82,7 +82,8 @@ class Home extends BaseController
             $result = $this->model->getProductByQuery($type, $address, $minprice, $maxprice);
             
         }
-        $this->data['products'] = $this->getDataIndex($result);
+        
+        $this->data['products'] = $result->countAllResults(false) ? $this->getDataIndex($result) : null;
         
         return view('welcome_message', $this->data);
     }

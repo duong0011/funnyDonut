@@ -1524,3 +1524,6 @@ border-color: red green blue yellow */
     margin-bottom: 15px;
     color: #999;
 }
+.home__filter-error-icon {
+    font-size: 5rem;
+}

@@ -33,8 +33,9 @@ class Index_model extends Model
 
         if($type) $builder->whereIn('type', $type);
         if($minprice && $maxprice) {
-            $builder->where('price >', $minprice)->where('price <', $maxprice);
+            $builder->where('price >=', $minprice)->where('price <=', $maxprice);
             return $builder;
+
         }
         if($maxprice) $builder->where('price >=', $minprice);
         if($minprice) $builder->where('price <=', $maxprice);
