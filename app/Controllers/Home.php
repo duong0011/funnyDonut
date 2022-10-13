@@ -21,7 +21,11 @@ class Home extends BaseController
     }
     public function index()
     {   
-        $this->data['products'] = $this->getDataIndex($this->model->getProduct());
+        $result = $this->model->getProduct();
+        $gotData = $this->getDataIndex($result);
+        if($gotData == "fail") return view('errors/html/error_404');
+        $this->data['products'] = $result->countAllResults(false) ?  $gotData  : null;
+        
         $this->data['validation'] = null;
         return view('welcome_message', $this->data);
     }
@@ -53,7 +57,10 @@ class Home extends BaseController
         }
 
         $result = $this->model->sortQuery($this->data['products'], $attribute, $method);
-        $this->data['products'] = $this->getDataIndex($result);
+        $gotData = $this->getDataIndex($result);
+        if($gotData == "fail") return view('errors/html/error_404');
+        $this->data['products'] = $result->countAllResults(false) ?  $gotData  : null;
+        
         return view('welcome_message', $this->data);
     }
     public function showByRequset()
@@ -82,8 +89,9 @@ class Home extends BaseController
             $result = $this->model->getProductByQuery($type, $address, $minprice, $maxprice);
             
         }
-        
-        $this->data['products'] = $result->countAllResults(false) ? $this->getDataIndex($result) : null;
+        $gotData = $this->getDataIndex($result);
+        if($gotData == "fail") return view('errors/html/error_404');
+        $this->data['products'] = $result->countAllResults(false) ?  $gotData  : null;
         
         return view('welcome_message', $this->data);
     }
@@ -94,6 +102,7 @@ class Home extends BaseController
         $page = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
         $this->data['pageStart']  = $page;
         $this->data['pageEnd'] = ceil($_count/15);
+        if($this->data['pageStart'] > $this->data['pageEnd'] && $this->data['pageEnd']) return "fail";
         return $_count ? $this->model->getDataByPage($result, $page) : null;
     }
 }
