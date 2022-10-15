@@ -13,6 +13,7 @@
     <link rel="stylesheet" href=" <?= base_url()?>./assets/css/style.css">
     <link rel="stylesheet" href=" <?= base_url()?>./assets/css/grid.css">
     <link rel="stylesheet" href=" <?= base_url()?>./assets/css/responsive.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -445,13 +446,13 @@
                                 <i class="category-heading-icon fas fa-list-ul"></i>
                                 Menu
                             </h3>
-                            <form action="<?= base_url().'/home/showByRequset' ?>" method="get">
+                            <!-- <form action="<?= base_url().'/home/showByRequset'?>" method="get"> -->
                                 <div class="category-group">
                                 <div class="category-group-title">Product categories</div>
                                 <ul class="category-group-list">
                                     <?php foreach ($menuType as  $value): ?>
                                         <li class="category-group-item">
-                                            <input type="checkbox" class="category-group-item-check" name = "type[]" value = "<?= $value['type']?>" >
+                                            <input type="checkbox" class="category-group-item-check type" value = "<?= $value['type']?>" >
                                                <?= $value['type']?>
                                         </li>
                                     <?php endforeach ?>
@@ -463,7 +464,7 @@
                                     <ul class="category-group-list">
                                          <?php foreach ($menuAddress as  $value): ?>
                                             <li class="category-group-item">
-                                            <input type="checkbox" class="category-group-item-check" name = "address[]" value = "<?= $value['address']?>" <?= set_checkbox('type[]', $value['address']) ?>>
+                                            <input type="checkbox" class="category-group-item-check address" value = "<?= $value['address']?>">
                                                 <?= $value['address']; ?>
                                             </li>
                                         <?php endforeach ?>
@@ -473,15 +474,52 @@
                                 <div class="category-group">
                                     <div class="category-group-title">Price Range</div>
                                     <div class="category-group-filter">
-                                        <input type="number" placeholder="From" class="category-group-filter-input" name = 'minprice' value="<?= set_value('minprice') ?>">
+                                        <input type="number" placeholder="From" class="category-group-filter-input" id = 'minprice'>
                                         <i class="fas fa-arrow-right"></i>
-                                        <input type="number" placeholder="To" class="category-group-filter-input" name ="maxprice" value = "<?= set_value('maxprice') ?>">
-                                        
+                                        <input type="number" placeholder="To" class="category-group-filter-input" id ="maxprice" >
+
                                     </div>
-                                    <div><?= loadError($validation,'maxprice');?></div>
+                                    <div id = "loadError"></div>
                                 </div>
-                                <button class="btn btn--brown category-group-filter-btn"  >APPLY</button>
-                            </form>
+                                <button class="btn btn--brown category-group-filter-btn" id = 'reloadData'>APPLY</button>
+                            <!-- </form> -->
+                            <script>
+                                $(document).ready(function() {
+                                    $(document).on('click', '#reloadData', function() {
+                                        let minprice = $('#minprice').val();
+                                        let maxprice = $('#maxprice').val();
+                                        if(minprice  && maxprice  && (minprice > maxprice) || minprice< 0 || maxprice < 0) {
+                                            error = "please enter a valid value";
+                                            $('#loadError').text(error);
+                                            
+                                        } else {
+                                            error = " ";
+                                            
+                                            console.log("<?= base_url(uri_string()) ?>");
+                                            $('#loadError').text(error);
+                                            let address = [];
+                                            let type = [];
+                                            $('.address').each(function() {
+                                                if($(this).is(":checked"))
+                                                    address.push($(this).val());
+                                            });
+                                            $('.type').each(function() {
+                                                if($(this).is(":checked"))
+                                                    type.push($(this).val());
+                                            });
+                                            console.log(type.toString());
+                                            let data = {
+                                                'type' : type,
+                                                'address' : address,
+                                                'minprice': minprice,
+                                                'maxprice': maxprice
+                                            };
+                                            loadProduct(data, "get", "<?= base_url().'/home/showByRequset'?>");
+                                           
+                                        } 
+                                    });
+                                });
+                            </script>
                             <!-- <div class="category-group">
                                 <div class="category-group-title">Loại Shop</div>
                                 <ul class="category-group-list">
@@ -688,58 +726,13 @@
                                     </li>
                                 </ul>
                             </nav>
-                            <div id="list-product" class="row sm-gutter"></div>
-                            <div id="list-product" class="row sm-gutter">
-                               <?php if (isset($products)): ?>
-                                    <?php foreach ($products as $product): ?>
-                                    <div class="col l-2-4 m-3 c-6 home-product-item">
-                                    <a class="home-product-item-link" href="#">
-                                        <div class="home-product-item__img" style="background-image:url('data:image/jpeg;base64,<?=$product['image']?>')"></div>
-                                        <div class="home-product-item__info">
-                                            <h4 class="home-product-item__name"><?= $product['nameproduct']; ?></h4>
-                                            <div class="home-product-item__price">
-                                                <p class="home-product-item__price-old"><?= $product['price']?>USD</p>
-                                                <p class="home-product-item__price-new"><?=$product['price']-$product['price']*$product['discount']/100?>USD</p>
-                                                <i class="home-product-item__ship fas fa-shipping-fast"></i>
-                                            </div>
-                                            <div class="home-product-item__footer">
-                                                <div class="home-product-item__save">
-                                                    <input type="checkbox" name="save-check" id="heart-save">
-                                                    <label for="heart-save" class="far fa-heart"></label>
-                                                </div>
-                                                <div class="home-product-item__rating-star">
-                                                    <i class="star-checked far fa-star"></i>
-                                                    <i class="star-checked far fa-star"></i>
-                                                    <i class="star-checked far fa-star"></i>
-                                                    <i class="star-checked far fa-star"></i>
-                                                    <i class="star-checked far fa-star"></i>
-                                                </div>
-                                                <div class="home-product-item__saled"><?= $product['sold']?></div>
-                                            </div>
-                                            <div class="home-product-item__origin"><?= $product['address']?></div>
-                                        </div>
-                                    </a>
-                                    </div>
-                                    <?php endforeach ?>
-                                <?php else: ?>
-                                    <div class="col l-10">
-                                        <div class="home__filter-error">
-                                            <i class="home__filter-error-icon fa-regular fa-file-excel"></i>
-                                            <p>Hix. No products. Did you try to turn off the filter condition and find it again?</p>
-                                            <span>or</span>
-                                            <button class="btn btn--brown home-filter-btn">
-                                                <a href="<?=base_url().'/home' ?>">
-                                                    Clear filter
-                                                </a>
-                                            </button>
-                                        </div>
-                                    </div>
-                                <?php endif ?>
+                            <div id="list-product" class="row sm-gutter loadProduct">
+                               
                             </div>
-                        </div>
+                       
                         <!-- pagination -->
-                       <?php if (isset($products)): ?>
-                            <ul class="pagination home-product-pagination">
+                       
+                            <ul class="pagination home-product-pagination" id = "page">
                             
                            <!--  <li class="pagination-item">
                                 <a href="#" class="pagination-item-link">1</a>
@@ -753,51 +746,9 @@
                             <li class="pagination-item">
                                 <a class="pagination-item-link pagination-item-link--disable">. . .</a>
                             </li> -->
-                             <?php if ($pageStart != 1): ?>
-                                <li class="pagination-item">
-                                <a href="<?= convertLink(base_url(uri_string()).'?'.$_SERVER['QUERY_STRING'],$pageStart-1)?>" class="pagination-item-link pagination-item-link--disable">
-                                    <i class="fas fa-chevron-left"></i>
-                                </a>
-                            <?php endif ?>
-                            <?php if ($pageStart >= 3): ?>
-                                <li class="pagination-item">
-                                    <a href="<?= convertLink(base_url(uri_string()).'?'.$_SERVER['QUERY_STRING'], 1)?>" class="pagination-item-link"><?= 1 ?></a>
-                                </li>
-                            <?php endif ?>
-                            <?php if ($pageStart != 1): ?>
-                                <li class="pagination-item">
-                                    <a class="pagination-item-link pagination-item-link--disable">. . .</a>
-                                </li>
-                            <?php endif ?>
-                             <li class="pagination-item pagination-item--active">
-                                <a href="<?= convertLink(base_url(uri_string()).'?'.$_SERVER['QUERY_STRING'], $pageStart)?>" class="pagination-item-link "><?= $pageStart ?></a>
-                            </li>
-                            <?php for ($i = $pageStart+1; $i <= min($pageEnd-1,$pageStart+2); $i++): ?>
-                                <li class="pagination-item">
-                                    <a href="<?= convertLink(base_url(uri_string()).'?'.$_SERVER['QUERY_STRING'],$i)?>" class="pagination-item-link"><?= $i ?></a>
-                                </li>
-                            <?php endfor ?>
-                            <?php if ($pageEnd-1 > $pageStart+2): ?>
-                                 <li class="pagination-item">
-                                    <a class="pagination-item-link pagination-item-link--disable">. . .</a>
-                                </li>
-                                <li class="pagination-item">
-                                    <a href="<?= convertLink(base_url(uri_string()).'?'.$_SERVER['QUERY_STRING'],$pageEnd)?>" class="pagination-item-link"><?=$pageEnd?></a>
-                                 </li>
-                            <?php elseif($pageEnd > $pageStart): ?>
-                                 <li class="pagination-item">
-                                    <a href="<?= convertLink(base_url(uri_string()).'?'.$_SERVER['QUERY_STRING'],$pageEnd)?>" class="pagination-item-link"><?=$pageEnd?></a>
-                                 </li>
-                            <?php endif ?>
-                            <?php if ($pageEnd > $pageStart): ?>
-                                 <li class="pagination-item">
-                                <a href="<?= convertLink(base_url(uri_string()).'?'.$_SERVER['QUERY_STRING'],$pageStart+1)?>" class="pagination-item-link">
-                                    <i class="fas fa-chevron-right"></i>
-                                </a>
-                            </li>
-                            <?php endif ?>
+                
                         </ul>
-                       <?php endif ?>
+                     
                     </div>
                 </div>
             </div>
@@ -1090,6 +1041,57 @@
           }
         }, 5000);
     </script>
-    
+        <script>
+        $(document).ready(function() {
+            loadProduct("", "get", "<?= base_url().'/home/fetch'?>");
+        });
+        function loadProduct(pdata, ptype, url) {
+            $.ajax({
+                url: url,
+                data: pdata,
+                type: ptype,
+                headers: {
+                    "My-First-Header":"first value",
+                    "My-Second-Header":"second value"
+                },
+                success: function (response) {
+                    //console.log(typeof(response.products));
+                    $('.loadProduct').html("");                       
+                    if (response.products !== null) {
+                        $.each(response.products , function(index, value) {
+                        $('.loadProduct').append("<div class='col l-2-4 m-3 c-6 home-product-item'>\
+                            <a class='home-product-item-link' href='#'>\
+                            <div class='home-product-item__img' style='background-image:url(data:image/jpeg;base64,"+value.image+")'></div>\
+                            <div class='home-product-item__info'>\
+                                <h4 class='home-product-item__name'>"+ value.nameproduct+"</h4>\
+                                <div class='home-product-item__price'>\
+                                    <p class='home-product-item__price-old'>"+ value.price+"USD</p>\
+                                    <p class='home-product-item__price-new'>"+(value.price-value.price*value.discount/100).toFixed(2)+"USD</p>\
+                                    <i class='home-product-item__ship fas fa-shipping-fast'></i>\
+                                </div>\
+                                <div class='home-product-item__footer'>\
+                                    <div class='home-product-item__save'>\
+                                        <input type='checkbox' name='save-check' id='heart-save'>\
+                                        <label for='heart-save' class='far fa-heart'></label>\
+                                    </div>\
+                                    <div class='home-product-item__rating-star'>\
+                                            <i class='star-checked far fa-star'></i>\
+                                            <i class='star-checked far fa-star'></i>\
+                                            <i class='star-checked far fa-star'></i>\
+                                            <i class='star-checked far fa-star'></i>\
+                                            <i class='star-checked far fa-star'></i>\
+                                    </div>\
+                                         <div class='home-product-item__saled'>"+ value.sold+"</div>\
+                                    </div>\
+                                    <div class='home-product-item__origin'>"+value.address+"</div>\
+                                </div>\
+                            </div>");
+                        });
+                    }
+                }
+                                            
+            });
+    }
+ </script>
 </body>
 </html>

@@ -21,15 +21,14 @@ class Home extends BaseController
     }
     public function index()
     {   
-        $result = $this->model->getProduct();
-        $gotData = $this->getDataIndex($result);
-        if($gotData == "fail") return view('errors/html/error_404');
-        $this->data['products'] = $result->countAllResults(false) ?  $gotData  : null;
-        
-        $this->data['validation'] = null;
         return view('welcome_message', $this->data);
     }
-
+    public function fetch()
+    {
+        $result = $this->model->getProduct();
+        $this->data['products'] = $this->getDataIndex($result);
+        return $this->response->setJSON($this->data);
+    }
     public function sortBy($attribute, $method = "ASC")  
     {
         if($this->request->getMethod() == 'get') {
@@ -37,25 +36,8 @@ class Home extends BaseController
             $address = $this->request->getVar('address');
             $minprice = $this->request->getVar('minprice');
             $maxprice = $this->request->getVar('maxprice');
-            $this->data['validation'] = Null; 
-            if($minprice && $maxprice) {
-                $rules = [
-                    'maxprice' => [
-                        'rules' =>'greater_than['.$minprice.']',
-                        'errors' => [
-                            'greater_than'=>'Please enter the appropriate price',
-                            
-                        ]
-                    ]
-                ];
-                if(!$this->validate($rules)) {
-                    $this->data['validation'] = $this->validator;
-                    return view('welcome_message', $this->data);
-                }
-            }
             $this->data['products'] = $this->model->getProductByQuery($type, $address, $minprice, $maxprice);
         }
-
         $result = $this->model->sortQuery($this->data['products'], $attribute, $method);
         $gotData = $this->getDataIndex($result);
         if($gotData == "fail") return view('errors/html/error_404');
@@ -65,35 +47,16 @@ class Home extends BaseController
     }
     public function showByRequset()
     {
-        if($this->request->getMethod() == 'get') {
-            $type = $this->request->getVar('type');
-            $address = $this->request->getVar('address');
-            $minprice = $this->request->getVar('minprice');
-            $maxprice = $this->request->getVar('maxprice');
-            $this->data['validation'] = Null; 
-            if($minprice && $maxprice) {
-                $rules = [
-                    'maxprice' => [
-                        'rules' =>'greater_than['.$minprice.']',
-                        'errors' => [
-                            'greater_than'=>'Please enter the appropriate price',
-                            
-                        ]
-                    ]
-                ];
-
-                if(!$this->validate($rules)) {
-                    $this->data['validation'] = $this->validator;
-                }
-            }
-            $result = $this->model->getProductByQuery($type, $address, $minprice, $maxprice);
-            
-        }
+        
+        $type = $this->request->getVar('type');
+        $address = $this->request->getVar('address');
+        $minprice = $this->request->getVar('minprice');
+        $maxprice = $this->request->getVar('maxprice');
+        $result = $this->model->getProductByQuery($type, $address, $minprice, $maxprice);
         $gotData = $this->getDataIndex($result);
         if($gotData == "fail") return view('errors/html/error_404');
         $this->data['products'] = $result->countAllResults(false) ?  $gotData  : null;
-        
-        return view('welcome_message', $this->data);
+        return $this->response->setJSON($this->data);
     }
     public function getDataIndex($result)
     {
