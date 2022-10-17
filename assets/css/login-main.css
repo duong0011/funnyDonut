@@ -62,8 +62,7 @@
     /* margin-top: 30px; */
     margin: 30px 0;
     text-align: center;
-    width: 25%;
-    min-width: 320px;
+    width: 30%;
     /* box-shadow: 0 0 5px var(--primary-color); */
     border: 3px solid var(--primary-color);
 }
@@ -127,8 +126,9 @@
 }
 
 .form-term {
-    display: inline;
+    display: inline-block;
     font-size: 1.4rem;
+    margin: 10px 0;
 }
 
 .form-term input {
@@ -152,3 +152,10 @@
     font-size: 1.4rem;
 }
 
+.input-alert-error {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-top: -12px;
+    margin-bottom: 15px;
+}

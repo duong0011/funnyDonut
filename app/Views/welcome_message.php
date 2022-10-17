@@ -165,7 +165,7 @@
                                 <a href="#" class="header__nav-item-link header__nav-item--bold"><?=  $user['fullname'];?></a>
                                 <ul class="header__nav-user-menu">
                                     <li class="header__nav-user-item">
-                                        <a href="#">Tài khoản của tôi</a>
+                                        <a href="<?= base_url('/profile') ?>">My profile</a>
                                     </li>
                                     <li class="header__nav-user-item">
                                         <a href="#">Đơn mua</a>
@@ -194,31 +194,14 @@
                     <input type="checkbox" id="mobile-search" class="header__search-check" hidden>
                     <div class="header__search">
                         <div class="header__search-input-wrap">
-                            <input type="text" class="header__search-input" placeholder="Enter to search for products:">
-                            <div class="header__search-history">
-                                <ul class="header__search-history-list">
-                                    <li class="header__search-history-item">
-                                        <a href="#">Combo 30 điểm đại học khối A</a>
-                                    </li>
-                                    <li class="header__search-history-item">
-                                        <a href="#">Combo 30 điểm đại học khối D</a>
-                                    </li>
-                                    <li class="header__search-history-item">
-                                        <a href="#">Mỹ phẩm cho người yêu</a>
-                                    </li>
-                                    <li class="header__search-history-item">
-                                        <a href="#">Bí kíp tán crush auto đổ</a>
-                                    </li>
-                                    <li class="header__search-history-item">
-                                        <a href="#">Iphone 13 Pro Max giá rẻ</a>
-                                    </li>
-                                    <li class="header__search-history-item">
-                                        <a href="#">Người yêu đẹp trai như LTP</a>
-                                    </li>
+                            <input type="text" class="header__search-input" placeholder="Enter to search for products:" id = 'searchproduct'>
+                            <div class="header__search-history" >
+                                <ul class="header__search-history-list hintsforproduct">
+                                   
                                 </ul>
                             </div>
                         </div>
-                        <button class="btn header__search-btn">
+                        <button class="btn header__search-btn" id="clicksearch">
                             <i class="header__search-btn-icon fas fa-search"></i>
                         </button>
                     </div>
@@ -484,59 +467,6 @@
                                 </div>
                                 <button class="btn btn--brown category-group-filter-btn" id = 'reloadData'>APPLY</button>
                             <!-- </form> -->
-                            <script>
-                                $(document).ready(function() {
-                                    $(document).on('click', '#reloadData', function() {
-                                        callLoadData('home/showByRequset');
-                                    });
-                                });
-                                 $(document).ready(function() {
-                                    $(document).on('click', '#sortByTime', function() {
-                                        callLoadData('home/showByRequset'+'/'+$('#sortByTime').val());
-                                    });
-                                });
-                                $(document).ready(function() {
-                                    $(document).on('click', '#sortBySold', function() {
-                                        callLoadData('home/showByRequset'+'/'+$('#sortBySold').val());
-                                    });
-                                });
-                                // $(document).ready(function() {
-                                //     $(document).on('click', '#pageclick', function() {
-                                //         let url = $('#pageclick').val();
-                                //         callLoadData(url);
-                                //     });
-                                // });
-                                function callLoadData(url, page) {
-                                    let minprice = $('#minprice').val();
-                                    let maxprice = $('#maxprice').val();
-                                    if(minprice  && maxprice  && (minprice > maxprice) || minprice< 0 || maxprice < 0) {
-                                        error = "please enter a valid value";
-                                        $('#loadError').text(error);
-                                        
-                                    } else {
-                                        error = " ";
-                                        $('#loadError').text(error);
-                                        let address = [];
-                                        let type = [];
-                                            $('.address').each(function() {
-                                                if($(this).is(":checked"))
-                                                address.push($(this).val());
-                                            });
-                                            $('.type').each(function() {
-                                                if($(this).is(":checked"))
-                                                    type.push($(this).val());
-                                            });
-                                            let data = {
-                                                'type' : type,
-                                                'address' : address,
-                                                'minprice': minprice,
-                                                'maxprice': maxprice,
-                                                'page' : page
-                                            };
-                                            loadProduct(data, "get", url); 
-                                        } 
-                                }
-                            </script>
                             <!-- <div class="category-group">
                                 <div class="category-group-title">Loại Shop</div>
                                 <ul class="category-group-list">
@@ -1034,7 +964,67 @@
           }
         }, 5000);
     </script>
-        <script>
+    <!-- lay du lieu cho tung chuc nang -->
+    <script>
+        $(document).ready(function() {
+            $(document).on('click', '#reloadData', function() {
+                callLoadData('home/showByRequset');
+            });
+        });
+        $(document).ready(function() {
+            $(document).on('click', '#sortByTime', function() {
+                callLoadData('home/showByRequset'+'/'+$('#sortByTime').val());
+            });
+        });
+         $(document).ready(function() {
+            $(document).on('click', '#clicksearch', function() {
+                callLoadData('home/showByRequset'+'/'+$('#sortByTime').val());
+            });
+        });
+        $(document).ready(function() {
+            $(document).on('click', '#sortBySold', function() {
+                callLoadData('home/showByRequset'+'/'+$('#sortBySold').val());
+            });
+        });
+        $(document).ready(function() {
+            $(document).on('click', '#pageclick', function() {
+                let url = $('#pageclick').val();
+                callLoadData(url);
+            });
+        });
+        function callLoadData(url, page) {
+            let minprice = $('#minprice').val();
+            let maxprice = $('#maxprice').val();
+            if(minprice  && maxprice  && (minprice > maxprice) || minprice< 0 || maxprice < 0) {
+                error = "please enter a valid value";
+                $('#loadError').text(error);
+                
+            } else {
+                error = " ";
+                $('#loadError').text(error);
+                let address = [];
+                let type = [];
+                    $('.address').each(function() {
+                        if($(this).is(":checked"))
+                        address.push($(this).val());
+                    });
+                    $('.type').each(function() {
+                        if($(this).is(":checked"))
+                            type.push($(this).val());
+                    });
+                    let data = {
+                        'type' : type,
+                        'address' : address,
+                        'minprice': minprice,
+                        'maxprice': maxprice,
+                        'page' : page
+                    };
+                    loadProduct(data, "get", url); 
+                } 
+        }
+    </script>
+    <!-- show du lieu sau khi lay duoc tu DB -->
+    <script>
         $(document).ready(function() {
             loadProduct("", "get", "<?= base_url().'/home/fetch'?>");
         });
@@ -1088,26 +1078,31 @@
                                     <i class='fas fa-chevron-left'></i>\
                                 </button>\
                                 </li>");
-                        if(pageStart >= 2) {
-                             $('#page').append("<li class='pagination-item'>\
+                         if(pageStart >= 3) {
+                            $('#page').append("<li class='pagination-item'>\
                                     <button onclick = callLoadData('"+request+"',1) class='pagination-item-link'><?= 1 ?></button>\
                                 </li>");
-                        }
-                        if(pageStart != 1 && pageStart > 4) {
                             $('#page').append(" <li class='pagination-item'>\
                                     <a class='pagination-item-link pagination-item-link--disable'>. . .</a>\
                                 </li>");
+                        } else if(pageStart >= 2) {
+
+                             $('#page').append("<li class='pagination-item'>\
+                                    <button onclick = callLoadData('"+request+"',1) class='pagination-item-link'><?= 1 ?></button>\
+                                </li>");
+
                         }
+                        
                         $('#page').append("<li class='pagination-item pagination-item--active'>\
                                 <button class='pagination-item-link'>"+pageStart+"</button>\
                             </li>");
-                        
                         for (i = pageStart+1; i <= Math.min(pageEnd-1,pageStart+2); i++) {
                             $("#page").append("<li class='pagination-item'>\
                                     <button class='pagination-item-link' onclick = callLoadData('"+request+"',"+i+")>"+i+"</button>\
                                 </li>");
                         }
-                        if (pageEnd-1 > pageStart+4) {
+
+                        if (pageEnd-1 > pageStart+2) {
                             $("#page").append("<li class='pagination-item'>\
                                     <a class='pagination-item-link pagination-item-link--disable'>. . .</a>\
                                 </li>\
@@ -1142,6 +1137,40 @@
                     }
                 }
                                             
+        });
+}
+</script>
+ <script>
+    jQuery(document).ready(function($) {
+         $(document).on('keyup', '#searchproduct', function() {
+                let product = $('#searchproduct').val();
+                showHints(product);
+
+            });
+    });
+    function showHints(product) {
+        $.ajax({
+                url: '<?=base_url('/home/showHints')?>',
+                type: 'get',
+                data: {'productName' : product},
+                success: function (response) {
+                    if(response.hints !== null) {
+                       $('.hintsforproduct').html(""); 
+                       $.each(response.hints, function(index,val) {
+                             $('.hintsforproduct').append("\
+                            <li class='header__search-history-item'>\
+                                <a href='#'>"+val.nameproduct+"</a>\
+                            </li>");
+                       });
+                    }
+                    else {
+                        $('.hintsforproduct').html("");
+                        $('.hintsforproduct').append("\
+                            <li class='header__search-history-item'>\
+                               No results were found \
+                            </li>");
+                    }
+                }
             });
     }
  </script>

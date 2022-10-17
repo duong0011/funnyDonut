@@ -49,4 +49,8 @@ class Index_model extends Model
     {
         return (($page == 1) ? $data->get(15, ($page-1)*15) : $data->get(15, ($page-1)*15+1))->getResultArray();
     }
+    public function hints($name='')
+    {
+        return $this->db->table('product')->select('nameproduct')->like('nameproduct', $name);
+    }
 }
