@@ -94,15 +94,20 @@ class Register extends Controller
 		$builder = $this->db;
 		$builder->set(['status' => 'active']);
 		$builder->where('unitid', $unitid);
-		if(count($builder->get()->getResultArray())) {
-			if(count($builder->where('status =', 'inactive')->where('unitid', $unitid)->get()->getResultArray())) {
+		if(($builder->countAllResults(false))) {
+			if($builder->where('status', 'inactive')->countAllResults(false)) {
 				$builder->update();
-				$this->session->set('success','Activation complete');
-				return redirect()->to(base_url().'/login');
+				session()->('success',' You have successfully activated your account')
+				return redirect()->to(base_url('/login'));
 			}
-			else echo "Your account have been actived!";
+			else {
+				session()->('success', "Your account have been actived!")
+				return redirect()->to(base_url('/login'));
+			}
 		}
-		else echo "Can't find your account!";
-
+		else {
+			session()->('success',"Can't find your account!");
+			return redirect()->to(base_url('/login'));
+		}
 	}
 }

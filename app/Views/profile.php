@@ -382,9 +382,9 @@
                 <div class="row">
                     <div class="c-2 info-list">
                         <div class="user-avatar-name">
-                            <p class="user-name">sr14</p>
+                            
                             <div class="user-avtar-upload">
-                                <img class="user-avatar" id="imgPreview" src="<?= base_url()?>./assets/img/profile/avatar_user.png" alt="avatar"/>
+                                <img class="user-avatar" id="imgPreview" src="data:image/jpeg;base64,<?=$user['avatar']?>" alt="avatar"/>
                                 <input type="file" name="" id="imageUpload" accept=".png, .jpg, .jpeg"/>
                                 <label for="imageUpload"><i class="fa-solid fa-arrow-up-from-bracket"></i></label>
                             </div>
@@ -421,27 +421,28 @@
                                     <ul class="profile-list">
                                         <li class="profile-name">
                                             <span>Name</span>
-                                            <input type="text" value="Tran Nga" class="form-input">
+                                            <input type="text" value="<?= $user['fullname']?>" class="form-input" id = "fullnameuser">
+                                            <span style=""></span>
                                         </li>
                                         <li class="profile-username">
                                             <span>Username</span>
-                                            <input type="text" value="sr14" class="form-input"> 
+                                            <input type="text" value="<?= $user['username']?>" class="form-input" readonly> 
                                         </li>
                                         <li class="profile-phone">
                                             <span>Phone number</span>
-                                            <p class="profile-phone">+79219698056</p>
+                                            <p class="profile-phone"><?= $user['phonenumber'];?></p>
                                             <a href="" class="profile-change">Change</a>
                                         </li>
                                         <li class="profile-email">
                                             <span>Email</span>
-                                            <p>tranngasr@gmail.com</p>
+                                            <p><?= $user['email'] ?></p>
                                             <a href="" class="profile-change">Change</a>
                                         </li>
                                         <li class="profile-gender">
                                             <span>Gender</span>
-                                            <input type="radio" value="male" name="gender" id="male">
-                                            <label for="male">Male</label>
-                                            <input type="radio" value="female" name="gender" id="female">
+                                            <input type="radio" value="male" name="gender" id="male" <?php if($user['gender'] == 'male') echo "checked"?>>
+                                            <label for="male" >Male</label>
+                                            <input type="radio" value="female" name="gender" id="female" <?php if($user['gender'] == 'female') echo "checked"?>>
                                             <label for="female">Female</label>
                                         </li>
                                         <li class="profile-date">
@@ -473,7 +474,7 @@
                                         </li>
                                     </ul>
                                     <div class="profile-change-submit">
-                                        <input type="button" value="Save" class="profile-save-btn">
+                                        <button type="button" value="Save" class="profile-save-btn" onclick='updateData()'>Save</button>
                                     </div>
                                 </form>
                             </div>
@@ -868,6 +869,34 @@
                     }
                 }
             });
+    }
+ </script>
+ <!-- cap nhat profile -->
+ <script>
+    function updateData() {
+        
+        let data = {
+            'fullname' :$('#fullnameuser').val(),
+            'gender' : $('#gender').val(),
+        }
+       $.ajax({
+            url: '<?=base_url('/profile/updateData')?>',
+            type: 'post',
+            data: data,
+            success: function (response) {
+                window.location.reload();
+            }
+       })
+       .done(function() {
+           console.log("success");
+       })
+       .fail(function() {
+           console.log("error");
+       })
+       .always(function() {
+           console.log("complete");
+       });
+       
     }
  </script>
 </body>

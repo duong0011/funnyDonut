@@ -978,7 +978,7 @@
         });
          $(document).ready(function() {
             $(document).on('click', '#clicksearch', function() {
-                callLoadData('home/showByRequset'+'/'+$('#sortByTime').val());
+                callLoadData('home/showByRequset');
             });
         });
         $(document).ready(function() {
@@ -992,7 +992,7 @@
                 callLoadData(url);
             });
         });
-        function callLoadData(url, page) {
+        function callLoadData(url, page, data) {
             let minprice = $('#minprice').val();
             let maxprice = $('#maxprice').val();
             if(minprice  && maxprice  && (minprice > maxprice) || minprice< 0 || maxprice < 0) {
@@ -1012,12 +1012,15 @@
                         if($(this).is(":checked"))
                             type.push($(this).val());
                     });
+                    console.log(document.URL);
                     let data = {
                         'type' : type,
                         'address' : address,
                         'minprice': minprice,
                         'maxprice': maxprice,
-                        'page' : page
+                        'keyWord': $('#searchproduct').val(),
+                        'page' : page,
+
                     };
                     loadProduct(data, "get", url); 
                 } 
@@ -1035,10 +1038,11 @@
                 type: ptype,
                 async: true,
                 success: function (response) {
-                    //console.log(typeof(response.products));
+                   
                     $('.loadProduct').html("");
                     $('#page').html("");                       
                     if (response.products !== null) {
+                         console.log(response.products);
                         console.log(response.currentRequest1);
                         window.history.pushState('page2', 'Title', response.currentRequest1);
                         $.each(response.products , function(index, value) {

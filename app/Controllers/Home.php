@@ -33,11 +33,13 @@ class Home extends BaseController
         $address = $this->request->getVar('address');
         $minprice = $this->request->getVar('minprice');
         $maxprice = $this->request->getVar('maxprice');
+        $keyWord = $this->request->getVar('keyWord');
         $result = $this->model->getProductByQuery($type, $address, $minprice, $maxprice);
         $result = $this->model->sortQuery($result, $attribute, $method);
+        if($keyWord) $result = $this->model->getByKeyword($result,$keyWord);
         $gotData = $this->getDataIndex($result);
-        if($gotData == "fail") return view('errors/html/error_404');
         $this->data['products'] = $result->countAllResults(false) ?  $gotData  : null;
+        //print_r($gotData);
         return $this->response->setJSON($this->data);
     }
     public function getDataIndex($result)
@@ -56,16 +58,6 @@ class Home extends BaseController
     {
         $name = $this->request->getVar('productName');
         $result=$this->model->hints($name);
-        $this->data['currentRequest1'] = base_url('/home').'?'.$_SERVER['QUERY_STRING'];
-        $count = $result->countAllResults(false);
-        $this->data['hints'] = $count ? $result->get(5)->getResultArray() : null;
-        return $this->response->setJSON($this->data);
-    }
-    public function showProductSearched()
-    {
-        $name = $this->request->getVar('productName');
-        $result=$this->model->hints($name);
-        $this->data['currentRequest1'] = base_url('/home').'?'.$_SERVER['QUERY_STRING'];
         $count = $result->countAllResults(false);
         $this->data['hints'] = $count ? $result->get(5)->getResultArray() : null;
         return $this->response->setJSON($this->data);
