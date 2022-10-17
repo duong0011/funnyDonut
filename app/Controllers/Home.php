@@ -29,30 +29,14 @@ class Home extends BaseController
         $this->data['products'] = $this->getDataIndex($result);
         return $this->response->setJSON($this->data);
     }
-    public function sortBy($attribute, $method = "ASC")  
+    public function showByRequset($attribute = '', $method = "")
     {
-        if($this->request->getMethod() == 'get') {
-            $type = $this->request->getVar('type');
-            $address = $this->request->getVar('address');
-            $minprice = $this->request->getVar('minprice');
-            $maxprice = $this->request->getVar('maxprice');
-            $this->data['products'] = $this->model->getProductByQuery($type, $address, $minprice, $maxprice);
-        }
-        $result = $this->model->sortQuery($this->data['products'], $attribute, $method);
-        $gotData = $this->getDataIndex($result);
-        if($gotData == "fail") return view('errors/html/error_404');
-        $this->data['products'] = $result->countAllResults(false) ?  $gotData  : null;
-        
-        return view('welcome_message', $this->data);
-    }
-    public function showByRequset()
-    {
-        
         $type = $this->request->getVar('type');
         $address = $this->request->getVar('address');
         $minprice = $this->request->getVar('minprice');
         $maxprice = $this->request->getVar('maxprice');
         $result = $this->model->getProductByQuery($type, $address, $minprice, $maxprice);
+        $result = $this->model->sortQuery($result, $attribute, $method);
         $gotData = $this->getDataIndex($result);
         if($gotData == "fail") return view('errors/html/error_404');
         $this->data['products'] = $result->countAllResults(false) ?  $gotData  : null;
@@ -60,6 +44,8 @@ class Home extends BaseController
     }
     public function getDataIndex($result)
     {
+        $this->data['currentRequest1'] = base_url('/home').'?'.$_SERVER['QUERY_STRING'];
+         $this->data['currentRequest'] = base_url(uri_string()).'?';
         $builder = $result;
         $_count = $builder->countAllResults(false);
         $page = $this->request->getVar('page') ? $this->request->getVar('page') : 1;

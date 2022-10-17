@@ -18,6 +18,7 @@
 </head>
 <body>
     <!-- main -->
+
     <div class="app">
         <!-- header -->
         <header class="header">
@@ -486,39 +487,55 @@
                             <script>
                                 $(document).ready(function() {
                                     $(document).on('click', '#reloadData', function() {
-                                        let minprice = $('#minprice').val();
-                                        let maxprice = $('#maxprice').val();
-                                        if(minprice  && maxprice  && (minprice > maxprice) || minprice< 0 || maxprice < 0) {
-                                            error = "please enter a valid value";
-                                            $('#loadError').text(error);
-                                            
-                                        } else {
-                                            error = " ";
-                                            
-                                            console.log("<?= base_url(uri_string()) ?>");
-                                            $('#loadError').text(error);
-                                            let address = [];
-                                            let type = [];
+                                        callLoadData('home/showByRequset');
+                                    });
+                                });
+                                 $(document).ready(function() {
+                                    $(document).on('click', '#sortByTime', function() {
+                                        callLoadData('home/showByRequset'+'/'+$('#sortByTime').val());
+                                    });
+                                });
+                                $(document).ready(function() {
+                                    $(document).on('click', '#sortBySold', function() {
+                                        callLoadData('home/showByRequset'+'/'+$('#sortBySold').val());
+                                    });
+                                });
+                                // $(document).ready(function() {
+                                //     $(document).on('click', '#pageclick', function() {
+                                //         let url = $('#pageclick').val();
+                                //         callLoadData(url);
+                                //     });
+                                // });
+                                function callLoadData(url, page) {
+                                    let minprice = $('#minprice').val();
+                                    let maxprice = $('#maxprice').val();
+                                    if(minprice  && maxprice  && (minprice > maxprice) || minprice< 0 || maxprice < 0) {
+                                        error = "please enter a valid value";
+                                        $('#loadError').text(error);
+                                        
+                                    } else {
+                                        error = " ";
+                                        $('#loadError').text(error);
+                                        let address = [];
+                                        let type = [];
                                             $('.address').each(function() {
                                                 if($(this).is(":checked"))
-                                                    address.push($(this).val());
+                                                address.push($(this).val());
                                             });
                                             $('.type').each(function() {
                                                 if($(this).is(":checked"))
                                                     type.push($(this).val());
                                             });
-                                            console.log(type.toString());
                                             let data = {
                                                 'type' : type,
                                                 'address' : address,
                                                 'minprice': minprice,
-                                                'maxprice': maxprice
+                                                'maxprice': maxprice,
+                                                'page' : page
                                             };
-                                            loadProduct(data, "get", "<?= base_url().'/home/showByRequset'?>");
-                                           
+                                            loadProduct(data, "get", url); 
                                         } 
-                                    });
-                                });
+                                }
                             </script>
                             <!-- <div class="category-group">
                                 <div class="category-group-title">Loại Shop</div>
@@ -649,11 +666,9 @@
                         <div class="home-filter hide-on-mobile-tablet">
                             <div class="home-filter-control">
                                 <p class="home-filter-title">Sorted by:</p>
-                                <button class="btn btn--brown home-filter-btn">
-                                    <a href="<?= base_url().'/home/sortBy/sold?'.$_SERVER['QUERY_STRING']?>">Popular</a>
-                                </button>
-                                <button class="btn home-filter-btn">
-                                    <a href="<?= base_url().'/home/sortBy/created_at?'.$_SERVER['QUERY_STRING']?>">Latest</a>
+                                <button class="btn btn--brown home-filter-btn type-sort" id = "sortBySold" value="sold">Popular</button>
+                                <button class="btn home-filter-btn" value="created_at" id = "sortByTime">
+                                    Latest
                                 </button>
                                 <button class="btn home-filter-btn">bestseller</button>
                                 <div class="btn home-filter-sort">
@@ -661,16 +676,18 @@
                                     <i class="fas fa-sort-amount-down-alt"></i>
                                     <ul class="home-filter-sort-list">
                                         <li>
-                                            <a href="<?= base_url().'/home/sortBy/price?'.$_SERVER['QUERY_STRING']?>" class="home-filter-sort-item-link">
-                                                Price: Low to High
-                                                <i class="fas fa-sort-amount-down-alt"></i>
-                                            </a>
+                                            
+                                            <button class="btn home-filter-btn" onclick="callLoadData('home/showByRequset/price/DESC')">
+                                               Price: Hight to low
+                                            </button>
+                                            <i class="fas fa-sort-amount-down-alt"></i>
+                                            
                                         </li>
                                         <li>
-                                            <a href="<?= base_url().'/home/sortBy/price/DESC?'.$_SERVER['QUERY_STRING']?>" class="home-filter-sort-item-link">
-                                                Price: Hight to Low
-                                                <i class="fas fa-sort-amount-up-alt"></i>
-                                            </a>
+                                            <button class="btn home-filter-btn" onclick="callLoadData('home/showByRequset/price/ESC')">
+                                               Price: Low to hight
+                                            </button>
+                                            <i class="fas fa-sort-amount-down-alt"></i>
                                         </li>
                                     </ul>
                                 </div>
@@ -734,20 +751,9 @@
                        
                             <ul class="pagination home-product-pagination" id = "page">
                             
-                           <!--  <li class="pagination-item">
-                                <a href="#" class="pagination-item-link">1</a>
-                            </li>
-                            <li class="pagination-item pagination-item--active">
-                                <a href="#" class="pagination-item-link">2</a>
-                            </li>
-                            <li class="pagination-item">
-                                <a href="#" class="pagination-item-link">3</a>
-                            </li>
-                            <li class="pagination-item">
-                                <a class="pagination-item-link pagination-item-link--disable">. . .</a>
-                            </li> -->
+                          
                 
-                        </ul>
+                            </ul>
                      
                     </div>
                 </div>
@@ -808,20 +814,7 @@
                                                                        
                                     </div>
                                 </div>
-                                <!-- <div>
-                                    <h3 class="footer__heading">ĐƠN VỊ VẬN CHUYỂN</h3>
-                                    <div class="footer-sale-ship">
-                                        <img src=" <?= base_url()?>./assets/img/ship/1.PNG" class="footer-item-sale-ship">
-                                        <img src=" <?= base_url()?>./assets/img/ship/2.PNG" class="footer-item-sale-ship">
-                                        <img src=" <?= base_url()?>./assets/img/ship/3.PNG" class="footer-item-sale-ship">
-                                        <img src=" <?= base_url()?>./assets/img/ship/4.PNG" class="footer-item-sale-ship">
-                                        <img src=" <?= base_url()?>./assets/img/ship/5.PNG" class="footer-item-sale-ship">
-                                        <img src=" <?= base_url()?>./assets/img/ship/6.PNG" class="footer-item-sale-ship">
-                                        <img src=" <?= base_url()?>./assets/img/ship/7.PNG" class="footer-item-sale-ship">
-                                        <img src=" <?= base_url()?>./assets/img/ship/8.PNG" class="footer-item-sale-ship">
-                                        <img src=" <?= base_url()?>./assets/img/ship/9.PNG" class="footer-item-sale-ship">
-                                    </div>
-                                </div> -->
+                        
                             </div>
                             <div class="col l-2-4 m-4 c-6">
                                 <h3 class="footer__heading">FOLLOW US</h3>
@@ -1050,14 +1043,14 @@
                 url: url,
                 data: pdata,
                 type: ptype,
-                headers: {
-                    "My-First-Header":"first value",
-                    "My-Second-Header":"second value"
-                },
+                async: true,
                 success: function (response) {
                     //console.log(typeof(response.products));
-                    $('.loadProduct').html("");                       
+                    $('.loadProduct').html("");
+                    $('#page').html("");                       
                     if (response.products !== null) {
+                        console.log(response.currentRequest1);
+                        window.history.pushState('page2', 'Title', response.currentRequest1);
                         $.each(response.products , function(index, value) {
                         $('.loadProduct').append("<div class='col l-2-4 m-3 c-6 home-product-item'>\
                             <a class='home-product-item-link' href='#'>\
@@ -1081,12 +1074,71 @@
                                             <i class='star-checked far fa-star'></i>\
                                             <i class='star-checked far fa-star'></i>\
                                     </div>\
-                                         <div class='home-product-item__saled'>"+ value.sold+"</div>\
+                                         <div class='home-product-item__saled'>"+value.sold+"</div>\
                                     </div>\
                                     <div class='home-product-item__origin'>"+value.address+"</div>\
                                 </div>\
                             </div>");
                         });
+                        pageStart = Number(response.pageStart);
+                        pageEnd = Number(response.pageEnd);
+                        request = response.currentRequest.toString();
+                        $('#page').append("<li class='pagination-item'>\
+                                <button class='pagination-item-link pagination-item-link--disable' onclick = callLoadData('"+request+"',"+Math.max(1,pageStart-1)+")>\
+                                    <i class='fas fa-chevron-left'></i>\
+                                </button>\
+                                </li>");
+                        if(pageStart >= 2) {
+                             $('#page').append("<li class='pagination-item'>\
+                                    <button onclick = callLoadData('"+request+"',1) class='pagination-item-link'><?= 1 ?></button>\
+                                </li>");
+                        }
+                        if(pageStart != 1 && pageStart > 4) {
+                            $('#page').append(" <li class='pagination-item'>\
+                                    <a class='pagination-item-link pagination-item-link--disable'>. . .</a>\
+                                </li>");
+                        }
+                        $('#page').append("<li class='pagination-item pagination-item--active'>\
+                                <button class='pagination-item-link'>"+pageStart+"</button>\
+                            </li>");
+                        
+                        for (i = pageStart+1; i <= Math.min(pageEnd-1,pageStart+2); i++) {
+                            $("#page").append("<li class='pagination-item'>\
+                                    <button class='pagination-item-link' onclick = callLoadData('"+request+"',"+i+")>"+i+"</button>\
+                                </li>");
+                        }
+                        if (pageEnd-1 > pageStart+4) {
+                            $("#page").append("<li class='pagination-item'>\
+                                    <a class='pagination-item-link pagination-item-link--disable'>. . .</a>\
+                                </li>\
+                                <li class='pagination-item'>\
+                                    <button class='pagination-item-link' onclick = callLoadData('"+request+"',"+pageEnd+")>"+pageEnd+"</button>\
+                                </li>");
+                        }else if (pageEnd > pageStart) {
+                            $('#page').append("<li class='pagination-item'>\
+                                <button onclick = callLoadData('"+request+"',"+pageEnd+") class='pagination-item-link'>"+pageEnd+"</button>\
+                            </li>")
+                        } 
+                        if(pageEnd >= pageStart) {
+                            $("#page").append(" <li class='pagination-item'>\
+                                <button class='pagination-item-link' onclick = callLoadData('"+request+"',"+Math.min(pageStart+1, pageEnd)+") >\
+                                    <i class='fas fa-chevron-right'></i>\
+                                </button>\
+                            </li>")   
+                        }
+                    }else {
+                         $('.loadProduct').append("<div class='col l-10'>\
+                        <div class='home__filter-error'>\
+                            <i class='home__filter-error-icon fa-regular fa-file-excel'></i>\
+                            <p>Hix. No products. Did you try to turn off the filter condition and find it again?</p>\
+                            <span>or</span>\
+                            <button class='btn btn--brown home-filter-btn'>\
+                                <a href='<?= base_url().'/home'?>'>\
+                                    Clear filter\
+                                </a>\
+                            </button>\
+                        </div>\
+                    </div>")
                     }
                 }
                                             
