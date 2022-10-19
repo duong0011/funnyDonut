@@ -363,7 +363,13 @@
     border-radius: 3px;
     width: 100%;
 }
-
+.input-alert-error {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-top: -12px;
+    margin-bottom: 15px;
+}
 .addr-new-btn{
     float: right;
     margin-left: 5px;
