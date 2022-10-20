@@ -33,7 +33,7 @@ class Home extends BaseController
         $address = $this->request->getVar('address');
         $minprice = $this->request->getVar('minprice');
         $maxprice = $this->request->getVar('maxprice');
-        $keyWord = $this->request->getVar('keyWord');
+        $keyWord = $this->request->getVar('keyword');
         $result = $this->model->getProductByQuery($type, $address, $minprice, $maxprice);
         $result = $this->model->sortQuery($result, $attribute, $method);
         if($keyWord) $result = $this->model->getByKeyword($result,$keyWord);

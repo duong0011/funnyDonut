@@ -67,6 +67,7 @@ class Register extends Controller
        				'phonenumber' => $this->request->getVar('phonenumber', FILTER_UNSAFE_RAW),
        				'unitid' => $unitid,
        				'avatar' => $hex,
+       				'DateOfBirth' => '1900-01-01'
 
        			];
        			if($this->db->where('username', $tdata['username'])->countAllResults()) {
@@ -97,16 +98,16 @@ class Register extends Controller
 		if(($builder->countAllResults(false))) {
 			if($builder->where('status', 'inactive')->countAllResults(false)) {
 				$builder->update();
-				session()->('success',' You have successfully activated your account')
+				session()->set('success',' You have successfully activated your account');
 				return redirect()->to(base_url('/login'));
 			}
 			else {
-				session()->('success', "Your account have been actived!")
+				session()->set('success', "Your account have been actived!");
 				return redirect()->to(base_url('/login'));
 			}
 		}
 		else {
-			session()->('success',"Can't find your account!");
+			session()->set('success',"Can't find your account!");
 			return redirect()->to(base_url('/login'));
 		}
 	}

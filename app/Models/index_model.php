@@ -11,7 +11,7 @@ class Index_model extends Model
    	}
    	public function getInfoUser($unitid)
    	{
-   		$builder = $this->db->table('user_of_shop')->select('fullname, username,email, phonenumber, address, avatar, gender, DateOfBirth')->where('unitid', $unitid)->get();
+   		$builder = $this->db->table('user_of_shop')->select('fullname, username,email, phonenumber, avatar, gender, DateOfBirth')->where('unitid', $unitid)->get();
    		return (count($builder->getResultArray()) == 1) ? $builder->getRowArray() : false;
    	}
     public function getProduct()

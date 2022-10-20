@@ -194,7 +194,7 @@
                     <input type="checkbox" id="mobile-search" class="header__search-check" hidden>
                     <div class="header__search">
                         <div class="header__search-input-wrap">
-                            <input type="text" class="header__search-input" placeholder="Enter to search for products:" id = 'searchproduct'>
+                            <input type="text" class="header__search-input" placeholder="Enter to search for products:" id = 'searchproduct' autocomplete="off">
                             <div class="header__search-history" >
                                 <ul class="header__search-history-list hintsforproduct">
                                    
@@ -607,14 +607,14 @@
                                     <ul class="home-filter-sort-list">
                                         <li>
                                             
-                                            <button class="btn home-filter-btn" onclick="callLoadData('home/showByRequset/price/DESC')">
+                                            <button class="btn home-filter-btn" id = "sortByPriceDESC" value="price" >
                                                Price: Hight to low
                                             </button>
                                             <i class="fas fa-sort-amount-down-alt"></i>
                                             
                                         </li>
                                         <li>
-                                            <button class="btn home-filter-btn" onclick="callLoadData('home/showByRequset/price/ESC')">
+                                            <button class="btn home-filter-btn" value="price" id = "sortByPriceESC">
                                                Price: Low to hight
                                             </button>
                                             <i class="fas fa-sort-amount-down-alt"></i>
@@ -622,20 +622,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="home-filter-page">
-                                <div class="home-filter-page-number">
-                                    <p class="home-filter-page-now">1</p>
-                                    /14
-                                </div>
-                                <div class="home-filter-page-control">
-                                    <a href="#" class="home-filter-page-btn home-filter-page-btn--disable">
-                                        <i class="fas fa-angle-left"></i>
-                                    </a>
-                                    <a href="#" class="home-filter-page-btn">
-                                        <i class="fas fa-angle-right"></i>
-                                    </a>
-                                </div>
-                            </div>
+                            
                         </div>
                         <!-- home product -->
                         <div class="home-product">
@@ -967,38 +954,47 @@
     <!-- lay du lieu cho tung chuc nang -->
     <script>
         $(document).ready(function() {
-            $(document).on('click', '#reloadData', function() {
-                callLoadData('home/showByRequset');
-            });
+           
         });
         $(document).ready(function() {
             $(document).on('click', '#sortByTime', function() {
-                callLoadData('home/showByRequset'+'/'+$('#sortByTime').val());
+                callLoadData('home/showByRequset'+'/'+$('#sortByTime').val(), new URL(document.URL).searchParams.get('page'));
             });
-        });
-         $(document).ready(function() {
-            $(document).on('click', '#clicksearch', function() {
+            $(document).on('click', '#reloadData', function() {
                 callLoadData('home/showByRequset');
             });
-        });
-        $(document).ready(function() {
-            $(document).on('click', '#sortBySold', function() {
-                callLoadData('home/showByRequset'+'/'+$('#sortBySold').val());
+            $(document).on('click', '#clicksearch', function() {
+                searchData('home/showByRequset');
             });
-        });
-        $(document).ready(function() {
+            $(document).on('click', '#sortBySold', function() {
+                callLoadData('home/showByRequset'+'/'+$('#sortBySold').val(), new URL(document.URL).searchParams.get('page'));
+            });
             $(document).on('click', '#pageclick', function() {
                 let url = $('#pageclick').val();
                 callLoadData(url);
             });
+            $(document).on('click', '#sortByPriceDESC', function() {
+                callLoadData('home/showByRequset'+'/'+$('#sortByPriceDESC').val()+'/DESC', new URL(document.URL).searchParams.get('page'));
+            });
+             $(document).on('click', '#sortByPriceESC', function() {
+                callLoadData('home/showByRequset'+'/'+$('#sortByPriceESC').val()+'/ESC', new URL(document.URL).searchParams.get('page'));
+            });
+        });
+         
+        $(document).ready(function() {
+            var curl = new URL(document.URL);
+            if(curl.searchParams.get('keyword'))
+                callLoadData("<?= base_url().'/home/showByRequset'?>");
+            else  loadProduct("", "get", "<?= base_url().'/home/fetch'?>");
         });
         function callLoadData(url, page, data) {
+            var curl = new URL(document.URL);
+            let keyWord = curl.searchParams.get('keyword');
             let minprice = $('#minprice').val();
             let maxprice = $('#maxprice').val();
             if(minprice  && maxprice  && (minprice > maxprice) || minprice< 0 || maxprice < 0) {
                 error = "please enter a valid value";
                 $('#loadError').text(error);
-                
             } else {
                 error = " ";
                 $('#loadError').text(error);
@@ -1011,26 +1007,29 @@
                     $('.type').each(function() {
                         if($(this).is(":checked"))
                             type.push($(this).val());
-                    });
-                    console.log(document.URL);
+                    });                    
                     let data = {
                         'type' : type,
                         'address' : address,
                         'minprice': minprice,
                         'maxprice': maxprice,
-                        'keyWord': $('#searchproduct').val(),
+                        'keyword': keyWord,
                         'page' : page,
 
                     };
                     loadProduct(data, "get", url); 
                 } 
         }
+        function searchData(url) {
+           let data = { 
+                'keyword' : $('#searchproduct').val()
+            }
+
+            loadProduct(data, "get", url);
+        }
     </script>
     <!-- show du lieu sau khi lay duoc tu DB -->
     <script>
-        $(document).ready(function() {
-            loadProduct("", "get", "<?= base_url().'/home/fetch'?>");
-        });
         function loadProduct(pdata, ptype, url) {
             $.ajax({
                 url: url,
@@ -1077,6 +1076,7 @@
                         pageStart = Number(response.pageStart);
                         pageEnd = Number(response.pageEnd);
                         request = response.currentRequest.toString();
+
                         $('#page').append("<li class='pagination-item'>\
                                 <button class='pagination-item-link pagination-item-link--disable' onclick = callLoadData('"+request+"',"+Math.max(1,pageStart-1)+")>\
                                     <i class='fas fa-chevron-left'></i>\

@@ -6,52 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funny Donut</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="<?= base_url()?>./assets/css/Huan-base.css">
-    <link rel="stylesheet" href="<?= base_url()?>./assets/css/Nga-base.css">
-    <link rel="stylesheet" href="<?= base_url()?>./assets/css/header-footer.css">
-    <link rel="stylesheet" href="<?= base_url()?>./assets/css/grid.css">
-    <link rel="stylesheet" href="<?= base_url()?>./assets/css/profile.css">
-    <link rel="stylesheet" href="<?= base_url()?>./assets/font/fontawesome-free-6.2.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/Huan-base.css">
+    <link rel="stylesheet" href="./assets/css/Nga-base.css">
+    <link rel="stylesheet" href="./assets/css/header-footer.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/up-product.css">
+    <link rel="stylesheet" href="./assets/font/fontawesome-free-6.2.0-web/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 </head>
 <body>
-    <div class="page-profile">
+    <div class="page-up-product">
         <!-- HEADER BEGIN -->
         <header class="header">
             <div class="grid wide">
                 <!-- navbar -->
                 <nav class="header__navbar hide-on-mobile-tablet">
                     <ul class="header__nav-list">
-                        <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Welcome <?= $user['fullname']?>!</li>
+                        <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Welcome customers!</li>
                         <!-- <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Trở thành Người bán Shopee</li>
                         <li class="header__nav-item header__nav-item--hover header__nav-item--separate header__show-qr">
                             Tải ứng dụng
                         </li> -->
                         <!-- qr code -->
                         <div class="header__qrcode">
-                            <img src="<?= base_url()?>./assets/img/qr/qr-code.png" class="header__qr">
+                            <img src="./assets/img/qr/qr-code.png" class="header__qr">
                             <div class="header__apps">
                                 <a href="#" class="header__app-link">
-                                    <img src="<?= base_url()?>./assets/img/qr/app-store.png" class="header__app-img">
+                                    <img src="./assets/img/qr/app-store.png" class="header__app-img">
                                 </a>
                                 <a href="#" class="header__app-link">
-                                    <img src="<?= base_url()?>./assets/img/qr/gg-play.png" class="header__app-img">
+                                    <img src="./assets/img/qr/gg-play.png" class="header__app-img">
                                 </a>
                                 <a href="#" class="header__app-link">
-                                    <img src="<?= base_url()?>./assets/img/qr/app-gallery.png" class="header__app-img">
+                                    <img src="./assets/img/qr/app-gallery.png" class="header__app-img">
                                 </a>
                                 <a href="#" class="header__app-link">
-                                    <img src="<?= base_url()?>./assets/img/qr/ltp-img.png" class="header__app-img">
+                                    <img src="./assets/img/qr/ltp-img.png" class="header__app-img">
                                 </a>
                             </div>
                         </div>
-                        <li class="header__nav-item header__nav-item--hover header__nav-item--separate"><a href="<?= base_url().'/PushProduct' ?>" style="text-decoration: none; color: white;">Become seller</a></li>
                         <li class="header__nav-item">
                             Follow us on
                             <a href="#" class="header__nav-icon-link">
@@ -79,7 +76,7 @@
                                 <ul class="header__notifi-list">
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="<?= base_url()?>./assets/img/sp/casio.png" class="header__notifi-img">
+                                            <img src="./assets/img/sp/casio.png" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
                                                     Casio fx 580 VN Plus
@@ -92,7 +89,7 @@
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="<?= base_url()?>./assets/img/sp/iphone.png" class="header__notifi-img">
+                                            <img src="./assets/img/sp/iphone.png" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
                                                     Điện Thoại iPhone 13 Pro 128GB - Hàng Nhập Khẩu
@@ -105,7 +102,7 @@
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="<?= base_url()?>./assets/img/sp/iphone2.png" class="header__notifi-img">
+                                            <img src="./assets/img/sp/iphone2.png" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
                                                     Apple iPhone 12 Pro Max 128GB
@@ -118,7 +115,7 @@
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="<?= base_url()?>./assets/img/sp/laptop.png" class="header__notifi-img">
+                                            <img src="./assets/img/sp/laptop.png" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
                                                     Laptop HP 650 g1 siêu khỏe bền
@@ -131,7 +128,7 @@
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="<?= base_url()?>./assets/img/sp/laptop2.png" class="header__notifi-img">
+                                            <img src="./assets/img/sp/laptop2.png" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
                                                     Laptop thinkpad x240 chất mỏng nhẹ i5 4300u Ram 4gb Ssd 128gb
@@ -183,6 +180,21 @@
                                 </ul>
                             </li> 
                         <?php }?>
+
+                        <!-- <li class="header__nav-item header__nav-user">
+                            <img src="./assets/img/user.png" class="header__nav-user-avt">
+                            <a href="#" class="header__nav-item-link header__nav-item--bold">Lục Thiên Phong</a>
+                            <ul class="header__nav-user-menu">
+                                <li class="header__nav-user-item">
+                                    <a href="#">Tài khoản của tôi</a>
+                                </li>
+                                <li class="header__nav-user-item">
+                                    <a href="#">Đơn mua</a>
+                                </li>
+                                <li class="header__nav-user-item">
+                                    <a href="#">Đăng xuất</a>
+                                </li>
+                            </ul>
                         </li> -->
                     </ul>
                 </nav>
@@ -195,28 +207,40 @@
                     
                     <div class="header__logo">
                         
-                        <a href="<?= base_url('/home') ?>" class="header__logo-link">
-                            <!-- <img src="<?= base_url()?>./assets/img/logo/logo-full-white.png" class="header__logo-img"> -->
-                            <img src="<?= base_url()?>./assets/img/logo/logo.png" class="header__logo-img">
+                        <a href="#" class="header__logo-link">
+                            <!-- <img src="./assets/img/logo/logo-full-white.png" class="header__logo-img"> -->
+                            <img src="./assets/img/logo/logo.png" class="header__logo-img">
                         </a>
                     </div>
-                    <input type="checkbox" id="mobile-search" class="header__search-check" hidden >
+                    <input type="checkbox" id="mobile-search" class="header__search-check" hidden>
                     <div class="header__search">
                         <div class="header__search-input-wrap">
-                            <input type="text" class="header__search-input" placeholder="Enter to search for products:" id = 'searchproduct' autocomplete="new-password">
-                            <div class="header__search-history" >
-                                <ul class="header__search-history-list hintsforproduct">
+                            <input type="text" class="header__search-input" placeholder="Enter to search for products:">
+                            <div class="header__search-history">
+                                <ul class="header__search-history-list">
+                                    <li class="header__search-history-item">
+                                        <a href="#">Combo 30 điểm đại học khối A</a>
+                                    </li>
+                                    <li class="header__search-history-item">
+                                        <a href="#">Combo 30 điểm đại học khối D</a>
+                                    </li>
+                                    <li class="header__search-history-item">
+                                        <a href="#">Mỹ phẩm cho người yêu</a>
+                                    </li>
+                                    <li class="header__search-history-item">
+                                        <a href="#">Bí kíp tán crush auto đổ</a>
+                                    </li>
+                                    <li class="header__search-history-item">
+                                        <a href="#">Iphone 13 Pro Max giá rẻ</a>
+                                    </li>
+                                    <li class="header__search-history-item">
+                                        <a href="#">Người yêu đẹp trai như LTP</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
-                        <button class="btn-Huan header__search-btn" onclick="loadSearch()">
-                            <i class='header__search-btn-icon fas fa-search'></i>;
-                               
-                            <script type="text/javascript">
-                                function loadSearch() {
-                                   location.href='<?=base_url('/home?keyword=')?>'+$('#searchproduct').val(); 
-                                }
-                            </script>
+                        <button class="btn-Huan header__search-btn">
+                            <i class="header__search-btn-icon fas fa-search"></i>
                         </button>
                     </div>
                     <!-- header__cart--no-cart --><!-- header__cart--has-cart -->
@@ -225,7 +249,7 @@
                         <div class="header__cart-count">4</div>
                         
                         <div class="header__cart-list no-cart">
-                            <img src="<?= base_url()?>./assets/img/sp/no-cart.png" class="header__no-cart-img">
+                            <img src="./assets/img/sp/no-cart.png" class="header__no-cart-img">
                             <p class="header__no-cart-text">Chưa có sản phẩm</p>
                         </div>
                         
@@ -233,7 +257,7 @@
                             <h4 class="header__cart-heading">Sản phẩm đã chọn</h4>
                             <ul class="header__cart-list-item">
                                 <li class="header__cart-item">
-                                    <img src="<?= base_url()?>./assets/img/buy/1.PNG" class="header__cart-item-img">
+                                    <img src="./assets/img/buy/1.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Thanh Thanh 2000 1m57 46kg 88-62-89</h3>
@@ -249,7 +273,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="<?= base_url()?>./assets/img/buy/2.PNG" class="header__cart-item-img">
+                                    <img src="./assets/img/buy/2.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Hồng Ánh 1998 1m62 48kg 89-64-91</h3>
@@ -265,7 +289,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="<?= base_url()?>./assets/img/buy/3.PNG" class="header__cart-item-img">
+                                    <img src="./assets/img/buy/3.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
@@ -281,7 +305,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="<?= base_url()?>./assets/img/buy/4.PNG" class="header__cart-item-img">
+                                    <img src="./assets/img/buy/4.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
@@ -297,7 +321,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="<?= base_url()?>./assets/img/buy/5.PNG" class="header__cart-item-img">
+                                    <img src="./assets/img/buy/5.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Thanh Thanh 2000 1m57 46kg 88-62-89</h3>
@@ -313,7 +337,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="<?= base_url()?>./assets/img/buy/6.PNG" class="header__cart-item-img">
+                                    <img src="./assets/img/buy/6.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Hồng Ánh 1998 1m62 48kg 89-64-91</h3>
@@ -329,7 +353,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="<?= base_url()?>./assets/img/buy/7.PNG" class="header__cart-item-img">
+                                    <img src="./assets/img/buy/7.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
@@ -345,7 +369,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="<?= base_url()?>./assets/img/buy/8.PNG" class="header__cart-item-img">
+                                    <img src="./assets/img/buy/8.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
@@ -388,167 +412,65 @@
         <!-- CONTAINER BEGIN -->
         <div class="container">
             <div class="grid wide">
-                <div class="row">
-                    <div class="c-2 info-list">
-                        <div class="user-avatar-name">
-                            
-                            <div class="user-avtar-upload">
-                                <img class="user-avatar" id="imgPreview" src="data:image/jpeg;base64,<?=$user['avatar']?>" alt="avatar"/>
-                                <input type="file" name="" id="imageUpload" accept=".png, .jpg, .jpeg"/>
-                                <label for="imageUpload"><i class="fa-solid fa-arrow-up-from-bracket"></i></label>
+                <h1>NEW PRODUCT</h1>
+                <div class="form-product">
+                    <form action="" class="form-up-product">
+                        <p class="product-name">Name</p>
+                        <input type="text" class="product-name-input form-input">
+                        <p class="product-price">Price</p>
+                        <input type="text" class="product-price-input form-input-other" placeholder="USD">
+                        <p class="product-type-text">Type</p>
+                        <select name="" id="" class="product-type-select" onchange="productOtherWrite()">
+                            <option value="bread">Bread</option>
+                            <option value="cake">Cake</option>
+                            <option value="candy">Candy</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <input type="text" placeholder="write down..." class="form-product-other">
+                        <p class="product-size">Size</p>
+                        <input type="text" class="product-width-input form-input-other product-input-size" placeholder="Length (cm)">
+                        <span class="symbol-x">x</span>
+                        <input type="text" class="product-length-input form-input-other product-input-size" placeholder="Width (cm)">
+                        <p class="product-amount">Amount</p>
+                        <input type="text" class="product-amount-input form-input-other">
+                        <p class="product-weight">Weight</p>
+                        <input type="text" class="product-weight-input form-input-other" placeholder="gram">
+                        <p class="product-ingredient">Ingredient</p>
+                        <input type="text" class="product-ingredient-input form-input">
+                        <p class="product-description">Description</p>
+                        <input type="text" class="product-description-input form-input">
+                        <p class="product-note">Note</p>
+                        <input type="text" class="product-note-input form-input">
+                        <p class="product-photo">Product photo</p>
+                        <div class="product-img">
+                            <div class="product-img-frame">
+                                <img src="./assets/img/add-img.png" alt="add img" id="imgPreview" class="product-add-img">
+                                <input type="file" name="" id="prod-img-input-btn" class="prod-img-input" accept=".png, .jpg, .jpeg">
+                                <label for="prod-img-input-btn"></label>
+                            </div>
+                            <div class="product-img-frame">
+                                <img src="./assets/img/add-img.png" alt="add img" id="imgPreview" class="product-add-img">
+                                <input type="file" name="" id="prod-img-input-btn" class="prod-img-input" accept=".png, .jpg, .jpeg">
+                                <label for="prod-img-input-btn"></label>
+                            </div>
+                            <div class="product-img-frame">
+                                <img src="./assets/img/add-img.png" alt="add img" id="imgPreview" class="product-add-img">
+                                <input type="file" name="" id="prod-img-input-btn" class="prod-img-input" accept=".png, .jpg, .jpeg">
+                                <label for="prod-img-input-btn"></label>
+                            </div>
+                            <div class="product-img-frame">
+                                <img src="./assets/img/add-img.png" alt="add img" id="imgPreview" class="product-add-img">
+                                <input type="file" name="" id="prod-img-input-btn" class="prod-img-input" accept=".png, .jpg, .jpeg">
+                                <label for="prod-img-input-btn"></label>
+                            </div>
+                            <div class="product-img-frame">
+                                <img src="./assets/img/add-img.png" alt="add img" id="imgPreview" class="product-add-img">
+                                <input type="file" name="" id="prod-img-input-btn" class="prod-img-input" accept=".png, .jpg, .jpeg">
+                                <label for="prod-img-input-btn"></label>
                             </div>
                         </div>
-                        <div class="user-list">
-                            <ul class="user-list-info">
-                                <li class="user-list-item user-profile" onclick="navProfile()">
-                                    <i class="fa-solid fa-id-card"></i>
-                                    Profile
-                                </li>
-                                <li class="user-list-item user-addr" onclick="navAddress()">
-                                    <i class="fa-solid fa-location-arrow"></i>
-                                    Address
-                                </li>
-                                <li class="user-list-item user-pay" onclick="navPay()">
-                                    <i class="fa-solid fa-credit-card"></i>
-                                    Pay
-                                </li>
-                                <li class="user-list-item user-pwd" onclick="navPwd()">
-                                    <i class="fa-solid fa-key"></i>    
-                                    Password
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="c-10 info-change">
-                        <div class="block-profile">
-                            <p class="block-name">
-                                PROFILE
-                            </p>
-                            <div class="block-form c-9">
-                                <form action="">
-                                    <ul class="profile-list">
-                                        <li class="profile-name">
-                                            <span>Name</span>
-                                            <input type="text" value="<?= $user['fullname']?>" class="form-input" id = "fullnameuser">
-                                            <span id = "error_name" class = "input-alert-error"></span>
-                                        </li>
-                                        <li class="profile-username">
-                                            <span>Username</span>
-                                            <input type="text" value="<?= $user['username']?>" class="form-input" readonly> 
-                                        </li>
-                                        <li class="profile-phone">
-                                            <span>Phone number</span>
-                                            <p class="profile-phone"><?= $user['phonenumber'];?></p>
-                                            <a href="" class="profile-change">Change</a>
-                                        </li>
-                                        <li class="profile-email">
-                                            <span>Email</span>
-                                            <p><?= $user['email'] ?></p>
-                                            <a href="" class="profile-change">Change</a>
-                                        </li>
-                                        <li class="profile-gender">
-                                            <span>Gender</span>
-                                            <input type="radio" value="male" name="gender" id="male" <?php if($user['gender'] == 'male') echo "checked"?>>
-                                            <label for="male" >Male</label>
-                                            <input type="radio" value="female" name="gender" id="female" <?php if($user['gender'] == 'female') echo "checked"?>>
-                                            <label for="female">Female</label>
-                                        </li>
-                                        <li class="profile-date">
-                                            <span>Date of birth</span>
-                                            <select name="" id="date-day">
-                                                <option value="<?=  date_format(date_create($user['DateOfBirth']), 'd');?>"><?=  date_format(date_create($user['DateOfBirth']), 'd');?></option>
-                                                <script>
-                                                    for(i=1;i<=31;i++){
-                                                        document.writeln("<option value='"+i+"'>"+((i < 10) ? ('0'+i) : i) +"</option>");
-                                                    }
-                                                </script>
-                                            </select>
-                                            <select name="" id="date-month">
-                                                <option value="<?=date_format(date_create($user['DateOfBirth']), 'm');?>"><?=  date_format(date_create($user['DateOfBirth']), 'm');?></option>
-                                                <script>
-                                                    for(i=1;i<=12;i++){
-                                                        document.writeln("<option value='"+i+"'>"+((i < 10) ? ('0'+i) : i)+"</option>");
-                                                    }
-                                                </script>
-                                            </select>
-                                            <select name="" id="date-year">
-                                                <option value="<?=date_format(date_create($user['DateOfBirth']), 'Y');?>"><?=  date_format(date_create($user['DateOfBirth']), 'Y');?></option>
-                                                <script>
-                                                    for(i=2022;i>=1900;i--){
-                                                        document.writeln("<option value='"+i+"'>"+i+"</option>");
-                                                    }
-                                                </script>
-                                            </select>
-                                             <span id = "error_day" class = "input-alert-error"></span>
-                                        </li>
-                                    </ul>
-                                    <div class="profile-change-submit">
-                                        <button type="button" value="Save" class="profile-save-btn" onclick='updateData()'>Save</button>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="block-avatar c-3">
-                                
-                            </div>
-                        </div>
-
-                        <div class="block-address">
-                            <p class="block-name">
-                                ADDRESS
-                            </p>
-                            <!-- <i class="address-icon-location fa-solid fa-location-dot"></i> -->
-                            <div id = "showaddress">
-                                
-                            </div>
-                            <br>
-                            <input type="button" value="New address" class="address-btn-add" onclick="showNewAddress()">
-                            <br>
-                            <br>
-                        </div>
-
-                        <div class="block-pay">
-                            <p class="block-name">
-                                PAY
-                            </p>
-                            <div class="pay-old">
-                                <i class="pay-icon-card fa-brands fa-cc-visa"></i>
-                                <span class="pay-name">Visa **0823</span>
-                                <i class="pay-icon-garbage fa-solid fa-trash-can"></i>
-                            </div>
-                            <br>
-                            <input type="button" value="New card" class="pay-btn-new" onclick="showNewPay()">
-                            
-                        </div>
-
-                        <div class="block-change-password">
-                            <p class="block-name">
-                                CHANGE PASSWORD
-                            </p>
-                            <div class="pwd-form">
-                                <ul class="pwd-list">
-                                    <li class="pwd-list-item">
-                                        <span>Current password</span>
-                                        <input type="password" class="pwd-input" id = "currentpass" autocomplete="new-password">
-                                        <span class="input-alert-error error_currentpass" style="font-size: 1.2rem;font-weight: 500;color: var(--primary-color);margin-top: -12px;margin-bottom: 15px;" ></span>
-                                    </li>
-                                    <li class="pwd-list-item">
-                                        <span>New password</span>
-                                        <input type="password" class="pwd-input" id = "newpass" autocomplete="off">
-                                        <span class="input-alert-error error_newpass" style="font-size: 1.2rem;font-weight: 500;color: var(--primary-color);margin-top: -12px;margin-bottom: 15px;" ></span>
-                                    </li>
-                                    <li class="pwd-list-item">
-                                        <span>Confirm password</span>
-                                        <input type="password" class="pwd-input" id = "confirmpass">
-                                        <span class="input-alert-error error_confirmpass" style="font-size: 1.2rem;font-weight: 500;color: var(--primary-color);margin-top: -12px;margin-bottom: 15px;" ></span>
-                                    </li>
-                                </ul>
-                                <br>
-
-                                <input type="button" value="Save" class="pwd-save-btn" id = "changepassword">
-                            </div>
-                        </div>
-                    </div>
+                        <input type="submit" value="Save" class="product-save-btn">
+                    </form>
                 </div>
             </div>
         </div>
@@ -604,23 +526,23 @@
                                 <div>
                                     <h3 class="footer__heading">PAY MENT</h3>
                                     <div class="footer-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/pay/1.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/pay/2.PNG" class="footer-item-sale-ship">
+                                        <img src="./assets/img/pay/1.PNG" class="footer-item-sale-ship">
+                                        <img src="./assets/img/pay/2.PNG" class="footer-item-sale-ship">
                                                                        
                                     </div>
                                 </div>
                                 <!-- <div>
                                     <h3 class="footer__heading">ĐƠN VỊ VẬN CHUYỂN</h3>
                                     <div class="footer-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/ship/1.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/ship/2.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/ship/3.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/ship/4.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/ship/5.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/ship/6.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/ship/7.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/ship/8.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/ship/9.PNG" class="footer-item-sale-ship">
+                                        <img src="./assets/img/ship/1.PNG" class="footer-item-sale-ship">
+                                        <img src="./assets/img/ship/2.PNG" class="footer-item-sale-ship">
+                                        <img src="./assets/img/ship/3.PNG" class="footer-item-sale-ship">
+                                        <img src="./assets/img/ship/4.PNG" class="footer-item-sale-ship">
+                                        <img src="./assets/img/ship/5.PNG" class="footer-item-sale-ship">
+                                        <img src="./assets/img/ship/6.PNG" class="footer-item-sale-ship">
+                                        <img src="./assets/img/ship/7.PNG" class="footer-item-sale-ship">
+                                        <img src="./assets/img/ship/8.PNG" class="footer-item-sale-ship">
+                                        <img src="./assets/img/ship/9.PNG" class="footer-item-sale-ship">
                                     </div>
                                 </div> -->
                             </div>
@@ -651,20 +573,20 @@
                                 <h3 class="footer__heading">DOWNLOAD APP</h3>
                                 <div class="footer-download">
                                     <a href="#" class="footer-download-link">
-                                        <img src="<?= base_url()?>./assets/img/qr/qr-code.png" class="footer-download-qr">
+                                        <img src="./assets/img/qr/qr-code.png" class="footer-download-qr">
                                     </a>
                                     <div class="footer-download-app">
                                         <a href="#" class="footer-download-link">
-                                            <img src="<?= base_url()?>./assets/img/qr/gg-play.png" class="footer-download-app-img">
+                                            <img src="./assets/img/qr/gg-play.png" class="footer-download-app-img">
                                         </a>
                                         <a href="#" class="footer-download-link">
-                                            <img src="<?= base_url()?>./assets/img/qr/app-store.png" class="footer-download-app-img">
+                                            <img src="./assets/img/qr/app-store.png" class="footer-download-app-img">
                                         </a>
                                         <a href="#" class="footer-download-link">
-                                            <img src="<?= base_url()?>./assets/img/qr/app-gallery.png" class="footer-download-app-img">
+                                            <img src="./assets/img/qr/app-gallery.png" class="footer-download-app-img">
                                         </a>
                                         <a href="#" class="footer-download-link">
-                                            <img src="<?= base_url()?>./assets/img/qr/ltp-img.png" class="footer-download-app-img">
+                                            <img src="./assets/img/qr/ltp-img.png" class="footer-download-app-img">
                                         </a>
                                     </div>
                                 </div>
@@ -732,107 +654,26 @@
         </footer>
         <!-- FOOTER END -->
     </div>
-    
-    <!-- MODAL ADDRESS -->
-    <div class="modal modal-address">
-        <div class="modal-addr-container">
-            <form action="" class="form-addr-new">
-                <p class="modal-text">New address</p>
-                <input type="text" placeholder="Name" class="addr-new-input nameinaddress">
-                <br>
-                <input type="tel" placeholder="Phone number" class="addr-new-input phonenumberinaddress">
-                <br>
-                <input type="text" placeholder="Address" class="addr-new-input addressinaddress">
-                <br>
-                <br>
-                <p id = "error_address" class="input-alert-error"></p>
-                <input type="button" value="Save" class="addr-new-btn" id = "clicktosave">
-                <input type="button" value="Back" class="addr-new-btn add-new-btn-back"  onclick="hideNewAddress()">
-            </form>
-        </div>
-    </div>
 
-    <!-- MODAL PAY -->
-    <div class="modal modal-pay">
-        <div class="modal-addr-container">
-            <form action="" class="form-card-new">
-                <p class="modal-text">New card</p>
-                <input type="text" placeholder="Card number" class="addr-new-input">
-                <br>
-                <span>
-                    Expiration date
-                </span>
-                <input type="text" placeholder="MM" class="pay-date">
-                <span>/</span>
-                <input type="text" placeholder="YY" class="pay-date">
-                <br>
-                <input type="text" placeholder="CVV/CVC" class="pay-cvv">
-                <br>
-                <input type="button" value="Save" class="addr-new-btn" onclick="hideNewPay()">
-                <input type="button" value="Back" class="addr-new-btn add-new-btn-back" onclick="hideNewPay()">
-            </form>
-        </div>
-    </div>
-    
+    <!-- Script Type -->
     <script>
-        var blockProfile = document.getElementsByClassName("block-profile");
-        var blockAddress = document.getElementsByClassName("block-address");
-        var blockPay = document.getElementsByClassName("block-pay");
-        var blockPwd = document.getElementsByClassName("block-change-password");
-
-        const textChange = document.querySelector('.user-profile');
-        
-        function navProfile(){
-            blockProfile[0].style.display="block";
-            blockAddress[0].style.display="none";
-            blockPay[0].style.display="none";
-            blockPwd[0].style.display="none";
+        var productType = document.getElementsByClassName("product-type-select");
+        var productOther = document.getElementsByClassName("form-product-other");
+        function productOtherWrite(){
+            if(productType[0].value === "other"){
+                productOther[0].style.display="inline-block";
+            }
+            else {
+                productOther[0].style.display="none";
+            }
         }
-
-        function navAddress(){
-            blockProfile[0].style.display="none";
-            blockAddress[0].style.display="block";
-            blockPay[0].style.display="none";
-            blockPwd[0].style.display="none";
-        }
-
-        function navPay(){
-            blockProfile[0].style.display="none";
-            blockAddress[0].style.display="none";
-            blockPay[0].style.display="block";
-            blockPwd[0].style.display="none";
-        }
-
-        function navPwd(){
-            blockProfile[0].style.display="none";
-            blockAddress[0].style.display="none";
-            blockPay[0].style.display="none";
-            blockPwd[0].style.display="block";
-        }
-
-        const modalAddress = document.querySelector('.modal-address');
-        function showNewAddress(){
-            modalAddress.classList.add('open');
-        }
-        function hideNewAddress(){
-            modalAddress.classList.remove('open');
-        }
-
-        const modalPay = document.querySelector('.modal-pay');
-        function showNewPay(){
-            modalPay.classList.add('open');
-        }
-        function hideNewPay(){
-            modalPay.classList.remove('open');
-        }
-
     </script>
 
-    <!-- JS preview image -->
-    
+    <!-- Preview Image -->
+	
     <script>
         $(document).ready(() => {
-            $("#imageUpload").change(function () {
+            $("#prod-img-input-btn").change(function () {
                 const file = this.files[0];
                 if (file) {
                     let reader = new FileReader();
@@ -844,228 +685,6 @@
                 }
             });
         });
-    </script>
-    <!-- loa du lieu thanh tim kiem -->
-    <script>
-    jQuery(document).ready(function($) {
-         $(document).on('keyup', '#searchproduct', function() {
-                let product = $('#searchproduct').val();
-                showHints(product);
-
-            });
-    });
-    function showHints(product) {
-        $.ajax({
-                url: '<?=base_url('/home/showHints')?>',
-                type: 'get',
-                data: {'productName' : product},
-                success: function (response) {
-                    if(response.hints !== null) {
-                       $('.hintsforproduct').html(""); 
-                       $.each(response.hints, function(index,val) {
-                             $('.hintsforproduct').append("\
-                            <li class='header__search-history-item'>\
-                                <a href='#'>"+val.nameproduct+"</a>\
-                            </li>");
-                       });
-                    }
-                    else {
-                        $('.hintsforproduct').html("");
-                        $('.hintsforproduct').append("\
-                            <li class='header__search-history-item'>\
-                               No results were found \
-                            </li>");
-                    }
-                }
-            });
-    }
- </script>
- <!-- cap nhat profile -->
- <script>
-    function updateData() {
-        let day = $('#date-day').val();
-        let month = $('#date-month').val();
-        let year = $('#date-year').val();
-        let getDay = year+'-'+month+'-'+day;
-        if(!dateIsValid(new Date(getDay))) {
-            $('#error_day').text("This day invalid");
-            return false;
-        } 
-        if($('#fullnameuser').val().length <= 8) {
-            $('#error_name').text("Name is requied");
-            return false;
-        }
-        let data = {
-            'fullname' :$('#fullnameuser').val(),
-            'gender' : document.querySelector('input[name="gender"]:checked').value,
-            'DateOfBirth': getDay,
-        }
-        let img = new FormData();
-        var file = $('#imageUpload')[0].files;
-        if(file.length) {
-            img.append('file', file[0]);
-            $.ajax({
-                    url: '<?=base_url('/profile/updateData')?>',
-                    type: 'post',
-                    data: img,
-                    cache: false,
-                    contentType:false,
-                    processData:false,
-                    success: function (response) {
-                        
-                    }
-                });
-        }
-        $.ajax({
-            url: '<?=base_url('/profile/updateData')?>',
-            type: 'post',
-            data: data,
-            success: function (response) {
-                document.location.reload();
-            }
-        });
-    }
-    // kiem tra avatar
-    $(document).ready(function() {
-        
-        $('#imageUpload').change(function (e) {
-            e.preventDefault();
-            var file = this.files[0];
-            var fileType = file.type;
-            var file_size = file.size;
-            var match = ['image/jpeg', 'image/jpg', 'image/png'];
-            console.log(fileType);
-            if(! ( (fileType == match[0]) || (fileType == match[1]) || (fileType == match[2] ) )) {
-                alert("Only JPED, JPG & PNG file types");
-                return false;  
-            }
-            if(file_size > 2200000) {
-                alert("Sorry! File size Exceeds");
-                $('#imageUpload').val('');
-                return false;
-            }
-        });
-    });
-    // cap nhat mat 
-    $('#changepassword').on('click', function () {
-        var cpass = $('#currentpass').val();
-        var npass = $('#newpass').val();
-        var conpass = $('#confirmpass').val();
-        if(cpass.length < 8) {
-            $('.error_currentpass').text('Password requires at least 8 characters');
-            return false;
-        }
-        $('.error_currentpass').text('');
-        if(npass.length < 8) { 
-            $('.error_newpass').text('Password requires at least 8 characters');
-            return false;
-        }
-         $('.error_newpass').text('');
-        if(conpass.length < 8) {
-            $('.error_confirmpass').text('Password requires at least 8 characters');
-            return false;
-        }
-        $('.error_confirmpass').text('');
-        if(npass != conpass) {
-            $('.error_confirmpass').text('Confirm password is incorrect');
-            return false;
-        }
-        $('.error_confirmpass').text('');
-        $.ajax({
-                url: '<?= base_url('/profile/updatePassword')?>',
-                type: 'post',
-                data: {
-                    'currentpass': cpass,
-                    'newpass' : npass
-                },
-                success: function (response) {
-                    alert(response.smg);
-                }
-            });
-    });
-    // luu dia chi mới
-    $('#clicktosave').on('click', function () {
-        let name = $('.nameinaddress').val(), phonenumber = $('.phonenumberinaddress').val(), address = $('.addressinaddress').val();
-        console.log(name+phonenumber+address)
-        if(!name.length  || !phonenumber.length || !address.length) {
-           $('#error_address').text('All infomation is requied!'); 
-           return false;
-        }
-        $('#error_address').text('');
-        if(name.length < 8) {
-            $('#error_address').text('Please fill in the full name!'); 
-            return false;
-        }
-        $('#error_address').text('');
-        if(!validatePhoneNumber(phonenumber)) {
-            $('#error_address').text('Invalid phone number!'); 
-            return false;
-        }
-        data = {
-            'name' : name,
-            'phonenumber' : phonenumber,
-            'address' : address
-        };
-        $.ajax({
-                url: ' <?=base_url('/profile/addAddress')?>',
-                type: 'post',
-                data: data,
-                success: function (response) {
-                    loadAddress();
-                    modalAddress.classList.remove('open');
-                }
-            });
-        
-    });
-    // hien thi dia chi
-    $(document).ready(function() {
-       loadAddress();
-    });
-    function loadAddress() {
-         $.ajax({
-                    url: '<?= base_url('profile/fetchAdress') ?>',
-                    type: 'get',
-                    //data: {},
-                    success: function (data) {
-                        $('#showaddress').html('');
-                        $.each(data.result ,function(index, el) {
-                            $('#showaddress').append("<br>\
-                                <div class='address-old'>\
-                                    <p class='address-name'>Full name:     "+el.name+"</p>\
-                                    <p class='address-phone'>Phonenumber:  "+el.phonenumber+"</p>\
-                                    <p claa='address-address'>Address:     "+el.address+".</p>\
-                                </div>\
-                                <div class='address-delete' onclick='icondelete("+el.aid+")'>\
-                                    <i class='address-icon-garbage fa-solid fa-trash-can'></i>\
-                                </div>\
-                                <br>");
-                        });
-                    }
-                });    
-    }
-    // xoa dia chi
-    function icondelete(aid) {
-        $.ajax({
-            url: '<?= base_url('/profile/deleteAddress') ?>',
-            type: 'post',
-            data: {
-                'aid' :aid
-            },
-            success: function (data) {
-                loadAddress();
-            }
-        });
-    }
- </script>
- <!-- validate function -->
- <script type="text/javascript">
-    function dateIsValid(date) {
-         return date instanceof Date && !isNaN(date.getTime());
-    }
-    function validatePhoneNumber(input_str) {
-      var re = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
-      return re.test(input_str);
-    }
- </script>
+</script>
 </body>
 </html>
