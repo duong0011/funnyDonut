@@ -855,6 +855,10 @@
             });
     });
     function showHints(product) {
+        if(!product) {
+            $('.hintsforproduct').html("");
+            return false;
+        }
         $.ajax({
                 url: '<?=base_url('/home/showHints')?>',
                 type: 'get',
@@ -1022,26 +1026,27 @@
        loadAddress();
     });
     function loadAddress() {
+
          $.ajax({
-                    url: '<?= base_url('profile/fetchAdress') ?>',
-                    type: 'get',
-                    //data: {},
-                    success: function (data) {
-                        $('#showaddress').html('');
-                        $.each(data.result ,function(index, el) {
-                            $('#showaddress').append("<br>\
-                                <div class='address-old'>\
-                                    <p class='address-name'>Full name:     "+el.name+"</p>\
-                                    <p class='address-phone'>Phonenumber:  "+el.phonenumber+"</p>\
-                                    <p claa='address-address'>Address:     "+el.address+".</p>\
-                                </div>\
-                                <div class='address-delete' onclick='icondelete("+el.aid+")'>\
-                                    <i class='address-icon-garbage fa-solid fa-trash-can'></i>\
-                                </div>\
-                                <br>");
-                        });
-                    }
-                });    
+            url: '<?= base_url('profile/fetchAdress') ?>',
+            type: 'get',
+            //data: {},
+            success: function (data) {
+                $('#showaddress').html('');
+                $.each(data.result ,function(index, el) {
+                    $('#showaddress').append("<br>\
+                        <div class='address-old'>\
+                            <p class='address-name'>Full name:     "+el.name+"</p>\
+                            <p class='address-phone'>Phonenumber:  "+el.phonenumber+"</p>\
+                            <p claa='address-address'>Address:     "+el.address+".</p>\
+                        </div>\
+                        <div class='address-delete' onclick='icondelete("+el.aid+")'>\
+                            <i class='address-icon-garbage fa-solid fa-trash-can'></i>\
+                        </div>\
+                        <br>");
+                });
+            }
+        });    
     }
     // xoa dia chi
     function icondelete(aid) {

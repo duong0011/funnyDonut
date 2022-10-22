@@ -24,4 +24,5 @@ class PushProduct extends Controller
         else $this->data['user'] = $this->model->getInfoUser(session()->get('loged_user'));
 		return view('pushProduct', $this->data);
 	}
+	
 }

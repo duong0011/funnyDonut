@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funny Donut</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="./assets/css/Huan-base.css">
-    <link rel="stylesheet" href="./assets/css/Nga-base.css">
-    <link rel="stylesheet" href="./assets/css/header-footer.css">
-    <link rel="stylesheet" href="./assets/css/grid.css">
-    <link rel="stylesheet" href="./assets/css/up-product.css">
-    <link rel="stylesheet" href="./assets/font/fontawesome-free-6.2.0-web/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url()?>./assets/css/Huan-base.css">
+    <link rel="stylesheet" href="<?= base_url()?>./assets/css/Nga-base.css">
+    <link rel="stylesheet" href="<?= base_url()?>./assets/css/header-footer.css">
+    <link rel="stylesheet" href="<?= base_url()?>./assets/css/grid.css">
+    <link rel="stylesheet" href="<?= base_url()?>./assets/css/up-product.css">
+    <link rel="stylesheet" href="<?= base_url()?>./assets/font/fontawesome-free-6.2.0-web/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -33,19 +33,19 @@
                         </li> -->
                         <!-- qr code -->
                         <div class="header__qrcode">
-                            <img src="./assets/img/qr/qr-code.png" class="header__qr">
+                            <img src="<?= base_url()?>./assets/img/qr/qr-code.png" class="header__qr">
                             <div class="header__apps">
                                 <a href="#" class="header__app-link">
-                                    <img src="./assets/img/qr/app-store.png" class="header__app-img">
+                                    <img src="<?= base_url()?>./assets/img/qr/app-store.png" class="header__app-img">
                                 </a>
                                 <a href="#" class="header__app-link">
-                                    <img src="./assets/img/qr/gg-play.png" class="header__app-img">
+                                    <img src="<?= base_url()?>./assets/img/qr/gg-play.png" class="header__app-img">
                                 </a>
                                 <a href="#" class="header__app-link">
-                                    <img src="./assets/img/qr/app-gallery.png" class="header__app-img">
+                                    <img src="<?= base_url()?>./assets/img/qr/app-gallery.png" class="header__app-img">
                                 </a>
                                 <a href="#" class="header__app-link">
-                                    <img src="./assets/img/qr/ltp-img.png" class="header__app-img">
+                                    <img src="<?= base_url()?>./assets/img/qr/ltp-img.png" class="header__app-img">
                                 </a>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                                 <ul class="header__notifi-list">
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="./assets/img/sp/casio.png" class="header__notifi-img">
+                                            <img src="<?= base_url()?>./assets/img/sp/casio.png" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
                                                     Casio fx 580 VN Plus
@@ -89,7 +89,7 @@
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="./assets/img/sp/iphone.png" class="header__notifi-img">
+                                            <img src="<?= base_url()?>./assets/img/sp/iphone.png" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
                                                     Điện Thoại iPhone 13 Pro 128GB - Hàng Nhập Khẩu
@@ -102,7 +102,7 @@
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="./assets/img/sp/iphone2.png" class="header__notifi-img">
+                                            <img src="<?= base_url()?>./assets/img/sp/iphone2.png" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
                                                     Apple iPhone 12 Pro Max 128GB
@@ -115,7 +115,7 @@
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="./assets/img/sp/laptop.png" class="header__notifi-img">
+                                            <img src="<?= base_url()?>./assets/img/sp/laptop.png" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
                                                     Laptop HP 650 g1 siêu khỏe bền
@@ -128,7 +128,7 @@
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="./assets/img/sp/laptop2.png" class="header__notifi-img">
+                                            <img src="<?= base_url()?>./assets/img/sp/laptop2.png" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
                                                     Laptop thinkpad x240 chất mỏng nhẹ i5 4300u Ram 4gb Ssd 128gb
@@ -182,7 +182,7 @@
                         <?php }?>
 
                         <!-- <li class="header__nav-item header__nav-user">
-                            <img src="./assets/img/user.png" class="header__nav-user-avt">
+                            <img src="<?= base_url()?>./assets/img/user.png" class="header__nav-user-avt">
                             <a href="#" class="header__nav-item-link header__nav-item--bold">Lục Thiên Phong</a>
                             <ul class="header__nav-user-menu">
                                 <li class="header__nav-user-item">
@@ -207,40 +207,28 @@
                     
                     <div class="header__logo">
                         
-                        <a href="#" class="header__logo-link">
-                            <!-- <img src="./assets/img/logo/logo-full-white.png" class="header__logo-img"> -->
-                            <img src="./assets/img/logo/logo.png" class="header__logo-img">
+                        <a href="<?= base_url('/home') ?>" class="header__logo-link">
+                            <!-- <img src="<?= base_url()?>./assets/img/logo/logo-full-white.png" class="header__logo-img"> -->
+                            <img src="<?= base_url()?>./assets/img/logo/logo.png" class="header__logo-img">
                         </a>
                     </div>
-                    <input type="checkbox" id="mobile-search" class="header__search-check" hidden>
+                    <input type="checkbox" id="mobile-search" class="header__search-check" hidden >
                     <div class="header__search">
                         <div class="header__search-input-wrap">
-                            <input type="text" class="header__search-input" placeholder="Enter to search for products:">
-                            <div class="header__search-history">
-                                <ul class="header__search-history-list">
-                                    <li class="header__search-history-item">
-                                        <a href="#">Combo 30 điểm đại học khối A</a>
-                                    </li>
-                                    <li class="header__search-history-item">
-                                        <a href="#">Combo 30 điểm đại học khối D</a>
-                                    </li>
-                                    <li class="header__search-history-item">
-                                        <a href="#">Mỹ phẩm cho người yêu</a>
-                                    </li>
-                                    <li class="header__search-history-item">
-                                        <a href="#">Bí kíp tán crush auto đổ</a>
-                                    </li>
-                                    <li class="header__search-history-item">
-                                        <a href="#">Iphone 13 Pro Max giá rẻ</a>
-                                    </li>
-                                    <li class="header__search-history-item">
-                                        <a href="#">Người yêu đẹp trai như LTP</a>
-                                    </li>
+                            <input type="text" class="header__search-input" placeholder="Enter to search for products:" id = 'searchproduct' autocomplete="new-password">
+                            <div class="header__search-history" >
+                                <ul class="header__search-history-list hintsforproduct">
                                 </ul>
                             </div>
                         </div>
-                        <button class="btn-Huan header__search-btn">
-                            <i class="header__search-btn-icon fas fa-search"></i>
+                        <button class="btn-Huan header__search-btn" onclick="loadSearch()">
+                            <i class='header__search-btn-icon fas fa-search'></i>;
+                               
+                            <script type="text/javascript">
+                                function loadSearch() {
+                                   location.href='<?=base_url('/home?keyword=')?>'+$('#searchproduct').val(); 
+                                }
+                            </script>
                         </button>
                     </div>
                     <!-- header__cart--no-cart --><!-- header__cart--has-cart -->
@@ -249,7 +237,7 @@
                         <div class="header__cart-count">4</div>
                         
                         <div class="header__cart-list no-cart">
-                            <img src="./assets/img/sp/no-cart.png" class="header__no-cart-img">
+                            <img src="<?= base_url()?>./assets/img/sp/no-cart.png" class="header__no-cart-img">
                             <p class="header__no-cart-text">Chưa có sản phẩm</p>
                         </div>
                         
@@ -257,7 +245,7 @@
                             <h4 class="header__cart-heading">Sản phẩm đã chọn</h4>
                             <ul class="header__cart-list-item">
                                 <li class="header__cart-item">
-                                    <img src="./assets/img/buy/1.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>./assets/img/buy/1.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Thanh Thanh 2000 1m57 46kg 88-62-89</h3>
@@ -273,7 +261,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="./assets/img/buy/2.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>./assets/img/buy/2.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Hồng Ánh 1998 1m62 48kg 89-64-91</h3>
@@ -289,7 +277,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="./assets/img/buy/3.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>./assets/img/buy/3.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
@@ -305,7 +293,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="./assets/img/buy/4.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>./assets/img/buy/4.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
@@ -321,7 +309,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="./assets/img/buy/5.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>./assets/img/buy/5.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Thanh Thanh 2000 1m57 46kg 88-62-89</h3>
@@ -337,7 +325,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="./assets/img/buy/6.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>./assets/img/buy/6.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Hồng Ánh 1998 1m62 48kg 89-64-91</h3>
@@ -353,7 +341,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="./assets/img/buy/7.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>./assets/img/buy/7.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
@@ -369,7 +357,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="./assets/img/buy/8.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>./assets/img/buy/8.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
@@ -442,34 +430,30 @@
                         <p class="product-note">Note</p>
                         <input type="text" class="product-note-input form-input">
                         <p class="product-photo">Product photo</p>
-                        <div class="product-img">
+                        <!-- <div class="product-img">
                             <div class="product-img-frame">
-                                <img src="./assets/img/add-img.png" alt="add img" id="imgPreview" class="product-add-img">
+                                <img src="<?= base_url()?>./assets/img/add-img.png" alt="add img" id="imgPreview" class="product-add-img">
                                 <input type="file" name="" id="prod-img-input-btn" class="prod-img-input" accept=".png, .jpg, .jpeg">
                                 <label for="prod-img-input-btn"></label>
                             </div>
                             <div class="product-img-frame">
-                                <img src="./assets/img/add-img.png" alt="add img" id="imgPreview" class="product-add-img">
+                                <img src="<?= base_url()?>./assets/img/add-img.png" alt="add img" id="imgPreview" class="product-add-img">
                                 <input type="file" name="" id="prod-img-input-btn" class="prod-img-input" accept=".png, .jpg, .jpeg">
                                 <label for="prod-img-input-btn"></label>
                             </div>
                             <div class="product-img-frame">
-                                <img src="./assets/img/add-img.png" alt="add img" id="imgPreview" class="product-add-img">
+                                <img src="<?= base_url()?>./assets/img/add-img.png" alt="add img" id="imgPreview" class="product-add-img">
                                 <input type="file" name="" id="prod-img-input-btn" class="prod-img-input" accept=".png, .jpg, .jpeg">
                                 <label for="prod-img-input-btn"></label>
                             </div>
-                            <div class="product-img-frame">
-                                <img src="./assets/img/add-img.png" alt="add img" id="imgPreview" class="product-add-img">
-                                <input type="file" name="" id="prod-img-input-btn" class="prod-img-input" accept=".png, .jpg, .jpeg">
-                                <label for="prod-img-input-btn"></label>
-                            </div>
-                            <div class="product-img-frame">
-                                <img src="./assets/img/add-img.png" alt="add img" id="imgPreview" class="product-add-img">
-                                <input type="file" name="" id="prod-img-input-btn" class="prod-img-input" accept=".png, .jpg, .jpeg">
-                                <label for="prod-img-input-btn"></label>
-                            </div>
+                        </div> -->
+                        <div>
+                            <input type="file" id = 'input-file' multiple style="display: none;">
+                            <label for="input-file" id = 'lfpushproduct'>
+                                <i class="fas fa-upload"></i> &nbsp; Choose A Photo
+                            </label>
                         </div>
-                        <input type="submit" value="Save" class="product-save-btn">
+                        <input type="submit" value="Save" class="product-save-btn" accept=".png, .jpg, .jpeg" name="files">
                     </form>
                 </div>
             </div>
@@ -526,23 +510,23 @@
                                 <div>
                                     <h3 class="footer__heading">PAY MENT</h3>
                                     <div class="footer-sale-ship">
-                                        <img src="./assets/img/pay/1.PNG" class="footer-item-sale-ship">
-                                        <img src="./assets/img/pay/2.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>./assets/img/pay/1.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>./assets/img/pay/2.PNG" class="footer-item-sale-ship">
                                                                        
                                     </div>
                                 </div>
                                 <!-- <div>
                                     <h3 class="footer__heading">ĐƠN VỊ VẬN CHUYỂN</h3>
                                     <div class="footer-sale-ship">
-                                        <img src="./assets/img/ship/1.PNG" class="footer-item-sale-ship">
-                                        <img src="./assets/img/ship/2.PNG" class="footer-item-sale-ship">
-                                        <img src="./assets/img/ship/3.PNG" class="footer-item-sale-ship">
-                                        <img src="./assets/img/ship/4.PNG" class="footer-item-sale-ship">
-                                        <img src="./assets/img/ship/5.PNG" class="footer-item-sale-ship">
-                                        <img src="./assets/img/ship/6.PNG" class="footer-item-sale-ship">
-                                        <img src="./assets/img/ship/7.PNG" class="footer-item-sale-ship">
-                                        <img src="./assets/img/ship/8.PNG" class="footer-item-sale-ship">
-                                        <img src="./assets/img/ship/9.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>./assets/img/ship/1.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>./assets/img/ship/2.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>./assets/img/ship/3.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>./assets/img/ship/4.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>./assets/img/ship/5.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>./assets/img/ship/6.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>./assets/img/ship/7.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>./assets/img/ship/8.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>./assets/img/ship/9.PNG" class="footer-item-sale-ship">
                                     </div>
                                 </div> -->
                             </div>
@@ -573,20 +557,20 @@
                                 <h3 class="footer__heading">DOWNLOAD APP</h3>
                                 <div class="footer-download">
                                     <a href="#" class="footer-download-link">
-                                        <img src="./assets/img/qr/qr-code.png" class="footer-download-qr">
+                                        <img src="<?= base_url()?>./assets/img/qr/qr-code.png" class="footer-download-qr">
                                     </a>
                                     <div class="footer-download-app">
                                         <a href="#" class="footer-download-link">
-                                            <img src="./assets/img/qr/gg-play.png" class="footer-download-app-img">
+                                            <img src="<?= base_url()?>./assets/img/qr/gg-play.png" class="footer-download-app-img">
                                         </a>
                                         <a href="#" class="footer-download-link">
-                                            <img src="./assets/img/qr/app-store.png" class="footer-download-app-img">
+                                            <img src="<?= base_url()?>./assets/img/qr/app-store.png" class="footer-download-app-img">
                                         </a>
                                         <a href="#" class="footer-download-link">
-                                            <img src="./assets/img/qr/app-gallery.png" class="footer-download-app-img">
+                                            <img src="<?= base_url()?>./assets/img/qr/app-gallery.png" class="footer-download-app-img">
                                         </a>
                                         <a href="#" class="footer-download-link">
-                                            <img src="./assets/img/qr/ltp-img.png" class="footer-download-app-img">
+                                            <img src="<?= base_url()?>./assets/img/qr/ltp-img.png" class="footer-download-app-img">
                                         </a>
                                     </div>
                                 </div>
@@ -686,5 +670,45 @@
             });
         });
 </script>
+<!-- load du lieu tim kiem -->
+<script>
+    jQuery(document).ready(function($) {
+         $(document).on('keyup', '#searchproduct', function() {
+                let product = $('#searchproduct').val();
+                showHints(product);
+
+            });
+    });
+    function showHints(product) {
+        if(!product) {
+            $('.hintsforproduct').html("");
+            return false;
+        }
+        $.ajax({
+                url: '<?=base_url('/home/showHints')?>',
+                type: 'get',
+                data: {'productName' : product},
+                success: function (response) {
+                    if(response.hints !== null) {
+                       $('.hintsforproduct').html(""); 
+                       $.each(response.hints, function(index,val) {
+                             $('.hintsforproduct').append("\
+                            <li class='header__search-history-item'>\
+                                <a href='#'>"+val.nameproduct+"</a>\
+                            </li>");
+                       });
+                    }
+                    else {
+                        $('.hintsforproduct').html("");
+                        $('.hintsforproduct').append("\
+                            <li class='header__search-history-item'>\
+                               No results were found \
+                            </li>");
+                    }
+                }
+            });
+    }
+ </script>
+
 </body>
 </html>

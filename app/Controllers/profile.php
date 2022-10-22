@@ -26,10 +26,8 @@ class Profile extends Controller
 	public function updateData()
 	{
 		
-
 		if($this->request->getMethod() == "post") {
 			$unitid = session()->get('loged_user');
-
 			if(isset($_FILES['file']['name'])) {
 				if(!empty($_FILES['file']['name'])) {
 					move_uploaded_file($_FILES['file']['tmp_name'], $_FILES['file']['name']);

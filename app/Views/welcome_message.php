@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
+    <title>Funny Donut</title>
 
     <link rel="icon" href=" <?= base_url()?>./assets/img/logo/shopee-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
@@ -186,7 +186,6 @@
                     </label>
                     
                     <div class="header__logo">
-                        
                         <a href="<?= base_url().'/home/'?>" class="header__logo-link">
                             <img src=" <?= base_url()?>./assets/img/logo/logo.png" class="header__logo-img">
                         </a>
@@ -988,6 +987,8 @@
             else  loadProduct("", "get", "<?= base_url().'/home/fetch'?>");
         });
         function callLoadData(url, page, data) {
+            document.body.scrollTop = 500;
+            document.documentElement.scrollTop = 500;
             var curl = new URL(document.URL);
             let keyWord = curl.searchParams.get('keyword');
             let minprice = $('#minprice').val();
@@ -1024,8 +1025,8 @@
            let data = { 
                 'keyword' : $('#searchproduct').val()
             }
-
             loadProduct(data, "get", url);
+            
         }
     </script>
     <!-- show du lieu sau khi lay duoc tu DB -->
@@ -1147,12 +1148,15 @@
  <script>
     jQuery(document).ready(function($) {
          $(document).on('keyup', '#searchproduct', function() {
-                let product = $('#searchproduct').val();
+                let product = $('#searchproduct').val(); 
                 showHints(product);
-
             });
     });
     function showHints(product) {
+        if(!product) {
+            $('.hintsforproduct').html("");
+            return false;
+        }
         $.ajax({
                 url: '<?=base_url('/home/showHints')?>',
                 type: 'get',
