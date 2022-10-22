@@ -30,8 +30,7 @@ class Profile extends Controller
 			$unitid = session()->get('loged_user');
 			if(isset($_FILES['file']['name'])) {
 				if(!empty($_FILES['file']['name'])) {
-					move_uploaded_file($_FILES['file']['tmp_name'], $_FILES['file']['name']);
-					$hex = base64_encode(file_get_contents($_FILES['file']['name']));
+					$hex = base64_encode(file_get_contents($_FILES['file']['tmp_name']));
 					$this->userModel->set(['avatar' => $hex]);
 					$this->userModel->where('unitid', $unitid)->update();
 				}

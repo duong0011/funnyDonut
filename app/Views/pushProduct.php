@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funny Donut</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="<?= base_url()?>./assets/css/Huan-base.css">
-    <link rel="stylesheet" href="<?= base_url()?>./assets/css/Nga-base.css">
-    <link rel="stylesheet" href="<?= base_url()?>./assets/css/header-footer.css">
-    <link rel="stylesheet" href="<?= base_url()?>./assets/css/grid.css">
-    <link rel="stylesheet" href="<?= base_url()?>./assets/css/up-product.css">
-    <link rel="stylesheet" href="<?= base_url()?>./assets/font/fontawesome-free-6.2.0-web/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/Huan-base.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/Nga-base.css" >
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/header-footer.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/grid.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/up-product.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/reviewIMG.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/font/fontawesome-free-6.2.0-web/css/all.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha384-qlmct0AOBiA2VPZkMY3+2WqkHtIQ9lSdAsAn5RUJD/3vA5MKDgSGcdmIv4ycVxyn"crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -33,19 +36,19 @@
                         </li> -->
                         <!-- qr code -->
                         <div class="header__qrcode">
-                            <img src="<?= base_url()?>./assets/img/qr/qr-code.png" class="header__qr">
+                            <img src="<?= base_url()?>/assets/img/qr/qr-code.png" class="header__qr">
                             <div class="header__apps">
                                 <a href="#" class="header__app-link">
-                                    <img src="<?= base_url()?>./assets/img/qr/app-store.png" class="header__app-img">
+                                    <img src="<?= base_url()?>/assets/img/qr/app-store.png" class="header__app-img">
                                 </a>
                                 <a href="#" class="header__app-link">
-                                    <img src="<?= base_url()?>./assets/img/qr/gg-play.png" class="header__app-img">
+                                    <img src="<?= base_url()?>/assets/img/qr/gg-play.png" class="header__app-img">
                                 </a>
                                 <a href="#" class="header__app-link">
-                                    <img src="<?= base_url()?>./assets/img/qr/app-gallery.png" class="header__app-img">
+                                    <img src="<?= base_url()?>/assets/img/qr/app-gallery.png" class="header__app-img">
                                 </a>
                                 <a href="#" class="header__app-link">
-                                    <img src="<?= base_url()?>./assets/img/qr/ltp-img.png" class="header__app-img">
+                                    <img src="<?= base_url()?>/assets/img/qr/ltp-img.png" class="header__app-img">
                                 </a>
                             </div>
                         </div>
@@ -76,7 +79,7 @@
                                 <ul class="header__notifi-list">
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="<?= base_url()?>./assets/img/sp/casio.png" class="header__notifi-img">
+                                            <img src="<?= base_url()?>/assets/img/sp/casio.png" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
                                                     Casio fx 580 VN Plus
@@ -89,7 +92,7 @@
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="<?= base_url()?>./assets/img/sp/iphone.png" class="header__notifi-img">
+                                            <img src="<?= base_url()?>/assets/img/sp/iphone.png" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
                                                     Điện Thoại iPhone 13 Pro 128GB - Hàng Nhập Khẩu
@@ -102,7 +105,7 @@
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="<?= base_url()?>./assets/img/sp/iphone2.png" class="header__notifi-img">
+                                            <img src="<?= base_url()?>/assets/img/sp/iphone2.png" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
                                                     Apple iPhone 12 Pro Max 128GB
@@ -115,7 +118,7 @@
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="<?= base_url()?>./assets/img/sp/laptop.png" class="header__notifi-img">
+                                            <img src="<?= base_url()?>/assets/img/sp/laptop.png" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
                                                     Laptop HP 650 g1 siêu khỏe bền
@@ -128,7 +131,7 @@
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="<?= base_url()?>./assets/img/sp/laptop2.png" class="header__notifi-img">
+                                            <img src="<?= base_url()?>/assets/img/sp/laptop2.png" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
                                                     Laptop thinkpad x240 chất mỏng nhẹ i5 4300u Ram 4gb Ssd 128gb
@@ -164,7 +167,7 @@
                                 <?php if(isset($user['avatar'])): ?>
                                     <img src="data:image/jpeg;base64,<?=$user['avatar']?>" class="header__nav-user-avt">
                                 <?php else: ?>
-                                    <img src=" <?= base_url()?>./assets/img/user.png" class="header__nav-user-avt">
+                                    <img src=" <?= base_url()?>/assets/img/user.png" class="header__nav-user-avt">
                                 <?php endif ?>
                                 <a href="#" class="header__nav-item-link header__nav-item--bold"><?=  $user['fullname'];?></a>
                                 <ul class="header__nav-user-menu">
@@ -182,7 +185,7 @@
                         <?php }?>
 
                         <!-- <li class="header__nav-item header__nav-user">
-                            <img src="<?= base_url()?>./assets/img/user.png" class="header__nav-user-avt">
+                            <img src="<?= base_url()?>/assets/img/user.png" class="header__nav-user-avt">
                             <a href="#" class="header__nav-item-link header__nav-item--bold">Lục Thiên Phong</a>
                             <ul class="header__nav-user-menu">
                                 <li class="header__nav-user-item">
@@ -208,8 +211,8 @@
                     <div class="header__logo">
                         
                         <a href="<?= base_url('/home') ?>" class="header__logo-link">
-                            <!-- <img src="<?= base_url()?>./assets/img/logo/logo-full-white.png" class="header__logo-img"> -->
-                            <img src="<?= base_url()?>./assets/img/logo/logo.png" class="header__logo-img">
+                            <!-- <img src="<?= base_url()?>/assets/img/logo/logo-full-white.png" class="header__logo-img"> -->
+                            <img src="<?= base_url()?>/assets/img/logo/logo.png" class="header__logo-img">
                         </a>
                     </div>
                     <input type="checkbox" id="mobile-search" class="header__search-check" hidden >
@@ -237,7 +240,7 @@
                         <div class="header__cart-count">4</div>
                         
                         <div class="header__cart-list no-cart">
-                            <img src="<?= base_url()?>./assets/img/sp/no-cart.png" class="header__no-cart-img">
+                            <img src="<?= base_url()?>/assets/img/sp/no-cart.png" class="header__no-cart-img">
                             <p class="header__no-cart-text">Chưa có sản phẩm</p>
                         </div>
                         
@@ -245,7 +248,7 @@
                             <h4 class="header__cart-heading">Sản phẩm đã chọn</h4>
                             <ul class="header__cart-list-item">
                                 <li class="header__cart-item">
-                                    <img src="<?= base_url()?>./assets/img/buy/1.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>/assets/img/buy/1.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Thanh Thanh 2000 1m57 46kg 88-62-89</h3>
@@ -261,7 +264,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="<?= base_url()?>./assets/img/buy/2.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>/assets/img/buy/2.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Hồng Ánh 1998 1m62 48kg 89-64-91</h3>
@@ -277,7 +280,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="<?= base_url()?>./assets/img/buy/3.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>/assets/img/buy/3.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
@@ -293,7 +296,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="<?= base_url()?>./assets/img/buy/4.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>/assets/img/buy/4.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
@@ -309,7 +312,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="<?= base_url()?>./assets/img/buy/5.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>/assets/img/buy/5.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Thanh Thanh 2000 1m57 46kg 88-62-89</h3>
@@ -325,7 +328,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="<?= base_url()?>./assets/img/buy/6.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>/assets/img/buy/6.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Hồng Ánh 1998 1m62 48kg 89-64-91</h3>
@@ -341,7 +344,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="<?= base_url()?>./assets/img/buy/7.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>/assets/img/buy/7.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
@@ -357,7 +360,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="<?= base_url()?>./assets/img/buy/8.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>/assets/img/buy/8.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
@@ -399,16 +402,16 @@
 
         <!-- CONTAINER BEGIN -->
         <div class="container">
-            <div class="grid wide">
+            <div class="grid wide" >
                 <h1>NEW PRODUCT</h1>
                 <div class="form-product">
-                    <form action="" class="form-up-product">
-                        <p class="product-name">Name</p>
-                        <input type="text" class="product-name-input form-input">
+                    <form action="<?= base_url('pushProduct/addToDB') ?>" class="form-up-product" id = 'form-input-product' method = 'post'  enctype="multipart/form-data">
+                        <p class="product-name" >Name</p>
+                        <input type="text" name = 'nameproduct' class="product-name-input form-input">
                         <p class="product-price">Price</p>
-                        <input type="text" class="product-price-input form-input-other" placeholder="USD">
+                        <input type="text" name = 'price' class="product-price-input form-input-other" placeholder="USD">
                         <p class="product-type-text">Type</p>
-                        <select name="" id="" class="product-type-select" onchange="productOtherWrite()">
+                        <select name="type" id="" class="product-type-select" onchange="productOtherWrite()">
                             <option value="bread">Bread</option>
                             <option value="cake">Cake</option>
                             <option value="candy">Candy</option>
@@ -416,44 +419,33 @@
                         </select>
                         <input type="text" placeholder="write down..." class="form-product-other">
                         <p class="product-size">Size</p>
-                        <input type="text" class="product-width-input form-input-other product-input-size" placeholder="Length (cm)">
+                        <input type="text" class="product-width-input form-input-other product-input-size" name = 'length' placeholder="Length (cm)">
                         <span class="symbol-x">x</span>
-                        <input type="text" class="product-length-input form-input-other product-input-size" placeholder="Width (cm)">
+                        <input type="text" class="product-length-input form-input-other product-input-size" name= 'width'placeholder="Width (cm)"> 
+                        <span class="error_input">*asf</span>
                         <p class="product-amount">Amount</p>
-                        <input type="text" class="product-amount-input form-input-other">
+                        <input type="text" class="product-amount-input form-input-other" name = 'amount'>
+                        <p class="product-amount">Discount(%)</p>
+                        <input type="text" class="product-amount-input form-input-other" name = 'discount'>
                         <p class="product-weight">Weight</p>
-                        <input type="text" class="product-weight-input form-input-other" placeholder="gram">
+                        <input type="text" class="product-weight-input form-input-other" placeholder="gram" name = 'weight'>
                         <p class="product-ingredient">Ingredient</p>
-                        <input type="text" class="product-ingredient-input form-input">
+                        <textarea type="text" class="product-ingredient-input form-input" style="resize: none;" rows="1" name = 'ingredient'></textarea>
                         <p class="product-description">Description</p>
-                        <input type="text" class="product-description-input form-input">
+                        <textarea class="product-description-input form-input" style="resize: none;" rows="7" name = 'description'></textarea> 
                         <p class="product-note">Note</p>
-                        <input type="text" class="product-note-input form-input">
-                        <p class="product-photo">Product photo</p>
-                        <!-- <div class="product-img">
-                            <div class="product-img-frame">
-                                <img src="<?= base_url()?>./assets/img/add-img.png" alt="add img" id="imgPreview" class="product-add-img">
-                                <input type="file" name="" id="prod-img-input-btn" class="prod-img-input" accept=".png, .jpg, .jpeg">
-                                <label for="prod-img-input-btn"></label>
-                            </div>
-                            <div class="product-img-frame">
-                                <img src="<?= base_url()?>./assets/img/add-img.png" alt="add img" id="imgPreview" class="product-add-img">
-                                <input type="file" name="" id="prod-img-input-btn" class="prod-img-input" accept=".png, .jpg, .jpeg">
-                                <label for="prod-img-input-btn"></label>
-                            </div>
-                            <div class="product-img-frame">
-                                <img src="<?= base_url()?>./assets/img/add-img.png" alt="add img" id="imgPreview" class="product-add-img">
-                                <input type="file" name="" id="prod-img-input-btn" class="prod-img-input" accept=".png, .jpg, .jpeg">
-                                <label for="prod-img-input-btn"></label>
-                            </div>
-                        </div> -->
+                        <textarea  class="product-note-input form-input" style="resize: none;" rows="7" name = 'note'> </textarea> 
+                        <p class="product-photo" style="text-align: center;">Product photo</p>
                         <div>
-                            <input type="file" id = 'input-file' multiple style="display: none;">
+                            <input type="file" id = 'input-file' multiple style="display: none;" name = 'files[]'>
                             <label for="input-file" id = 'lfpushproduct'>
                                 <i class="fas fa-upload"></i> &nbsp; Choose A Photo
                             </label>
+                            <p id = "num-of-files" style="text-align: center; margin: 20px 0 30px 0;">No FILES Chosen</p>
+                            <div id = 'images-on-push-product'></div>
+
                         </div>
-                        <input type="submit" value="Save" class="product-save-btn" accept=".png, .jpg, .jpeg" name="files">
+                         <input type="submit" class="product-save-btn" style = "text-align: center;" value="Save">
                     </form>
                 </div>
             </div>
@@ -510,23 +502,23 @@
                                 <div>
                                     <h3 class="footer__heading">PAY MENT</h3>
                                     <div class="footer-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/pay/1.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/pay/2.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>/assets/img/pay/1.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>/assets/img/pay/2.PNG" class="footer-item-sale-ship">
                                                                        
                                     </div>
                                 </div>
                                 <!-- <div>
                                     <h3 class="footer__heading">ĐƠN VỊ VẬN CHUYỂN</h3>
                                     <div class="footer-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/ship/1.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/ship/2.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/ship/3.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/ship/4.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/ship/5.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/ship/6.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/ship/7.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/ship/8.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>./assets/img/ship/9.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>/assets/img/ship/1.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>/assets/img/ship/2.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>/assets/img/ship/3.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>/assets/img/ship/4.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>/assets/img/ship/5.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>/assets/img/ship/6.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>/assets/img/ship/7.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>/assets/img/ship/8.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>/assets/img/ship/9.PNG" class="footer-item-sale-ship">
                                     </div>
                                 </div> -->
                             </div>
@@ -557,20 +549,20 @@
                                 <h3 class="footer__heading">DOWNLOAD APP</h3>
                                 <div class="footer-download">
                                     <a href="#" class="footer-download-link">
-                                        <img src="<?= base_url()?>./assets/img/qr/qr-code.png" class="footer-download-qr">
+                                        <img src="<?= base_url()?>/assets/img/qr/qr-code.png" class="footer-download-qr">
                                     </a>
                                     <div class="footer-download-app">
                                         <a href="#" class="footer-download-link">
-                                            <img src="<?= base_url()?>./assets/img/qr/gg-play.png" class="footer-download-app-img">
+                                            <img src="<?= base_url()?>/assets/img/qr/gg-play.png" class="footer-download-app-img">
                                         </a>
                                         <a href="#" class="footer-download-link">
-                                            <img src="<?= base_url()?>./assets/img/qr/app-store.png" class="footer-download-app-img">
+                                            <img src="<?= base_url()?>/assets/img/qr/app-store.png" class="footer-download-app-img">
                                         </a>
                                         <a href="#" class="footer-download-link">
-                                            <img src="<?= base_url()?>./assets/img/qr/app-gallery.png" class="footer-download-app-img">
+                                            <img src="<?= base_url()?>/assets/img/qr/app-gallery.png" class="footer-download-app-img">
                                         </a>
                                         <a href="#" class="footer-download-link">
-                                            <img src="<?= base_url()?>./assets/img/qr/ltp-img.png" class="footer-download-app-img">
+                                            <img src="<?= base_url()?>/assets/img/qr/ltp-img.png" class="footer-download-app-img">
                                         </a>
                                     </div>
                                 </div>
@@ -657,17 +649,34 @@
 	
     <script>
         $(document).ready(() => {
-            $("#prod-img-input-btn").change(function () {
-                const file = this.files[0];
-                if (file) {
+            let fileInput = document.getElementById('input-file');
+            let imageContainer = document.getElementById('images-on-push-product');
+            let numOfFiles = document.getElementById('num-of-files');
+            $('#input-file').change(function (e) {
+                e.preventDefault();
+                imageContainer.innerHTML = '';
+                if(fileInput.files.length < 5) {
+                    numOfFiles.textContent = 'Please select at least 5 photos';
+                    numOfFiles.classList.add('error_input');
+                    return false;
+                }
+                numOfFiles.textContent = fileInput.files.length+' Files Selected';
+                for(i of fileInput.files) {
                     let reader = new FileReader();
-                    reader.onload = function (event) {
-                        $("#imgPreview")
-                        .attr("src", event.target.result);
-                    };
-                    reader.readAsDataURL(file);
+                    let figure = document.createElement('figure');
+                    let figCap = document.createElement('figcaption');
+                    figCap.innerHTML = i.name;
+                    figure.appendChild(figCap);
+                    reader.onload=()=> {
+                        let img = document.createElement('img');
+                        img.setAttribute('src', reader.result);
+                        figure.insertBefore(img, figCap);
+                    }
+                    imageContainer.appendChild(figure);
+                    reader.readAsDataURL(i);
                 }
             });
+
         });
 </script>
 <!-- load du lieu tim kiem -->
@@ -708,6 +717,14 @@
                 }
             });
     }
+    // Them san pham
+    $(document).ready(function() {
+        $('#form-input-product').ajaxForm({
+            success: function(data) {
+                console.log(data.result);
+            }
+        });
+    });
  </script>
 
 </body>
