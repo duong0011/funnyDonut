@@ -439,7 +439,7 @@
 						</div>
 						<div class="shop__following">
 							<i class="fa-solid fa-user-plus"></i>
-							<span class="shop__following--title">Followers:</span>
+							<span class="shop__following--title">Following:</span>
 							<span class="shop__following--info">20</span>
 						</div>
 						<div class="shop__rating">
@@ -450,6 +450,11 @@
                     </div>
                 </div>
             </div>
+			<div class="grid wide">
+				<div class="row sm-gutter">
+
+				</div>
+			</div>
         </div>
         <!-- footer -->
         <footer class="footer">
@@ -576,6 +581,7 @@
                         </div>
                     </div>
                 </div>
+				
             </div>
             <!-- other footer -->
             <div class="other-footer">
