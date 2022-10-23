@@ -452,7 +452,7 @@
                                 <i class="fas fa-upload"></i> &nbsp; Choose A Photo
                             </label>
                             <p id = "num-of-files" style="text-align: center; margin: 20px 0 30px 0;">No FILES Chosen</p>
-                            <div id = 'images-on-push-product'></div>
+                            <div id = "images-on-push-product"></div>
                         </div>
                         <button class="product-save-btn" style = "text-align: center;" value="Save"> save</button>
                     </form>

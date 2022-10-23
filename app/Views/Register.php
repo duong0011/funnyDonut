@@ -9,9 +9,9 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href=" <?= base_url()?>./assets/css/login-base.css">
-    <link rel="stylesheet" href=" <?= base_url()?>./assets/css/login-main.css">
-    <link rel="stylesheet" href=" <?= base_url()?>./assets/font/fontawesome-free-6.2.0-web/css/all.min.css">
+    <link rel="stylesheet" href=" <?= base_url()?>/assets/css/login-base.css">
+    <link rel="stylesheet" href=" <?= base_url()?>/assets/css/login-main.css">
+    <link rel="stylesheet" href=" <?= base_url()?>/assets/font/fontawesome-free-6.2.0-web/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
                 <div class="header__navbar">
                     <div class="logo">
                         <a href="<?= base_url().'/home' ?>" class="logo-link">
-                            <img src=" <?= base_url()?>./assets/img/logo-no-color.png" alt="" class="logo-img">
+                            <img src=" <?= base_url()?>/assets/img/logo-no-color.png" alt="" class="logo-img">
                         </a>
                     </div>
                     <div class="navbar__item">
