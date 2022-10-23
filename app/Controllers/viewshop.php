@@ -2,10 +2,10 @@
 
 use CodeIgniter\Controller;
 
-class showproduct extends Controller
+class Viewshop extends Controller
 {
 	public function index()
 	{
-		return view('product');	
+		return view('viewshop');
 	}
 }

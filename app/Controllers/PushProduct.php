@@ -26,7 +26,7 @@ class PushProduct extends Controller
 	}
 	public function addToDB()
 	{
-		if($this->request->getMethod()=='post') {
+		if($this->request->getMethod() =='post') {
 			if(isset($_FILES['files']['name']))
 				return $this->response->setJSON(['result' => $_POST]);
 		}

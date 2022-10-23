@@ -405,11 +405,15 @@
             <div class="grid wide" >
                 <h1>NEW PRODUCT</h1>
                 <div class="form-product">
-                    <form action="<?= base_url('pushProduct/addToDB') ?>" class="form-up-product" id = 'form-input-product' method = 'post'  enctype="multipart/form-data">
+                    <form class="form-up-product" id = 'form-input-product' method = 'post'  enctype="multipart/form-data">
                         <p class="product-name" >Name</p>
+                        <span class="error_input" id = 'field_name'></span>
                         <input type="text" name = 'nameproduct' class="product-name-input form-input">
+
                         <p class="product-price">Price</p>
+                        <span class="error_input" id = 'field_price'></span><br>
                         <input type="text" name = 'price' class="product-price-input form-input-other" placeholder="USD">
+
                         <p class="product-type-text">Type</p>
                         <select name="type" id="" class="product-type-select" onchange="productOtherWrite()">
                             <option value="bread">Bread</option>
@@ -418,21 +422,27 @@
                             <option value="other">Other</option>
                         </select>
                         <input type="text" placeholder="write down..." class="form-product-other">
-                        <p class="product-size">Size</p>
-                        <input type="text" class="product-width-input form-input-other product-input-size" name = 'length' placeholder="Length (cm)">
-                        <span class="symbol-x">x</span>
-                        <input type="text" class="product-length-input form-input-other product-input-size" name= 'width'placeholder="Width (cm)"> 
-                        <span class="error_input">*asf</span>
+                        
+                       
+
                         <p class="product-amount">Amount</p>
+                        <span class="error_input" id = 'field_amount'></span><br>
                         <input type="text" class="product-amount-input form-input-other" name = 'amount'>
+
                         <p class="product-amount">Discount(%)</p>
-                        <input type="text" class="product-amount-input form-input-other" name = 'discount'>
+                        <span class="error_input" id = 'field_discount'></span><br>
+                        <input type="text" class="product-discount-input form-input-other" name = 'discount'>
+
                         <p class="product-weight">Weight</p>
+                        <span class="error_input" id = 'field_weight'></span><br>
                         <input type="text" class="product-weight-input form-input-other" placeholder="gram" name = 'weight'>
+
                         <p class="product-ingredient">Ingredient</p>
                         <textarea type="text" class="product-ingredient-input form-input" style="resize: none;" rows="1" name = 'ingredient'></textarea>
-                        <p class="product-description">Description</p>
+
+                        <p class="product-descripti on">Description</p>
                         <textarea class="product-description-input form-input" style="resize: none;" rows="7" name = 'description'></textarea> 
+
                         <p class="product-note">Note</p>
                         <textarea  class="product-note-input form-input" style="resize: none;" rows="7" name = 'note'> </textarea> 
                         <p class="product-photo" style="text-align: center;">Product photo</p>
@@ -443,9 +453,8 @@
                             </label>
                             <p id = "num-of-files" style="text-align: center; margin: 20px 0 30px 0;">No FILES Chosen</p>
                             <div id = 'images-on-push-product'></div>
-
                         </div>
-                         <input type="submit" class="product-save-btn" style = "text-align: center;" value="Save">
+                        <button class="product-save-btn" style = "text-align: center;" value="Save"> save</button>
                     </form>
                 </div>
             </div>
@@ -636,8 +645,15 @@
         var productType = document.getElementsByClassName("product-type-select");
         var productOther = document.getElementsByClassName("form-product-other");
         function productOtherWrite(){
-            if(productType[0].value === "other"){
+            
+            if(productType[0].value == "other"){
+
                 productOther[0].style.display="inline-block";
+                $('.form-product-other').change(function (e) {
+                    e.preventDefault();
+                    productType[0].options[3].value = $('.form-product-other').val();
+                });
+               
             }
             else {
                 productOther[0].style.display="none";
@@ -685,7 +701,6 @@
          $(document).on('keyup', '#searchproduct', function() {
                 let product = $('#searchproduct').val();
                 showHints(product);
-
             });
     });
     function showHints(product) {
@@ -719,13 +734,48 @@
     }
     // Them san pham
     $(document).ready(function() {
-        $('#form-input-product').ajaxForm({
-            success: function(data) {
-                console.log(data.result);
+        function statusOfField(field_name, tag_field, length_required, smg, typeNumber) { 
+            if(field_name.val().length < length_required && !typeNumber) {
+                tag_field.text(smg);
+                return false;
             }
+            if((typeNumber && !isNumeric(field_name.val())) || Number(field_name.val()) <= 0) {
+                tag_field.text(smg);
+                return false;
+            }
+            tag_field.text('');
+            return true;
+        }
+        
+        $('.product-save-btn').on('click', function () {
+            $(document).on('submit', '#form-input-product', function() {
+                return false;
+            });
+            var status = [];
+            status.push(statusOfField($('.product-name-input'), $('#field_name'), 4, '*Name of product is requied and at least 4 character', 0));
+            status.push(statusOfField($('.product-price-input'), $('#field_price'), 4, '*Price of product is requied and and it must be a number greater than 0', 1));
+            status.push(statusOfField($('.product-amount-input'), $('#field_amount'), 4, '*Price of product is requied and and it must be a number greater than 0', 1));
+            status.push(statusOfField($('.product-discount-input'), $('#field_discount'), 4, '*Price of product is requied and and it must be a number greater than 0', 1));
+            status.push(statusOfField($('.product-weight-input'), $('#field_weight'), 4, '*Price of product is requied and and it must be a number greater than 0', 1));
+            for(i of status) { 
+                if(!i) return false;
+            }
+            $('#form-input-product').ajaxForm({
+                url : '<?= base_url('pushProduct/addToDB') ?>',
+                success: function(data) {
+                    console.log(data.result);
+                }
+            });
         });
+        
     });
- </script>
 
+ </script>
+<script>
+    // valid gia tri
+    function isNumeric(value) {
+        return /^-?\d+$/.test(value);
+    }
+</script>
 </body>
 </html>

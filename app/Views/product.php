@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +15,7 @@
     <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <!-- main -->
     <div class="app">
@@ -23,7 +25,8 @@
                 <!-- navbar -->
                 <nav class="header__navbar hide-on-mobile-tablet">
                     <ul class="header__nav-list">
-                        <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Welcome customers!</li>
+                        <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Welcome
+                            customers!</li>
                         <!-- <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Trở thành Người bán Shopee</li>
                         <li class="header__nav-item header__nav-item--hover header__nav-item--separate header__show-qr">
                             Tải ứng dụng
@@ -148,7 +151,7 @@
                                 Help
                             </a>
                         </li>
-                        
+
                         <li class="header__nav-item header__nav-item--bold header__nav-item--separate">
                             <a href="#" class="header__nav-item-link">Sign Up</a>
                         </li>
@@ -179,12 +182,12 @@
                         <i class="header__mobile-menu-icon fa-solid fa-bars"></i>
                         <!-- <i class="header__mobile-search-icon fas fa-search"></i> -->
                     </label>
-                    
+
                     <div class="header__logo">
-                        
+
                         <a href="#" class="header__logo-link">
                             <!-- <img src="./assets/img/logo/logo-full-white.png" class="header__logo-img"> -->
-                            <img src="./assets/img/logo/20221001_210128_0000.png" class="header__logo-img">
+                            <img src="./assets/img/logo/logo.png" class="header__logo-img">
                         </a>
                     </div>
                     <input type="checkbox" id="mobile-search" class="header__search-check" hidden>
@@ -218,16 +221,17 @@
                             <i class="header__search-btn-icon fas fa-search"></i>
                         </button>
                     </div>
-                    <!-- header__cart--no-cart --><!-- header__cart--has-cart -->
+                    <!-- header__cart--no-cart -->
+                    <!-- header__cart--has-cart -->
                     <div class="header__cart header__cart--has-cart">
                         <i class="header__cart-icon fas fa-shopping-cart"></i>
                         <div class="header__cart-count">4</div>
-                        
+
                         <div class="header__cart-list no-cart">
                             <img src="./assets/img/sp/no-cart.png" class="header__no-cart-img">
                             <p class="header__no-cart-text">Chưa có sản phẩm</p>
                         </div>
-                        
+
                         <div class="header__cart-list has-cart">
                             <h4 class="header__cart-heading">Sản phẩm đã chọn</h4>
                             <ul class="header__cart-list-item">
@@ -269,7 +273,7 @@
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
                                             <p class="header__cart-item-price">2.800USD</p>
-                                        </div>  
+                                        </div>
                                         <div class="header__cart-item-body">
                                             <p class="header__cart-item-number">x 1</p>
                                             <div class="header__cart-item-close">
@@ -285,7 +289,7 @@
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
                                             <p class="header__cart-item-price">3.200USD</p>
-                                        </div>  
+                                        </div>
                                         <div class="header__cart-item-body">
                                             <p class="header__cart-item-number">x 3</p>
                                             <div class="header__cart-item-close">
@@ -333,7 +337,7 @@
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
                                             <p class="header__cart-item-price">2.800USD</p>
-                                        </div>  
+                                        </div>
                                         <div class="header__cart-item-body">
                                             <p class="header__cart-item-number">x 1</p>
                                             <div class="header__cart-item-close">
@@ -349,7 +353,7 @@
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
                                             <p class="header__cart-item-price">3.200USD</p>
-                                        </div>  
+                                        </div>
                                         <div class="header__cart-item-body">
                                             <p class="header__cart-item-number">x 3</p>
                                             <div class="header__cart-item-close">
@@ -386,13 +390,30 @@
         <div class="container">
             <div class="grid wide">
                 <div class="row sm-gutter product__background">
-                    <div class="col c-1">
+                    <div class="col l-1 imgs">
+                        <div class="small-img">
+                            <img src="./assets/img/sp/sp1.jpg" alt="" onclick="showImg(this.src)">
+                        </div>
+                        <div class="small-img">
+                            <img src="./assets/img/home/1.PNG" alt="" onclick="showImg(this.src)">
+                        </div>
+                        <div class="small-img">
+                            <img src="./assets/img/home/2.PNG" alt="" onclick="showImg(this.src)">
+                        </div>
+                        <div class="small-img">
+                            <img src="./assets/img/home/3.PNG" alt="" onclick="showImg(this.src)">
+                        </div>
+                        <div class="small-img">
+                            <img src="./assets/img/home/4.PNG" alt="" onclick="showImg(this.src)">
+                        </div>
+
 
                     </div>
-                    <div class="col c-5">
-                        <a class="home-product-item-link" href="#">
-                            <div class="home-product-item__img" style="background-image: url(./assets/img/sp/sp1.jpg);"></div>
-                        </a>
+                    <div class="col l-5">
+                        <div class="big__img">
+                            <!-- style="background-image: url(./assets/img/sp/sp1.jpg);" -->
+                            <img src="./assets/img/sp/sp1.jpg" alt="">
+                        </div>
                         <div class="row sm-gutter">
                             <div class="col c-6">
                                 <div class="home-product-item__share">
@@ -402,10 +423,12 @@
                                             <i class="product__share-icon product__share-icon-vk fa-brands fa-vk"></i>
                                         </a>
                                         <a href="#" class="product__share-icon-link">
-                                            <i class="product__share-icon product__share-icon-instagram fa-brands fa-instagram"></i>
+                                            <i
+                                                class="product__share-icon product__share-icon-instagram fa-brands fa-instagram"></i>
                                         </a>
                                         <a href="#" class="product__share-icon-link">
-                                            <i class="product__share-icon product__share-icon-telegram fa-brands fa-telegram"></i>
+                                            <i
+                                                class="product__share-icon product__share-icon-telegram fa-brands fa-telegram"></i>
                                         </a>
                                     </li>
                                 </div>
@@ -422,16 +445,16 @@
                                     <span class="product__favourite">
                                         (1.98k)
                                     </span>
-                                    
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col c-6 product-info">
-                        <h1 class="product__name">
+                    <div class="col l-6 product-info">
+                        <h1 class="product__name" style="padding-left: 10px">
                             Bánh mì pate thơm ngon bổ dưỡng
                         </h1>
-                        <div class="product__item-rating">
+                        <div class="product__item-rating" style="padding-left: 10px">
                             <span class="product__quantity-rating">
                                 4.9
                             </span>
@@ -443,17 +466,17 @@
                                 <i class="star-checked far fa-star"></i>
                             </div>
                         </div>
-                        <div class="product-item__price">
+                        <div class="product-item__price" style="padding-left: 10px">
                             <p class="product-item__price-old">180USD</p>
                             <p class="product-item__price-new">200USD</p>
                         </div>
-                        <div class="row sm-gutter">
-                            <div class="col c-2">
+                        <div class="row sm-gutter" style="padding-left: 10px">
+                            <div class="col l-2">
                                 <div class="product-item__transport">
                                     <span class="product-item__transport-title">Shipping</span>
                                 </div>
                             </div>
-                            <div class="col c-10">
+                            <div class="col l-10">
                                 <div class="product-item__transport-info">
                                     <i class="product-item__transport-icon fa-solid fa-truck-fast"></i>
                                     <span class="product-item__transport-label">Free Shipping</span>
@@ -461,14 +484,14 @@
                             </div>
                         </div>
 
-                        <div class="row sm-gutter">
-                            <div class="col c-2">
-                                <div class="product-item__shipping"> 
+                        <div class="row sm-gutter" style="padding-left: 10px">
+                            <div class="col l-2">
+                                <div class="product-item__shipping">
                                     <span class="product-item__shipping-title">Shipping in city</span>
                                 </div>
                             </div>
-                            <div class="col c-10">
-                                <div class="product-item__shipping-info"> 
+                            <div class="col l-10">
+                                <div class="product-item__shipping-info">
                                     <button class="product-item__shipping-info-btn product-item__shipping-info-active">
                                         <span class="product-item__shipping-info-btn-info">Moscow</span>
                                     </button>
@@ -478,18 +501,20 @@
                                     <button class="product-item__shipping-info-btn">
                                         <span class="product-item__shipping-info-btn-info">Kazan</span>
                                     </button>
-                                </div>  
+                                </div>
                             </div>
                         </div>
 
-                        <div class="row sm-gutter">
-                            <div class="col c-2">
-                                <div class="product-item__size"> <!--product-item__size-unable-->
+                        <div class="row sm-gutter" style="padding-left: 10px">
+                            <div class="col l-2">
+                                <div class="product-item__size">
+                                    <!--product-item__size-unable-->
                                     <span class="product-item__size-title">Size</span>
                                 </div>
                             </div>
-                            <div class="col c-10">
-                                <div class="product-item__size-info"> <!--product-item__size-info-unable-->
+                            <div class="col l-10">
+                                <div class="product-item__size-info">
+                                    <!--product-item__size-info-unable-->
                                     <button class="product-item__size-btn">
                                         <span class="product-item__size-btn-info">24cm</span>
                                     </button>
@@ -499,43 +524,44 @@
                                     <button class="product-item__size-btn">
                                         <span class="product-item__size-btn-info">28cm</span>
                                     </button>
-                                </div>  
+                                </div>
                             </div>
                         </div>
 
-                        <div class="row sm-gutter">
-                            <div class="col c-2">
-                                <div class="product-item__quantity"> 
+                        <div class="row sm-gutter" style="padding-left: 10px">
+                            <div class="col l-2">
+                                <div class="product-item__quantity">
                                     <span class="product-item__quantity-title">Quantity</span>
                                 </div>
                             </div>
-                            <div class="col c-10">
+                            <div class="col l-10">
                                 <div class="product-item__quantity-info">
-                                    <input type="number" placeholder="Enter number" id="product-item__quantity-number" class="product-item__quantity-info-number">
-                                </div>  
+                                    <input type="number" step="1" min="0" placeholder="Enter number"
+                                        id="product-item__quantity-number" class="product-item__quantity-info-number">
+                                </div>
                             </div>
                         </div>
 
-                        <div class="row sm-gutter">
-                            <!-- <div class="col c-4"> -->
-                                <div class="product-item__more-cart"> 
-                                    <i class="product-item__more-cart-icon fa-solid fa-cart-plus"></i>
-                                    <span class="product-item__more-cart-title">Add to Cart</span>
-                                </div>
+                        <div class="row sm-gutter" style="padding-left: 10px">
+                            <!-- <div class="col l-4"> -->
+                            <div class="product-item__more-cart">
+                                <i class="product-item__more-cart-icon fa-solid fa-cart-plus"></i>
+                                <span class="product-item__more-cart-title">Add to Cart</span>
+                            </div>
                             <!-- </div> -->
-                            <!-- <div class="col c-3"> -->
-                                <div class="product-item__buy-now"> 
-                                    <span class="product-item__buy-now-title">Buy now</span>
-                                </div>  
+                            <!-- <div class="col l-3"> -->
+                            <div class="product-item__buy-now">
+                                <span class="product-item__buy-now-title">Buy now</span>
+                            </div>
                             <!-- </div> -->
                         </div>
                     </div>
                 </div>
                 <div class="row sm-gutter product__background magazin__box">
-                    <div class="col c-1">
+                    <div class="col l-1">
                         <img src="./assets/img/magazin/1.jpg" alt="" class="magazin-img">
                     </div>
-                    <div class="col c-4">
+                    <div class="col l-4">
                         <div class="magazin__info">
                             <h3>theordinarystore.vn</h3>
                             <span class="magazin__info-status">Active 3 Hours Ago</span>
@@ -550,23 +576,23 @@
 
                         </div>
                     </div>
-                    <div class="col c-7">
+                    <div class="col l-7">
                         <div class="row sm-gutter magazin__info-parameter">
-                            <div class="col c-4">
+                            <div class="col l-4">
                                 <div class="magazin__parameter">
                                     <span class="magazin__parameter-info">Ratings</span>
                                     <span class="magazin__parameter-info-quantity">46.3k</span>
                                 </div>
-                                
+
                             </div>
-                            <div class="col c-4">
+                            <div class="col l-4">
                                 <div class="magazin__parameter">
                                     <span class="magazin__parameter-info">Response Rate</span>
                                     <span class="magazin__parameter-info-quantity">96%</span>
                                 </div>
-                                
+
                             </div>
-                            <div class="col c-4">
+                            <div class="col l-4">
                                 <div class="magazin__parameter">
                                     <span class="magazin__parameter-info">Joined</span>
                                     <span class="magazin__parameter-info-quantity">21 months ago</span>
@@ -574,21 +600,21 @@
                             </div>
                         </div>
                         <div class="row sm-gutter magazin__info-parameter">
-                            <div class="col c-4">
+                            <div class="col l-4">
                                 <div class="magazin__parameter">
                                     <span class="magazin__parameter-info">Products</span>
                                     <span class="magazin__parameter-info-quantity">46.3k</span>
                                 </div>
-                                
+
                             </div>
-                            <div class="col c-4">
+                            <div class="col l-4">
                                 <div class="magazin__parameter">
                                     <span class="magazin__parameter-info">Response Time</span>
                                     <span class="magazin__parameter-info-quantity">96%</span>
                                 </div>
-                                
+
                             </div>
-                            <div class="col c-4">
+                            <div class="col l-4">
                                 <div class="magazin__parameter">
                                     <span class="magazin__parameter-info">Follower</span>
                                     <span class="magazin__parameter-info-quantity">100k</span>
@@ -597,33 +623,236 @@
                         </div>
                     </div>
                 </div>
+            </div>
             <div class="grid wide">
                 <div class="row sm-gutter product__background magazin__box">
                     <div class="product__specifications">
+                        <i class="product__specifications-icon fa-sharp fa-solid fa-caret-right"></i>
                         <h1>Product Specifications</h1>
                     </div>
 
-                    <div class="col c-1">
-                        <div class="row sm-gutter">
-                            <div class="col c-3">
-                                <span class="product__specifications-brand">
-                                    Brand
+                    <!-- <div class="product__specifications-paramets">
+                        
+                    </div> -->
+                </div>
+                <div class="row sm-gutter product__background" style="margin-top: 0">
+                    <div class="col l-2" style="margin-bottom: 20px;">
+                        <div class="product__specifications-brand ">Brand</div>
+                    </div>
+                    <div class="col l-10">
+                        <div class="product__specifications-brand-info">Banh mi nha Huan</div>
+                    </div>
+                    <div class="col l-2">
+                        <div class="product__specifications-brand" style="margin-bottom: 20px;">Brand</div>
+                    </div>
+                    <div class="col l-10">
+                        <div class="product__specifications-brand-info">Banh mi nha Huan</div>
+                    </div>
+                    <div class="col l-2">
+                        <div class="product__specifications-brand" style="margin-bottom: 20px;">Brand</div>
+                    </div>
+                    <div class="col l-10">
+                        <div class="product__specifications-brand-info">Banh mi nha Huan</div>
+                    </div>
+                    <div class="col l-2">
+                        <div class="product__specifications-brand" style="margin-bottom: 20px;">Brand</div>
+                    </div>
+                    <div class="col l-10">
+                        <div class="product__specifications-brand-info">Banh mi nha Huan</div>
+                    </div>
+                    <div class="col l-2">
+                        <div class="product__specifications-brand" style="margin-bottom: 20px;">Brand</div>
+                    </div>
+                    <div class="col l-10">
+                        <div class="product__specifications-brand-info">Banh mi nha Huan</div>
+                    </div>
+
+                    <!-- <div class="product__specifications-paramets">
+                        
+                    </div> -->
+                </div>
+                <div class="row sm-gutter product__background" style="margin-top: 0">
+                    <div class="product__description">
+                        <i class="product__description-icon fa-sharp fa-solid fa-caret-right"></i>
+                        <h1>Product Description</h1>
+                    </div>
+                    <div class="Product__description-info">
+                        <span>
+                            BÁNH MỲ PHÔ MAI , ĐẬU ĐỎ
+                            - quy cách : thùng 1 kg
+                            - vị : phô mai , đậu đỏ
+                            - xuất xứ : thành phố Đức Châu , tỉnh Sơn Đông , Trung Quốc
+                            - hạn sử dụng : 2 tháng kể từ ngày sản xuất in trên vỏ bánh 👉bánh mỳ phô mai béo ngậy thơm vị sữa , bánh mỳ đậu đỏ thơm bùi tạo nên hương vị khó quên
+                            - bánh làm từ bột mì cao cấp , trứng sữa , phô mai , đậu đỏ toàn thành phần được tuyển chọn kĩ càng , buổi sáng chỉ cần một cái bánh và 1 ly sữa là đủ dinh dưỡng cho cả buổi sáng đầy năng lượng rồi
+                            - Mọi thắc mắc khách hàng vui lòng liên hệ : Trang ,sđt 0349977558 , địa chỉ 290 đoan tĩnh ,phường hải yên , thành phố móng cái , quảng ninh
+                        </span>
+                    </div>
+
+                    <!-- <div class="product__specifications-paramets">
+                        
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="grid wide">
+                <div class="row sm-gutter product__background magazin__box">
+                    <div class="product__Ratings">
+                        <h1>Product Ratings</h1>
+                    </div>
+                </div>
+
+                <div class="row sm-gutter product__background">
+                    <div class="col l-12">
+                        <div class="product__rating-filter">
+                            <div class="product__rating-filter--star">
+                                <span class="product__quantity-rating" style="font-size: 2.8rem; padding-bottom: 4px">
+                                    4.9
                                 </span>
+                                <div class="product-item__rating-star">
+                                    <i class="star-checked far fa-star"></i>
+                                    <i class="star-checked far fa-star"></i>
+                                    <i class="star-checked far fa-star"></i>
+                                    <i class="star-checked far fa-star"></i>
+                                    <i class="star-checked far fa-star"></i>
+                                </div>
                             </div>
-                            <div class="col c-9">
-                                <span class="product__specifications-brand-info">
-                                    Diabrand
-                                </span>
-                            </div>
+                            <button class="btn home-filter-btn">All</button>
+                            <button class="btn home-filter-btn product__rating-btn--active">
+                                5 Star
+                                <p>(0)</p>
+                            </button>
+                            <button class="btn home-filter-btn">
+                                4 Star
+                                <p>(0)</p>
+                            </button>
+                            <button class="btn home-filter-btn">
+                                3 Star
+                                <p>(0)</p>
+                            </button>
+                            <button class="btn home-filter-btn">
+                                2 Star
+                                <p>(0)</p>
+                            </button>
+                            <button class="btn home-filter-btn">
+                                1 Star
+                                <p>(0)</p>
+                            </button>
                         </div>
                     </div>
 
-                    <div class="product__specifications-paramets">
-                        
+                </div>
+                <!-- bình luận -->
+                <div class="row sm-gutter product__background"
+                    style="border-bottom: 1px solid rgba(153, 153, 153, 0.3); padding-top: 10px">
+                    <div class="col l-1">
+                        <div class="product__rating-avatar">
+                            <img src="https://sme.hust.edu.vn/wp-content/uploads/2022/02/Avatar-Facebook-trang.jpg"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="col l-11">
+                        <div class="product__rating-info">
+                            <div class="product__rating-info--name">
+                                <p>Lục Nhất Thiên</p>
+                            </div>
+                            <div class="product__rating-item">
+                                <div class="product__rating-item-star">
+                                    <i class="star-checked far fa-star"></i>
+                                    <i class="star-checked far fa-star"></i>
+                                    <i class="star-checked far fa-star"></i>
+                                    <i class="star-checked far fa-star"></i>
+                                    <i class="star-uncheck far fa-star"></i>
+                                </div>
+                            </div>
+
+                            <div class="product__rating-date">
+                                <span style="font-size: 1.4rem; color: rgb(193, 193, 193); margin:10px 0 10px;">
+                                    25-10-2022</span>
+                            </div>
+
+                            <div class="Product__rating-label">
+                                <span>
+                                    shop đóng gói cực kì cẩn thận mình phải gỡ bnhiêu lâu mới mở ra được cho nên
+                                    gương k có bị vỡ còn lại thì giống mới mô tả ai đang băn khoăn thì mua ngay
+                                    đi nha vì gương giá rẻ còn đóng gói chắc chắn
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="product__rating--images">
+                            <div class="product__rating--image">
+                                <img src="./assets/img/home/1.PNG" alt="">
+
+                            </div>
+                            <div class="product__rating--image">
+                                <img src="./assets/img/home/1.PNG" alt="">
+
+                            </div>
+                            <div class="product__rating--image">
+                                <img src="./assets/img/home/1.PNG" alt="">
+
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-            </div>
-            
+                <div class="row sm-gutter product__background"
+                    style="border-bottom: 1px solid rgba(153, 153, 153, 0.3); padding-top: 10px">
+                    <div class="col l-1">
+                        <div class="product__rating-avatar">
+                            <img src="https://sme.hust.edu.vn/wp-content/uploads/2022/02/Avatar-Facebook-trang.jpg"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="col l-11">
+                        <div class="product__rating-info">
+                            <div class="product__rating-info--name">
+                                <p>Lục Nhất Thiên</p>
+                            </div>
+                            <div class="product__rating-item">
+                                <div class="product__rating-item-star">
+                                    <i class="star-checked far fa-star"></i>
+                                    <i class="star-checked far fa-star"></i>
+                                    <i class="star-checked far fa-star"></i>
+                                    <i class="star-checked far fa-star"></i>
+                                    <i class="star-uncheck far fa-star"></i>
+                                </div>
+                            </div>
+
+                            <div class="product__rating-date">
+                                <span style="font-size: 1.4rem; color: rgb(193, 193, 193); margin:10px 0 10px;">
+                                    25-10-2022</span>
+                            </div>
+
+                            <div class="Product__rating-label">
+                                <span>
+                                    shop đóng gói cực kì cẩn thận mình phải gỡ bnhiêu lâu mới mở ra được cho nên
+                                    gương k có bị vỡ còn lại thì giống mới mô tả ai đang băn khoăn thì mua ngay
+                                    đi nha vì gương giá rẻ còn đóng gói chắc chắn
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="product__rating--images">
+                            <div class="product__rating--image">
+                                <img src="./assets/img/home/1.PNG" alt="">
+
+                            </div>
+                            <div class="product__rating--image">
+                                <img src="./assets/img/home/1.PNG" alt="">
+
+                            </div>
+                            <div class="product__rating--image">
+                                <img src="./assets/img/home/1.PNG" alt="">
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
         <!-- footer -->
@@ -631,57 +860,57 @@
             <!-- main footer -->
             <div class="main-footer">
                 <div class="grid wide">
-                        <div class="row sm-gutter main-footer-info">
-                            <div class="col l-2-4 m-4 c-6">
-                                <h3 class="footer__heading">CUSTOMER SERVICE</h3>
-                                <ul class="footer-list">
-                                    <li>
-                                        <a href="#" class="footer-item-link">Help Center</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link">How to buy</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link">Thanh Toán</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link">Shipping</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link">Return & Refund</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link">Contact Us</a>
-                                    </li>
-                                
-                                </ul>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <h3 class="footer__heading">ABOUT SHOP</h3>
-                                <ul class="footer-list">
-                                    <li>
-                                        <a href="#" class="footer-item-link">About Us</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link">Shop Policies</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link">Privacy Policy</a>
-                                    </li>
-                                        <a href="#" class="footer-item-link">Media Contact</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col l-2-4 m-4 c-12 pay-and-ship">
-                                <div>
-                                    <h3 class="footer__heading">PAY MENT</h3>
-                                    <div class="footer-sale-ship">
-                                        <img src="./assets/img/pay/1.PNG" class="footer-item-sale-ship">
-                                        <img src="./assets/img/pay/2.PNG" class="footer-item-sale-ship">
-                                                                       
-                                    </div>
+                    <div class="row sm-gutter main-footer-info">
+                        <div class="col l-2-4 m-4 c-6">
+                            <h3 class="footer__heading">CUSTOMER SERVICE</h3>
+                            <ul class="footer-list">
+                                <li>
+                                    <a href="#" class="footer-item-link">Help Center</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-item-link">How to buy</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-item-link">Payment</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-item-link">Shipping</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-item-link">Return & Refund</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-item-link">Contact Us</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="col l-2-4 m-4 c-6">
+                            <h3 class="footer__heading">ABOUT SHOP</h3>
+                            <ul class="footer-list">
+                                <li>
+                                    <a href="#" class="footer-item-link">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-item-link">Shop Policies</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-item-link">Privacy Policy</a>
+                                </li>
+                                <a href="#" class="footer-item-link">Media Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col l-2-4 m-4 c-12 pay-and-ship">
+                            <div>
+                                <h3 class="footer__heading">PAY MENT</h3>
+                                <div class="footer-sale-ship">
+                                    <img src="./assets/img/pay/1.PNG" class="footer-item-sale-ship">
+                                    <img src="./assets/img/pay/2.PNG" class="footer-item-sale-ship">
+
                                 </div>
-                                <!-- <div>
+                            </div>
+                            <!-- <div>
                                     <h3 class="footer__heading">ĐƠN VỊ VẬN CHUYỂN</h3>
                                     <div class="footer-sale-ship">
                                         <img src="./assets/img/ship/1.PNG" class="footer-item-sale-ship">
@@ -695,53 +924,53 @@
                                         <img src="./assets/img/ship/9.PNG" class="footer-item-sale-ship">
                                     </div>
                                 </div> -->
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <h3 class="footer__heading">FOLLOW US</h3>
-                                <ul class="footer-list">
-                                    <li>
-                                        <a href="#" class="footer-item-link footer-item-link-fb">
-                                            <i class="footer-item-icon fa-brands fa-vk"></i>
-                                            VKontakte
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link footer-item-link-is">
-                                            <i class="footer-item-icon fab fa-instagram-square"></i>
-                                            Instagram
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link footer-item-link-li">
-                                            <i class="footer-item-icon fab fa-telegram"></i>
-                                            Telegram
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col l-2-4 m-8 c-6">
-                                <h3 class="footer__heading">DOWNLOAD APP</h3>
-                                <div class="footer-download">
-                                    <a href="#" class="footer-download-link">
-                                        <img src="./assets/img/qr/qr-code.png" class="footer-download-qr">
+                        </div>
+                        <div class="col l-2-4 m-4 c-6">
+                            <h3 class="footer__heading">FOLLOW US</h3>
+                            <ul class="footer-list">
+                                <li>
+                                    <a href="#" class="footer-item-link footer-item-link-fb">
+                                        <i class="footer-item-icon fa-brands fa-vk"></i>
+                                        VKontakte
                                     </a>
-                                    <div class="footer-download-app">
-                                        <a href="#" class="footer-download-link">
-                                            <img src="./assets/img/qr/gg-play.png" class="footer-download-app-img">
-                                        </a>
-                                        <a href="#" class="footer-download-link">
-                                            <img src="./assets/img/qr/app-store.png" class="footer-download-app-img">
-                                        </a>
-                                        <a href="#" class="footer-download-link">
-                                            <img src="./assets/img/qr/app-gallery.png" class="footer-download-app-img">
-                                        </a>
-                                        <a href="#" class="footer-download-link">
-                                            <img src="./assets/img/qr/ltp-img.png" class="footer-download-app-img">
-                                        </a>
-                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-item-link footer-item-link-is">
+                                        <i class="footer-item-icon fab fa-instagram-square"></i>
+                                        Instagram
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-item-link footer-item-link-li">
+                                        <i class="footer-item-icon fab fa-telegram"></i>
+                                        Telegram
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col l-2-4 m-8 c-6">
+                            <h3 class="footer__heading">DOWNLOAD APP</h3>
+                            <div class="footer-download">
+                                <a href="#" class="footer-download-link">
+                                    <img src="./assets/img/qr/qr-code.png" class="footer-download-qr">
+                                </a>
+                                <div class="footer-download-app">
+                                    <a href="#" class="footer-download-link">
+                                        <img src="./assets/img/qr/gg-play.png" class="footer-download-app-img">
+                                    </a>
+                                    <a href="#" class="footer-download-link">
+                                        <img src="./assets/img/qr/app-store.png" class="footer-download-app-img">
+                                    </a>
+                                    <a href="#" class="footer-download-link">
+                                        <img src="./assets/img/qr/app-gallery.png" class="footer-download-app-img">
+                                    </a>
+                                    <a href="#" class="footer-download-link">
+                                        <img src="./assets/img/qr/ltp-img.png" class="footer-download-app-img">
+                                    </a>
                                 </div>
                             </div>
                         </div>
+                    </div>
                     <!-- copyright -->
                     <div class="row">
                         <div class="grid">
@@ -826,8 +1055,8 @@
                     </div>
                     <div class="auth-form__policy">
                         <p class="auth-form__policy-text">
-                            Bằng việc đăng ký, bạn đồng ý với Shoppee về 
-                            <a href="#" class="auth-form__text-link">Điều khoản dịch vụ</a> & 
+                            Bằng việc đăng ký, bạn đồng ý với Shoppee về
+                            <a href="#" class="auth-form__text-link">Điều khoản dịch vụ</a> &
                             <a href="#" class="auth-form__text-link">Chính sách bảo mật</a>
                         </p>
                     </div>
@@ -851,7 +1080,7 @@
                     </a>
                 </div>
             </div>
-            
+
             <!-- authen login-->
             <div class="auth-form">
                 <div class="auth-form__container">
@@ -904,7 +1133,13 @@
 
     <!-- script js -->
     <!-- <script src="./assets/js/product.js"></script> -->
-    
-    
+    <script>
+        let bigImg = document.querySelector('.big__img img')
+        function showImg(pic) {
+            bigImg.src = pic;
+        }
+    </script>
+
 </body>
+
 </html>
