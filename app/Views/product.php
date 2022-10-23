@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop</title>
-    <link rel="icon" href="./assets/img/logo/shopee-logo.png" type="image/x-icon">
+    <link rel="icon" href="<?= base_url()?>/assets/img/logo/shopee-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="./assets/css/base.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/grid.css">
-    <link rel="stylesheet" href="./assets/css/product.css">
-    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/base.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/style.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/grid.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/product.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
@@ -33,19 +33,19 @@
                         </li> -->
                         <!-- qr code -->
                         <div class="header__qrcode">
-                            <img src="./assets/img/qr/qr-code.png" class="header__qr">
+                            <img src="<?= base_url()?>/assets/img/qr/qr-code.png" class="header__qr">
                             <div class="header__apps">
                                 <a href="#" class="header__app-link">
-                                    <img src="./assets/img/qr/app-store.png" class="header__app-img">
+                                    <img src="<?= base_url()?>/assets/img/qr/app-store.png" class="header__app-img">
                                 </a>
                                 <a href="#" class="header__app-link">
-                                    <img src="./assets/img/qr/gg-play.png" class="header__app-img">
+                                    <img src="<?= base_url()?>/assets/img/qr/gg-play.png" class="header__app-img">
                                 </a>
                                 <a href="#" class="header__app-link">
-                                    <img src="./assets/img/qr/app-gallery.png" class="header__app-img">
+                                    <img src="<?= base_url()?>/assets/img/qr/app-gallery.png" class="header__app-img">
                                 </a>
                                 <a href="#" class="header__app-link">
-                                    <img src="./assets/img/qr/ltp-img.png" class="header__app-img">
+                                    <img src="<?= base_url()?>/assets/img/qr/ltp-img.png" class="header__app-img">
                                 </a>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                                 <ul class="header__notifi-list">
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="./assets/img/sp/casio.png" class="header__notifi-img">
+                                            <img src="<?= base_url()?>/assets/img/sp/casio.png" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
                                                     Casio fx 580 VN Plus
@@ -89,7 +89,7 @@
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="./assets/img/sp/iphone.png" class="header__notifi-img">
+                                            <img src="<?= base_url()?>/assets/img/sp/iphone.png" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
                                                     Điện Thoại iPhone 13 Pro 128GB - Hàng Nhập Khẩu
@@ -102,7 +102,7 @@
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="./assets/img/sp/iphone2.png" class="header__notifi-img">
+                                            <img src="<?= base_url()?>/assets/img/sp/iphone2.png" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
                                                     Apple iPhone 12 Pro Max 128GB
@@ -115,7 +115,7 @@
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="./assets/img/sp/laptop.png" class="header__notifi-img">
+                                            <img src="<?= base_url()?>/assets/img/sp/laptop.png" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
                                                     Laptop HP 650 g1 siêu khỏe bền
@@ -128,7 +128,7 @@
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="./assets/img/sp/laptop2.png" class="header__notifi-img">
+                                            <img src="<?= base_url()?>/assets/img/sp/laptop2.png" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
                                                     Laptop thinkpad x240 chất mỏng nhẹ i5 4300u Ram 4gb Ssd 128gb
@@ -160,7 +160,7 @@
                         </li>
 
                         <!-- <li class="header__nav-item header__nav-user">
-                            <img src="./assets/img/user.png" class="header__nav-user-avt">
+                            <img src="<?= base_url()?>/assets/img/user.png" class="header__nav-user-avt">
                             <a href="#" class="header__nav-item-link header__nav-item--bold">Lục Thiên Phong</a>
                             <ul class="header__nav-user-menu">
                                 <li class="header__nav-user-item">
@@ -186,8 +186,8 @@
                     <div class="header__logo">
 
                         <a href="#" class="header__logo-link">
-                            <!-- <img src="./assets/img/logo/logo-full-white.png" class="header__logo-img"> -->
-                            <img src="./assets/img/logo/logo.png" class="header__logo-img">
+                            <!-- <img src="<?= base_url()?>/assets/img/logo/logo-full-white.png" class="header__logo-img"> -->
+                            <img src="<?= base_url()?>/assets/img/logo/logo.png" class="header__logo-img">
                         </a>
                     </div>
                     <input type="checkbox" id="mobile-search" class="header__search-check" hidden>
@@ -228,7 +228,7 @@
                         <div class="header__cart-count">4</div>
 
                         <div class="header__cart-list no-cart">
-                            <img src="./assets/img/sp/no-cart.png" class="header__no-cart-img">
+                            <img src="<?= base_url()?>/assets/img/sp/no-cart.png" class="header__no-cart-img">
                             <p class="header__no-cart-text">Chưa có sản phẩm</p>
                         </div>
 
@@ -236,7 +236,7 @@
                             <h4 class="header__cart-heading">Sản phẩm đã chọn</h4>
                             <ul class="header__cart-list-item">
                                 <li class="header__cart-item">
-                                    <img src="./assets/img/buy/1.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>/assets/img/buy/1.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Thanh Thanh 2000 1m57 46kg 88-62-89</h3>
@@ -252,7 +252,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="./assets/img/buy/2.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>/assets/img/buy/2.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Hồng Ánh 1998 1m62 48kg 89-64-91</h3>
@@ -268,7 +268,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="./assets/img/buy/3.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>/assets/img/buy/3.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
@@ -284,7 +284,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="./assets/img/buy/4.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>/assets/img/buy/4.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
@@ -300,7 +300,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="./assets/img/buy/5.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>/assets/img/buy/5.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Thanh Thanh 2000 1m57 46kg 88-62-89</h3>
@@ -316,7 +316,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="./assets/img/buy/6.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>/assets/img/buy/6.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Hồng Ánh 1998 1m62 48kg 89-64-91</h3>
@@ -332,7 +332,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="./assets/img/buy/7.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>/assets/img/buy/7.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
@@ -348,7 +348,7 @@
                                     </div>
                                 </li>
                                 <li class="header__cart-item">
-                                    <img src="./assets/img/buy/8.PNG" class="header__cart-item-img">
+                                    <img src="<?= base_url()?>/assets/img/buy/8.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
@@ -392,27 +392,27 @@
                 <div class="row sm-gutter product__background">
                     <div class="col l-1 imgs">
                         <div class="small-img">
-                            <img src="./assets/img/sp/sp1.jpg" alt="" onclick="showImg(this.src)">
+                            <img src="<?= base_url()?>/assets/img/sp/sp1.jpg" alt="" onclick="showImg(this.src)">
                         </div>
                         <div class="small-img">
-                            <img src="./assets/img/home/1.PNG" alt="" onclick="showImg(this.src)">
+                            <img src="<?= base_url()?>/assets/img/home/1.PNG" alt="" onclick="showImg(this.src)">
                         </div>
                         <div class="small-img">
-                            <img src="./assets/img/home/2.PNG" alt="" onclick="showImg(this.src)">
+                            <img src="<?= base_url()?>/assets/img/home/2.PNG" alt="" onclick="showImg(this.src)">
                         </div>
                         <div class="small-img">
-                            <img src="./assets/img/home/3.PNG" alt="" onclick="showImg(this.src)">
+                            <img src="<?= base_url()?>/assets/img/home/3.PNG" alt="" onclick="showImg(this.src)">
                         </div>
                         <div class="small-img">
-                            <img src="./assets/img/home/4.PNG" alt="" onclick="showImg(this.src)">
+                            <img src="<?= base_url()?>/assets/img/home/4.PNG" alt="" onclick="showImg(this.src)">
                         </div>
 
 
                     </div>
                     <div class="col l-5">
                         <div class="big__img">
-                            <!-- style="background-image: url(./assets/img/sp/sp1.jpg);" -->
-                            <img src="./assets/img/sp/sp1.jpg" alt="">
+                            <!-- style="background-image: url(<?= base_url()?>/assets/img/sp/sp1.jpg);" -->
+                            <img src="<?= base_url()?>/assets/img/sp/sp1.jpg" alt="">
                         </div>
                         <div class="row sm-gutter">
                             <div class="col c-6">
@@ -559,7 +559,7 @@
                 </div>
                 <div class="row sm-gutter product__background magazin__box">
                     <div class="col l-1">
-                        <img src="./assets/img/magazin/1.jpg" alt="" class="magazin-img">
+                        <img src="<?= base_url()?>/assets/img/magazin/1.jpg" alt="" class="magazin-img">
                     </div>
                     <div class="col l-4">
                         <div class="magazin__info">
@@ -782,15 +782,15 @@
 
                         <div class="product__rating--images">
                             <div class="product__rating--image">
-                                <img src="./assets/img/home/1.PNG" alt="">
+                                <img src="<?= base_url()?>/assets/img/home/1.PNG" alt="">
 
                             </div>
                             <div class="product__rating--image">
-                                <img src="./assets/img/home/1.PNG" alt="">
+                                <img src="<?= base_url()?>/assets/img/home/1.PNG" alt="">
 
                             </div>
                             <div class="product__rating--image">
-                                <img src="./assets/img/home/1.PNG" alt="">
+                                <img src="<?= base_url()?>/assets/img/home/1.PNG" alt="">
 
                             </div>
 
@@ -837,15 +837,15 @@
 
                         <div class="product__rating--images">
                             <div class="product__rating--image">
-                                <img src="./assets/img/home/1.PNG" alt="">
+                                <img src="<?= base_url()?>/assets/img/home/1.PNG" alt="">
 
                             </div>
                             <div class="product__rating--image">
-                                <img src="./assets/img/home/1.PNG" alt="">
+                                <img src="<?= base_url()?>/assets/img/home/1.PNG" alt="">
 
                             </div>
                             <div class="product__rating--image">
-                                <img src="./assets/img/home/1.PNG" alt="">
+                                <img src="<?= base_url()?>/assets/img/home/1.PNG" alt="">
 
                             </div>
 
@@ -905,23 +905,23 @@
                             <div>
                                 <h3 class="footer__heading">PAY MENT</h3>
                                 <div class="footer-sale-ship">
-                                    <img src="./assets/img/pay/1.PNG" class="footer-item-sale-ship">
-                                    <img src="./assets/img/pay/2.PNG" class="footer-item-sale-ship">
+                                    <img src="<?= base_url()?>/assets/img/pay/1.PNG" class="footer-item-sale-ship">
+                                    <img src="<?= base_url()?>/assets/img/pay/2.PNG" class="footer-item-sale-ship">
 
                                 </div>
                             </div>
                             <!-- <div>
                                     <h3 class="footer__heading">ĐƠN VỊ VẬN CHUYỂN</h3>
                                     <div class="footer-sale-ship">
-                                        <img src="./assets/img/ship/1.PNG" class="footer-item-sale-ship">
-                                        <img src="./assets/img/ship/2.PNG" class="footer-item-sale-ship">
-                                        <img src="./assets/img/ship/3.PNG" class="footer-item-sale-ship">
-                                        <img src="./assets/img/ship/4.PNG" class="footer-item-sale-ship">
-                                        <img src="./assets/img/ship/5.PNG" class="footer-item-sale-ship">
-                                        <img src="./assets/img/ship/6.PNG" class="footer-item-sale-ship">
-                                        <img src="./assets/img/ship/7.PNG" class="footer-item-sale-ship">
-                                        <img src="./assets/img/ship/8.PNG" class="footer-item-sale-ship">
-                                        <img src="./assets/img/ship/9.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>/assets/img/ship/1.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>/assets/img/ship/2.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>/assets/img/ship/3.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>/assets/img/ship/4.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>/assets/img/ship/5.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>/assets/img/ship/6.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>/assets/img/ship/7.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>/assets/img/ship/8.PNG" class="footer-item-sale-ship">
+                                        <img src="<?= base_url()?>/assets/img/ship/9.PNG" class="footer-item-sale-ship">
                                     </div>
                                 </div> -->
                         </div>
@@ -952,20 +952,20 @@
                             <h3 class="footer__heading">DOWNLOAD APP</h3>
                             <div class="footer-download">
                                 <a href="#" class="footer-download-link">
-                                    <img src="./assets/img/qr/qr-code.png" class="footer-download-qr">
+                                    <img src="<?= base_url()?>/assets/img/qr/qr-code.png" class="footer-download-qr">
                                 </a>
                                 <div class="footer-download-app">
                                     <a href="#" class="footer-download-link">
-                                        <img src="./assets/img/qr/gg-play.png" class="footer-download-app-img">
+                                        <img src="<?= base_url()?>/assets/img/qr/gg-play.png" class="footer-download-app-img">
                                     </a>
                                     <a href="#" class="footer-download-link">
-                                        <img src="./assets/img/qr/app-store.png" class="footer-download-app-img">
+                                        <img src="<?= base_url()?>/assets/img/qr/app-store.png" class="footer-download-app-img">
                                     </a>
                                     <a href="#" class="footer-download-link">
-                                        <img src="./assets/img/qr/app-gallery.png" class="footer-download-app-img">
+                                        <img src="<?= base_url()?>/assets/img/qr/app-gallery.png" class="footer-download-app-img">
                                     </a>
                                     <a href="#" class="footer-download-link">
-                                        <img src="./assets/img/qr/ltp-img.png" class="footer-download-app-img">
+                                        <img src="<?= base_url()?>/assets/img/qr/ltp-img.png" class="footer-download-app-img">
                                     </a>
                                 </div>
                             </div>
@@ -1132,7 +1132,7 @@
     </div>
 
     <!-- script js -->
-    <!-- <script src="./assets/js/product.js"></script> -->
+    <!-- <script src="<?= base_url()?>/assets/js/product.js"></script> -->
     <script>
         let bigImg = document.querySelector('.big__img img')
         function showImg(pic) {
