@@ -43,23 +43,25 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin-left: 40px;
 }
 
-.shop__product, .shop__joined, .shop__respontime {
+.shop__product, .shop__joined, .shop__respontime,
+.shop__follower, .shop__rating, .shop__following {
     font-size: 1.6rem;
 }
 
 .shop__product--title,
-.shop__joined--title,
-.shop_respontime--title {
+.shop__joined--title, .shop__following--title,
+.shop_respontime--title, .shop__follower--title
+,.shop__ratings--title {
     margin: 0 5px; 
 }
 
 .shop__product--info,
-.shop__joined--info,
-.shop__respontime--info {
+.shop__joined--info, .shop__following--info,
+.shop__respontime--info, .shop__follower--info
+,.shop__ratings--info {
     /* color: rgb(139, 52, 52); */
-    color: rgb(87, 28, 28);
+    color: rgb(208, 1, 27);
     font-weight: 500;
 }

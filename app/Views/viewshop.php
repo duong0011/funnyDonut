@@ -409,7 +409,12 @@
 							</button>
 						</div>
                     </div>
-                    <div class="shop__info col l-4">
+
+					<div class="col l-1">
+
+					</div>
+
+                    <div class="shop__info col l-3" style="margin-right: 30px;">
 						<div class="shop__product">
 							<i class="fa-solid fa-shop"></i>
 							<span class="shop__product--title">Products:</span>
@@ -418,12 +423,29 @@
 						<div class="shop__joined">
 							<i class="fa-solid fa-check"></i>
 							<span class="shop__joined--title">Joined:</span>
-							<span class="shop__joined--info">10 months ago</span>
+							<span class="shop__joined--info">21 months ago</span>
 						</div>
 						<div class="shop__respontime">
 							<i class="fa-regular fa-comment-dots"></i>
 							<span class="shop_respontime--title">Response Time:</span>
-							<span class="shop__respontime--info">98%</span>
+							<span class="shop__respontime--info">96%</span>
+						</div>
+                    </div>
+					<div class="shop__info col l-3">
+						<div class="shop__follower">
+							<i class="fa-solid fa-users"></i>
+							<span class="shop__follower--title">Followers:</span>
+							<span class="shop__follower--info">100k</span>
+						</div>
+						<div class="shop__following">
+							<i class="fa-solid fa-user-plus"></i>
+							<span class="shop__following--title">Followers:</span>
+							<span class="shop__following--info">20</span>
+						</div>
+						<div class="shop__rating">
+							<i class="fa-regular fa-star"></i>
+							<span class="shop__ratings--title">Ratings:</span>
+							<span class="shop__ratings--info">4.7 (46.3k)</span>
 						</div>
                     </div>
                 </div>
