@@ -12,6 +12,8 @@
     box-shadow: 0 2px 10px var(--primary-color);
 }
 
+
+
 .form-product p{
     font-size: 1.4rem;
     margin-top: 0;
@@ -57,6 +59,10 @@
     background-color: var(--primary-color);
     border-radius: 3px;
     border: none;
+    display: inline-block;
+    width: 40%;
+    height: 38px;
+    cursor: pointer;
 }
 
 .product-input-size{

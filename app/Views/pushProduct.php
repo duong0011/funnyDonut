@@ -477,7 +477,7 @@
                                         <a href="#" class="footer-item-link">How to buy</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="footer-item-link">Thanh Toán</a>
+                                        <a href="#" class="footer-item-link">Payment</a>
                                     </li>
                                     <li>
                                         <a href="#" class="footer-item-link">Shipping</a>
