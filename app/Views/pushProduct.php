@@ -454,7 +454,7 @@
                             <p id = "num-of-files" style="text-align: center; margin: 20px 0 30px 0;">No FILES Chosen</p>
                             <div id = "images-on-push-product"></div>
                         </div>
-                        <button class="product-save-btn" style = "text-align: center;" value="Save"> save</button>
+                        <button class="product-save-btn" style = "text-align: center; display: block; width: 32%; height: 38px; font-size: 1.8rem; margin-left: 200px; cursor: pointer;" value="Save"> save</button>
                     </form>
                 </div>
             </div>
