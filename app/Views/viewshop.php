@@ -389,7 +389,7 @@
         <!-- container -->
         <div class="container">
             <div class="grid wide">
-                <div class="row sm-gutter product__background magazin__box">
+                <div class="row sm-gutter product__background magazin__box" style="margin-bottom: 25px;">
                     <div class="col l-4" style="padding:0; background-color: rgba(139, 52, 52, 0.2); border-radius: 2px;">
                         <div class="shop__label">
 							<img src="<?= base_url()?>/assets/img/magazin/1.jpg" alt="" class="img__shop">
@@ -403,7 +403,7 @@
 								<i class="magazin__info-btn-icon fa-solid fa-plus"></i>
 								<span class="magazin__info-btn-label">Follow</span>
 							</button>
-							<button class="magazin__info-btn" style="width: 180px">
+							<button class="magazin__info-btn" style="width: 180px; margin-bottom:10px">
 								<i class="magazin__info-btn-icon fa-solid fa-comments"></i>
 								<span class="magazin__info-btn-label">Chat now</span>
 							</button>
@@ -449,7 +449,732 @@
 						</div>
                     </div>
                 </div>
-            </div>
+
+                <div class="row sm-gutter product__background magazin__box">
+                    <div class="col l-12" style="padding:0;">
+                        <div class="home-filter hide-on-mobile-tablet" style="background-color: white;">
+                            <div class="home-filter-control">
+                                <!-- <p class="home-filter-title">Sorted by:</p> -->
+                                <button class="btn btn--brown home-filter-btn">
+                                    <a href="">
+                                        All product
+                                    </a>
+                                </button>
+
+                                <div class="btn home-filter-sort" style="min-width: 120px;">
+                                    <p class="home-filter-sort-btn">Menu</p>                                  
+                                    <ul class="home-filter-sort-list">
+                                        <li>
+                                            <a href="#" class="home-filter-sort-item-link">
+                                                Bread                                       
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="home-filter-sort-item-link">
+                                                Candy
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="home-filter-sort-item-link">                                               
+                                                Cake                                              
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button class="btn home-filter-btn">Popular</button>
+                                <button class="btn home-filter-btn">Latest</button>
+                                <button class="btn home-filter-btn">bestseller</button>
+                                <div class="btn home-filter-sort" style="min-width: 180px;">
+                                    <p class="home-filter-sort-btn">Price</p>
+                                    <i class="fas fa-sort-amount-down-alt"></i>
+                                    <ul class="home-filter-sort-list">
+                                        <li>
+                                            <a href="#" class="home-filter-sort-item-link">
+                                                Price: Low to High
+                                                <i class="fas fa-sort-amount-down-alt"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="home-filter-sort-item-link">
+                                                
+                                                Price: Hight to Low
+                                                <i class="fas fa-sort-amount-up-alt"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div> 
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="list-product" class="row sm-gutter product__background">
+                    <div class="col l-2 home-product-item">
+                        <a class="home-product-item-link" href="#">
+                            <div class="home-product-item__img" style="background-image: url(./assets/img/home/1.PNG);"></div>
+                            <div class="home-product-item__info">
+                                <h4 class="home-product-item__name">Ổ đĩa flash USB2.0 2TB Hp kim loại chống thấm nước</h4>
+                                <div class="home-product-item__price">
+                                    <p class="home-product-item__price-old">180USD</p>
+                                    <p class="home-product-item__price-new">200USD</p>
+                                    <i class="home-product-item__ship fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="home-product-item__footer">
+                                    <div class="home-product-item__save">
+                                        <input type="checkbox" name="save-check" id="heart-save">
+                                        <label for="heart-save" class="far fa-heart"></label>
+                                    </div>
+                                    <div class="home-product-item__rating-star">
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                    </div>
+                                    <div class="home-product-item__saled">Sold 3,8k</div>
+                                </div>
+                                <div class="home-product-item__origin">Saint Peterburg</div>
+                                <div class="home-product-item__favourite">
+                                    Yêu thích
+                                </div>
+                                <div class="home-product-item__sale-off">
+                                    <div class="home-product-item__sale-off-value">40%</div>
+                                    <div class="home-product-item__sale-off-label">GIẢM</div>
+                                </div>
+                            </div>
+                            <div class="home-product-item-footer">Tìm sản phẩm tương tự</div>
+                        </a>
+                    </div>
+                    <div class="col l-2 home-product-item">
+                        <a class="home-product-item-link" href="#">
+                            <div class="home-product-item__img" style="background-image: url(./assets/img/home/1.PNG);"></div>
+                            <div class="home-product-item__info">
+                                <h4 class="home-product-item__name">Ổ đĩa flash USB2.0 2TB Hp kim loại chống thấm nước</h4>
+                                <div class="home-product-item__price">
+                                    <p class="home-product-item__price-old">180USD</p>
+                                    <p class="home-product-item__price-new">200USD</p>
+                                    <i class="home-product-item__ship fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="home-product-item__footer">
+                                    <div class="home-product-item__save">
+                                        <input type="checkbox" name="save-check" id="heart-save">
+                                        <label for="heart-save" class="far fa-heart"></label>
+                                    </div>
+                                    <div class="home-product-item__rating-star">
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                    </div>
+                                    <div class="home-product-item__saled">Sold 3,8k</div>
+                                </div>
+                                <div class="home-product-item__origin">Saint Peterburg</div>
+                                <div class="home-product-item__favourite">
+                                    Yêu thích
+                                </div>
+                                <div class="home-product-item__sale-off">
+                                    <div class="home-product-item__sale-off-value">40%</div>
+                                    <div class="home-product-item__sale-off-label">GIẢM</div>
+                                </div>
+                            </div>
+                            <div class="home-product-item-footer">Tìm sản phẩm tương tự</div>
+                        </a>
+                    </div>
+                    <div class="col l-2 home-product-item">
+                        <a class="home-product-item-link" href="#">
+                            <div class="home-product-item__img" style="background-image: url(./assets/img/home/1.PNG);"></div>
+                            <div class="home-product-item__info">
+                                <h4 class="home-product-item__name">Ổ đĩa flash USB2.0 2TB Hp kim loại chống thấm nước</h4>
+                                <div class="home-product-item__price">
+                                    <p class="home-product-item__price-old">180USD</p>
+                                    <p class="home-product-item__price-new">200USD</p>
+                                    <i class="home-product-item__ship fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="home-product-item__footer">
+                                    <div class="home-product-item__save">
+                                        <input type="checkbox" name="save-check" id="heart-save">
+                                        <label for="heart-save" class="far fa-heart"></label>
+                                    </div>
+                                    <div class="home-product-item__rating-star">
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                    </div>
+                                    <div class="home-product-item__saled">Sold 3,8k</div>
+                                </div>
+                                <div class="home-product-item__origin">Saint Peterburg</div>
+                                <div class="home-product-item__favourite">
+                                    Yêu thích
+                                </div>
+                                <div class="home-product-item__sale-off">
+                                    <div class="home-product-item__sale-off-value">40%</div>
+                                    <div class="home-product-item__sale-off-label">GIẢM</div>
+                                </div>
+                            </div>
+                            <div class="home-product-item-footer">Tìm sản phẩm tương tự</div>
+                        </a>
+                    </div>
+                    <div class="col l-2 home-product-item">
+                        <a class="home-product-item-link" href="#">
+                            <div class="home-product-item__img" style="background-image: url(./assets/img/home/1.PNG);"></div>
+                            <div class="home-product-item__info">
+                                <h4 class="home-product-item__name">Ổ đĩa flash USB2.0 2TB Hp kim loại chống thấm nước</h4>
+                                <div class="home-product-item__price">
+                                    <p class="home-product-item__price-old">180USD</p>
+                                    <p class="home-product-item__price-new">200USD</p>
+                                    <i class="home-product-item__ship fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="home-product-item__footer">
+                                    <div class="home-product-item__save">
+                                        <input type="checkbox" name="save-check" id="heart-save">
+                                        <label for="heart-save" class="far fa-heart"></label>
+                                    </div>
+                                    <div class="home-product-item__rating-star">
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                    </div>
+                                    <div class="home-product-item__saled">Sold 3,8k</div>
+                                </div>
+                                <div class="home-product-item__origin">Saint Peterburg</div>
+                                <div class="home-product-item__favourite">
+                                    Yêu thích
+                                </div>
+                                <div class="home-product-item__sale-off">
+                                    <div class="home-product-item__sale-off-value">40%</div>
+                                    <div class="home-product-item__sale-off-label">GIẢM</div>
+                                </div>
+                            </div>
+                            <div class="home-product-item-footer">Tìm sản phẩm tương tự</div>
+                        </a>
+                    </div>
+                    <div class="col l-2 home-product-item">
+                        <a class="home-product-item-link" href="#">
+                            <div class="home-product-item__img" style="background-image: url(./assets/img/home/1.PNG);"></div>
+                            <div class="home-product-item__info">
+                                <h4 class="home-product-item__name">Ổ đĩa flash USB2.0 2TB Hp kim loại chống thấm nước</h4>
+                                <div class="home-product-item__price">
+                                    <p class="home-product-item__price-old">180USD</p>
+                                    <p class="home-product-item__price-new">200USD</p>
+                                    <i class="home-product-item__ship fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="home-product-item__footer">
+                                    <div class="home-product-item__save">
+                                        <input type="checkbox" name="save-check" id="heart-save">
+                                        <label for="heart-save" class="far fa-heart"></label>
+                                    </div>
+                                    <div class="home-product-item__rating-star">
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                    </div>
+                                    <div class="home-product-item__saled">Sold 3,8k</div>
+                                </div>
+                                <div class="home-product-item__origin">Saint Peterburg</div>
+                                <div class="home-product-item__favourite">
+                                    Yêu thích
+                                </div>
+                                <div class="home-product-item__sale-off">
+                                    <div class="home-product-item__sale-off-value">40%</div>
+                                    <div class="home-product-item__sale-off-label">GIẢM</div>
+                                </div>
+                            </div>
+                            <div class="home-product-item-footer">Tìm sản phẩm tương tự</div>
+                        </a>
+                    </div>
+                    <div class="col l-2 home-product-item">
+                        <a class="home-product-item-link" href="#">
+                            <div class="home-product-item__img" style="background-image: url(./assets/img/home/1.PNG);"></div>
+                            <div class="home-product-item__info">
+                                <h4 class="home-product-item__name">Ổ đĩa flash USB2.0 2TB Hp kim loại chống thấm nước</h4>
+                                <div class="home-product-item__price">
+                                    <p class="home-product-item__price-old">180USD</p>
+                                    <p class="home-product-item__price-new">200USD</p>
+                                    <i class="home-product-item__ship fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="home-product-item__footer">
+                                    <div class="home-product-item__save">
+                                        <input type="checkbox" name="save-check" id="heart-save">
+                                        <label for="heart-save" class="far fa-heart"></label>
+                                    </div>
+                                    <div class="home-product-item__rating-star">
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                    </div>
+                                    <div class="home-product-item__saled">Sold 3,8k</div>
+                                </div>
+                                <div class="home-product-item__origin">Saint Peterburg</div>
+                                <div class="home-product-item__favourite">
+                                    Yêu thích
+                                </div>
+                                <div class="home-product-item__sale-off">
+                                    <div class="home-product-item__sale-off-value">40%</div>
+                                    <div class="home-product-item__sale-off-label">GIẢM</div>
+                                </div>
+                            </div>
+                            <div class="home-product-item-footer">Tìm sản phẩm tương tự</div>
+                        </a>
+                    </div>
+                    <div class="col l-2 home-product-item">
+                        <a class="home-product-item-link" href="#">
+                            <div class="home-product-item__img" style="background-image: url(./assets/img/home/1.PNG);"></div>
+                            <div class="home-product-item__info">
+                                <h4 class="home-product-item__name">Ổ đĩa flash USB2.0 2TB Hp kim loại chống thấm nước</h4>
+                                <div class="home-product-item__price">
+                                    <p class="home-product-item__price-old">180USD</p>
+                                    <p class="home-product-item__price-new">200USD</p>
+                                    <i class="home-product-item__ship fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="home-product-item__footer">
+                                    <div class="home-product-item__save">
+                                        <input type="checkbox" name="save-check" id="heart-save">
+                                        <label for="heart-save" class="far fa-heart"></label>
+                                    </div>
+                                    <div class="home-product-item__rating-star">
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                    </div>
+                                    <div class="home-product-item__saled">Sold 3,8k</div>
+                                </div>
+                                <div class="home-product-item__origin">Saint Peterburg</div>
+                                <div class="home-product-item__favourite">
+                                    Yêu thích
+                                </div>
+                                <div class="home-product-item__sale-off">
+                                    <div class="home-product-item__sale-off-value">40%</div>
+                                    <div class="home-product-item__sale-off-label">GIẢM</div>
+                                </div>
+                            </div>
+                            <div class="home-product-item-footer">Tìm sản phẩm tương tự</div>
+                        </a>
+                    </div>
+                    <div class="col l-2 home-product-item">
+                        <a class="home-product-item-link" href="#">
+                            <div class="home-product-item__img" style="background-image: url(./assets/img/home/1.PNG);"></div>
+                            <div class="home-product-item__info">
+                                <h4 class="home-product-item__name">Ổ đĩa flash USB2.0 2TB Hp kim loại chống thấm nước</h4>
+                                <div class="home-product-item__price">
+                                    <p class="home-product-item__price-old">180USD</p>
+                                    <p class="home-product-item__price-new">200USD</p>
+                                    <i class="home-product-item__ship fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="home-product-item__footer">
+                                    <div class="home-product-item__save">
+                                        <input type="checkbox" name="save-check" id="heart-save">
+                                        <label for="heart-save" class="far fa-heart"></label>
+                                    </div>
+                                    <div class="home-product-item__rating-star">
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                    </div>
+                                    <div class="home-product-item__saled">Sold 3,8k</div>
+                                </div>
+                                <div class="home-product-item__origin">Saint Peterburg</div>
+                                <div class="home-product-item__favourite">
+                                    Yêu thích
+                                </div>
+                                <div class="home-product-item__sale-off">
+                                    <div class="home-product-item__sale-off-value">40%</div>
+                                    <div class="home-product-item__sale-off-label">GIẢM</div>
+                                </div>
+                            </div>
+                            <div class="home-product-item-footer">Tìm sản phẩm tương tự</div>
+                        </a>
+                    </div>
+                    <div class="col l-2 home-product-item">
+                        <a class="home-product-item-link" href="#">
+                            <div class="home-product-item__img" style="background-image: url(./assets/img/home/1.PNG);"></div>
+                            <div class="home-product-item__info">
+                                <h4 class="home-product-item__name">Ổ đĩa flash USB2.0 2TB Hp kim loại chống thấm nước</h4>
+                                <div class="home-product-item__price">
+                                    <p class="home-product-item__price-old">180USD</p>
+                                    <p class="home-product-item__price-new">200USD</p>
+                                    <i class="home-product-item__ship fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="home-product-item__footer">
+                                    <div class="home-product-item__save">
+                                        <input type="checkbox" name="save-check" id="heart-save">
+                                        <label for="heart-save" class="far fa-heart"></label>
+                                    </div>
+                                    <div class="home-product-item__rating-star">
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                    </div>
+                                    <div class="home-product-item__saled">Sold 3,8k</div>
+                                </div>
+                                <div class="home-product-item__origin">Saint Peterburg</div>
+                                <div class="home-product-item__favourite">
+                                    Yêu thích
+                                </div>
+                                <div class="home-product-item__sale-off">
+                                    <div class="home-product-item__sale-off-value">40%</div>
+                                    <div class="home-product-item__sale-off-label">GIẢM</div>
+                                </div>
+                            </div>
+                            <div class="home-product-item-footer">Tìm sản phẩm tương tự</div>
+                        </a>
+                    </div>
+                    <div class="col l-2 home-product-item">
+                        <a class="home-product-item-link" href="#">
+                            <div class="home-product-item__img" style="background-image: url(./assets/img/home/1.PNG);"></div>
+                            <div class="home-product-item__info">
+                                <h4 class="home-product-item__name">Ổ đĩa flash USB2.0 2TB Hp kim loại chống thấm nước</h4>
+                                <div class="home-product-item__price">
+                                    <p class="home-product-item__price-old">180USD</p>
+                                    <p class="home-product-item__price-new">200USD</p>
+                                    <i class="home-product-item__ship fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="home-product-item__footer">
+                                    <div class="home-product-item__save">
+                                        <input type="checkbox" name="save-check" id="heart-save">
+                                        <label for="heart-save" class="far fa-heart"></label>
+                                    </div>
+                                    <div class="home-product-item__rating-star">
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                    </div>
+                                    <div class="home-product-item__saled">Sold 3,8k</div>
+                                </div>
+                                <div class="home-product-item__origin">Saint Peterburg</div>
+                                <div class="home-product-item__favourite">
+                                    Yêu thích
+                                </div>
+                                <div class="home-product-item__sale-off">
+                                    <div class="home-product-item__sale-off-value">40%</div>
+                                    <div class="home-product-item__sale-off-label">GIẢM</div>
+                                </div>
+                            </div>
+                            <div class="home-product-item-footer">Tìm sản phẩm tương tự</div>
+                        </a>
+                    </div>
+                    <div class="col l-2 home-product-item">
+                        <a class="home-product-item-link" href="#">
+                            <div class="home-product-item__img" style="background-image: url(./assets/img/home/1.PNG);"></div>
+                            <div class="home-product-item__info">
+                                <h4 class="home-product-item__name">Ổ đĩa flash USB2.0 2TB Hp kim loại chống thấm nước</h4>
+                                <div class="home-product-item__price">
+                                    <p class="home-product-item__price-old">180USD</p>
+                                    <p class="home-product-item__price-new">200USD</p>
+                                    <i class="home-product-item__ship fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="home-product-item__footer">
+                                    <div class="home-product-item__save">
+                                        <input type="checkbox" name="save-check" id="heart-save">
+                                        <label for="heart-save" class="far fa-heart"></label>
+                                    </div>
+                                    <div class="home-product-item__rating-star">
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                    </div>
+                                    <div class="home-product-item__saled">Sold 3,8k</div>
+                                </div>
+                                <div class="home-product-item__origin">Saint Peterburg</div>
+                                <div class="home-product-item__favourite">
+                                    Yêu thích
+                                </div>
+                                <div class="home-product-item__sale-off">
+                                    <div class="home-product-item__sale-off-value">40%</div>
+                                    <div class="home-product-item__sale-off-label">GIẢM</div>
+                                </div>
+                            </div>
+                            <div class="home-product-item-footer">Tìm sản phẩm tương tự</div>
+                        </a>
+                    </div>
+                    <div class="col l-2 home-product-item">
+                        <a class="home-product-item-link" href="#">
+                            <div class="home-product-item__img" style="background-image: url(./assets/img/home/1.PNG);"></div>
+                            <div class="home-product-item__info">
+                                <h4 class="home-product-item__name">Ổ đĩa flash USB2.0 2TB Hp kim loại chống thấm nước</h4>
+                                <div class="home-product-item__price">
+                                    <p class="home-product-item__price-old">180USD</p>
+                                    <p class="home-product-item__price-new">200USD</p>
+                                    <i class="home-product-item__ship fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="home-product-item__footer">
+                                    <div class="home-product-item__save">
+                                        <input type="checkbox" name="save-check" id="heart-save">
+                                        <label for="heart-save" class="far fa-heart"></label>
+                                    </div>
+                                    <div class="home-product-item__rating-star">
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                    </div>
+                                    <div class="home-product-item__saled">Sold 3,8k</div>
+                                </div>
+                                <div class="home-product-item__origin">Saint Peterburg</div>
+                                <div class="home-product-item__favourite">
+                                    Yêu thích
+                                </div>
+                                <div class="home-product-item__sale-off">
+                                    <div class="home-product-item__sale-off-value">40%</div>
+                                    <div class="home-product-item__sale-off-label">GIẢM</div>
+                                </div>
+                            </div>
+                            <div class="home-product-item-footer">Tìm sản phẩm tương tự</div>
+                        </a>
+                    </div>
+                    <div class="col l-2 home-product-item">
+                        <a class="home-product-item-link" href="#">
+                            <div class="home-product-item__img" style="background-image: url(./assets/img/home/1.PNG);"></div>
+                            <div class="home-product-item__info">
+                                <h4 class="home-product-item__name">Ổ đĩa flash USB2.0 2TB Hp kim loại chống thấm nước</h4>
+                                <div class="home-product-item__price">
+                                    <p class="home-product-item__price-old">180USD</p>
+                                    <p class="home-product-item__price-new">200USD</p>
+                                    <i class="home-product-item__ship fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="home-product-item__footer">
+                                    <div class="home-product-item__save">
+                                        <input type="checkbox" name="save-check" id="heart-save">
+                                        <label for="heart-save" class="far fa-heart"></label>
+                                    </div>
+                                    <div class="home-product-item__rating-star">
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                    </div>
+                                    <div class="home-product-item__saled">Sold 3,8k</div>
+                                </div>
+                                <div class="home-product-item__origin">Saint Peterburg</div>
+                                <div class="home-product-item__favourite">
+                                    Yêu thích
+                                </div>
+                                <div class="home-product-item__sale-off">
+                                    <div class="home-product-item__sale-off-value">40%</div>
+                                    <div class="home-product-item__sale-off-label">GIẢM</div>
+                                </div>
+                            </div>
+                            <div class="home-product-item-footer">Tìm sản phẩm tương tự</div>
+                        </a>
+                    </div>
+                    <div class="col l-2 home-product-item">
+                        <a class="home-product-item-link" href="#">
+                            <div class="home-product-item__img" style="background-image: url(./assets/img/home/1.PNG);"></div>
+                            <div class="home-product-item__info">
+                                <h4 class="home-product-item__name">Ổ đĩa flash USB2.0 2TB Hp kim loại chống thấm nước</h4>
+                                <div class="home-product-item__price">
+                                    <p class="home-product-item__price-old">180USD</p>
+                                    <p class="home-product-item__price-new">200USD</p>
+                                    <i class="home-product-item__ship fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="home-product-item__footer">
+                                    <div class="home-product-item__save">
+                                        <input type="checkbox" name="save-check" id="heart-save">
+                                        <label for="heart-save" class="far fa-heart"></label>
+                                    </div>
+                                    <div class="home-product-item__rating-star">
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                    </div>
+                                    <div class="home-product-item__saled">Sold 3,8k</div>
+                                </div>
+                                <div class="home-product-item__origin">Saint Peterburg</div>
+                                <div class="home-product-item__favourite">
+                                    Yêu thích
+                                </div>
+                                <div class="home-product-item__sale-off">
+                                    <div class="home-product-item__sale-off-value">40%</div>
+                                    <div class="home-product-item__sale-off-label">GIẢM</div>
+                                </div>
+                            </div>
+                            <div class="home-product-item-footer">Tìm sản phẩm tương tự</div>
+                        </a>
+                    </div>
+                    <div class="col l-2 home-product-item">
+                        <a class="home-product-item-link" href="#">
+                            <div class="home-product-item__img" style="background-image: url(./assets/img/home/1.PNG);"></div>
+                            <div class="home-product-item__info">
+                                <h4 class="home-product-item__name">Ổ đĩa flash USB2.0 2TB Hp kim loại chống thấm nước</h4>
+                                <div class="home-product-item__price">
+                                    <p class="home-product-item__price-old">180USD</p>
+                                    <p class="home-product-item__price-new">200USD</p>
+                                    <i class="home-product-item__ship fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="home-product-item__footer">
+                                    <div class="home-product-item__save">
+                                        <input type="checkbox" name="save-check" id="heart-save">
+                                        <label for="heart-save" class="far fa-heart"></label>
+                                    </div>
+                                    <div class="home-product-item__rating-star">
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                    </div>
+                                    <div class="home-product-item__saled">Sold 3,8k</div>
+                                </div>
+                                <div class="home-product-item__origin">Saint Peterburg</div>
+                                <div class="home-product-item__favourite">
+                                    Yêu thích
+                                </div>
+                                <div class="home-product-item__sale-off">
+                                    <div class="home-product-item__sale-off-value">40%</div>
+                                    <div class="home-product-item__sale-off-label">GIẢM</div>
+                                </div>
+                            </div>
+                            <div class="home-product-item-footer">Tìm sản phẩm tương tự</div>
+                        </a>
+                    </div>
+                    <div class="col l-2 home-product-item">
+                        <a class="home-product-item-link" href="#">
+                            <div class="home-product-item__img" style="background-image: url(./assets/img/home/1.PNG);"></div>
+                            <div class="home-product-item__info">
+                                <h4 class="home-product-item__name">Ổ đĩa flash USB2.0 2TB Hp kim loại chống thấm nước</h4>
+                                <div class="home-product-item__price">
+                                    <p class="home-product-item__price-old">180USD</p>
+                                    <p class="home-product-item__price-new">200USD</p>
+                                    <i class="home-product-item__ship fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="home-product-item__footer">
+                                    <div class="home-product-item__save">
+                                        <input type="checkbox" name="save-check" id="heart-save">
+                                        <label for="heart-save" class="far fa-heart"></label>
+                                    </div>
+                                    <div class="home-product-item__rating-star">
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                    </div>
+                                    <div class="home-product-item__saled">Sold 3,8k</div>
+                                </div>
+                                <div class="home-product-item__origin">Saint Peterburg</div>
+                                <div class="home-product-item__favourite">
+                                    Yêu thích
+                                </div>
+                                <div class="home-product-item__sale-off">
+                                    <div class="home-product-item__sale-off-value">40%</div>
+                                    <div class="home-product-item__sale-off-label">GIẢM</div>
+                                </div>
+                            </div>
+                            <div class="home-product-item-footer">Tìm sản phẩm tương tự</div>
+                        </a>
+                    </div>
+                    <div class="col l-2 home-product-item">
+                        <a class="home-product-item-link" href="#">
+                            <div class="home-product-item__img" style="background-image: url(./assets/img/home/1.PNG);"></div>
+                            <div class="home-product-item__info">
+                                <h4 class="home-product-item__name">Ổ đĩa flash USB2.0 2TB Hp kim loại chống thấm nước</h4>
+                                <div class="home-product-item__price">
+                                    <p class="home-product-item__price-old">180USD</p>
+                                    <p class="home-product-item__price-new">200USD</p>
+                                    <i class="home-product-item__ship fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="home-product-item__footer">
+                                    <div class="home-product-item__save">
+                                        <input type="checkbox" name="save-check" id="heart-save">
+                                        <label for="heart-save" class="far fa-heart"></label>
+                                    </div>
+                                    <div class="home-product-item__rating-star">
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                    </div>
+                                    <div class="home-product-item__saled">Sold 3,8k</div>
+                                </div>
+                                <div class="home-product-item__origin">Saint Peterburg</div>
+                                <div class="home-product-item__favourite">
+                                    Yêu thích
+                                </div>
+                                <div class="home-product-item__sale-off">
+                                    <div class="home-product-item__sale-off-value">40%</div>
+                                    <div class="home-product-item__sale-off-label">GIẢM</div>
+                                </div>
+                            </div>
+                            <div class="home-product-item-footer">Tìm sản phẩm tương tự</div>
+                        </a>
+                    </div>
+                    <div class="col l-2 home-product-item">
+                        <a class="home-product-item-link" href="#">
+                            <div class="home-product-item__img" style="background-image: url(./assets/img/home/1.PNG);"></div>
+                            <div class="home-product-item__info">
+                                <h4 class="home-product-item__name">Ổ đĩa flash USB2.0 2TB Hp kim loại chống thấm nước</h4>
+                                <div class="home-product-item__price">
+                                    <p class="home-product-item__price-old">180USD</p>
+                                    <p class="home-product-item__price-new">200USD</p>
+                                    <i class="home-product-item__ship fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="home-product-item__footer">
+                                    <div class="home-product-item__save">
+                                        <input type="checkbox" name="save-check" id="heart-save">
+                                        <label for="heart-save" class="far fa-heart"></label>
+                                    </div>
+                                    <div class="home-product-item__rating-star">
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                        <i class="star-checked far fa-star"></i>
+                                    </div>
+                                    <div class="home-product-item__saled">Sold 3,8k</div>
+                                </div>
+                                <div class="home-product-item__origin">Saint Peterburg</div>
+                                <div class="home-product-item__favourite">
+                                    Yêu thích
+                                </div>
+                                <div class="home-product-item__sale-off">
+                                    <div class="home-product-item__sale-off-value">40%</div>
+                                    <div class="home-product-item__sale-off-label">GIẢM</div>
+                                </div>
+                            </div>
+                            <div class="home-product-item-footer">Tìm sản phẩm tương tự</div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- <div class="row sm-gutter product__background">
+                    <div class="col l-10">
+                        <div class="home__filter-error">
+                            <i class="home__filter-error-icon fa-regular fa-file-excel" style="margin-bottom: 10px"></i>
+                            <p>Hix. No products. Did you try to turn off the filter condition and find it again?</p>
+                            <span style="margin-top: 5px;">or</span>
+                            <button class="btn btn--brown home-filter-btn">
+                                <a href="">
+                                    Clear filter
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div> -->
+            
 			<div class="grid wide">
 				<div class="row sm-gutter">
 
@@ -732,6 +1457,8 @@
             </div>
         </div>
     </div>
+
+    
 
     <!-- script js -->
     <!-- <script src="<?= base_url()?>/assets/js/product.js"></script> -->

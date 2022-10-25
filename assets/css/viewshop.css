@@ -24,6 +24,7 @@
 
 .shop__name span {
     font-size: 1.2rem;
+    margin-top: 6px;
 }
 .img__shop {
     width: 25%;
@@ -65,3 +66,5 @@
     color: rgb(208, 1, 27);
     font-weight: 500;
 }
+
+
