@@ -11,9 +11,187 @@
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/base.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/grid.css">
-    <link rel="stylesheet" href="<?= base_url()?>/assets/css/product.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/viewshop.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* font-family: 'Raleway', sans-serif;*/
+            outline: none;
+            /* border: none; */
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            
+        }
+
+        .container2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+
+        /* Chat box section */
+        .chat-box {
+            width: 400px;
+            height: 450px;
+            background-color: #fff;
+            overflow: hidden;
+            border-radius: 10px;
+            position: fixed;
+            right: 5em;
+            bottom: 90px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            z-index: 10;
+        }
+
+        /* about client */
+        .client {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            height: 60px;
+            background-color: var(--header-color);
+            padding: 15px;
+
+        }
+
+        .client img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .client-info {
+            color: #fff;
+            padding: 15px;
+            
+        }
+
+        .client-info h2 {
+            font-size: 2em;
+        }
+        .client-info p {
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        /* main  (chat sextion)*/
+
+        .chats {
+            width: 100%;
+            padding: 0 15px;
+            color: #fff;
+            position: relative;
+            font-size: 1.4em;
+        }
+
+        .client-chat {
+            width: 60%;
+            word-wrap: break-word;
+            background-color: #4f5d73c7;
+            padding: 7px 10px;
+            border-radius: 10px 10px 10px 0;
+            margin: 10px 0;
+        }
+
+        .my-chat {
+            width: 60%;
+            word-wrap: break-word;
+            background-color: #77b3d4c7;
+            padding: 7px 10px;
+            border-radius: 10px 10px 0 10px;
+            margin: 5px 0 5px auto;
+        }
+
+        /* input section */
+
+        .chat-input {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 65px;
+            background-color: #fff;
+            padding: 15px;
+            overflow: hidden;
+            position: absolute;
+            bottom: 0;
+            
+        }
+
+        .chat-input input {
+            width: calc(100% - 40px);
+            height: 100%;
+            background-color: #4f5d7321;
+            border-radius: 50px;
+            color: #000;
+            font-size: 1.4em;
+            padding: 0 15px;
+            border: none;
+        }
+
+        .send-btn {
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+            overflow: hidden;
+            position: relative;
+            margin-left: 5px;
+            cursor: pointer;
+            transition: 0.4s ease-in-out;
+            border: none;
+        }
+
+        .send-btn:active {
+            transform: scale(0.85);
+
+        }
+
+        .send-btn img {
+            width: 100%;
+            height: 80%;
+            filter: hue-rotate(130deg);
+            
+        }
+
+        /* chat box button section */
+        .chat-btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #fff;
+            cursor: pointer;
+            overflow: hidden;
+            position: fixed;
+            bottom: 10px;
+            right: 6em;
+        }
+
+        .chat-btn img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 5px;
+            transition: 0.4s ease-in-out;
+        }
+
+        .chat-btn:hover img{
+            transform: rotate(30deg);
+        }
+    </style>
 </head>
 
 <body>
@@ -398,12 +576,12 @@
 								<span>Active 3 Hours Ago</span>
 							</div>
 						</div>
-						<div class="shop__description">
-							<button class="magazin__info-btn" style="width: 180px">
+						<div class="shop__description" style="margin-bottom:10px">
+							<button class="magazin__info-btn" style="width: 180px;  height: 25px; font-size: 1.2em">
 								<i class="magazin__info-btn-icon fa-solid fa-plus"></i>
 								<span class="magazin__info-btn-label">Follow</span>
 							</button>
-							<button class="magazin__info-btn" style="width: 180px; margin-bottom:10px">
+							<button class="magazin__info-btn" style="width: 180px; height: 25px; font-size: 1.2em">
 								<i class="magazin__info-btn-icon fa-solid fa-comments"></i>
 								<span class="magazin__info-btn-label">Chat now</span>
 							</button>
@@ -1175,11 +1353,44 @@
                     </div>
                 </div> -->
             
-			<div class="grid wide">
-				<div class="row sm-gutter">
-
-				</div>
-			</div>
+			
+        </div>
+        
+        <!-- container2 -->
+        <div class="container2">
+            <!-- Chat box -->
+            <div class="chat-box">
+                <!-- Client -->
+                <div class="client">
+                    <img src="https://image.thanhnien.vn/w1024/Uploaded/2022/wsxrxqeiod/2021_11_11/trieu-lo-tu-217.jpg" alt="logo">
+                    <div class="client-info">
+                        <h2>Trieu Lo Tu</h2>
+                        <p>online</p>
+                    </div>
+                </div>
+                <!-- main -->
+                <div class="chats">
+                    <div class="client-chat">Hi!</div>
+                    <div class="my-chat">Hi!</div>
+                    <div class="client-chat">How are you?</div>
+                    <div class="my-chat">Fine, thanks</div>
+                    <div class="client-chat">And you?</div>
+                    <div class="my-chat">Good</div>
+                </div>
+    
+                <!-- input field section -->
+                <div class="chat-input">
+                    <input type="text" placeholder="Enter message">
+                    <button class="send-btn">
+                        <!-- <i class="send-btn-icon fa-solid fa-paper-plane-top"></i> -->
+                        <img src="https://cdn-icons-png.flaticon.com/512/6532/6532019.png" alt="send-btn">
+                    </button>
+                </div>
+            </div>
+            <!-- button -->
+            <div class="chat-btn">
+                <img src="https://cdn-icons-png.flaticon.com/512/134/134914.png" alt="chat box icon btn">
+            </div>
         </div>
         <!-- footer -->
         <footer class="footer">
@@ -1462,11 +1673,18 @@
 
     <!-- script js -->
     <!-- <script src="<?= base_url()?>/assets/js/product.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script>
         let bigImg = document.querySelector('.big__img img')
         function showImg(pic) {
             bigImg.src = pic;
         }
+
+        $(document).ready(()=>{
+            $(".chat-btn").click(()=>{
+                $(".chat-box").slideToggle("slow");
+            })
+        })
     </script>
 
 </body>
