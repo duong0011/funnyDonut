@@ -13,6 +13,7 @@
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/style.css">
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/grid.css">
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/responsive.css">
+    <link rel="stylesheet" href=" <?= base_url()?>/assets/css/reviewIMG.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -462,7 +463,8 @@
                                         <input type="number" placeholder="To" class="category-group-filter-input" id ="maxprice" >
 
                                     </div>
-                                    <div id = "loadError"></div>
+                                    <br>
+                                    <div id = "loadError" class="error_input"></div>
                                 </div>
                                 <button class="btn btn--brown category-group-filter-btn" id = 'reloadData'>APPLY</button>
                             <!-- </form> -->
@@ -994,7 +996,7 @@
             let minprice = $('#minprice').val();
             let maxprice = $('#maxprice').val();
             if(minprice  && maxprice  && (minprice > maxprice) || minprice< 0 || maxprice < 0) {
-                error = "please enter a valid value";
+                error = "Please enter a valid value";
                 $('#loadError').text(error);
             } else {
                 error = " ";
