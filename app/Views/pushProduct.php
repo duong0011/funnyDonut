@@ -751,6 +751,11 @@
             $(document).on('submit', '#form-input-product', function() {
                 return false;
             });
+            let fileInput = document.getElementById('input-file');
+            if(fileInput.files.length < 5) {
+                document.getElementById('num-of-files').textContent('Please select at least 5 photos');
+                return false;
+            }
             var status = [];
             status.push(statusOfField($('.product-name-input'), $('#field_name'), 4, '*Name of product is requied and at least 4 character', 0));
             status.push(statusOfField($('.product-price-input'), $('#field_price'), 4, '*Price of product is requied and and it must be a number greater than 0', 1));
