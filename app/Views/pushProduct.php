@@ -405,7 +405,7 @@
             <div class="grid wide" >
                 <h1>NEW PRODUCT</h1>
                 <div class="form-product">
-                    <form class="form-up-product" id = 'form-input-product' method = 'post'  enctype="multipart/form-data">
+                    <form class="form-up-product" id = 'form-input-product' method = 'post'  enctype="multipart/form-data" action="<?= base_url('pushProduct/addToDB') ?>">
                         <p class="product-name" >Name</p>
                         <span class="error_input" id = 'field_name'></span>
                         <input type="text" name = 'nameproduct' class="product-name-input form-input">
@@ -761,9 +761,8 @@
                 if(!i) return false;
             }
             $('#form-input-product').ajaxForm({
-                url : '<?= base_url('pushProduct/addToDB') ?>',
                 success: function(data) {
-                    console.log(data.result);
+                    window.alert(data.result);
                 }
             });
         });
@@ -774,7 +773,7 @@
 <script>
     // valid gia tri
     function isNumeric(value) {
-        return /^-?\d+$/.test(value);
+        return /([0-9]+[\.|,][0-9]*)|([0-9]*[\.|,][0-9]+)|([0-9]+)/g.test(value);
     }
 </script>
 </body>

@@ -1068,9 +1068,9 @@
                                             <i class='star-checked far fa-star'></i>\
                                             <i class='star-checked far fa-star'></i>\
                                     </div>\
-                                         <div class='home-product-item__saled'>"+value.sold+"</div>\
+                                         <div class='home-product-item__saled'>"+value.rating+"</div>\
                                     </div>\
-                                    <div class='home-product-item__origin'>"+value.address+"</div>\
+                                    <div class='home-product-item__origin'>Sold("+value.sold+")</div>\
                                 </div>\
                             </div>");
                         });

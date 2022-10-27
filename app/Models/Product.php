@@ -9,7 +9,7 @@ class Product extends Model
 
     protected $returnType = 'array';
   
-    protected $allowedFields = ['nameproduct','price','like','rating','amount', 'info','owner','image','discount', 'type', 'address'];
+    protected $allowedFields = ['nameproduct','price','like','rating','amount', 'info','owner','image','discount', 'type', 'address', 'ingredient', 'weight', 'sold'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
