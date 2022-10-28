@@ -430,6 +430,11 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #555;
         }
+
+        .magazin__info-btn:hover {
+            cursor: pointer;
+        }
+
         
     </style>
 </head>
@@ -821,7 +826,7 @@
 								<i class="magazin__info-btn-icon fa-solid fa-plus"></i>
 								<span class="magazin__info-btn-label">Follow</span>
 							</button>
-							<button class="magazin__info-btn" style="width: 180px; height: 25px; font-size: 1.2em">
+							<button class="magazin__info-btn magazin__info-btn--chat" style="width: 180px; height: 25px; font-size: 1.2em">
 								<i class="magazin__info-btn-icon fa-solid fa-comments"></i>
 								<span class="magazin__info-btn-label">Chat now</span>
 							</button>
@@ -1598,7 +1603,7 @@
         
         <!-- container2 -->
         <div class="container2">
-            <div class="chat-box1">
+            <div class="chat-box1" style="display:none;">
                 <div class="card">
                     <div class="card-header msg_head" style="background-color: rgba(134, 50, 50, 1);">
                         <div class="d-flex bd-highlight">
@@ -1723,7 +1728,7 @@
                     </div>
 				</div>
             </div>
-            <div class="chat-box2">
+            <div class="chat-box2" style="display:none;">
                 <div class="card">
                 <div class="card-header">
 						<div class="input-group">
@@ -1791,7 +1796,7 @@
 										<span class="online_icon offline"></span>
 									</div>
 									<div class="user_info-searched">
-										<span>Dịch Dương Thiên Tỉ</span>
+										<span>Dịch ương Thiên Tỉ</span>
 										<p>Left 50 mins ago</p>
 									</div>
 								</div>
@@ -1826,7 +1831,7 @@
             </div>
             <!-- button -->
             <div class="chat-btn">
-                <img src="https://cdn-icons-png.flaticon.com/512/134/134914.png" alt="chat box icon btn">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwZck1Nal8rEIrnsqEVJkrA7jnnWEAeBXDZYJc9KFdUFPMxeRFP2ep3Osngu4-HXA4MwU&usqp=CAU" alt="chat box icon btn">
             </div>
         </div>
         <!-- footer -->
@@ -2124,11 +2129,20 @@
             })
         })
 
+        $(document).ready(()=>{
+            $(".magazin__info-btn--chat").click(()=>{
+                $(".chat-box1").slideToggle("slow");
+                $(".chat-box2").slideToggle("slow");
+            })
+        })
+
         $(document).ready(function(){
 	        $('#action_menu_btn').click(function(){
 		        $('.action_menu').toggle();
 	        });
         });
+
+        
     </script>
 
 </body>
