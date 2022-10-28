@@ -2127,6 +2127,7 @@
                 $(".chat-box1").slideToggle("slow");
                 $(".chat-box2").slideToggle("slow");
             })
+
         })
 
         $(document).ready(()=>{
