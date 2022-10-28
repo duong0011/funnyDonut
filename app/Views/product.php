@@ -439,7 +439,30 @@
             cursor: pointer;
         }
 
+        .push__comment {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .push__comment input {
+            width: 90%;
+            height: 50px;
+            margin: 10px 5px 10px;
+            font-size: 1.4rem;
+        }
+
+        .push__comment-icon {
+            font-size: 2.4rem;
+        }
+
+        .push__comment-icon-append {
+            color: #999;
+        }
         
+        .push__comment-icon-send {
+            color: var(--header-color);
+        }
     </style>
     </style>
 </head>
@@ -1171,6 +1194,18 @@
 
                 </div>
                 <!-- bình luận -->
+
+                <div class="row sm-gutter product__background" >
+                    <div class="col l-12">
+                        <div class="push__comment">
+                            <i class="push__comment-icon push__comment-icon-append fas fa-paperclip"></i>
+                            <input type="text" placeholder="Enter comment ...">
+                            </input>
+                            <i class="push__comment-icon push__comment-icon-send fas fa-location-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row sm-gutter product__background"
                     style="border-bottom: 1px solid rgba(153, 153, 153, 0.3); padding-top: 10px;">
                     <div class="col l-1">
