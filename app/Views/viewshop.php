@@ -313,12 +313,28 @@
             font-size: 1.4rem;
         }
 
+        .msg_cotainer img {
+            width: 200px;
+            height: auto;
+        }
+
         .msg_cotainer_send {
             margin-top: auto;
             margin-bottom: auto;
             margin-right: 10px;
             border-radius: 25px;
             background-color: #78e08f;
+            padding: 10px;
+            position: relative;
+            font-size: 1.4rem;
+        }
+
+        .msg_cotainer_send img {
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 200px;
+            height: auto;
+            border-radius: 0;
             padding: 10px;
             position: relative;
             font-size: 1.4rem;
@@ -789,7 +805,7 @@
             </ul> -->
         </header>
         <!-- container -->
-        <div class="container">
+        <div class="container-fluid" style="background-color: rgb(245,245,245); padding-top: 24px;">
             <div class="grid wide">
                 <div class="row sm-gutter product__background magazin__box" style="margin-bottom: 25px;">
                     <div class="col l-4" style="padding:0; background-color: rgba(139, 52, 52, 0.2); border-radius: 2px;">
@@ -863,7 +879,7 @@
                                     </a>
                                 </button>
 
-                                <div class="btn home-filter-sort" style="min-width: 120px;">
+                                <div class="btn home-filter-sort" style="min-width: 120px; padding-bottom: 0; background-color: rgba(130,50,50,0.1);">
                                     <p class="home-filter-sort-btn">Menu</p>                                  
                                     <ul class="home-filter-sort-list">
                                         <li>
@@ -883,10 +899,10 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <button class="btn home-filter-btn">Popular</button>
-                                <button class="btn home-filter-btn">Latest</button>
-                                <button class="btn home-filter-btn">bestseller</button>
-                                <div class="btn home-filter-sort" style="min-width: 180px;">
+                                <button class="btn home-filter-btn" style="background-color: rgba(130,50,50,0.1);">Popular</button>
+                                <button class="btn home-filter-btn" style="background-color: rgba(130,50,50,0.1);">Latest</button>
+                                <button class="btn home-filter-btn" style="background-color: rgba(130,50,50,0.1);">bestseller</button>
+                                <div class="btn home-filter-sort" style="min-width: 180px; padding-bottom: 0; background-color: rgba(130,50,50,0.1);">
                                     <p class="home-filter-sort-btn">Price</p>
                                     <i class="fas fa-sort-amount-down-alt"></i>
                                     <ul class="home-filter-sort-list">
@@ -1626,6 +1642,17 @@
                                 <img src="https://image.thanhnien.vn/w1024/Uploaded/2022/zxaijr/2022_03_30/trieuledinhphunhantronthue1-4371.jpeg" class="rounded-circle user_img_msg">
                             </div>
                         </div>
+
+                        <div class="d-flex justify-content-end mb-4">
+                            <div class="msg_cotainer_send">
+                                <img src="https://image.thanhnien.vn/w1024/Uploaded/2022/zxaijr/2022_03_30/trieuledinhphunhantronthue1-4371.jpeg" alt="">
+                                <span class="msg_time_send">8:55 AM, Today</span>
+                            </div>
+                            <div class="img_cont_msg">
+                                <img src="https://image.thanhnien.vn/w1024/Uploaded/2022/zxaijr/2022_03_30/trieuledinhphunhantronthue1-4371.jpeg" class="rounded-circle user_img_msg">
+                            </div>
+                        </div>
+
                         <div class="d-flex justify-content-start mb-4">
                             <div class="img_cont_msg">
                                 <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img_msg">
@@ -1653,6 +1680,17 @@
                                 <span class="msg_time">9:07 AM, Today</span>
                             </div>
                         </div>
+
+                        <div class="d-flex justify-content-start mb-4">
+                            <div class="img_cont_msg">
+                                <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img_msg">
+                            </div>
+                            <div class="msg_cotainer">
+                                <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg">
+                                <span class="msg_time">9:07 AM, Today</span>
+                            </div>
+                        </div>
+
                         <div class="d-flex justify-content-end mb-4">
                             <div class="msg_cotainer_send">
                                 Ok, thank you have a good day
