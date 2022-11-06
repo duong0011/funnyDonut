@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/base.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/grid.css">
-    <link rel="stylesheet" href="<?= base_url()?>/assets/css/product.css">
+    <link rel="stylesheet" href="<?= base_url()?>./assets/css/product.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -39,430 +39,7 @@
 
         
 
-        .container2 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        /* Chat box section */
-        .chat-box1 {
-            width: 400px;
-            height: 500px;
-            background-color: #fff;
-            overflow: hidden;
-            border-radius: 15px;
-            position: fixed;
-            right: calc(5em + 300px + 10px);
-            bottom: 90px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            z-index: 10;
-            
-        }
-
-        .chat-box2 {
-            width: 300px;
-            height: 500px;
-            background-color: #fff;
-            overflow: hidden;
-            border-radius: 15px;
-            position: fixed;
-            right: 5em;
-            bottom: 90px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            z-index: 10;
-            color: black;
-        }
-
-        /* chat box button section */
-        .chat-btn {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background-color: #fff;
-            cursor: pointer;
-            overflow: hidden;
-            position: fixed;
-            bottom: 10px;
-            right: 6em;
-        }
-
-        .chat-btn img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 5px;
-            transition: 0.4s ease-in-out;
-        }
-
-        .chat-btn:hover img{
-            transform: rotate(30deg);
-        }
-
-
-
-        .chat {
-            margin-top: auto;
-            margin-bottom: auto;
-        }
-
-        .card {
-            height: 500px;
-            border-radius: 15px !important;
-            /* background-color: var(--header-color); */
-        }
-
-        .contacts_body {
-            padding: 0.75rem 0 !important;
-            overflow-y: auto;
-            white-space: nowrap;
-        }
-
-        .msg_card_body {
-            overflow-y: auto;
-        }
-
-        .card-header {
-            border-radius: 15px 15px 0 0 !important;
-            border-bottom: 0 !important;
-            background-color: var(--header-color);
-        }
-
-        .card-footer {
-            border-radius: 0 0 15px 15px !important;
-            border-top: 0 !important;
-        }
-
-        .container {
-            align-content: center;
-        }
-
-        .search {
-            border-radius: 15px 0 0 15px !important;
-            background-color: rgba(0, 0, 0, 0.3) !important;
-            border: 0 !important;
-            color: white !important;
-            font-size: 1.4rem;
-        }
-
-        .search::placeholder {
-            color: white !important;
-        }
-
-        .search:focus {
-            box-shadow: none !important;
-            outline: 0px !important;
-        }
-
-        .type_msg {
-            background-color: rgba(0, 0, 0, 0.3) !important;
-            border: 0 !important;
-            color: white !important;
-            height: 60px !important;
-            overflow-y: auto;
-            font-size: 1.4rem;
-        }
-
-       
-
-        .type_msg:focus {
-            box-shadow: none !important;
-            outline: 0px !important;
-        }
-
-        .attach_btn {
-            border-radius: 15px 0 0 15px !important;
-            background-color: rgba(0, 0, 0, 0.3) !important;
-            border: 0 !important;
-            color: white !important;
-            cursor: pointer;
-            font-size: 1.8rem;
-        }
-
-        .send_btn {
-            border-radius: 0 15px 15px 0 !important;
-            background-color: rgba(0, 0, 0, 0.3) !important;
-            border: 0 !important;
-            color: white !important;
-            cursor: pointer;
-            font-size:3rem;
-        }
-
-        .search_btn {
-            border-radius: 0 15px 15px 0 !important;
-            background-color: rgba(0, 0, 0, 0.3) !important;
-            border: 0 !important;
-            color: white !important;
-            cursor: pointer;
-            font-size: 1.4rem;
-        }
-
-        .contacts {
-            list-style: none;
-            padding: 0;
         
-        }
-
-        .contacts li {
-            width: 100% !important;
-            height: 66px;
-            /* padding: 0 0px 2px px; */
-            margin-bottom: 6px !important;
-            
-        }
-
-        .active {
-            background-color: rgba(0, 0, 0, 0.3);
-        }
-
-        .user_img {
-            height: 60px;
-            width: 60px;
-            /* border: 50% solid #f5f6fa; */
-            background-image: radial-gradient(circle, #456BD9, #456BD9 66%, transparent 66%);
-            
-        }
-
-        .user_img_msg {
-            height: 40px;
-            width: 40px;
-            border: 1.5px solid #f5f6fa;
-        }
-
-        .img_cont {
-            position: relative;
-            height: 70px;
-            width: 70px;
-            margin-left: 10px;
-        }
-
-        .img_cont_msg {
-            height: 40px;
-            width: 40px;
-        }
-
-        .online_icon {
-            position: absolute;
-            height: 15px;
-            width: 15px;
-            background-color: #4cd137;
-            border-radius: 50%;
-            bottom: 13px;
-            right: 13px;
-            border: 1.5px solid white;
-        }
-
-        .offline {
-            background-color: #c23616 !important;
-        }
-
-        .user_info {
-            margin-top: auto;
-            margin-bottom: auto;
-            margin-left: 15px;
-        }
-
-        .user_info span {
-            font-size: 1.8rem;
-            color: white;
-        }
-
-        .user_info p {
-            font-size: 12px;
-            color: white;
-            opacity: 0.6;
-        }
-
-        .user_info-searched {
-            margin-top: auto;
-            margin-bottom: auto;
-            margin-left: 15px;
-        }
-
-        .user_info-searched span {
-            font-size: 1.8rem;
-            color: black;
-        }
-
-        .user_info-searched p {
-            font-size: 12px;
-            color: black;
-            opacity: 0.6;
-        }
-
-        .video_cam {
-            margin-left: 50px;
-            margin-top: 5px;
-        }
-
-        .video_cam span {
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-            margin-right: 20px;
-        }
-
-        .msg_cotainer {
-            margin-top: auto;
-            margin-bottom: auto;
-            margin-left: 10px;
-            border-radius: 25px;
-            background-color: #82ccdd;
-            padding: 10px;
-            position: relative;
-            font-size: 1.4rem;
-        }
-
-        .msg_cotainer img {
-            width: 200px;
-            height: auto;
-        }
-
-        .msg_cotainer_send {
-            margin-top: auto;
-            margin-bottom: auto;
-            margin-right: 10px;
-            border-radius: 25px;
-            background-color: #78e08f;
-            padding: 10px;
-            position: relative;
-            font-size: 1.4rem;
-        }
-
-        .msg_cotainer_send img {
-            margin-top: auto;
-            margin-bottom: auto;
-            width: 200px;
-            height: auto;
-            border-radius: 0;
-            padding: 10px;
-            position: relative;
-            font-size: 1.4rem;
-        }
-
-        .msg_time {
-            position: absolute;
-            left: 0;
-            bottom: -15px;
-            color: black;
-            font-size: 10px;
-        }
-
-        .msg_time_send {
-            position: absolute;
-            right: 0;
-            bottom: -15px;
-            color: black;
-            font-size: 10px;
-        }
-
-        .msg_head {
-            position: relative;
-        }
-
-        #action_menu_btn {
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            color: white;
-            cursor: pointer;
-            font-size: 20px;
-        }
-
-        .action_menu {
-            z-index: 1;
-            position: absolute;
-            padding: 15px 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border-radius: 15px;
-            top: 30px;
-            right: 15px;
-            display: none;
-            font-size: 20px;
-        }
-
-        .action_menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .action_menu ul li {
-            width: 100%;
-            padding: 10px 15px;
-            margin-bottom: 5px;
-        }
-
-        .action_menu ul li i {
-            padding-right: 10px;
-        }
-
-        .action_menu ul li:hover {
-            cursor: pointer;
-            background-color: rgba(0, 0, 0, 0.2);
-        }
-
-
-        /* width */
-
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-
-        /* Track */
-
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-
-        /* Handle */
-
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-        }
-
-
-        /* Handle on hover */
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-
-        .magazin__info-btn:hover {
-            cursor: pointer;
-        }
-
-        .push__comment {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .push__comment input {
-            width: 90%;
-            height: 50px;
-            margin: 10px 5px 10px;
-            font-size: 1.4rem;
-        }
-
-        .push__comment-icon {
-            font-size: 2.4rem;
-        }
-
-        .push__comment-icon-append {
-            color: #999;
-        }
-        
-        .push__comment-icon-send {
-            color: var(--header-color);
-        }
     </style>
     </style>
 </head>
@@ -604,12 +181,34 @@
                             </a>
                         </li>
 
-                        <li class="header__nav-item header__nav-item--bold header__nav-item--separate">
-                            <a href="#" class="header__nav-item-link">Sign Up</a>
-                        </li>
-                        <li class="header__nav-item header__nav-item--bold">
-                            <a href="#" class="header__nav-item-link">Sign In</a>
-                        </li>
+                         <?php if(!session()->has('loged_user')){ ?>
+                            <li class="header__nav-item header__nav-item--bold header__nav-item--separate">
+                                <a href="<?= base_url().'/register' ?>" class="header__nav-item-link">Sign Up</a>
+                            </li>
+                            <li class="header__nav-item header__nav-item--bold">
+                                <a href="<?= base_url().'/login' ?>" class="header__nav-item-link">Sign In</a>
+                            </li>
+                        <?php }else{ ?>
+                            <li class="header__nav-item header__nav-user">
+                                <?php if(isset($user['avatar'])): ?>
+                                    <img src="data:image/jpeg;base64,<?=$user['avatar']?>" class="header__nav-user-avt">
+                                <?php else: ?>
+                                    <img src=" <?= base_url()?>/assets/img/user.png" class="header__nav-user-avt">
+                                <?php endif ?>
+                                <a href="#" class="header__nav-item-link header__nav-item--bold"><?=  $user['fullname'];?></a>
+                                <ul class="header__nav-user-menu">
+                                    <li class="header__nav-user-item">
+                                        <a href="<?= base_url('/profile') ?>">My profile</a>
+                                    </li>
+                                    <li class="header__nav-user-item">
+                                        <a href="#">Đơn mua</a>
+                                    </li>
+                                    <li class="header__nav-user-item">
+                                        <a href="<?= base_url().'/login/logout' ?>" >Logout</a>
+                                    </li>
+                                </ul>
+                            </li> 
+                        <?php }?>
 
                         <!-- <li class="header__nav-item header__nav-user">
                             <img src="<?= base_url()?>/assets/img/user.png" class="header__nav-user-avt">
@@ -637,40 +236,28 @@
 
                     <div class="header__logo">
 
-                        <a href="#" class="header__logo-link">
+                        <a href="<?= base_url()?>" class="header__logo-link">
                             <!-- <img src="<?= base_url()?>/assets/img/logo/logo-full-white.png" class="header__logo-img"> -->
                             <img src="<?= base_url()?>/assets/img/logo/logo.png" class="header__logo-img">
                         </a>
                     </div>
-                    <input type="checkbox" id="mobile-search" class="header__search-check" hidden>
+                    <input type="checkbox" id="mobile-search" class="header__search-check" hidden >
                     <div class="header__search">
                         <div class="header__search-input-wrap">
-                            <input type="text" class="header__search-input" placeholder="Enter to search for products:">
-                            <div class="header__search-history">
-                                <ul class="header__search-history-list">
-                                    <li class="header__search-history-item">
-                                        <a href="#">Combo 30 điểm đại học khối A</a>
-                                    </li>
-                                    <li class="header__search-history-item">
-                                        <a href="#">Combo 30 điểm đại học khối D</a>
-                                    </li>
-                                    <li class="header__search-history-item">
-                                        <a href="#">Mỹ phẩm cho người yêu</a>
-                                    </li>
-                                    <li class="header__search-history-item">
-                                        <a href="#">Bí kíp tán crush auto đổ</a>
-                                    </li>
-                                    <li class="header__search-history-item">
-                                        <a href="#">Iphone 13 Pro Max giá rẻ</a>
-                                    </li>
-                                    <li class="header__search-history-item">
-                                        <a href="#">Người yêu đẹp trai như LTP</a>
-                                    </li>
+                            <input type="text" class="header__search-input" placeholder="Enter to search for products:" id = 'searchproduct' autocomplete="new-password">
+                            <div class="header__search-history" >
+                                <ul class="header__search-history-list hintsforproduct">
                                 </ul>
                             </div>
                         </div>
-                        <button class="btn header__search-btn">
-                            <i class="header__search-btn-icon fas fa-search"></i>
+                        <button class="btn-Huan header__search-btn" onclick="loadSearch()">
+                            <i class='header__search-btn-icon fas fa-search'></i>;
+                               
+                            <script type="text/javascript">
+                                function loadSearch() {
+                                   location.href='<?=base_url('/home?keyword=')?>'+$('#searchproduct').val(); 
+                                }
+                            </script>
                         </button>
                     </div>
                     <!-- header__cart--no-cart -->
@@ -843,28 +430,17 @@
             <div class="grid wide">
                 <div class="row sm-gutter product__background"  style="margin-top: 10px;">
                     <div class="col l-1 imgs">
-                        <div class="small-img">
-                            <img src="<?= base_url()?>/assets/img/sp/sp1.jpg" alt="" onclick="showImg(this.src)">
-                        </div>
-                        <div class="small-img">
-                            <img src="<?= base_url()?>/assets/img/home/1.PNG" alt="" onclick="showImg(this.src)">
-                        </div>
-                        <div class="small-img">
-                            <img src="<?= base_url()?>/assets/img/home/2.PNG" alt="" onclick="showImg(this.src)">
-                        </div>
-                        <div class="small-img">
-                            <img src="<?= base_url()?>/assets/img/home/3.PNG" alt="" onclick="showImg(this.src)">
-                        </div>
-                        <div class="small-img">
-                            <img src="<?= base_url()?>/assets/img/home/4.PNG" alt="" onclick="showImg(this.src)">
-                        </div>
-
+                        <?php foreach ($img_product as $value): ?>
+                            <div class="small-img">
+                                <img src="data:image/jpeg;base64,<?=$value['image']?>" alt="" onclick="showImg(this.src)">
+                            </div>
+                        <?php endforeach ?>
 
                     </div>
                     <div class="col l-5">
                         <div class="big__img">
                             <!-- style="background-image: url(<?= base_url()?>/assets/img/sp/sp1.jpg);" -->
-                            <img src="<?= base_url()?>/assets/img/sp/sp1.jpg" alt="">
+                            <img src="data:image/jped;base64,<?=$img_product[0]['image']?>" alt="">
                         </div>
                         <div class="row sm-gutter">
                             <div class="col c-6">
@@ -944,7 +520,7 @@
                             </div>
                             <div class="col l-10">
                                 <div class="product-item__shipping-info">
-                                    <button class="product-item__shipping-info-btn product-item__shipping-info-active">
+                                    <button class="product-item__shipping-info-btn">
                                         <span class="product-item__shipping-info-btn-info">Moscow</span>
                                     </button>
                                     <button class="product-item__shipping-info-btn">
@@ -1011,20 +587,22 @@
                 </div>
                 <div class="row sm-gutter product__background magazin__box">
                     <div class="col l-1">
-                        <img src="<?= base_url()?>/assets/img/magazin/1.jpg" alt="" class="magazin-img">
+                        <img src="data:image/jped;base64,<?=$seller['avatar']?>" alt="" class="magazin-img">
                     </div>
                     <div class="col l-4">
                         <div class="magazin__info">
-                            <h3>theordinarystore.vn</h3>
+                            <h3><?= $seller['fullname']?></h3>
                             <span class="magazin__info-status">Active 3 Hours Ago</span>
                             <button class="magazin__info-btn magazin__info-btn-active magazin__info-btn--chat">
                                 <i class="magazin__info-btn-icon fa-solid fa-comments"></i>
                                 <span class="magazin__info-btn-label">Chat now</span>
                             </button>
-                            <button class="magazin__info-btn">
-                                <i class="magazin__info-btn-icon fa-solid fa-shop"></i>
-                                <span class="magazin__info-btn-label">View Shop</span>
-                            </button>
+                            <a href="<?= base_url('/viewshop')?>?sellerID=<?=$seller['unitid'] ?>">
+                                <button class="magazin__info-btn">
+                                    <i class="magazin__info-btn-icon fa-solid fa-shop"></i>
+                                    <span class="magazin__info-btn-label">View Shop</span>
+                                </button>
+                            </a>
 
                         </div>
                     </div>
@@ -1859,7 +1437,46 @@
 		        $('.action_menu').toggle();
 	        });
         });
+
     </script>
+    <script>
+    jQuery(document).ready(function($) {
+         $(document).on('keyup', '#searchproduct', function() {
+                let product = $('#searchproduct').val();
+                showHints(product);
+
+            });
+    });
+    function showHints(product) {
+        if(!product) {
+            $('.hintsforproduct').html("");
+            return false;
+        }
+        $.ajax({
+                url: '<?=base_url('/home/showHints')?>',
+                type: 'get',
+                data: {'productName' : product},
+                success: function (response) {
+                    if(response.hints !== null) {
+                       $('.hintsforproduct').html(""); 
+                       $.each(response.hints, function(index,val) {
+                             $('.hintsforproduct').append("\
+                            <li class='header__search-history-item'>\
+                                <a href='#'>"+val.nameproduct+"</a>\
+                            </li>");
+                       });
+                    }
+                    else {
+                        $('.hintsforproduct').html("");
+                        $('.hintsforproduct').append("\
+                            <li class='header__search-history-item'>\
+                               No results were found \
+                            </li>");
+                    }
+                }
+            });
+    }
+ </script>
 
 </body>
 

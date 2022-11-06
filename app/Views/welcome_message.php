@@ -1048,8 +1048,9 @@
                         console.log(response.currentRequest1);
                         window.history.pushState('page2', 'Title', response.currentRequest1);
                         $.each(response.products , function(index, value) {
+                        console.log(value.pid);
                         $('.loadProduct').append("<div class='col l-2-4 m-3 c-6 home-product-item'>\
-                            <a class='home-product-item-link' href='#'>\
+                            <a class='home-product-item-link' href='<?= base_url('showproduct')?>?id="+value.pid+"'>\
                             <div class='home-product-item__img' style='background-image:url(data:image/jpeg;base64,"+value.image+")'></div>\
                             <div class='home-product-item__info'>\
                                 <h4 class='home-product-item__name'>"+ value.nameproduct+"</h4>\
@@ -1147,6 +1148,7 @@
         });
 }
 </script>
+<!-- thanh tim kiem san pham -->
  <script>
     jQuery(document).ready(function($) {
          $(document).on('keyup', '#searchproduct', function() {

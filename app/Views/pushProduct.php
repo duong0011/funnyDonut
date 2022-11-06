@@ -416,9 +416,9 @@
 
                         <p class="product-type-text">Type</p>
                         <select name="type" id="" class="product-type-select" onchange="productOtherWrite()">
-                            <option value="bread">Bread</option>
-                            <option value="cake">Cake</option>
-                            <option value="candy">Candy</option>
+                            <option value="Bread">Bread</option>
+                            <option value="Cake">Cake</option>
+                            <option value="Candy">Candy</option>
                             <option value="other">Other</option>
                         </select>
                         <input type="text" placeholder="write down..." class="form-product-other">

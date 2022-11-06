@@ -82,7 +82,8 @@ class Login extends Controller
 						'email' => $gdata['email'],
 						'status' => 'social_user',
 						'unitid' => $unitid,
-						'avatar' => $hex
+						'avatar' => $hex,
+						'DataOfBirth' => '1900-01-01'
 					];
 					$this->db2->save($ndata);
 					session()->set('loged_user', $unitid);

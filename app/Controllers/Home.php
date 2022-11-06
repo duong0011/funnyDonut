@@ -54,8 +54,7 @@ class Home extends BaseController
         if($this->data['pageStart'] > $this->data['pageEnd'] && $this->data['pageEnd']) return "fail";
         return $_count ? $this->model->getDataByPage($result, $page) : null;
     }
-    public function showHints()
-    {
+    public function showHints(){
         $name = $this->request->getVar('productName');
         $result=$this->model->hints($name);
         $count = $result->countAllResults(false);

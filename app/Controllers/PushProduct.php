@@ -9,6 +9,7 @@ class PushProduct extends Controller
 {
 	private $db;
 	private $data;
+	private $userModel;
 	public function __construct()
 	{
 		helper(['form', 'link']);
@@ -31,7 +32,7 @@ class PushProduct extends Controller
 			$builder = $this->db;
 			$_POST['rating'] = random_int(1000,10000);
 			$_POST['sold'] = random_int(1000, 10000);
-			
+			$_POST['owner'] = session()->get('loged_user');
 			$builder->save($_POST);
 			$id = $builder->insertID;
 			$builder->set([
