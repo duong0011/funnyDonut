@@ -6,19 +6,9 @@ use App\Models\index_model;
 use App\Models\Product;
 class Viewshop extends Controller
 {
-	private $data;
-	private $userModel;
-	public function __construct()
-	{
-		$this->data = [];
-        $this->userModel = new userModel();
-	}
+	
 	public function index() {
-		return view('shoppingCart', $this->data);
+		return view('shoppingCart');
 	}
-	public function fetch() {
-		$sellerID = $this->request->getVar('sellerID');
-		$builder = new Product();
-		
-	}
+	
 }
