@@ -899,9 +899,13 @@
             $('#error_name').text("Name is requied");
             return false;
         }
+        let gender = document.querySelector('input[name="gender"]:checked').value
+        if(!gender) {
+            $('#error_name').text("Name is requied");
+        }
         let data = {
             'fullname' :$('#fullnameuser').val(),
-            'gender' : document.querySelector('input[name="gender"]:checked').value,
+            'gender' : gender,
             'DateOfBirth': getDay,
         }
         let img = new FormData();

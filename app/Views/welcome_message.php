@@ -1040,7 +1040,6 @@
                 type: ptype,
                 async: true,
                 success: function (response) {
-                   
                     $('.loadProduct').html("");
                     $('#page').html("");                       
                     if (response.products !== null) {

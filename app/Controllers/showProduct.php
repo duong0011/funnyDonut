@@ -24,10 +24,8 @@ class showproduct extends Controller
         $product_builder = new Product();
         $product_got = $product_builder->where('pid', $pid)->get()->getRowArray();
         $this->data['seller'] = $this->userModel->select('unitid,avatar,fullname')->getWhere(['unitid'=>$product_got['owner']])->getRowArray();
-        //print_r($this->data['seller']);
         $this->data['img_product'] = $IMGproduct->where('pid', $pid)->get()->getResultArray();
         $this->data['user'] = $model->getInfoUser(session()->get('loged_user'));
-        print_r($product_got);
-		//return view('product', $this->data);
+		return view('product', $this->data);
 	}
 }
