@@ -5,43 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
-    <link rel="icon" href="<?= base_url()?>/assets/img/logo/shopee-logo.png" type="image/x-icon">
+    <title>Funny Donut</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/Huan-base.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/base.css">
-    <link rel="stylesheet" href="<?= base_url()?>/assets/css/style.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/header-footer.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/grid.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/demo__shopping_cart.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/style__shopping_cart.css">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha384-qlmct0AOBiA2VPZkMY3+2WqkHtIQ9lSdAsAn5RUJD/3vA5MKDgSGcdmIv4ycVxyn"crossorigin="anonymous"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha384-qlmct0AOBiA2VPZkMY3+2WqkHtIQ9lSdAsAn5RUJD/3vA5MKDgSGcdmIv4ycVxyn"crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            /* font-family: 'Raleway', sans-serif;*/
-            /* outline: none; */
-            /* border: none; */
-        }
+    <!-- <link rel="stylesheet" href="<?= base_url()?>/assets/css/profile.css"> -->
+    <link rel="stylesheet" href="<?= base_url()?>/assets/font/fontawesome-free-6.2.0-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-        /* body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            
-        } */
-        
-    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+    </script>
 </head>
+
 
 <body>
     <!-- main -->
-    <div class="app">
+    <div class="app" style="background-color: rgba(236, 238, 240, 0.6);">
         <!-- header -->
         <header class="header">
             <div class="grid wide">
@@ -203,6 +188,7 @@
                                 </ul>
                             </li> 
                         <?php }?>
+
                         <!-- <li class="header__nav-item header__nav-user">
                             <img src="<?= base_url()?>/assets/img/user.png" class="header__nav-user-avt">
                             <a href="#" class="header__nav-item-link header__nav-item--bold">Lục Thiên Phong</a>
@@ -229,12 +215,12 @@
 
                     <div class="header__logo">
 
-                        <a href="<?= base_url().'/home/'?>" class="header__logo-link">
+                        <a href="<?= base_url()?>" class="header__logo-link">
                             <!-- <img src="<?= base_url()?>/assets/img/logo/logo-full-white.png" class="header__logo-img"> -->
                             <img src="<?= base_url()?>/assets/img/logo/logo.png" class="header__logo-img">
                         </a>
                     </div>
-                    <input type="checkbox" id="mobile-search" class="header__search-check" hidden>
+                    <input type="checkbox" id="mobile-search" class="header__search-check" hidden >
                     <div class="header__search">
                         <div class="header__search-input-wrap">
                             <input type="text" class="header__search-input" placeholder="Enter to search for products:" id = 'searchproduct' autocomplete="new-password">
@@ -244,7 +230,7 @@
                             </div>
                         </div>
                         <button class="btn-Huan header__search-btn" onclick="loadSearch()">
-                            <i class='header__search-btn-icon fas fa-search'></i>;
+                            <i class='header__search-btn-icon fas fa-search'></i>
                                
                             <script type="text/javascript">
                                 function loadSearch() {
@@ -396,22 +382,161 @@
                                     </div>
                                 </li>
                             </ul>
-                            <div class="header__cart-footer">
-                                <a href="#" class="btn btn--primary header__cart-see-cart">Xem giỏ hàng</a>
+                            <div class="header__cart-footer" style="background-color: var(--header-color);">
+                                <a href="#" class="btn btn--brown header__cart-see-cart">Xem giỏ hàng</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
         </header>
-        
+        <!-- container -->
+        <div class="grid wide" style="background-color: white;">
+            <!-- Start DEMO HTML (Use the following code into your project)-->
+            <header id="site-header">
+                <div class="container">
+                    <h1>Shopping cart </h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <section id="cart">
+                    <article class="product">
+                        <header>
+                            <a class="remove">
+                                <img src="assets/img/shopping_cart/mouse.jpg" alt="Gamming Mouse">
+                                <h3>Remove product</h3>
+                            </a>
+                        </header>
+
+                        <div class="content">
+
+                            <h1>Mouse</h1>
+
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, numquam quis perspiciatis ea
+                            ad omnis provident laborum dolore in atque.
+
+                            <!-- <div title="You have selected this product to be shipped in the color yellow." style="top: 0"
+                                class="color yellow"></div> -->
+                            <!-- <div style="top: 43px" class="type small">XXL</div> -->
+                        </div>
+
+                        <footer class="content">
+                            <span class="qt-minus">-</span>
+                            <span class="qt">2</span>
+                            <span class="qt-plus">+</span>
+
+                            <h2 class="full-price">
+                                29.98$
+                            </h2>
+
+                            <h2 class="price">
+                                14.99$
+                            </h2>
+                        </footer>
+                    </article>
+
+                    <article class="product">
+                        <header>
+                            <a class="remove">
+                                <img src="assets/img/shopping_cart/keyboard.jpg" alt="Keyboard">
+                                <h3>Remove product</h3>
+                            </a>
+                        </header>
+
+                        <div class="content">
+
+                            <h1>Keyboard</h1>
+
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, numquam quis perspiciatis ea
+                            ad omnis provident laborum dolore in atque.
+
+                            <!-- <div title="You have selected this product to be shipped in the color red." style="top: 0"
+                                class="color red"></div> -->
+                            <!-- <div title="You have selected this product to be shipped sized Small." style="top: 43px"
+                                class="type small">Small</div> -->
+                        </div>
+
+                        <footer class="content">
+
+                            <span class="qt-minus">-</span>
+                            <span class="qt">1</span>
+                            <span class="qt-plus">+</span>
+
+                            <h2 class="full-price">
+                                79.99$
+                            </h2>
+
+                            <h2 class="price">
+                                79.99$
+                            </h2>
+                        </footer>
+                    </article>
+
+                    <article class="product">
+                        <header>
+                            <a class="remove">
+                                <img src="assets/img/shopping_cart/handfree.jpg" alt="Handfree">
+
+                                <h3>Remove product</h3>
+                            </a>
+                        </header>
+
+                        <div class="content">
+
+                            <h1>Handfree</h1>
+
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, numquam quis perspiciatis ea
+                            ad omnis provident laborum dolore in atque.
+
+                            <!-- <div title="You have selected this product to be shipped in the color blue." style="top: 0"
+                                class="color blue"></div> -->
+                            <!-- <div style="top: 43px" class="type small">Large</div> -->
+                        </div>
+
+                        <footer class="content">
+
+                            <span class="qt-minus">-</span>
+                            <span class="qt">3</span>
+                            <span class="qt-plus">+</span>
+
+                            <h2 class="full-price">
+                                53.99$
+                            </h2>
+
+                            <h2 class="price">
+                                17.99$
+                            </h2>
+                        </footer>
+                    </article>
+
+                </section>
+
+            </div>
+
+            <footer id="site-footer">
+                <div class="container clearfix">
+                    <div class="left">
+                        <h2 class="subtotal">Subtotal: <span>163.96</span>$</h2>
+                        <h3 class="shipping">Shipping: <span>1.00</span>$</h3>
+                    </div>
+                    <div class="right">
+                        <h1 class="total">Total: <span>177.16</span>$</h1>
+                        <a class="btn btn--brown">Go to payment</a>
+                    </div>
+
+                </div>
+            </footer>
+		    <!-- END EDMO HTML (Happy Coding!)-->
+        </div>
         <!-- footer -->
         <footer class="footer">
             <!-- main footer -->
             <div class="main-footer">
                 <div class="grid wide">
-                    <div class="row sm-gutter main-footer-info" style="padding: 0; margin: 0;">
-                        <div class="col l-2 m-4 c-6">
+                    <div class="row sm-gutter main-footer-info">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">CUSTOMER SERVICE</h3>
                             <ul class="footer-list">
                                 <li>
@@ -435,7 +560,7 @@
 
                             </ul>
                         </div>
-                        <div class="col l-2 m-4 c-6">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">ABOUT SHOP</h3>
                             <ul class="footer-list">
                                 <li>
@@ -451,7 +576,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col l-2 m-4 c-12 pay-and-ship">
+                        <div class="col l-2-4 m-4 c-12 pay-and-ship">
                             <div>
                                 <h3 class="footer__heading">PAY MENT</h3>
                                 <div class="footer-sale-ship">
@@ -475,7 +600,7 @@
                                     </div>
                                 </div> -->
                         </div>
-                        <div class="col l-2 m-4 c-6">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">FOLLOW US</h3>
                             <ul class="footer-list">
                                 <li>
@@ -498,7 +623,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col l-2 m-4 c-6">
+                        <div class="col l-2-4 m-8 c-6">
                             <h3 class="footer__heading">DOWNLOAD APP</h3>
                             <div class="footer-download">
                                 <a href="#" class="footer-download-link">
@@ -530,7 +655,6 @@
                         </div>
                     </div>
                 </div>
-				
             </div>
             <!-- other footer -->
             <div class="other-footer">
@@ -681,88 +805,90 @@
             </div>
         </div>
     </div>
-
-    
-
-    <!-- script js -->
-    <!-- <script src="<?= base_url()?>/assets/js/product.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script>
-        let bigImg = document.querySelector('.big__img img')
-        function showImg(pic) {
-            bigImg.src = pic;
+        var check = false;
+        function changeVal(el) {
+        var qt = parseFloat(el.parent().children(".qt").html());
+        var price = parseFloat(el.parent().children(".price").html());
+        var eq = Math.round(price * qt * 100) / 100;
+        
+        el.parent().children(".full-price").html( eq + "$" );
+        
+        changeTotal();			
         }
 
-        $(document).ready(()=>{
-            $(".chat-btn").click(()=>{
-                $(".chat-box1").slideToggle("slow");
-                $(".chat-box2").slideToggle("slow");
-            })
-
-        })
-
-        $(document).ready(()=>{
-           
-            $(".magazin__info-btn--chat").click(()=>{
-                if(<?= session()->has('loged_user') ? 0 : 1 ?>) {
-                    window.location.href = '<?= base_url('/login')?>';
-                    return false;
-                }
-                $(".chat-box1").slideToggle("slow");
-                $(".chat-box2").slideToggle("slow");
-            })
-        })
+        function changeTotal() {
+        
+            var price = 0;
+            $(".full-price").each(function(index){
+                price += parseFloat($(".full-price").eq(index).html());
+            });
+            
+            price = Math.round(price * 100) / 100;
+            var shipping = parseFloat($(".shipping span").html());
+            var fullPrice = Math.round((price + shipping) *100) / 100;
+            
+            if(price == 0) {
+                fullPrice = 0;
+            }
+            
+            $(".subtotal span").html(price);
+            $(".total span").html(fullPrice);
+        }
 
         $(document).ready(function(){
-	        $('#action_menu_btn').click(function(){
-		        $('.action_menu').toggle();
-	        });
-        });
-
         
-    </script>
-    <!-- loa du lieu thanh tim kiem -->
-    <script>
-        jQuery(document).ready(function($) {
-             $(document).on('keyup', '#searchproduct', function() {
-                    let product = $('#searchproduct').val();
-                    showHints(product);
-
-                });
-        });
-        function showHints(product) {
-            if(!product) {
-                $('.hintsforproduct').html("");
-                return false;
-            }
-            $.ajax({
-                url: '<?=base_url('/home/showHints')?>',
-                type: 'get',
-                data: {'productName' : product},
-                success: function (response) {
-                    if(response.hints !== null) {
-                       $('.hintsforproduct').html(""); 
-                       $.each(response.hints, function(index,val) {
-                             $('.hintsforproduct').append("\
-                            <li class='header__search-history-item'>\
-                                <a href='#'>"+val.nameproduct+"</a>\
-                            </li>");
-                       });
-                    }
+        $(".remove").click(function(){
+            var el = $(this);
+            el.parent().parent().addClass("removed");
+            window.setTimeout(
+            function(){
+                el.parent().parent().slideUp('fast', function() { 
+                el.parent().parent().remove(); 
+                if($(".product").length == 0) {
+                    if(check) {
+                        // $("#cart").html("<h1>The shop does not function, yet!</h1><p>If you liked my shopping cart, please take a second and heart this Pen on <a href='https://codepen.io/ziga-miklic/pen/xhpob'>CodePen</a>. Thank you!</p>");
+                    } 
                     else {
-                        $('.hintsforproduct').html("");
-                        $('.hintsforproduct').append("\
-                            <li class='header__search-history-item'>\
-                               No results were found \
-                            </li>");
+                        $("#cart").html("<h1>No products!</h1>");
                     }
                 }
-            });
-        }
-    // load san pham
-    
+                changeTotal(); 
+                });
+            }, 200);
+        });
+        
+        $(".qt-plus").click(function(){
+            $(this).parent().children(".qt").html(parseInt($(this).parent().children(".qt").html()) + 1);
+            
+            $(this).parent().children(".full-price").addClass("added");
+            
+            var el = $(this);
+            window.setTimeout(function(){el.parent().children(".full-price").removeClass("added"); changeVal(el);}, 150);
+        });
+        
+        $(".qt-minus").click(function(){
+            
+            child = $(this).parent().children(".qt");
+            
+            if(parseInt(child.html()) > 1) {
+            child.html(parseInt(child.html()) - 1);
+            }
+            
+            $(this).parent().children(".full-price").addClass("minused");
+            
+            var el = $(this);
+            window.setTimeout(function(){el.parent().children(".full-price").removeClass("minused"); changeVal(el);}, 150);
+        });
+        
+        window.setTimeout(function(){$(".is-open").removeClass("is-open")}, 1200);
+        
+        $(".btn").click(function(){
+            check = true;
+            $(".remove").click();
+        });
+        });
     </script>
-
 </body>
 
 </html>

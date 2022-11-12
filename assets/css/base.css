@@ -121,7 +121,7 @@ html {
 
 .btn.btn--primary {
     color: var(--white-color);
-    background-color: var(--light-btn-primary-color);
+    background-color: var(--header-color);
 }
 
 .btn.btn--brown {
