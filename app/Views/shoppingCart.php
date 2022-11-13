@@ -519,10 +519,10 @@
                 <div class="container clearfix">
                     <div class="left">
                         <h2 class="subtotal">Subtotal: <span>163.96</span>$</h2>
-                        <h3 class="shipping">Shipping: <span>1.00</span>$</h3>
+                        <h3 class="shipping">Shipping: <span>0.00</span>$</h3>
                     </div>
                     <div class="right">
-                        <h1 class="total">Total: <span>177.16</span>$</h1>
+                        <h1 class="total">Total: <span>163.96</span>$</h1>
                         <a class="btn btn--brown">Go to payment</a>
                     </div>
 
