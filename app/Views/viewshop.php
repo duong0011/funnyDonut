@@ -413,7 +413,16 @@
 							<img src="data:image/jpeg;base64,<?= $seller['avatar'];?>" alt="" class="img__shop">
 							<div class="shop__name">
 								<h3><?= $seller['fullname'] ?></h3>
-								<span>Active 3 Hours Ago</span>
+								<?php if($seller['currentstatus'] == 'online'):?>
+                                    <span>Active now</span>
+                                <?php else: ?>
+                                    <span>Offline <?php 
+                                        date_default_timezone_set('Europe/Moscow');
+                                        $current = new DateTime();
+                                        $timelogout = new DateTime($seller['logout_time']);
+                                        echo $current->diff($timelogout)->format('%h hours %i minutes ago');
+                                    ?></span>
+                                <?php endif ?>
 							</div>
 						</div>
 						<div class="shop__description" style="margin-bottom:10px">

@@ -17,7 +17,7 @@ class Viewshop extends Controller
 	public function index() {
 		if(!isset($_GET['sellerID'])) return redirect()->to('Home');
 		$sellerID = $this->request->getVar('sellerID');
-		$this->data['seller'] = $this->userModel->select('avatar, fullname')->getWhere(['unitid' => $sellerID])->getRowArray();
+		$this->data['seller'] = $this->userModel->select('avatar, fullname, login_time, logout_time, currentstatus')->getWhere(['unitid' => $sellerID])->getRowArray();
 		$model = new index_model();
 		if(session()->has('loged_user')) {
         	$this->data['user'] = $model->getInfoUser(session()->get('loged_user'));

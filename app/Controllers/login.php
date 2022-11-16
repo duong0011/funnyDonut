@@ -46,9 +46,13 @@ class Login extends Controller
 					return view('login', $data);
 				}
 				if(password_verify($password, $gdata['password'])) {
+					date_default_timezone_set('Europe/Moscow');
+					$this->db2->set(['login_time' => date('Y-m-d h:i:s'), 'currentstatus' => 'online']);
+					$this->db2->where('username', $username)->update();
 					$this->session->set('loged_user', $gdata['unitid']);
 					return redirect()->to(base_url().'/home');
 				}
+
 				$this->session->set('success', 'Password incorect');
 			}
 		}
@@ -87,10 +91,16 @@ class Login extends Controller
 					];
 					$this->db2->save($ndata);
 					session()->set('loged_user', $unitid);
+					date_default_timezone_set('Europe/Moscow');
+					$this->db2->set(['login_time' => date('Y-m-d h:i:s')]);
+					$this->db2->where('unitid', $unitid)->update();
 					return redirect()->to(base_url().'/home');
 				}
 				$ndata = $this->db->verifyUsername($gdata['id']);
 				$this->session->set('loged_user', $ndata['unitid']);
+				date_default_timezone_set('Europe/Moscow');
+				$this->db2->set(['login_time' => date('Y-m-d h:i:s'), 'currentstatus' => 'online']);
+				$this->db2->where('unitid', $ndata['unitid'])->update();
 				return redirect()->to(base_url().'/home');
 			}
 		}
@@ -102,6 +112,10 @@ class Login extends Controller
 	}
 	public function logout()	
 	{
+		$unitid = session()->get('loged_user');
+		date_default_timezone_set('Europe/Moscow');
+		$this->db2->set(['logout_time' => date('Y-m-d h:i:s'), 'currentstatus' => 'offline']);
+		$this->db2->where('unitid', $unitid)->update();
 		session()->remove('loged_user');
 		session()->destroy();
 		return redirect()->to(base_url().'/login');
