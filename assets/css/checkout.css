@@ -1,0 +1,241 @@
+.address{
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--primary-color);
+    font-size: 1.8rem;
+    margin-top:30px;
+    padding: 10px 20px;
+    line-height: 40px;
+}
+
+.address > span,
+.address > i {
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.address > span {
+    font-weight: 500;
+}
+
+.address-name {
+    font-weight: 500;
+    margin-right: 25px;
+}
+
+.address-default {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 3px;
+    position: relative;
+    top: -3px;
+    margin-left: 25px;
+}
+
+.address-change{
+    color: var(--secondary-color);
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.address-change:hover{
+    opacity: 0.8;
+}
+
+.product-list{
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--primary-color);
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.product-detail{
+    font-size: 1.6rem;
+    text-align: center;
+    color: #ccc;
+}
+
+.product-detail span:first-child{
+    text-align: start;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.shop {
+    /* border: 1px solid var(--primary-color); */
+    font-size: 1.5rem;
+    padding-top: 20px;
+    font-weight: 400;
+}
+
+.shop-name {
+    color: var(--primary-color);
+}
+
+.product-shop-item{
+    font-size: 1.4rem;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.product-img img{
+    width: 150px;
+}
+
+hr {
+    /* border: 1px solid var(--primary-color); */
+}
+.note-delivery {
+    text-align: center;
+    /* border: 1px dotted var(--primary-color); */
+    font-size: 1.4rem;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.note {
+    text-align: left;
+    border: none;
+}
+
+.note input {
+    width: 70%;
+    padding: 5px;
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.note input:active,
+.note input:focus {
+    outline: none;
+}
+
+.btn-delivery-change {
+    color: var(--secondary-color);
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.btn-delivery-change:hover {
+    opacity: 0.9;
+}
+
+.total-money {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 20px;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.total-money-txt {
+    text-align: right;
+}
+
+.pay {
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--primary-color);
+    margin: 30px 0;
+    padding: 20px;
+    font-size: 1.4rem;
+}
+
+.pay-method span{
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.choose-method {
+    font-size: 1.6rem;
+    margin-top: 20px;
+}
+
+.method-cash p {
+    margin-left: 16px;
+}
+
+.pay-total {
+    text-align: right;
+}
+
+.pay-btn input{
+    background-color: var(--primary-color);
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    padding: 8px 25px;
+    float: right;
+}
+
+.pay-btn input:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.open{
+    display: flex;
+}
+
+.modal-addr-container{
+    min-width: 500px;
+    background-color: var(--white-color);
+    border-radius: 5px;
+    padding: 30px;
+}
+
+.modal-text{
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.addr-new-input{
+    outline: none;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.addr-new-btn{
+    float: right;
+    margin-left: 5px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: 1.4rem;
+    outline: none;
+    padding: 8px 30px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.addr-new-btn.add-new-btn-back{
+    background-color: rgb(238, 235, 235);
+    color: var(--black-color);
+}
+
+.addr-new-btn:hover{
+    opacity: 0.9;
+}
