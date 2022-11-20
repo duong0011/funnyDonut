@@ -10,6 +10,10 @@ class shoppingcart extends Controller
 	private $userModel;
 	
 	public function index() {
-		return view('shoppingCart');
+		$model = new index_model();
+		if(session()->has('loged_user')) {
+        	$this->data['user'] = $model->getInfoUser(session()->get('loged_user'));
+        }
+		return view('shoppingCart', $this->data);
 	}
 }
