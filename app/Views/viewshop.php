@@ -414,13 +414,17 @@
 							<div class="shop__name">
 								<h3><?= $seller['fullname'] ?></h3>
 								<?php if($seller['currentstatus'] == 'online'):?>
-                                    <span>Active now</span>
+                                    <span class="fa fa-circle" style="font-size:10px;color:#4cd137;"> Online</span>
                                 <?php else: ?>
                                     <span>Offline <?php 
                                         date_default_timezone_set('Europe/Moscow');
                                         $current = new DateTime();
                                         $timelogout = new DateTime($seller['logout_time']);
-                                        echo $current->diff($timelogout)->format('%h hours %i minutes ago');
+                                        $timelogoutcaculated = explode(',', $current->diff($timelogout, true)->format('%d,%h,%i'));
+                                        if($timelogoutcaculated[0]) echo $timelogoutcaculated[0],' days ago';
+                                        elseif($timelogoutcaculated[1]) echo $timelogoutcaculated[1],' hours ago';
+                                        elseif($timelogoutcaculated[2]) echo $timelogoutcaculated[2],' minutes ago';
+                                        else echo ' just now';
                                     ?></span>
                                 <?php endif ?>
 							</div>
@@ -565,129 +569,23 @@
         <!-- container2 -->
         <div class="container2">
             <div class="chat-box1" style="display:none;">
-                <div class="card">
-                    <div class="card-header msg_head" style="background-color: rgba(134, 50, 50, 1);">
-                        <div class="d-flex bd-highlight">
-                            <div class="img_cont">
-                                <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img">
-                                <span class="online_icon"></span>
-                            </div>
-                            <div class="user_info">
-                                <span>Triệu Lộ Tư</span>
-                                <p>Online</p>
-                            </div>
-                            <div class="video_cam" style="display:none;">
-                                <span><i class="fas fa-video"></i></span>
-                                <span><i class="fas fa-phone"></i></span>
-                            </div>
+                <div class="card" >
+                    <div class='card-header msg_head' style='background-color: rgba(134, 50, 50, 1);'></div>
+                    <div class='card-body msg_card_body' style='background-color: rgba(134, 50, 50, 0.1);'></div>
+                    <form action="#">
+                        <div class='card-footer'>
+                            <input type="" name="">
+                            <input type="text">
+                            <input name='' class='form-control type_msg' placeholder='Type your message...'>
+                            <button>
+                                <div class='input-group-append'>
+                                    <span class='input-group-text send_btn'><i class='fas fa-location-arrow'></i></span>
+                                </div>
+                            </button>
                         </div>
-                        <span id="action_menu_btn"><i class="fas fa-ellipsis-v"></i></span>
-                        <div class="action_menu">
-                            <ul>
-                                <li><i class="fa-solid fa-shop"></i>View Shop</li>
-                                <li><i class="fas fa-ban"></i> Block</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-body msg_card_body" style="background-color: rgba(134, 50, 50, 0.1);">
-                        <div class="d-flex justify-content-start mb-4">
-                            <div class="img_cont_msg">
-                                <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img_msg">
-                            </div>
-                            <div class="msg_cotainer">
-                                Hi, how are you samim?
-                                <span class="msg_time">8:40 AM, Today</span>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-end mb-4">
-                            <div class="msg_cotainer_send">
-                                Hi Khalid i am good tnx how about you?
-                                <span class="msg_time_send">8:55 AM, Today</span>
-                            </div>
-                            <div class="img_cont_msg">
-                                <img src="https://image.thanhnien.vn/w1024/Uploaded/2022/zxaijr/2022_03_30/trieuledinhphunhantronthue1-4371.jpeg" class="rounded-circle user_img_msg">
-                            </div>
-                        </div>
-
-                        <div class="d-flex justify-content-end mb-4">
-                            <div class="msg_cotainer_send">
-                                <img src="https://image.thanhnien.vn/w1024/Uploaded/2022/zxaijr/2022_03_30/trieuledinhphunhantronthue1-4371.jpeg" alt="">
-                                <span class="msg_time_send">8:55 AM, Today</span>
-                            </div>
-                            <div class="img_cont_msg">
-                                <img src="https://image.thanhnien.vn/w1024/Uploaded/2022/zxaijr/2022_03_30/trieuledinhphunhantronthue1-4371.jpeg" class="rounded-circle user_img_msg">
-                            </div>
-                        </div>
-
-                        <div class="d-flex justify-content-start mb-4">
-                            <div class="img_cont_msg">
-                                <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img_msg">
-                            </div>
-                            <div class="msg_cotainer">
-                                I am good too, thank you for your chat template
-                                <span class="msg_time">9:00 AM, Today</span>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-end mb-4">
-                            <div class="msg_cotainer_send">
-                                You are welcome
-                                <span class="msg_time_send">9:05 AM, Today</span>
-                            </div>
-                            <div class="img_cont_msg">
-                                <img src="https://image.thanhnien.vn/w1024/Uploaded/2022/zxaijr/2022_03_30/trieuledinhphunhantronthue1-4371.jpeg" class="rounded-circle user_img_msg">
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-start mb-4">
-                            <div class="img_cont_msg">
-                                <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img_msg">
-                            </div>
-                            <div class="msg_cotainer">
-                                I am looking for your next templates
-                                <span class="msg_time">9:07 AM, Today</span>
-                            </div>
-                        </div>
-
-                        <div class="d-flex justify-content-start mb-4">
-                            <div class="img_cont_msg">
-                                <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img_msg">
-                            </div>
-                            <div class="msg_cotainer">
-                                <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg">
-                                <span class="msg_time">9:07 AM, Today</span>
-                            </div>
-                        </div>
-
-                        <div class="d-flex justify-content-end mb-4">
-                            <div class="msg_cotainer_send">
-                                Ok, thank you have a good day
-                                <span class="msg_time_send">9:10 AM, Today</span>
-                            </div>
-                            <div class="img_cont_msg">
-                                <img src="https://image.thanhnien.vn/w1024/Uploaded/2022/zxaijr/2022_03_30/trieuledinhphunhantronthue1-4371.jpeg" class="rounded-circle user_img_msg">
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-start mb-4">
-                            <div class="img_cont_msg">
-                                <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img_msg">
-                            </div>
-                            <div class="msg_cotainer">
-                                Bye, see you
-                                <span class="msg_time">9:12 AM, Today</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class="input-group">
-                            <div class="input-group-append">
-                                <span class="input-group-text attach_btn"><i class="fas fa-paperclip"></i></span>
-                            </div>
-                            <textarea name="" class="form-control type_msg" placeholder="Type your message..."></textarea>
-                            <div class="input-group-append">
-                                <span class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></span>
-                            </div>
-                        </div>
-                    </div>
-				</div>
+                    </form>
+                </div>
+                </div>
             </div>
             <div class="chat-box2" style="display:none;">
                 <div class="card">
@@ -752,18 +650,7 @@
 									</div>
 								</div>
 							</li>
-							<li>
-								<div class="d-flex bd-highlight">
-									<div class="img_cont">
-										<img src="data:image/jpeg;base64,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" class="rounded-circle user_img">
-										<span class="online_icon offline"></span>
-									</div>
-									<div class="user_info-searched">
-										<span>Dương Dương</span>
-										<p>Left 50 mins ago</p>
-									</div>
-								</div>
-							</li>
+							
 						</ui>
 					</div>
                 </div>
@@ -1063,31 +950,45 @@
 
         $(document).ready(()=>{
             $(".chat-btn").click(()=>{
-                $(".chat-box1").slideToggle("slow");
+                if(<?= session()->has('loged_user') ? 0 : 1 ?>) {
+                    window.location.href = '<?= base_url('/login')?>';
+                    return false;
+                }
+                $(".chat-box1").slideUp("slow");
                 $(".chat-box2").slideToggle("slow");
             })
 
         })
 
         $(document).ready(()=>{
-           
             $(".magazin__info-btn--chat").click(()=>{
                 if(<?= session()->has('loged_user') ? 0 : 1 ?>) {
                     window.location.href = '<?= base_url('/login')?>';
                     return false;
                 }
-                $(".chat-box1").slideToggle("slow");
-                $(".chat-box2").slideToggle("slow");
+                $(".chat-box1").slideDown("slow");
+                $(".chat-box2").slideDown("slow");
+                var curl = new URL(document.URL);
+                url = '<?=base_url('viewshop/boxchat')?>/'+curl.searchParams.get('sellerID');
+                $.ajax({
+                    url:url ,
+                    type: 'GET',
+                })
+                .done(function(response) {
+                    document.querySelector('.card-header').innerHTML = response;
+                    $('#action_menu_btn').click(function(){
+                        $('.action_menu').toggle();
+                    });
+                    setInterval(loadChat, 500);
+                })
+                .fail(function() {
+                    console.log("error");
+                })
             })
         })
+        function loadChat() {
 
-        $(document).ready(function(){
-	        $('#action_menu_btn').click(function(){
-		        $('.action_menu').toggle();
-	        });
-        });
-
-        
+        }
     </script>
     <!-- loa du lieu thanh tim kiem -->
     <script>
@@ -1129,15 +1030,15 @@
         }
     // load san pham
     function callLoadData(url, page, data) {
-            window.scrollTo({ top: 200, behavior: 'smooth' });
-            var curl = new URL(document.URL);
+        window.scrollTo({ top: 200, behavior: 'smooth' });
+        var curl = new URL(document.URL);
 
-            let data1 = {
-                'sellerID' : curl.searchParams.get('sellerID'),
-                'page' : page,
-            };
-            loadProduct(data1, url); 
-        } 
+        let data1 = {
+            'sellerID' : curl.searchParams.get('sellerID'),
+            'page' : page,
+        };
+        loadProduct(data1, url); 
+    } 
 
     function loadProduct(pdata, url) {
         $.ajax({
