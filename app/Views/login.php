@@ -60,8 +60,8 @@
                     <input type="text" class="form-input login-name" placeholder="Enter username" name = "username">
                     <input type="password" class="form-input login-password" placeholder="Enter password" name = "password">
                     <?php if(isset($loginButton)): ?>
-                        <div>
-                            <a href="<?= filter_var($loginButton, FILTER_SANITIZE_URL) ?>">Login with Google</a>
+                        <div class="login-google">
+                            <span>Login with<a href="<?= filter_var($loginButton, FILTER_SANITIZE_URL) ?>"><i class="fa-brands fa-google"></i></a></span>
                         </div>
                     <?php endif ?>
                     <a href="" class="login-pass-forget">Forget password?</a>
