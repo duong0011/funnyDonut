@@ -41,8 +41,10 @@
 .header__nav-item--hover:hover,
 .header__nav-item-link:hover,
 .header__nav-icon-link:hover {
-    opacity: 0.8;
+    color: rgba(255, 255, 255, 0.8)!important;
+    opacity: 0.8!important;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .header__nav-item--bold {

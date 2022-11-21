@@ -13,6 +13,7 @@
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/base.css">
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/style.css">
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/grid.css">
+    <link rel="stylesheet" href=" <?= base_url()?>/assets/css/home__search_result.css">
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/responsive.css">
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/reviewIMG.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -909,7 +910,7 @@
                 <div class="row sm-gutter">
                     <div class="col l-2 m-0 c-0">
                         <!-- category -->
-                        <nav class="category">
+                        <nav class="category" style="padding-left: 8px;">
                             <h3 class="category-heading">
                                 <i class="category-heading-icon fas fa-list-ul"></i>
                                 Menu
@@ -1164,15 +1165,51 @@
                     </div>
                     <div class="col l-10 m-12 c-12">
                         <!-- shop liên quan đến từ khóa tìm kiếm-->
-                        <div class="home-search__result">
-                            <div class="home-search__result-shop">
-                                <div class="row sm-gutter">
-                                    <div class="col l-4">
-                                        
-                                    </div>
-                                </div>
+                        <h4>Shop related to "<span class="keyword__search">Trieu Lo Tu</span>"</h4>
+                        <div class="home-search__result-shop">
+                            <div class="home__shop-img">
+                                <img src="https://znews-photo.zingcdn.me/w660/Uploaded/kbd_pilk/2022_08_24/na_trat1.jpg" alt="">
                             </div>
+                            <div class="home-search__result-shop-info">
+                                <h2 class="shop__name">Co Luc Na Trat China</h2>
+                                <div class="home__shop-info">
+                                    <span class="home__shop-info-quantity--follower"> 
+                                        <p class="shop__info-quantity--follower">10</p>Followers
+                                    </span>
+                                    <span>
+                                        <p class="shop__info-quantity--follow">10</p>Follow
+                                    </span>
+                                </div>
+                                <button class="magazin__info-btn" style="min-width: 200px; margin-top: 10px;">
+                                    <i class="magazin__info-btn-icon fa-solid fa-shop"></i>
+                                    <span class="magazin__info-btn-label">View Shop</span>
+                                </button>
+                            </div>
+                            
                         </div>
+                        <div class="home-search__result-shop">
+                            <div class="home__shop-img">
+                                <img src="https://znews-photo.zingcdn.me/w660/Uploaded/kbd_pilk/2022_08_24/na_trat1.jpg" alt="">
+                            </div>
+                            <div class="home-search__result-shop-info">
+                                <h2 class="shop__name">Co Luc Na Trat China</h2>
+                                <div class="home__shop-info">
+                                    <span class="home__shop-info-quantity--follower"> 
+                                        <p class="shop__info-quantity--follower">10</p>Followers
+                                    </span>
+                                    <span>
+                                        <p class="shop__info-quantity--follow">10</p>Follow
+                                    </span>
+                                </div>
+                                <button class="magazin__info-btn" style="min-width: 200px; margin-top: 10px;">
+                                    <i class="magazin__info-btn-icon fa-solid fa-shop"></i>
+                                    <span class="magazin__info-btn-label">View Shop</span>
+                                </button>
+                            </div>
+                            
+                        </div>
+
+                        <h4>Product related to "<span class="keyword__search">Trieu Lo Tu</span>"</h4>
                         <!-- home filter -->
                         <div class="home-filter hide-on-mobile-tablet">
                             <div class="home-filter-control">
