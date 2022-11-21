@@ -64,7 +64,9 @@
                     <div class="text-danger" style="font-size: 15px;"><?= loadError($validation, 'repassword') ?></div>
                     <div class="form-term">
                         <input type="checkbox" name="confirm" id="" value="confirm">
-                        I agree to these <a href="">terms</a>
+                        I agree to these <a href=" <?= base_url()?>/assets/pdf_files/terms.pdf" >Terms</a> 
+                        and 
+                        <a href="<?= base_url()?>/assets/pdf_files/policy.pdf ">Privacy policy</a>
                         <div style="font-size: 15px;" class="text-danger"><?= $smg ?></div>
                     </div>
                     <input type="submit" class="btn form-btn" value="Register">
@@ -100,3 +102,4 @@
     </script> -->
 </body>
 </html>
+

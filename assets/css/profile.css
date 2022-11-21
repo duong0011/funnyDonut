@@ -161,60 +161,6 @@
     opacity: 0.9;
 }
 
-.address-icon-location{
-    font-size: 2.8rem;
-    margin-left: 3px;
-    color: var(--primary-color);
-}
-
-.address-old{
-    /* border: 2px solid var(--secondary-color); */
-    display: inline-block;
-    border-radius: 5px;
-    padding: 8px;
-    box-shadow: 0 0 3px var(--primary-color);
-    background-color: var(--primary-color);
-}
-
-.address-old p{
-    font-size: 1.4rem;
-    line-height: 2.1rem;
-    margin: 0;
-    color: var(--white-color);
-}
-
-.address-delete{
-    display: inline-block;
-    vertical-align: bottom;
-    /* cursor: pointer; */
-}
-
-.address-icon-garbage{
-    font-size: 2.2rem;
-    color: var(--primary-color);
-    cursor: pointer;
-    right: 0;
-}
-
-.address-icon-garbage:hover{
-    opacity: 0.9;
-}
-
-.address-btn-add{
-    color: var(--white-color);
-    background-color: var(--primary-color);
-    margin-top: 20px;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.4rem;
-    cursor: pointer;
-}
-
-.address-btn-add:hover{
-    opacity: 0.9;
-}
-
 .pay-old{
     /* border: 1px solid var(); */
     display: inline-block;

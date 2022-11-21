@@ -48,20 +48,20 @@
             <!-- LOGIN -->
             <div class="container__box" id="login-box">
                 <form name="login-form" method="post">
+                    <h2>LOGIN</h2>
                     <?php if($p_session->get('success')): ?>
-                        <div ><?= $p_session->get('success') ?></div>
+                        <div class="alert-success" ><?= $p_session->get('success') ?></div>
                         <?php $p_session->remove('success')?>
                     <?php endif ?>
-                    <h2>LOGIN</h2>
                     <?php if(isset($validation)): ?>
-                        <div > <?= $validation->listErrors()?></div>
+                        <div class="error"> <?= $validation->listErrors()?></div>
                     <?php endif?>
                     
                     <input type="text" class="form-input login-name" placeholder="Enter username" name = "username">
                     <input type="password" class="form-input login-password" placeholder="Enter password" name = "password">
                     <?php if(isset($loginButton)): ?>
-                        <div>
-                            <a href="<?= filter_var($loginButton, FILTER_SANITIZE_URL) ?>">Login with Google</a>
+                        <div class="login-google">
+                            <span>Login with<a href="<?= filter_var($loginButton, FILTER_SANITIZE_URL) ?>"><i class="fa-brands fa-google"></i></a></span>
                         </div>
                     <?php endif ?>
                     <a href="" class="login-pass-forget">Forget password?</a>

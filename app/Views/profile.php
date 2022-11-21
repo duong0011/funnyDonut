@@ -404,10 +404,6 @@
                                     <i class="fa-solid fa-id-card"></i>
                                     Profile
                                 </li>
-                                <li class="user-list-item user-addr" onclick="navAddress()">
-                                    <i class="fa-solid fa-location-arrow"></i>
-                                    Address
-                                </li>
                                 <li class="user-list-item user-pay" onclick="navPay()">
                                     <i class="fa-solid fa-credit-card"></i>
                                     Pay
@@ -440,6 +436,19 @@
                                         <li class="profile-phone">
                                             <span>Phone number</span>
                                             <p class="profile-phone"><?= $user['phonenumber'];?></p>
+                                            <a href="" class="profile-change">Change</a>
+                                        </li>
+                                        <li class="profile-address">
+                                            <span>Address</span>
+                                            <select name="" id="city">
+                                                <option value="<?=  date_format(date_create($user['DateOfBirth']), 'd');?>"><?=  date_format(date_create($user['DateOfBirth']), 'd');?></option>
+                                                <script>
+                                                    for(i=1;i<=31;i++){
+                                                        document.writeln("<option value='"+i+"'>"+((i < 10) ? ('0'+i) : i) +"</option>");
+                                                    }
+                                                </script>
+                                            </select>
+                                            <input type="text" class="form-input" placeholder="Specific address">
                                             <a href="" class="profile-change">Change</a>
                                         </li>
                                         <li class="profile-email">
