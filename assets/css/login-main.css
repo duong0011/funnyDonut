@@ -88,6 +88,11 @@
     border: 1px solid var(--primary-color);
 }
 
+.login-google {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
 .login-pass-forget{
     display: inline-block;
     text-decoration: none;
