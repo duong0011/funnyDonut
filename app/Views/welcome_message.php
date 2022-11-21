@@ -16,6 +16,36 @@
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/reviewIMG.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .rung{
+            animation:code-pro-rung-lac 2s ease infinite
+        }
+
+        @-webkit-keyframes code-pro-rung-lac{
+            0%{
+                -webkit-transform:rotate(0) scale(1) skew(1deg)
+            }
+            10%{
+                -webkit-transform:rotate(-25deg) scale(1) skew(1deg)
+            }
+            20%{
+                -webkit-transform:rotate(25deg) scale(1) skew(1deg)
+            }
+            30%{
+                -webkit-transform:rotate(-25deg) scale(1) skew(1deg)
+            }
+            40%{
+                -webkit-transform:rotate(25deg) scale(1) skew(1deg)
+            }
+            50%{
+                -webkit-transform:rotate(0) scale(1) skew(1deg)
+            }
+            100%{
+                -webkit-transform:rotate(0) scale(1) skew(1deg)
+            }
+        }
+    </style>
+
 </head>
 <body>
     <!-- main -->
@@ -62,6 +92,8 @@
                     <ul class="header__nav-list">
                         <li class="header__nav-item header__show-note">
                             <a href="#" class="header__nav-item-link">
+                                <!-- nếu có thông báo thì thêm class "rung" vào dòng lệnh i-->
+                                <!-- <i class="header__nav-icon far fa-bell rung"></i> --> 
                                 <i class="header__nav-icon far fa-bell"></i>
                                 Notifications
                             </a>
@@ -485,7 +517,7 @@
                                     </li>
                                 </ul>
                             </div> -->
-                            <div class="category-group">
+                            <div class="category-group" style="display: none;">
                                 <div class="category-group-title">Time of delivery</div>
                                 <ul class="category-group-list">
                                     <li class="category-group-item">
@@ -593,16 +625,26 @@
                         </nav>
                     </div>
                     <div class="col l-10 m-12 c-12">
+                        <!-- shop liên quan đến từ khóa tìm kiếm-->
+                        <div class="home-search__result">
+                            <div class="home-search__result-shop">
+                                <div class="row sm-gutter">
+                                    <div class="col l-4">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- home filter -->
                         <div class="home-filter hide-on-mobile-tablet">
                             <div class="home-filter-control">
                                 <p class="home-filter-title">Sorted by:</p>
-                                <button class="btn btn--brown home-filter-btn type-sort" id = "sortBySold" value="sold">Popular</button>
+                                <button class="btn btn--brown home-filter-btn type-sort" id = "sortBySold" value="sold">Oldest</button>
                                 <button class="btn home-filter-btn" value="created_at" id = "sortByTime">
                                     Latest
                                 </button>
-                                <button class="btn home-filter-btn">bestseller</button>
-                                <div class="btn home-filter-sort">
+                                <button class="btn home-filter-btn">Bestseller</button>
+                                <div class="btn home-filter-sort" style="width:220px;">
                                     <p class="home-filter-sort-btn">Price</p>
                                     <i class="fas fa-sort-amount-down-alt"></i>
                                     <ul class="home-filter-sort-list">
@@ -675,6 +717,99 @@
                      
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="container2">
+            <div class="chat-box1" style="display:none;">
+                <div class="card" >
+                    <div class='card-header msg_head' style='background-color: rgba(134, 50, 50, 1);'></div>
+                    <div class='card-body msg_card_body' style='background-color: rgba(134, 50, 50, 0.1);'></div>
+                    <form action="#">
+                        <div class='card-footer'>
+                            <input type="" name="">
+                            <input type="text">
+                            <input name='' class='form-control type_msg' placeholder='Type your message...'>
+                            <button>
+                                <div class='input-group-append'>
+                                    <span class='input-group-text send_btn'><i class='fas fa-location-arrow'></i></span>
+                                </div>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                </div>
+            </div>
+            <div class="chat-box2" style="display:none;">
+                <div class="card">
+                <div class="card-header">
+						<div class="input-group">
+							<input type="text" placeholder="Search..." name="" class="form-control search">
+							<div class="input-group-prepend">
+								<span class="input-group-text search_btn"><i class="fas fa-search"></i></span>
+							</div>
+						</div>
+					</div>
+					<div class="card-body contacts_body">
+						<ui class="contacts">
+							<li>
+								<div class="d-flex bd-highlight">
+									<div class="img_cont">
+										<img src="https://static2-images.vnncdn.net/files/publish/2022/9/19/lo-tu-1-146.jpg" class="rounded-circle user_img">
+										<span class="online_icon"></span>
+									</div>
+									<div class="user_info-searched">
+										<span>Triệu Lộ Tư</span>
+										<p>Online</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="d-flex bd-highlight">
+									<div class="img_cont">
+										<img src="https://znews-photo.zingcdn.me/w660/Uploaded/kbd_pilk/2022_01_01/bach_loc10.jpg" class="rounded-circle user_img">
+										<span class="online_icon offline"></span>
+									</div>
+									<div class="user_info-searched">
+										<span>Bạch Lộc</span>
+										<p>Left 7 mins ago</p>
+									</div>
+								</div>
+							</li>
+							
+								
+							</li>
+							<li>
+								<div class="d-flex bd-highlight">
+									<div class="img_cont">
+										<img src="https://vtv1.mediacdn.vn/zoom/550_339/2021/11/29/1597350815557dich-duong-thien-ti-khien-fan-vo-oa-voi-hinh-16276283065531081461379-crop-16276283125721658243581-163817188296830526689.jpg" class="rounded-circle user_img">
+										<span class="online_icon offline"></span>
+									</div>
+									<div class="user_info-searched">
+										<span>Dịch ương Thiên Tỉ</span>
+										<p>Left 50 mins ago</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="d-flex bd-highlight">
+									<div class="img_cont">
+										<img src="https://image.thanhnien.vn/w660/Uploaded/2022/zxaijr/2021_08_23/huakhaibaolucgiadinh10_nrpt.png" class="rounded-circle user_img">
+										<span class="online_icon offline"></span>
+									</div>
+									<div class="user_info-searched">
+										<span>Hứa Khải</span>
+										<p>Left 50 mins ago</p>
+									</div>
+								</div>
+							</li>
+							
+						</ui>
+					</div>
+                </div>
+            </div>
+            <!-- button -->
+            <div class="chat-btn">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwZck1Nal8rEIrnsqEVJkrA7jnnWEAeBXDZYJc9KFdUFPMxeRFP2ep3Osngu4-HXA4MwU&usqp=CAU" alt="chat box icon btn">
             </div>
         </div>
         <!-- footer -->

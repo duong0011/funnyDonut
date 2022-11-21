@@ -598,7 +598,7 @@
                                 <span class="magazin__info-btn-label">Chat now</span>
                             </button>
                             <a href="<?= base_url('/viewshop')?>?sellerID=<?=$seller['unitid'] ?>">
-                                <button class="magazin__info-btn">
+                                <button class="magazin__info-btn" style="min-width: 130px;">
                                     <i class="magazin__info-btn-icon fa-solid fa-shop"></i>
                                     <span class="magazin__info-btn-label">View Shop</span>
                                 </button>
