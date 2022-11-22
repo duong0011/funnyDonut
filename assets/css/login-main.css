@@ -95,8 +95,8 @@
 }
 
 .login-google {
-    margin-bottom: 20px;
-    font-size: 1.3rem;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
 }
 
 .login-google i{
@@ -108,7 +108,7 @@
     display: inline-block;
     text-decoration: none;
     font-size: 1.4rem;
-    margin: 5px 0 20px;
+    margin-top: 5px;
     color: var(--black-color);
 }
 
