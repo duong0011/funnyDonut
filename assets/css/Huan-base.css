@@ -113,6 +113,13 @@ html {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
+
+}
+
+.btn-Huan.btn--primary {
+    color: var(--white-color);
+    background-color: var(--header-color);
 }
 
 .btn.btn--primary {

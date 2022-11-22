@@ -267,9 +267,12 @@
 }
 
 .product-item__quantity-info-number {
-    width: 120px;
-    height: 30px;
+    width: 128px;
+    height: 31px;
     padding: 2px 0;
+    border: 1px solid #888;
+    border-radius: 4px;
+    outline: none;
 }
 
 .product-item__quantity-info :placeholder-shown {

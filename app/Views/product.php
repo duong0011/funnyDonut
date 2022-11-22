@@ -29,6 +29,19 @@
             /* border: none; */
         }
 
+        .shortenedSelect {
+            display: block;
+            width: 120px;
+            height: 35px;
+            border: 1px solid #888;
+            border-radius: 4px;
+            outline: none;
+            font-size: 1.4rem;
+        }
+        option {
+            font-size: 1.4rem;
+        }
+
         .rung{
             animation:code-pro-rung-lac 2s ease infinite
         }
@@ -187,6 +200,31 @@
             color: red;
             font-size: 40px;
             cursor: pointer;
+        }
+
+        .push__comment {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .push__comment input {
+            width: 90%;
+            height: 50px;
+            margin: 10px 5px 10px;
+            font-size: 1.4rem;
+        }
+
+        .push__comment-icon {
+            font-size: 2.4rem;
+        }
+
+        .push__comment-icon-append {
+            color: #999;
+        }
+
+        .push__comment-icon-send {
+            color: var(--header-color);
         }
     </style>
 </head>
@@ -690,7 +728,7 @@
                             <div class="col l-10">
                                 <div class="product-item__size-info">
                                     <!--product-item__size-info-unable-->
-                                    <button class="product-item__size-btn">
+                                    <!-- <button class="product-item__size-btn">
                                         <span class="product-item__size-btn-info">24cm</span>
                                     </button>
                                     <button class="product-item__size-btn product-item__size-info-active">
@@ -698,7 +736,13 @@
                                     </button>
                                     <button class="product-item__size-btn">
                                         <span class="product-item__size-btn-info">28cm</span>
-                                    </button>
+                                    </button> -->
+                                    <select id="country-state" name="country-state" class="shortenedSelect">
+                                        <option value="">Select size</option>
+                                        <option value="ALT">24 cm</option>
+                                        <option value="ALT">26 cm</option>
+                                        <option value="AL">28 cm</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>

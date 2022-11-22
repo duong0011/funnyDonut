@@ -29,6 +29,16 @@
             /* border: none; */
         }
 
+        .Shop__related-to--keyword__search,
+        .home-search__result-shop,
+        .Product__related-to--keyword__search {
+            display: flex;
+            /* display:none; */
+        }
+        .home-product-item-link:hover {
+            text-decoration: none;
+        }
+
         .rung{
             animation:code-pro-rung-lac 2s ease infinite
         }
@@ -473,30 +483,7 @@
             cursor: pointer;
         }
 
-        .push__comment {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .push__comment input {
-            width: 90%;
-            height: 50px;
-            margin: 10px 5px 10px;
-            font-size: 1.4rem;
-        }
-
-        .push__comment-icon {
-            font-size: 2.4rem;
-        }
-
-        .push__comment-icon-append {
-            color: #999;
-        }
-
-        .push__comment-icon-send {
-            color: var(--header-color);
-        }
+        
     </style>
 
 </head>
@@ -1093,7 +1080,7 @@
                                 </ul>
                             </div> -->
                             <div class="category-group">
-                                <div class="category-group-title">Đánh Giá</div>
+                                <div class="category-group-title">Ratings</div>
                                 <div class="rating-star">
                                     <input type="checkbox" class="category-group-item-check">
                                     <i class="star-checked far fa-star"></i>
@@ -1165,7 +1152,7 @@
                     </div>
                     <div class="col l-10 m-12 c-12">
                         <!-- shop liên quan đến từ khóa tìm kiếm-->
-                        <h4>Shop related to "<span class="keyword__search">Trieu Lo Tu</span>"</h4>
+                        <h4 class="Shop__related-to--keyword__search">Shop related to "<span class="keyword__search">Trieu Lo Tu</span>"</h4>
                         <div class="home-search__result-shop">
                             <div class="home__shop-img">
                                 <img src="https://znews-photo.zingcdn.me/w660/Uploaded/kbd_pilk/2022_08_24/na_trat1.jpg" alt="">
@@ -1233,7 +1220,7 @@
                             
                         </div>
 
-                        <h4>Product related to "<span class="keyword__search">Trieu Lo Tu</span>"</h4>
+                        <h4 class="Product__related-to--keyword__search">Product related to "<span class="keyword__search">Trieu Lo Tu</span>"</h4>
                         <!-- home filter -->
                         <div class="home-filter hide-on-mobile-tablet">
                             <div class="home-filter-control">

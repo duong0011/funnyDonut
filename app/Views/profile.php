@@ -210,7 +210,7 @@
                             </div>
                         </div>
                         <button class="btn-Huan header__search-btn" onclick="loadSearch()">
-                            <i class='header__search-btn-icon fas fa-search'></i>;
+                            <i class='header__search-btn-icon fas fa-search'></i>
                                
                             <script type="text/javascript">
                                 function loadSearch() {
@@ -554,7 +554,7 @@
                                 </ul>
                                 <br>
 
-                                <input type="button" value="Save" class="pwd-save-btn" id = "changepassword">
+                                <input type="button" value="Save" class="pwd-save-btn" id = "changepassword" style="margin-bottom: 10px; margin-top: -16px;">
                             </div>
                         </div>
                     </div>

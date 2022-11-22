@@ -36,6 +36,9 @@
             
         } */
 
+        .home-product-item-link:hover {
+            text-decoration: none;
+        }
         .rung{
             animation:code-pro-rung-lac 2s ease infinite
         }
@@ -459,11 +462,11 @@
 							</div>
 						</div>
 						<div class="shop__description" style="margin-bottom:10px">
-							<button class="magazin__info-btn" style="width: 180px;  height: 25px; font-size: 1.2em">
+							<button class="magazin__info-btn" style="width: 180px;  height: 28px; font-size: 1.2em; border: 1px solid #888; border-radius: 4px;">
 								<i class="magazin__info-btn-icon fa-solid fa-plus"></i>
 								<span class="magazin__info-btn-label">Follow</span>
 							</button>
-							<button class="magazin__info-btn magazin__info-btn--chat" style="width: 180px; height: 25px; font-size: 1.2em">
+							<button class="magazin__info-btn magazin__info-btn--chat" style="width: 180px; height: 28px; font-size: 1.2em; border: 1px solid #888; border-radius: 4px;">
 								<i class="magazin__info-btn-icon fa-solid fa-comments"></i>
 								<span class="magazin__info-btn-label">Chat now</span>
 							</button>
