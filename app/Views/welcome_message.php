@@ -1553,7 +1553,7 @@
                                         <a href="#" class="footer-item-link">How to buy</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="footer-item-link">Thanh Toán</a>
+                                        <a href="#" class="footer-item-link">Payment</a>
                                     </li>
                                     <li>
                                         <a href="#" class="footer-item-link">Shipping</a>
@@ -1679,11 +1679,9 @@
                         <div class="grid other-footer-info">
                             <p class="other-footer-title">About Shop</p>
                             <p class="other-footer-more">
-                                Address: Tầng 4-5-6, Tòa nhà Capital Place, số 29 đường Liễu Giai,
-                                Phường Ngọc Khánh, Quận Ba Đình, Thành phố Hà Nội, Việt Nam.
-                                Support call center: 19001221 - Email: cskh@hotro.shopee.vn
+                                Address: ITMO University.Support call center: 8(921)xxx xx xx - Email: abc@funnydonut.com
                             </p>
-                            <p class="other-footer-more">
+                            <!-- <p class="other-footer-more">
                                 Chịu Trách Nhiệm Quản Lý Nội Dung: Nguyễn Đức Trí -
                                 Điện thoại liên hệ: 024 73081221 (ext 4678)
                             </p>
@@ -1694,7 +1692,7 @@
                             <p class="other-footer-more">
                                 Ngày sản xuất 2015 -
                                 Bản quyền gốc thuộc về Công ty TNHH Shopee
-                            </p>
+                            </p> -->
                         </div>
                     </div>
                 </div>

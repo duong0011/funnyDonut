@@ -78,7 +78,7 @@
 
         <!-- Footer Begin-->
         <footer class="footer">
-            <p class="footer-copyright">Copyright @wework 2022 | Privacy Policy</p>
+            <p class="footer-copyright">Student of ITMO university</p>
         </footer>
         <!-- Footer End-->
     </div>    

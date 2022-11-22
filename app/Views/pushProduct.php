@@ -581,7 +581,7 @@
                     <div class="row">
                         <div class="grid">
                             <p class="copyright-title">
-                                © 2021 Shopee copyright - Công ty TNHH CRF - Product by LTP
+                                Student of ITMO University
                             </p>
                         </div>
                     </div>
