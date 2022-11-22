@@ -29,17 +29,165 @@
             /* border: none; */
         }
 
-        /* body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+        .rung{
+            animation:code-pro-rung-lac 2s ease infinite
+        }
+
+        @-webkit-keyframes code-pro-rung-lac{
+            0%{
+                -webkit-transform:rotate(0) scale(1) skew(1deg)
+            }
+            10%{
+                -webkit-transform:rotate(-25deg) scale(1) skew(1deg)
+            }
+            20%{
+                -webkit-transform:rotate(25deg) scale(1) skew(1deg)
+            }
+            30%{
+                -webkit-transform:rotate(-25deg) scale(1) skew(1deg)
+            }
+            40%{
+                -webkit-transform:rotate(25deg) scale(1) skew(1deg)
+            }
+            50%{
+                -webkit-transform:rotate(0) scale(1) skew(1deg)
+            }
+            100%{
+                -webkit-transform:rotate(0) scale(1) skew(1deg)
+            }
+        }
+
+        div.stars {
+            /* width: 150px; */
+            display: inline-block;
+        }
             
-        } */
-
+        input.star { display: none; }
         
-
+        label.star {
+            float: right;
+            padding: 0 4px;
+            font-size: 22px;
+            color: #444;
+            transition: all .2s;
+        }
         
+        input.star:checked ~ label.star:before {
+            content: '\f005';
+            color: #FD4;
+            transition: all .25s;
+        }
+        
+        input.star-5:checked ~ label.star:before {
+            color: #FE7;
+            text-shadow: 0 0 20px #952;
+        }
+        
+        input.star-1:checked ~ label.star:before { color: #F62; }
+        
+        label.star:hover { transform: rotate(-15deg) scale(1.3); }
+        
+        label.star:before {
+            content: '\f006';
+            font-family: FontAwesome;
+        }
+        
+        .product__rating-filter {
+            display: flex;
+            align-items: center;
+            width: 95%;
+            height: 100px;
+            margin: 10px 0 20px 34px;
+            border: 1px solid rgb(210, 205, 205);
+            background-color: rgba(239, 155, 122, 0.1);
+            border-radius: 10px;
+
+        }
+
+        .push__comment-img {
+            background-color: #fff;
+            width: 100%;
+            margin: 0px auto;
+            /* padding: 20px 5px; */
+            height: auto;
+
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+        .push__comment-img label {
+            display: block;
+            position: relative;
+            background-color : var(--header-color);
+            width: 15%;
+            height: 30px;
+            color: white;
+            font-size: 16px;
+            /* padding-left: 20px; */
+            text-align: center;
+            margin: 10px auto;
+            border-radius:4px;            
+
+
+        }
+
+        #push__images {
+            width: 90%;
+            border: 2px solid black;
+            border-radius:10px;
+            position: relative;
+            margin: 0 auto 8px;
+            display: flex;
+            justify-content: space-evenly;
+            gap: 5px;
+            flex-wrap: wrap;
+
+
+
+        }
+
+        figure {
+            margin-top: 5px;
+            width: 20%;
+            
+        }
+        
+        img {
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        figcaption {
+            text-align: center;
+            font-size: 1.4rem;
+            margin-top: 1px;
+        }
+
+        .product__rating--images img {
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 5px #343436;
+            /* filter: brightness(1.1); */
+            /* transition: transform 0.25s ease; */
+            cursor: pointer;
+        }
+
+        .fullImageComment {
+            position: relative;
+            display: none;
+        }
+
+        .closebtn {
+            position: absolute;
+            top: -15px;
+            right: calc(65% - 35px);
+            color: red;
+            font-size: 40px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -51,7 +199,7 @@
         <header class="header">
             <div class="grid wide">
                 <!-- navbar -->
-                <nav class="header__navbar hide-on-mobile-tablet">
+                <nav class="header__navbar hide-on-mobile-tablet" style="padding-top: 10px;">
                     <ul class="header__nav-list">
                         <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Welcome
                             customers!</li>
@@ -93,6 +241,7 @@
                     <ul class="header__nav-list">
                         <li class="header__nav-item header__show-note">
                             <a href="#" class="header__nav-item-link">
+                                <!-- <i class="header__nav-icon far fa-bell rung"></i> -->
                                 <i class="header__nav-icon far fa-bell"></i>
                                 Notifications
                             </a>
@@ -249,8 +398,8 @@
                                 </ul>
                             </div>
                         </div>
-                        <button class="btn-Huan header__search-btn" onclick="loadSearch()">
-                            <i class='header__search-btn-icon fas fa-search'></i>;
+                        <button class="btn-Huan header__search-btn" style="outline: none; border: none; padding: 8px 0; margin-right: 4px; border-radius: 2px;" onclick="loadSearch()">
+                            <i class='header__search-btn-icon fas fa-search'></i>
                                
                             <script type="text/javascript">
                                 function loadSearch() {
@@ -485,7 +634,7 @@
                             <span class="product__quantity-rating">
                                 4.9
                             </span>
-                            <div class="product-item__rating-star">
+                            <div class="product-item__rating-star" style="padding-top: 6px;">
                                 <i class="star-checked far fa-star"></i>
                                 <i class="star-checked far fa-star"></i>
                                 <i class="star-checked far fa-star"></i>
@@ -498,20 +647,19 @@
                             <p class="product-item__price-new">200USD</p>
                         </div>
                         <div class="row sm-gutter" style="padding-left: 10px">
-                            <div class="col l-2">
+                            <div class="col l-3">
                                 <div class="product-item__transport">
-                                    <span class="product-item__transport-title">Shipping</span>
+                                    <span class="product-item__transport-title">Shop's address</span>
                                 </div>
                             </div>
-                            <div class="col l-10">
+                            <div class="col l-9">
                                 <div class="product-item__transport-info">
-                                    <i class="product-item__transport-icon fa-solid fa-truck-fast"></i>
-                                    <span class="product-item__transport-label">Free Shipping</span>
+                                    <span class="product-item__transport-label">Вяземский пер., 5/7, Санкт-Петербург, 1970222222222</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row sm-gutter" style="padding-left: 10px">
+                        <div class="row sm-gutter" style="padding-left: 10px; display: none;">
                             <div class="col l-2">
                                 <div class="product-item__shipping">
                                     <span class="product-item__shipping-title">Shipping in city</span>
@@ -584,7 +732,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row sm-gutter product__background magazin__box">
+                <div class="row sm-gutter product__background magazin__box" style="margin-bottom: 20px; padding-bottom: 10px;">
                     <div class="col l-1">
                         <img src="data:image/jped;base64,<?=$seller['avatar']?>" alt="" class="magazin-img">
                     </div>
@@ -654,7 +802,7 @@
                 </div>
             </div>
             <div class="grid wide">
-                <div class="row sm-gutter product__background magazin__box">
+                <div class="row sm-gutter product__background magazin__box" style="display: none;">
                     <div class="product__specifications">
                         <i class="product__specifications-icon fa-sharp fa-solid fa-caret-right"></i>
                         <h1>Product Specifications</h1>
@@ -664,7 +812,7 @@
                         
                     </div> -->
                 </div>
-                <div class="row sm-gutter product__background" style="margin-top: 0">
+                <div class="row sm-gutter product__background" style="margin-top: 0; display: none;">
                     <div class="col l-2" style="margin-bottom: 20px;">
                         <div class="product__specifications-brand ">Brand</div>
                     </div>
@@ -737,12 +885,31 @@
                                 <span class="product__quantity-rating" style="font-size: 2.8rem; padding-bottom: 4px">
                                     4.9
                                 </span>
-                                <div class="product-item__rating-star">
-                                    <i class="star-checked far fa-star"></i>
-                                    <i class="star-checked far fa-star"></i>
-                                    <i class="star-checked far fa-star"></i>
-                                    <i class="star-checked far fa-star"></i>
-                                    <i class="star-checked far fa-star"></i>
+                                <!-- <div class="rate">
+                                    <input type="radio" id="star5" name="rate" value="5"/>
+                                    <label for="star5" title="text">5 stars</label>
+                                    <input type="radio" id="star4" name="rate" value="4"/>
+                                    <label for="star4" title="text">4 stars</label>
+                                    <input type="radio" id="star3" name="rate" value="3"/>
+                                    <label for="star3" title="text">3 stars</label>
+                                    <input type="radio" id="star2" name="rate" value="2"/>
+                                    <label for="star2" title="text">2 stars</label>
+                                    <input type="radio" id="star1" name="rate" value="1"/>
+                                    <label for="star1" title="text">1 star</label>
+                                </div> -->
+                                <div class="stars">
+                                    <form action="">
+                                        <input class="star star-5" id="star-5" type="radio" name="star"/>
+                                        <label class="star star-5" for="star-5"></label>
+                                        <input class="star star-4" id="star-4" type="radio" name="star"/>
+                                        <label class="star star-4" for="star-4"></label>
+                                        <input class="star star-3" id="star-3" type="radio" name="star"/>
+                                        <label class="star star-3" for="star-3"></label>
+                                        <input class="star star-2" id="star-2" type="radio" name="star"/>
+                                        <label class="star star-2" for="star-2"></label>
+                                        <input class="star star-1" id="star-1" type="radio" name="star"/>
+                                        <label class="star star-1" for="star-1"></label>
+                                    </form>
                                 </div>
                             </div>
                             <button class="btn home-filter-btn">All</button>
@@ -775,10 +942,16 @@
                 <div class="row sm-gutter product__background" >
                     <div class="col l-12">
                         <div class="push__comment">
-                            <i class="push__comment-icon push__comment-icon-append fas fa-paperclip"></i>
+                            <input type="file" id="file-input" accept="image/png, image/jpeg, image/jpg" onchange="preview()" multiple>
+                                <label for="file-input">
+                                    <i class="push__comment-icon push__comment-icon-append fas fa-paperclip"></i>
+                                </label>
                             <input type="text" placeholder="Enter comment ...">
                             </input>
                             <i class="push__comment-icon push__comment-icon-send fas fa-location-arrow"></i>
+                        </div>
+                        <div class="push__comment-img">
+                            <div id="push__images"></div>
                         </div>
                     </div>
                 </div>
@@ -796,7 +969,7 @@
                             <div class="product__rating-info--name">
                                 <p>Lục Nhất Thiên</p>
                             </div>
-                            <div class="product__rating-item">
+                            <div class="product__rating-item" style="display:none;">
                                 <div class="product__rating-item-star">
                                     <i class="star-checked far fa-star"></i>
                                     <i class="star-checked far fa-star"></i>
@@ -823,23 +996,29 @@
 
                         <div class="product__rating--images" style="margin-bottom: 10px;">
                             <div class="product__rating--image">
-                                <img src="<?= base_url()?>/assets/img/home/1.PNG" alt="">
+                                <img src="<?= base_url()?>/assets/img/home/1.PNG" alt="" onclick="myFunction(this);">
 
                             </div>
                             <div class="product__rating--image">
-                                <img src="<?= base_url()?>/assets/img/home/1.PNG" alt="">
+                                <img src="<?= base_url()?>/assets/img/home/2.PNG" alt="" onclick="myFunction(this);">
 
                             </div>
                             <div class="product__rating--image">
-                                <img src="<?= base_url()?>/assets/img/home/1.PNG" alt="">
+                                <img src="<?= base_url()?>/assets/img/home/3.PNG" alt="" onclick="myFunction(this);">
 
                             </div>
 
                         </div>
+
+                        <div class="fullImageComment" style="margin-bottom: 10px;">
+                            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                            <img id="expandedImg" style="width:35%">
+                            
+                        </div>
                     </div>
                 </div>
                 <div class="row sm-gutter product__background"
-                    style="border-bottom: 1px solid rgba(153, 153, 153, 0.3); padding-top: 10px">
+                    style="border-bottom: 1px solid rgba(153, 153, 153, 0.3); padding-top: 10px;">
                     <div class="col l-1">
                         <div class="product__rating-avatar">
                             <img src="https://sme.hust.edu.vn/wp-content/uploads/2022/02/Avatar-Facebook-trang.jpg"
@@ -851,7 +1030,7 @@
                             <div class="product__rating-info--name">
                                 <p>Lục Nhất Thiên</p>
                             </div>
-                            <div class="product__rating-item">
+                            <div class="product__rating-item" style="display:none;">
                                 <div class="product__rating-item-star">
                                     <i class="star-checked far fa-star"></i>
                                     <i class="star-checked far fa-star"></i>
@@ -878,21 +1057,89 @@
 
                         <div class="product__rating--images" style="margin-bottom: 10px;">
                             <div class="product__rating--image">
-                                <img src="<?= base_url()?>/assets/img/home/1.PNG" alt="">
+                                <img src="<?= base_url()?>/assets/img/home/1.PNG" alt="" onclick="myFunction(this);">
 
                             </div>
                             <div class="product__rating--image">
-                                <img src="<?= base_url()?>/assets/img/home/1.PNG" alt="">
+                                <img src="<?= base_url()?>/assets/img/home/2.PNG" alt="" onclick="myFunction(this);">
 
                             </div>
                             <div class="product__rating--image">
-                                <img src="<?= base_url()?>/assets/img/home/1.PNG" alt="">
+                                <img src="<?= base_url()?>/assets/img/home/3.PNG" alt="" onclick="myFunction(this);">
 
                             </div>
 
                         </div>
+
+                        <div class="fullImageComment" style="margin-bottom: 10px;">
+                            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                            <img id="expandedImg" style="width:35%">
+                            
+                        </div>
                     </div>
                 </div>
+                <div class="row sm-gutter product__background"
+                    style="border-bottom: 1px solid rgba(153, 153, 153, 0.3); padding-top: 10px;">
+                    <div class="col l-1">
+                        <div class="product__rating-avatar">
+                            <img src="https://sme.hust.edu.vn/wp-content/uploads/2022/02/Avatar-Facebook-trang.jpg"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="col l-11">
+                        <div class="product__rating-info">
+                            <div class="product__rating-info--name">
+                                <p>Lục Nhất Thiên</p>
+                            </div>
+                            <div class="product__rating-item" style="display:none;">
+                                <div class="product__rating-item-star">
+                                    <i class="star-checked far fa-star"></i>
+                                    <i class="star-checked far fa-star"></i>
+                                    <i class="star-checked far fa-star"></i>
+                                    <i class="star-checked far fa-star"></i>
+                                    <i class="star-uncheck far fa-star"></i>
+                                </div>
+                            </div>
+
+                            <div class="product__rating-date">
+                                <span style="font-size: 1.4rem; color: rgb(193, 193, 193); margin:10px 0 10px;">
+                                    25-10-2022</span>
+                            </div>
+
+                            <div class="Product__rating-label">
+                                <span>
+                                    shop đóng gói cực kì cẩn thận mình phải gỡ bnhiêu lâu mới mở ra được cho nên
+                                    gương k có bị vỡ còn lại thì giống mới mô tả ai đang băn khoăn thì mua ngay
+                                    đi nha vì gương giá rẻ còn đóng gói chắc chắn
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="product__rating--images" style="margin-bottom: 10px;">
+                            <div class="product__rating--image">
+                                <img src="<?= base_url()?>/assets/img/home/4.PNG" alt="" onclick="myFunction(this);">
+
+                            </div>
+                            <div class="product__rating--image">
+                                <img src="<?= base_url()?>/assets/img/home/2.PNG" alt="" onclick="myFunction(this);">
+
+                            </div>
+                            <div class="product__rating--image">
+                                <img src="<?= base_url()?>/assets/img/home/3.PNG" alt="" onclick="myFunction(this);">
+
+                            </div>
+
+                        </div>
+
+                        <div class="fullImageComment" style="margin-bottom: 10px;">
+                            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                            <img id="expandedImg" style="width:35%">
+                            <!-- <div id="imgtext"></div> -->
+                        </div>
+                    </div>
+                </div>
+                
 
             </div>
         </div>
@@ -1476,6 +1723,41 @@
             });
     }
  </script>
+
+<script>
+    let fileInput = document.getElementById("file-input");
+    let imageContainer = document.getElementById("push__images");
+    
+    function preview() {
+        imageContainer.innerHTML = "";
+        // let numOfFiles = ${fileInput.files.length};
+        for (i of fileInput.files) {
+            let reader = new FileReader();
+            let figure = document.createElement("figure");
+            let figCap = document.createElement("figcaption");
+            figCap.innerText = i.name;
+            figure.appendChild(figCap);
+            reader.onload =() => {
+                let img = document.createElement("img");
+                img.setAttribute("src", reader.result);
+                figure.insertBefore(img, figCap);
+            }
+            imageContainer.appendChild(figure);
+            reader.readAsDataURL(i);
+        }
+        
+    }
+</script>
+
+<script>
+    function myFunction(imgs) {
+        var expandImg = document.getElementById("expandedImg");
+        // var imgText = document.getElementById("imgtext");
+        expandImg.src = imgs.src;
+        // imgText.innerHTML = imgs.alt;
+        expandImg.parentElement.style.display = "block";
+    }
+</script>
 
 </body>
 

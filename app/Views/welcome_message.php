@@ -508,7 +508,7 @@
         <header class="header">
             <div class="grid wide">
                 <!-- navbar -->
-                <nav class="header__navbar hide-on-mobile-tablet">
+                <nav class="header__navbar hide-on-mobile-tablet" style="padding-top: 10px;">
                     <ul class="header__nav-list">
                         <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Welcome <?php if(session()->has('loged_user')) echo $user['fullname']; ?>!</li>
                         <li class="header__nav-item header__nav-item--hover header__nav-item--separate"><a href="<?= base_url().'/PushProduct' ?>" style="text-decoration: none; color: white;">Become seller</a></li>
@@ -1185,6 +1185,18 @@
                                     <span class="magazin__info-btn-label">View Shop</span>
                                 </button>
                             </div>
+                            <div class="home-search__result-shop--description">
+                                <span class="shop__quantity-product">243</span>
+                                <p>products</p>
+                            </div>
+                            <div class="home-search__result-shop--description">
+                                <span class="shop__quantity-rating">5.0</span>
+                                <p>ratings</p>
+                            </div>
+                            <div class="home-search__result-shop--description" style="width:20%;">
+                                <span class="shop__quantity-rating-chat">96%</span>
+                                <p>chat response rate</p>
+                            </div>
                             
                         </div>
                         <div class="home-search__result-shop">
@@ -1205,6 +1217,18 @@
                                     <i class="magazin__info-btn-icon fa-solid fa-shop"></i>
                                     <span class="magazin__info-btn-label">View Shop</span>
                                 </button>
+                            </div>
+                            <div class="home-search__result-shop--description">
+                                <span class="shop__quantity-product">243</span>
+                                <p>products</p>
+                            </div>
+                            <div class="home-search__result-shop--description">
+                                <span class="shop__quantity-rating">5.0</span>
+                                <p>ratings</p>
+                            </div>
+                            <div class="home-search__result-shop--description" style="width:20%;">
+                                <span class="shop__quantity-rating-chat">96%</span>
+                                <p>chat response rate</p>
                             </div>
                             
                         </div>

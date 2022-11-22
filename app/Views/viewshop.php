@@ -35,6 +35,34 @@
             min-height: 100vh;
             
         } */
+
+        .rung{
+            animation:code-pro-rung-lac 2s ease infinite
+        }
+
+        @-webkit-keyframes code-pro-rung-lac{
+            0%{
+                -webkit-transform:rotate(0) scale(1) skew(1deg)
+            }
+            10%{
+                -webkit-transform:rotate(-25deg) scale(1) skew(1deg)
+            }
+            20%{
+                -webkit-transform:rotate(25deg) scale(1) skew(1deg)
+            }
+            30%{
+                -webkit-transform:rotate(-25deg) scale(1) skew(1deg)
+            }
+            40%{
+                -webkit-transform:rotate(25deg) scale(1) skew(1deg)
+            }
+            50%{
+                -webkit-transform:rotate(0) scale(1) skew(1deg)
+            }
+            100%{
+                -webkit-transform:rotate(0) scale(1) skew(1deg)
+            }
+        }
         
     </style>
 </head>
@@ -46,7 +74,7 @@
         <header class="header">
             <div class="grid wide">
                 <!-- navbar -->
-                <nav class="header__navbar hide-on-mobile-tablet">
+                <nav class="header__navbar hide-on-mobile-tablet" style="padding-top: 10px;">
                     <ul class="header__nav-list">
                         <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Welcome
                             customers!</li>
@@ -88,6 +116,7 @@
                     <ul class="header__nav-list">
                         <li class="header__nav-item header__show-note">
                             <a href="#" class="header__nav-item-link">
+                                <!-- <i class="header__nav-icon far fa-bell rung"></i> -->
                                 <i class="header__nav-icon far fa-bell"></i>
                                 Notifications
                             </a>
@@ -243,8 +272,8 @@
                                 </ul>
                             </div>
                         </div>
-                        <button class="btn-Huan header__search-btn" onclick="loadSearch()">
-                            <i class='header__search-btn-icon fas fa-search'></i>;
+                        <button class="btn-Huan header__search-btn" style="outline: none; border: none; padding: 8px 0; margin-right: 4px; border-radius: 2px;" onclick="loadSearch()">
+                            <i class='header__search-btn-icon fas fa-search'></i>
                                
                             <script type="text/javascript">
                                 function loadSearch() {
@@ -512,9 +541,9 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <button class="btn home-filter-btn" style="background-color: rgba(130,50,50,0.1);">Popular</button>
+                                <button class="btn home-filter-btn" style="background-color: rgba(130,50,50,0.1);">Oldest</button>
                                 <button class="btn home-filter-btn" style="background-color: rgba(130,50,50,0.1);">Latest</button>
-                                <button class="btn home-filter-btn" style="background-color: rgba(130,50,50,0.1);">bestseller</button>
+                                <button class="btn home-filter-btn" style="background-color: rgba(130,50,50,0.1);">Bestseller</button>
                                 <div class="btn home-filter-sort" style="min-width: 180px; padding-bottom: 0; background-color: rgba(130,50,50,0.1);">
                                     <p class="home-filter-sort-btn">Price</p>
                                     <i class="fas fa-sort-amount-down-alt"></i>

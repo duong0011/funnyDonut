@@ -21,6 +21,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
     </script>
+    <style>
+        .rung{
+            animation:code-pro-rung-lac 2s ease infinite
+        }
+
+        @-webkit-keyframes code-pro-rung-lac{
+            0%{
+                -webkit-transform:rotate(0) scale(1) skew(1deg)
+            }
+            10%{
+                -webkit-transform:rotate(-25deg) scale(1) skew(1deg)
+            }
+            20%{
+                -webkit-transform:rotate(25deg) scale(1) skew(1deg)
+            }
+            30%{
+                -webkit-transform:rotate(-25deg) scale(1) skew(1deg)
+            }
+            40%{
+                -webkit-transform:rotate(25deg) scale(1) skew(1deg)
+            }
+            50%{
+                -webkit-transform:rotate(0) scale(1) skew(1deg)
+            }
+            100%{
+                -webkit-transform:rotate(0) scale(1) skew(1deg)
+            }
+        }
+    </style>
 </head>
 
 
@@ -73,6 +102,7 @@
                     <ul class="header__nav-list">
                         <li class="header__nav-item header__show-note">
                             <a href="#" class="header__nav-item-link">
+                                <!-- <i class="header__nav-icon far fa-bell rung"></i> -->
                                 <i class="header__nav-icon far fa-bell"></i>
                                 Notifications
                             </a>
