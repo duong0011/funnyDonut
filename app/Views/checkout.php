@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
+    <!-- Style header -->
     <style>
         <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
@@ -225,6 +226,18 @@
 
         .push__comment-icon-send {
             color: var(--header-color);
+        }
+    </style>
+    <!-- Style main -->
+    <style>
+        .note-delivery {
+            border-top: 1px dashed rgb(139 52 52 / 28%);
+            border-bottom: 1px dashed rgb(139 52 52 / 28%);
+        }
+
+        .note {
+        padding: 38px 12px;
+        border-right: 1px dashed rgb(139 52 52 / 28%);
         }
     </style>
 </head>

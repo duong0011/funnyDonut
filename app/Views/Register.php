@@ -83,23 +83,6 @@
         <!-- Footer End-->
     </div>    
 
-    <!-- <script>
-        function navRegis(){
-            var formRegis=document.getElementById("regis-box");
-            var formLogin=document.getElementById("login-box");
-            
-            formRegis.style.display="block";
-            formLogin.style.display="none";
-        }
-
-        function navLogin(){
-            var formRegis=document.getElementById("regis-box");
-            var formLogin=document.getElementById("login-box");
-            
-            formRegis.style.display="none";
-            formLogin.style.display="block";
-        }
-    </script> -->
 </body>
 </html>
 
