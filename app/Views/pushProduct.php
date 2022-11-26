@@ -20,16 +20,227 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha384-qlmct0AOBiA2VPZkMY3+2WqkHtIQ9lSdAsAn5RUJD/3vA5MKDgSGcdmIv4ycVxyn"crossorigin="anonymous"></script>
 
+    <style>
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* font-family: 'Raleway', sans-serif;*/
+            /* outline: none; */
+            /* border: none; */
+        }
+
+        .shortenedSelect {
+            display: block;
+            width: 120px;
+            height: 35px;
+            border: 1px solid #888;
+            border-radius: 4px;
+            outline: none;
+            font-size: 1.4rem;
+        }
+        option {
+            font-size: 1.4rem;
+        }
+
+        .rung{
+            animation:code-pro-rung-lac 2s ease infinite
+        }
+
+        @-webkit-keyframes code-pro-rung-lac{
+            0%{
+                -webkit-transform:rotate(0) scale(1) skew(1deg)
+            }
+            10%{
+                -webkit-transform:rotate(-25deg) scale(1) skew(1deg)
+            }
+            20%{
+                -webkit-transform:rotate(25deg) scale(1) skew(1deg)
+            }
+            30%{
+                -webkit-transform:rotate(-25deg) scale(1) skew(1deg)
+            }
+            40%{
+                -webkit-transform:rotate(25deg) scale(1) skew(1deg)
+            }
+            50%{
+                -webkit-transform:rotate(0) scale(1) skew(1deg)
+            }
+            100%{
+                -webkit-transform:rotate(0) scale(1) skew(1deg)
+            }
+        }
+
+        div.stars {
+            /* width: 150px; */
+            display: inline-block;
+        }
+            
+        input.star { display: none; }
+        
+        label.star {
+            float: right;
+            padding: 0 4px;
+            font-size: 22px;
+            color: #444;
+            transition: all .2s;
+        }
+        
+        input.star:checked ~ label.star:before {
+            content: '\f005';
+            color: #FD4;
+            transition: all .25s;
+        }
+        
+        input.star-5:checked ~ label.star:before {
+            color: #FE7;
+            text-shadow: 0 0 20px #952;
+        }
+        
+        input.star-1:checked ~ label.star:before { color: #F62; }
+        
+        label.star:hover { transform: rotate(-15deg) scale(1.3); }
+        
+        label.star:before {
+            content: '\f006';
+            font-family: FontAwesome;
+        }
+        
+        .product__rating-filter {
+            display: flex;
+            align-items: center;
+            width: 95%;
+            height: 100px;
+            margin: 10px 0 20px 34px;
+            border: 1px solid rgb(210, 205, 205);
+            background-color: rgba(239, 155, 122, 0.1);
+            border-radius: 10px;
+
+        }
+
+        .push__comment-img {
+            background-color: #fff;
+            width: 100%;
+            margin: 0px auto;
+            /* padding: 20px 5px; */
+            height: auto;
+
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+        .push__comment-img label {
+            display: block;
+            position: relative;
+            background-color : var(--header-color);
+            width: 15%;
+            height: 30px;
+            color: white;
+            font-size: 16px;
+            /* padding-left: 20px; */
+            text-align: center;
+            margin: 10px auto;
+            border-radius:4px;            
+
+
+        }
+
+        #push__images {
+            width: 90%;
+            border: 2px solid black;
+            border-radius:10px;
+            position: relative;
+            margin: 0 auto 8px;
+            display: flex;
+            justify-content: space-evenly;
+            gap: 5px;
+            flex-wrap: wrap;
+
+
+
+        }
+
+        figure {
+            margin-top: 5px;
+            width: 20%;
+            
+        }
+        
+        img {
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        figcaption {
+            text-align: center;
+            font-size: 1.4rem;
+            margin-top: 1px;
+        }
+
+        .product__rating--images img {
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 5px #343436;
+            /* filter: brightness(1.1); */
+            /* transition: transform 0.25s ease; */
+            cursor: pointer;
+        }
+
+        .fullImageComment {
+            position: relative;
+            display: none;
+        }
+
+        .closebtn {
+            position: absolute;
+            top: -15px;
+            right: calc(65% - 35px);
+            color: red;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        .push__comment {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .push__comment input {
+            width: 90%;
+            height: 50px;
+            margin: 10px 5px 10px;
+            font-size: 1.4rem;
+        }
+
+        .push__comment-icon {
+            font-size: 2.4rem;
+        }
+
+        .push__comment-icon-append {
+            color: #999;
+        }
+
+        .push__comment-icon-send {
+            color: var(--header-color);
+        }
+    </style>
 </head>
 <body>
     <div class="page-up-product">
-        <!-- HEADER BEGIN -->
+        <!-- header -->
         <header class="header">
             <div class="grid wide">
                 <!-- navbar -->
-                <nav class="header__navbar hide-on-mobile-tablet">
+                <nav class="header__navbar hide-on-mobile-tablet" style="padding-top: 10px;">
                     <ul class="header__nav-list">
-                        <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Welcome customers!</li>
+                        <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Welcome
+                            customers!</li>
                         <!-- <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Trở thành Người bán Shopee</li>
                         <li class="header__nav-item header__nav-item--hover header__nav-item--separate header__show-qr">
                             Tải ứng dụng
@@ -68,6 +279,7 @@
                     <ul class="header__nav-list">
                         <li class="header__nav-item header__show-note">
                             <a href="#" class="header__nav-item-link">
+                                <!-- <i class="header__nav-icon far fa-bell rung"></i> -->
                                 <i class="header__nav-icon far fa-bell"></i>
                                 Notifications
                             </a>
@@ -154,8 +366,8 @@
                                 Help
                             </a>
                         </li>
-                        
-                       <?php if(!session()->has('loged_user')){ ?>
+
+                         <?php if(!session()->has('loged_user')){ ?>
                             <li class="header__nav-item header__nav-item--bold header__nav-item--separate">
                                 <a href="<?= base_url().'/register' ?>" class="header__nav-item-link">Sign Up</a>
                             </li>
@@ -207,10 +419,10 @@
                         <i class="header__mobile-menu-icon fa-solid fa-bars"></i>
                         <!-- <i class="header__mobile-search-icon fas fa-search"></i> -->
                     </label>
-                    
+
                     <div class="header__logo">
-                        
-                        <a href="<?= base_url('/home') ?>" class="header__logo-link">
+
+                        <a href="<?= base_url()?>" class="header__logo-link">
                             <!-- <img src="<?= base_url()?>/assets/img/logo/logo-full-white.png" class="header__logo-img"> -->
                             <img src="<?= base_url()?>/assets/img/logo/logo.png" class="header__logo-img">
                         </a>
@@ -224,8 +436,8 @@
                                 </ul>
                             </div>
                         </div>
-                        <button class="btn-Huan header__search-btn" onclick="loadSearch()">
-                            <i class='header__search-btn-icon fas fa-search'></i>;
+                        <button class="btn-Huan header__search-btn" style="outline: none; border: none; padding: 8px 0; margin-right: 4px; border-radius: 2px;" onclick="loadSearch()">
+                            <i class='header__search-btn-icon fas fa-search'></i>
                                
                             <script type="text/javascript">
                                 function loadSearch() {
@@ -234,16 +446,17 @@
                             </script>
                         </button>
                     </div>
-                    <!-- header__cart--no-cart --><!-- header__cart--has-cart -->
+                    <!-- header__cart--no-cart -->
+                    <!-- header__cart--has-cart -->
                     <div class="header__cart header__cart--has-cart">
                         <i class="header__cart-icon fas fa-shopping-cart"></i>
                         <div class="header__cart-count">4</div>
-                        
+
                         <div class="header__cart-list no-cart">
                             <img src="<?= base_url()?>/assets/img/sp/no-cart.png" class="header__no-cart-img">
                             <p class="header__no-cart-text">Chưa có sản phẩm</p>
                         </div>
-                        
+
                         <div class="header__cart-list has-cart">
                             <h4 class="header__cart-heading">Sản phẩm đã chọn</h4>
                             <ul class="header__cart-list-item">
@@ -285,7 +498,7 @@
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
                                             <p class="header__cart-item-price">2.800USD</p>
-                                        </div>  
+                                        </div>
                                         <div class="header__cart-item-body">
                                             <p class="header__cart-item-number">x 1</p>
                                             <div class="header__cart-item-close">
@@ -301,7 +514,7 @@
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
                                             <p class="header__cart-item-price">3.200USD</p>
-                                        </div>  
+                                        </div>
                                         <div class="header__cart-item-body">
                                             <p class="header__cart-item-number">x 3</p>
                                             <div class="header__cart-item-close">
@@ -349,7 +562,7 @@
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
                                             <p class="header__cart-item-price">2.800USD</p>
-                                        </div>  
+                                        </div>
                                         <div class="header__cart-item-body">
                                             <p class="header__cart-item-number">x 1</p>
                                             <div class="header__cart-item-close">
@@ -365,7 +578,7 @@
                                         <div class="header__cart-item-heading">
                                             <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
                                             <p class="header__cart-item-price">3.200USD</p>
-                                        </div>  
+                                        </div>
                                         <div class="header__cart-item-body">
                                             <p class="header__cart-item-number">x 3</p>
                                             <div class="header__cart-item-close">
@@ -377,7 +590,7 @@
                                 </li>
                             </ul>
                             <div class="header__cart-footer">
-                                <a href="#" class="btn-Huan btn--primary header__cart-see-cart">Xem giỏ hàng</a>
+                                <a href="#" class="btn btn--primary header__cart-see-cart">Xem giỏ hàng</a>
                             </div>
                         </div>
                     </div>
@@ -398,7 +611,6 @@
                 </li>
             </ul> -->
         </header>
-        <!-- HEADER END -->
 
         <!-- CONTAINER BEGIN -->
         <div class="container">
@@ -461,62 +673,62 @@
         </div>
         <!-- CONTAINER END -->
 
-        <!-- FOOTER BEGIN -->
-        <footer class="footer">
+         <!-- footer -->
+         <footer class="footer">
             <!-- main footer -->
             <div class="main-footer">
                 <div class="grid wide">
-                        <div class="row sm-gutter main-footer-info">
-                            <div class="col l-2-4 m-4 c-6">
-                                <h3 class="footer__heading">CUSTOMER SERVICE</h3>
-                                <ul class="footer-list">
-                                    <li>
-                                        <a href="#" class="footer-item-link">Help Center</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link">How to buy</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link">Payment</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link">Shipping</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link">Return & Refund</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link">Contact Us</a>
-                                    </li>
-                                
-                                </ul>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <h3 class="footer__heading">ABOUT SHOP</h3>
-                                <ul class="footer-list">
-                                    <li>
-                                        <a href="#" class="footer-item-link">About Us</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link">Shop Policies</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link">Privacy Policy</a>
-                                    </li>
-                                        <a href="#" class="footer-item-link">Media Contact</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col l-2-4 m-4 c-12 pay-and-ship">
-                                <div>
-                                    <h3 class="footer__heading">PAY MENT</h3>
-                                    <div class="footer-sale-ship">
-                                        <img src="<?= base_url()?>/assets/img/pay/1.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>/assets/img/pay/2.PNG" class="footer-item-sale-ship">
-                                                                       
-                                    </div>
+                    <div class="row sm-gutter main-footer-info">
+                        <div class="col l-2 m-4 c-6">
+                            <h3 class="footer__heading">CUSTOMER SERVICE</h3>
+                            <ul class="footer-list">
+                                <li>
+                                    <a href="#" class="footer-item-link">Help Center</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-item-link">How to buy</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-item-link">Payment</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-item-link">Shipping</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-item-link">Return & Refund</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-item-link">Contact Us</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="col l-2 m-4 c-6">
+                            <h3 class="footer__heading">ABOUT SHOP</h3>
+                            <ul class="footer-list">
+                                <li>
+                                    <a href="#" class="footer-item-link">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-item-link">Shop Policies</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-item-link">Privacy Policy</a>
+                                </li>
+                                <a href="#" class="footer-item-link">Media Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col l-2 m-4 c-12 pay-and-ship">
+                            <div>
+                                <h3 class="footer__heading">PAY MENT</h3>
+                                <div class="footer-sale-ship">
+                                    <img src="<?= base_url()?>/assets/img/pay/1.PNG" class="footer-item-sale-ship">
+                                    <img src="<?= base_url()?>/assets/img/pay/2.PNG" class="footer-item-sale-ship">
+
                                 </div>
-                                <!-- <div>
+                            </div>
+                            <!-- <div>
                                     <h3 class="footer__heading">ĐƠN VỊ VẬN CHUYỂN</h3>
                                     <div class="footer-sale-ship">
                                         <img src="<?= base_url()?>/assets/img/ship/1.PNG" class="footer-item-sale-ship">
@@ -530,53 +742,53 @@
                                         <img src="<?= base_url()?>/assets/img/ship/9.PNG" class="footer-item-sale-ship">
                                     </div>
                                 </div> -->
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <h3 class="footer__heading">FOLLOW US</h3>
-                                <ul class="footer-list">
-                                    <li>
-                                        <a href="#" class="footer-item-link footer-item-link-fb">
-                                            <i class="footer-item-icon fa-brands fa-vk"></i>
-                                            VKontakte
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link footer-item-link-is">
-                                            <i class="footer-item-icon fab fa-instagram-square"></i>
-                                            Instagram
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link footer-item-link-li">
-                                            <i class="footer-item-icon fab fa-telegram"></i>
-                                            Telegram
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col l-2-4 m-8 c-6">
-                                <h3 class="footer__heading">DOWNLOAD APP</h3>
-                                <div class="footer-download">
-                                    <a href="#" class="footer-download-link">
-                                        <img src="<?= base_url()?>/assets/img/qr/qr-code.png" class="footer-download-qr">
+                        </div>
+                        <div class="col l-2 m-4 c-6">
+                            <h3 class="footer__heading">FOLLOW US</h3>
+                            <ul class="footer-list">
+                                <li>
+                                    <a href="#" class="footer-item-link footer-item-link-fb">
+                                        <i class="footer-item-icon fa-brands fa-vk"></i>
+                                        VKontakte
                                     </a>
-                                    <div class="footer-download-app">
-                                        <a href="#" class="footer-download-link">
-                                            <img src="<?= base_url()?>/assets/img/qr/gg-play.png" class="footer-download-app-img">
-                                        </a>
-                                        <a href="#" class="footer-download-link">
-                                            <img src="<?= base_url()?>/assets/img/qr/app-store.png" class="footer-download-app-img">
-                                        </a>
-                                        <a href="#" class="footer-download-link">
-                                            <img src="<?= base_url()?>/assets/img/qr/app-gallery.png" class="footer-download-app-img">
-                                        </a>
-                                        <a href="#" class="footer-download-link">
-                                            <img src="<?= base_url()?>/assets/img/qr/ltp-img.png" class="footer-download-app-img">
-                                        </a>
-                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-item-link footer-item-link-is">
+                                        <i class="footer-item-icon fab fa-instagram-square"></i>
+                                        Instagram
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-item-link footer-item-link-li">
+                                        <i class="footer-item-icon fab fa-telegram"></i>
+                                        Telegram
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col l-2 m-8 c-6">
+                            <h3 class="footer__heading">DOWNLOAD APP</h3>
+                            <div class="footer-download">
+                                <a href="#" class="footer-download-link">
+                                    <img src="<?= base_url()?>/assets/img/qr/qr-code.png" class="footer-download-qr">
+                                </a>
+                                <div class="footer-download-app">
+                                    <a href="#" class="footer-download-link">
+                                        <img src="<?= base_url()?>/assets/img/qr/gg-play.png" class="footer-download-app-img">
+                                    </a>
+                                    <a href="#" class="footer-download-link">
+                                        <img src="<?= base_url()?>/assets/img/qr/app-store.png" class="footer-download-app-img">
+                                    </a>
+                                    <a href="#" class="footer-download-link">
+                                        <img src="<?= base_url()?>/assets/img/qr/app-gallery.png" class="footer-download-app-img">
+                                    </a>
+                                    <a href="#" class="footer-download-link">
+                                        <img src="<?= base_url()?>/assets/img/qr/ltp-img.png" class="footer-download-app-img">
+                                    </a>
                                 </div>
                             </div>
                         </div>
+                    </div>
                     <!-- copyright -->
                     <div class="row">
                         <div class="grid">
@@ -587,7 +799,7 @@
                     </div>
                 </div>
             </div>
-            <!-- other footer
+            <!-- other footer -->
             <div class="other-footer">
                 <div class="grid wide">
                     <div class="row other-footer-heading">
@@ -616,11 +828,9 @@
                         <div class="grid other-footer-info">
                             <p class="other-footer-title">About Shop</p>
                             <p class="other-footer-more">
-                                Address: Tầng 4-5-6, Tòa nhà Capital Place, số 29 đường Liễu Giai,
-                                Phường Ngọc Khánh, Quận Ba Đình, Thành phố Hà Nội, Việt Nam.
-                                Support call center: 19001221 - Email: cskh@hotro.shopee.vn
+                                Address: ITMO University.Support call center: 8(921)xxx xx xx - Email: abc@funnydonut.com
                             </p>
-                            <p class="other-footer-more">
+                            <!-- <p class="other-footer-more">
                                 Chịu Trách Nhiệm Quản Lý Nội Dung: Nguyễn Đức Trí -
                                 Điện thoại liên hệ: 024 73081221 (ext 4678)
                             </p>
@@ -631,13 +841,12 @@
                             <p class="other-footer-more">
                                 Ngày sản xuất 2015 -
                                 Bản quyền gốc thuộc về Công ty TNHH Shopee
-                            </p>
+                            </p> -->
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </footer>
-        <!-- FOOTER END -->
     </div>
 
     <!-- Script Type -->

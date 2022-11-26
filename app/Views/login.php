@@ -75,27 +75,10 @@
 
         <!-- Footer Begin-->
         <footer class="footer">
-            <p class="footer-copyright">Copyright @wework 2022 | Privacy Policy</p>
+            <p class="footer-copyright">Student of ITMO university</p>
         </footer>
         <!-- Footer End-->
     </div>    
 
-    <!-- <script>
-        function navRegis(){
-            var formRegis=document.getElementById("regis-box");
-            var formLogin=document.getElementById("login-box");
-            
-            formRegis.style.display="block";
-            formLogin.style.display="none";
-        }
-
-        function navLogin(){
-            var formRegis=document.getElementById("regis-box");
-            var formLogin=document.getElementById("login-box");
-            
-            formRegis.style.display="none";
-            formLogin.style.display="block";
-        }
-    </script> -->
 </body>
 </html>
