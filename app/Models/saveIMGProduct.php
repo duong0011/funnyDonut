@@ -8,7 +8,7 @@ class SaveIMGProduct extends Model
     protected $primaryKey = 'ipid';
 
     protected $returnType = 'array';
-    
+   
     protected $allowedFields = ['image', 'pid'];
 
 }

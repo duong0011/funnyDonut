@@ -13,9 +13,8 @@
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/grid.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/viewshop.css">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha384-qlmct0AOBiA2VPZkMY3+2WqkHtIQ9lSdAsAn5RUJD/3vA5MKDgSGcdmIv4ycVxyn"crossorigin="anonymous"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha384-qlmct0AOBiA2VPZkMY3+2WqkHtIQ9lSdAsAn5RUJD/3vA5MKDgSGcdmIv4ycVxyn"crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
@@ -599,99 +598,61 @@
         </div>
         
         <!-- container2 -->
+        <?php if(session()->has('loged_user')):?>
+
         <div class="container2">
             <div class="chat-box1" style="display:none;">
-                <div class="card" >
-                    <div class='card-header msg_head' style='background-color: rgba(134, 50, 50, 1);'></div>
-                    <div class='card-body msg_card_body' style='background-color: rgba(134, 50, 50, 0.1);'></div>
-                    <form action="#">
-                        <div class='card-footer'>
-                            <input type="" name="">
-                            <input type="text">
-                            <input name='' class='form-control type_msg' placeholder='Type your message...'>
-                            <button>
-                                <div class='input-group-append'>
-                                    <span class='input-group-text send_btn'><i class='fas fa-location-arrow'></i></span>
-                                </div>
-                            </button>
-                        </div>
-                    </form>
-                </div>
+               <div class="card">
+                    <div class="card-header msg_head" style="background-color: rgba(134, 50, 50, 1);">
+    
+                    </div>
+                    <div class="card-body msg_card_body" style="background-color: rgba(134, 50, 50, 0.1);">
+                    
+                    </div>
+                    <div class="card-footer">
+                        <form class="input-group" id="sendmess" method="post">
+                            <div class="input-group-append">
+                                <input type="file" id = 'input-file' multiple style="display: none;" name = 'files[]'>
+                                <label for="input-file" id = 'lfpushproduct' class="input-group-text attach_btn">
+                                    <span ><i class="fas fa-paperclip"></i></span> 
+                                </label>
+                                
+                                <div id = "images-on-push-product"></div>
+                            </div>
+                            <input type="text" name='idsend' value="<?= session()->get('loged_user');?>" hidden>
+                            <input type="text" name='idget' id="sendto" value="" hidden>
+                            <textarea name="msg" class="form-control type_msg" id = "form-control" placeholder="Type your message..." ></textarea>
+                            <div class="input-group-append">
+                                <button class="input-group-text send_btn"  style="border: none; outline: none;"> <i class="fas fa-location-arrow"></i></button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="chat-box2" style="display:none;">
                 <div class="card">
                 <div class="card-header">
-						<div class="input-group">
-							<input type="text" placeholder="Search..." name="" class="form-control search">
-							<div class="input-group-prepend">
-								<span class="input-group-text search_btn"><i class="fas fa-search"></i></span>
-							</div>
-						</div>
-					</div>
-					<div class="card-body contacts_body">
-						<ui class="contacts">
-							<li>
-								<div class="d-flex bd-highlight">
-									<div class="img_cont">
-										<img src="https://static2-images.vnncdn.net/files/publish/2022/9/19/lo-tu-1-146.jpg" class="rounded-circle user_img">
-										<span class="online_icon"></span>
-									</div>
-									<div class="user_info-searched">
-										<span>Triệu Lộ Tư</span>
-										<p>Online</p>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="d-flex bd-highlight">
-									<div class="img_cont">
-										<img src="https://znews-photo.zingcdn.me/w660/Uploaded/kbd_pilk/2022_01_01/bach_loc10.jpg" class="rounded-circle user_img">
-										<span class="online_icon offline"></span>
-									</div>
-									<div class="user_info-searched">
-										<span>Bạch Lộc</span>
-										<p>Left 7 mins ago</p>
-									</div>
-								</div>
-							</li>
-							
-								
-							</li>
-							<li>
-								<div class="d-flex bd-highlight">
-									<div class="img_cont">
-										<img src="https://vtv1.mediacdn.vn/zoom/550_339/2021/11/29/1597350815557dich-duong-thien-ti-khien-fan-vo-oa-voi-hinh-16276283065531081461379-crop-16276283125721658243581-163817188296830526689.jpg" class="rounded-circle user_img">
-										<span class="online_icon offline"></span>
-									</div>
-									<div class="user_info-searched">
-										<span>Dịch ương Thiên Tỉ</span>
-										<p>Left 50 mins ago</p>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="d-flex bd-highlight">
-									<div class="img_cont">
-										<img src="https://image.thanhnien.vn/w660/Uploaded/2022/zxaijr/2021_08_23/huakhaibaolucgiadinh10_nrpt.png" class="rounded-circle user_img">
-										<span class="online_icon offline"></span>
-									</div>
-									<div class="user_info-searched">
-										<span>Hứa Khải</span>
-										<p>Left 50 mins ago</p>
-									</div>
-								</div>
-							</li>
-							
-						</ui>
-					</div>
+                        <div class="input-group">
+                            <input type="text" placeholder="Search..." name="" class="form-control search">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text search_btn"><i class="fas fa-search"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body contacts_body">
+                        <ui class="contacts">
+                            
+                            
+                        </ui>
+                    </div>
                 </div>
             </div>
             <!-- button -->
             <div class="chat-btn">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwZck1Nal8rEIrnsqEVJkrA7jnnWEAeBXDZYJc9KFdUFPMxeRFP2ep3Osngu4-HXA4MwU&usqp=CAU" alt="chat box icon btn">
             </div>
-        </div>
+        </div>    
+        <?php endif ?>
         <!-- footer -->
         <footer class="footer">
             <!-- main footer -->
@@ -971,7 +932,8 @@
 
     <!-- script js -->
     <!-- <script src="<?= base_url()?>/assets/js/product.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+    <script src="https://malsup.github.io/jquery.form.js"></script> 
     <script>
         let bigImg = document.querySelector('.big__img img')
         function showImg(pic) {
@@ -986,6 +948,8 @@
                 }
                 $(".chat-box1").slideUp("slow");
                 $(".chat-box2").slideToggle("slow");
+                clearInterval(window.myIn);
+                loadListcontacts('<?= session()->get('loged_user');?>');
             })
 
         })
@@ -999,34 +963,71 @@
                 $(".chat-box1").slideDown("slow");
                 $(".chat-box2").slideDown("slow");
                 var curl = new URL(document.URL);
-                url = '<?=base_url('viewshop/boxchat')?>/'+curl.searchParams.get('sellerID');
-                $.ajax({
-                    url:url ,
-                    type: 'GET',
-                })
-                .done(function(response) {
-                    document.querySelector('.card-header').innerHTML = response;
-                    $('#action_menu_btn').click(function(){
-                        $('.action_menu').toggle();
-                    });
-                    setInterval(loadChat, 500);
-                })
-                .fail(function() {
-                    console.log("error");
-                })
+                loadChat(curl.searchParams.get('sellerID'));
+                loadListcontacts('<?= session()->get('loged_user');?>');
             })
         })
-        function loadChat() {
-
+        function loadListcontacts(id) {
+            $.ajax({
+                    url: '<?=base_url('viewshop/loadListcontacts')?>',
+                    type: 'get',
+                    data: {'id' : id},
+                    success: function (data) {
+                        document.querySelector('.contacts').innerHTML = data;
+                    }
+                });
         }
+        function loadChat(id) {
+            $(".chat-box1").slideDown("slow");
+            clearInterval(window.myIn);
+            url = '<?=base_url('viewshop/boxchat')?>/'+id;
+            $.ajax({
+                    url:url ,
+                    type: 'POST',
+                })
+            .done(function(response) {
+                document.querySelector('.card-header').innerHTML = response.output;
+                $('#action_menu_btn').click(function(){
+                    $('.action_menu').toggle();
+                });
+                document.getElementById('sendto').setAttribute('value', response.id);
+                window.myIn = setInterval(function () {
+                    $.ajax({
+                            url: '<?= base_url('viewshop/fetchChat') ?>',
+                            type: 'post',
+                            data: {
+                                'sendfrom' : '<?= session()->get('loged_user')?>',
+                                'sendto' : id
+                            },
+                            success: function (data) {
+                                document.querySelector('.msg_card_body').innerHTML = data;
+                            }
+                        });
+                }, 1000);
+            })
+            .fail(function() {
+                console.log("error");
+            });
+            // gui chat
+
+            $('#sendmess').ajaxForm({
+                url : "<?=base_url('/viewshop/saveMess')?>",
+                success: function(data) {
+                    let test = document.getElementById('form-control');
+                    test.value = "";
+                    loadListcontacts('<?= session()->get('loged_user');?>');
+                }
+            });
+        }
+
     </script>
     <!-- loa du lieu thanh tim kiem -->
-    <script>
+    
+    <script >
         jQuery(document).ready(function($) {
              $(document).on('keyup', '#searchproduct', function() {
                     let product = $('#searchproduct').val();
                     showHints(product);
-
                 });
         });
         function showHints(product) {

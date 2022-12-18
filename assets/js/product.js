@@ -52,7 +52,7 @@ function renderItem(items) {
                     <div class="home-product-item__favourite">
                         Yêu thích
                     </div>
-                    <div class="home-product-item__sale-off">
+                    <div class="home-prphpoduct-item__sale-off">
                         <div class="home-product-item__sale-off-value">${item.saleOff}%</div>
                         <div class="home-product-item__sale-off-label">GIẢM</div>
                     </div>
