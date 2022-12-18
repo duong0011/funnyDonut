@@ -65,7 +65,40 @@
                 -webkit-transform:rotate(0) scale(1) skew(1deg)
             }
         }
-        
+        .home-product-item__img {
+            position: relative;
+        }
+
+        .edit {
+            position: absolute;
+            bottom: 2px;
+            right: 3px;
+        }
+
+        .icon-edit{
+            font-size: 2.5rem;
+            color: var(--header-color);
+            padding: 8px;
+            background-color: rgba(256,256,256,0.85);
+            border-radius: 5px;
+            box-shadow: 0 0 5px var(--header-color);
+        }
+
+        .new-product a{
+            background-color: var(--header-color);
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: 400;
+            text-decoration: none;
+            border-radius: 15px;
+        }
+
+        .new-product a:hover {
+            text-decoration: none;
+            cursor: pointer;
+            opacity: 0.9;
+        }
     </style>
 </head>
 
@@ -564,15 +597,16 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </div> 
-
-                                
+                                </div>                    
+                            </div>
+                            <div class="new-product">
+                                    <a href="">New Product</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div id="list-product" class="row sm-gutter product__background">   
+                <div id="list-product" class="row sm-gutter product__background">
                 </div>
 
                 <!-- <div class="row sm-gutter product__background">
@@ -1084,7 +1118,12 @@
                     $.each(response.products , function(index, value) {
                     $('#list-product').append("<div class='col l-2 home-product-item'>\
                         <a class='home-product-item-link' href='<?= base_url('showproduct')?>?id="+value.pid+"'>\
-                        <div class='home-product-item__img' style='background-image:url(data:image/jpeg;base64,"+value.image+")'></div>\
+                        <div class='home-product-item__img' style='background-image:url(data:image/jpeg;base64,"+value.image+")'>\
+                            <div class='edit'>\
+                                <i class='fa-solid fa-pen-to-square icon-edit'></i>\
+                                <i class='fa-solid fa-trash-can icon-edit'></i>\
+                            </div>\
+                        </div>\
                         <div class='home-product-item__info'>\
                             <h4 class='home-product-item__name'>"+ value.nameproduct+"</h4>\
                             <div class='home-product-item__price'>\
