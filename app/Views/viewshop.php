@@ -87,6 +87,7 @@
 
         .icon-edit:hover {
             cursor: pointer;
+            opacity: 0.9;
         }
 
         .new-product a{
@@ -104,6 +105,18 @@
             cursor: pointer;
             opacity: 0.9;
         }
+
+        .magazin__info-btn {
+            background-color: var(--header-color);
+            color: var(--white);
+            border: none;
+        }
+
+        .magazin__info-btn:hover,
+        .btn--brown:hover {
+            opacity: 0.9;
+        }
+
     </style>
 </head>
 
@@ -499,11 +512,11 @@
 							</div>
 						</div>
 						<div class="shop__description" style="margin-bottom:10px">
-							<button class="magazin__info-btn" style="width: 180px;  height: 28px; font-size: 1.2em; border: 1px solid #888; border-radius: 4px;">
+							<button class="magazin__info-btn" style="width: 180px;  height: 28px; font-size: 1.2em; border-radius: 4px;">
 								<i class="magazin__info-btn-icon fa-solid fa-plus"></i>
 								<span class="magazin__info-btn-label">Follow</span>
 							</button>
-							<button class="magazin__info-btn magazin__info-btn--chat" style="width: 180px; height: 28px; font-size: 1.2em; border: 1px solid #888; border-radius: 4px;">
+							<button class="magazin__info-btn magazin__info-btn--chat" style="width: 180px; height: 28px; font-size: 1.2em; border-radius: 4px;">
 								<i class="magazin__info-btn-icon fa-solid fa-comments"></i>
 								<span class="magazin__info-btn-label">Chat now</span>
 							</button>
@@ -561,8 +574,8 @@
                                     </a>
                                 </button>
 
-                                <div class="btn home-filter-sort" style="min-width: 120px; padding-bottom: 0; background-color: rgba(130,50,50,0.1);">
-                                    <p class="home-filter-sort-btn">Menu</p>                                  
+                                <div class="btn home-filter-sort" style="min-width: 120px; background-color: rgba(130,50,50,0.1);">
+                                    <p class="home-filter-sort-btn" style="margin-bottom: 0;">Menu</p>                                  
                                     <ul class="home-filter-sort-list">
                                         <li>
                                             <a href="#" class="home-filter-sort-item-link">
@@ -584,9 +597,11 @@
                                 <button class="btn home-filter-btn" style="background-color: rgba(130,50,50,0.1);">Oldest</button>
                                 <button class="btn home-filter-btn" style="background-color: rgba(130,50,50,0.1);">Latest</button>
                                 <button class="btn home-filter-btn" style="background-color: rgba(130,50,50,0.1);">Bestseller</button>
-                                <div class="btn home-filter-sort" style="min-width: 180px; padding-bottom: 0; background-color: rgba(130,50,50,0.1);">
-                                    <p class="home-filter-sort-btn">Price</p>
-                                    <i class="fas fa-sort-amount-down-alt"></i>
+                                <div class="btn home-filter-sort" style="min-width: 180px; background-color: rgba(130,50,50,0.1);">
+                                    <p class="home-filter-sort-btn" style="margin-bottom: 0;">Price</p>
+                                    <div class="icon-filter-price">
+                                        <i class="fas fa-sort-amount-down-alt"></i>
+                                    </div>
                                     <ul class="home-filter-sort-list">
                                         <li>
                                             <a href="#" class="home-filter-sort-item-link">
