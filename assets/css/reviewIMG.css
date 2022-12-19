@@ -34,9 +34,9 @@ figcaption {
     margin-top: 0.5vmin;
 }
 .error_input {
+    display: block;
+    margin: 10px 0 5px;
     font-size: 1.2rem;
     font-weight: 500;
     color: var(--primary-color);
-    margin-top: -12px;
-    margin-bottom: 15px;
 }

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funny Donut</title>
+    <link rel="icon" href=" <?= base_url()?>/assets/img/logo/logo-web.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/login-base.css">
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/login-main.css">
@@ -95,7 +96,7 @@
                 <div class="header__navbar">
                     <div class="logo">
                         <a href="<?= base_url().'/home' ?>" class="logo-link">
-                            <img src=" <?= base_url()?>/assets/img/logo-no-color.png" alt="" class="logo-img">
+                            <img src=" <?= base_url()?>/assets/img/logo/logo.png" alt="" class="logo-img">
                         </a>
                     </div>
                     <div class="navbar__item">

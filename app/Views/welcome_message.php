@@ -8,7 +8,7 @@
     <title>Funny Donut</title>
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="icon" href=" <?= base_url()?>/assets/img/logo/shopee-logo.png" type="image/x-icon">
+    <link rel="icon" href=" <?= base_url()?>/assets/img/logo/logo-web.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/base.css">
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/style.css">
@@ -641,7 +641,7 @@
                                         <a href="<?= base_url('/profile') ?>">My profile</a>
                                     </li>
                                     <li class="header__nav-user-item">
-                                        <a href="#">Đơn mua</a>
+                                        <a href="#">History</a>
                                     </li>
                                     <li class="header__nav-user-item">
                                         <a href="<?= base_url().'/login/logout' ?>" >Logout</a>
@@ -1224,14 +1224,14 @@
                         <!-- home filter -->
                         <div class="home-filter hide-on-mobile-tablet">
                             <div class="home-filter-control">
-                                <p class="home-filter-title">Sorted by:</p>
+                                <p class="home-filter-title" style="margin-bottom:0;">Sorted by:</p>
                                 <button class="btn btn--brown home-filter-btn type-sort" id = "sortBySold" value="sold">Oldest</button>
                                 <button class="btn home-filter-btn" value="created_at" id = "sortByTime">
                                     Latest
                                 </button>
                                 <button class="btn home-filter-btn">Bestseller</button>
                                 <div class="btn home-filter-sort" style="width:220px;">
-                                    <p class="home-filter-sort-btn">Price</p>
+                                    <p class="home-filter-sort-btn" style="margin-bottom:0;">Price</p>
                                     <i class="fas fa-sort-amount-down-alt"></i>
                                     <ul class="home-filter-sort-list">
                                         <li>
