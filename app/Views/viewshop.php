@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
+    <title>Funny Donut</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="icon" href="<?= base_url()?>/assets/img/logo/shopee-logo.png" type="image/x-icon">
+    <link rel="icon" href="<?= base_url()?>/assets/img/logo/logo-web.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/base.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/style.css">
@@ -298,7 +298,11 @@
                                         <a href="<?= base_url('/profile') ?>">My profile</a>
                                     </li>
                                     <li class="header__nav-user-item">
+<<<<<<< HEAD
                                         <a href="<?= base_url('viewshop?sellerID=').session()->get('loged_user')?>">My shop</a>
+=======
+                                        <a href="#">History</a>
+>>>>>>> aa3ea2e610a86f8af5db118e671746492ff6e467
                                     </li>
                                     <li class="header__nav-user-item">
                                         <a href="<?= base_url().'/login/logout' ?>" >Logout</a>

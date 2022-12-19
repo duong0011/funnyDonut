@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initiacol l-scale=1.0">
     <title>Funny Donut</title>
+    <link rel="icon" href=" <?= base_url()?>/assets/img/logo/logo-web.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/Huan-base.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/Nga-base.css">
@@ -397,7 +398,7 @@
                                         <a href="<?= base_url('/profile') ?>">My profile</a>
                                     </li>
                                     <li class="header__nav-user-item">
-                                        <a href="#">Đơn mua</a>
+                                        <a href="#">History</a>
                                     </li>
                                     <li class="header__nav-user-item">
                                         <a href="<?= base_url().'/login/logout' ?>" >Logout</a>
