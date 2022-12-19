@@ -71,8 +71,9 @@
 
         .edit {
             position: absolute;
-            bottom: 2px;
-            right: 3px;
+            top: 153px;
+            right: 8px;
+            z-index: 99;
         }
 
         .icon-edit{
@@ -82,6 +83,10 @@
             background-color: rgba(256,256,256,0.85);
             border-radius: 5px;
             box-shadow: 0 0 5px var(--header-color);
+        }
+
+        .icon-edit:hover {
+            cursor: pointer;
         }
 
         .new-product a{
@@ -1117,12 +1122,12 @@
                     window.history.pushState('page2', 'Title', response.currentRequest1);
                     $.each(response.products , function(index, value) {
                     $('#list-product').append("<div class='col l-2 home-product-item'>\
+                        <div class='edit'>\
+                            <i class='fa-solid fa-pen-to-square icon-edit'></i>\
+                            <i class='fa-solid fa-trash-can icon-edit'></i>\
+                        </div>\
                         <a class='home-product-item-link' href='<?= base_url('showproduct')?>?id="+value.pid+"'>\
                         <div class='home-product-item__img' style='background-image:url(data:image/jpeg;base64,"+value.image+")'>\
-                            <div class='edit'>\
-                                <i class='fa-solid fa-pen-to-square icon-edit'></i>\
-                                <i class='fa-solid fa-trash-can icon-edit'></i>\
-                            </div>\
                         </div>\
                         <div class='home-product-item__info'>\
                             <h4 class='home-product-item__name'>"+ value.nameproduct+"</h4>\
