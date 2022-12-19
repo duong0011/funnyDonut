@@ -1708,7 +1708,7 @@
             Swal.fire({
                 icon: 'question',
                 title: 'Rate Us',
-                text: 'Tell others what you think about this product',
+                text: 'Do you like this product',
                 footer: html,
                 showCancelButton: true,
             }).then(function(e){
