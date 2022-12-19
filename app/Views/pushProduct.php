@@ -872,7 +872,7 @@
     </script>
 
     <!-- Preview Image -->
-	
+    
     <script>
         $(document).ready(() => {
             let fileInput = document.getElementById('input-file');
@@ -977,7 +977,7 @@
             }
             $('#form-input-product').ajaxForm({
                 success: function(data) {
-                    window.alert(data.result);
+                    window.alert(data);
                 }
             });
         });

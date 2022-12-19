@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/grid.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/viewshop.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/up-product.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/reviewIMG.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha384-qlmct0AOBiA2VPZkMY3+2WqkHtIQ9lSdAsAn5RUJD/3vA5MKDgSGcdmIv4ycVxyn"crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -34,7 +36,44 @@
             min-height: 100vh;
             
         } */
+        /* The Modal (background) */
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          padding-top: 100px; /* Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
 
+        /* Modal Content */
+        .modal-content {
+          background-color: #fefefe;
+          margin: auto;
+          padding: 20px;
+          border: 1px solid #888;
+          width: 50%;
+        }
+
+        /* The Close Button */
+        .close {
+          color: #aaaaaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
         .home-product-item-link:hover {
             text-decoration: none;
         }
@@ -84,7 +123,7 @@
             box-shadow: 0 0 5px var(--header-color);
         }
 
-        .new-product a{
+        .new-product {
             background-color: var(--header-color);
             color: white;
             padding: 10px;
@@ -94,7 +133,7 @@
             border-radius: 15px;
         }
 
-        .new-product a:hover {
+        .new-product {
             text-decoration: none;
             cursor: pointer;
             opacity: 0.9;
@@ -259,7 +298,7 @@
                                         <a href="<?= base_url('/profile') ?>">My profile</a>
                                     </li>
                                     <li class="header__nav-user-item">
-                                        <a href="#">Đơn mua</a>
+                                        <a href="<?= base_url('viewshop?sellerID=').session()->get('loged_user')?>">My shop</a>
                                     </li>
                                     <li class="header__nav-user-item">
                                         <a href="<?= base_url().'/login/logout' ?>" >Logout</a>
@@ -493,16 +532,18 @@
                                 <?php endif ?>
 							</div>
 						</div>
+                         <?php if(session()->get('loged_user') != $seller['unitid']): ?>
 						<div class="shop__description" style="margin-bottom:10px">
-							<button class="magazin__info-btn" style="width: 180px;  height: 28px; font-size: 1.2em; border: 1px solid #888; border-radius: 4px;">
-								<i class="magazin__info-btn-icon fa-solid fa-plus"></i>
-								<span class="magazin__info-btn-label">Follow</span>
-							</button>
-							<button class="magazin__info-btn magazin__info-btn--chat" style="width: 180px; height: 28px; font-size: 1.2em; border: 1px solid #888; border-radius: 4px;">
-								<i class="magazin__info-btn-icon fa-solid fa-comments"></i>
-								<span class="magazin__info-btn-label">Chat now</span>
-							</button>
-						</div>
+                            <button class="magazin__info-btn follow-button" style="width: 180px;  height: 28px; font-size: 1.2em; border: 1px solid #888; border-radius: 4px;">
+                                <i class="magazin__info-btn-icon fa-solid fa-plus"></i>
+                                <span class="magazin__info-btn-label follow-status"><?=$followerStatus?></span>
+                            </button>
+                            <button class="magazin__info-btn magazin__info-btn--chat" style="width: 180px; height: 28px; font-size: 1.2em; border: 1px solid #888; border-radius: 4px;">
+                                <i class="magazin__info-btn-icon fa-solid fa-comments"></i>
+                                <span class="magazin__info-btn-label">Chat now</span>
+                            </button>
+                        </div>
+                        <?php endif ?>
                     </div>
 
 					<div class="col l-1">
@@ -513,12 +554,12 @@
 						<div class="shop__product">
 							<i class="fa-solid fa-shop"></i>
 							<span class="shop__product--title">Products:</span>
-							<span class="shop__product--info">25</span>
+							<span class="shop__product--info productnumber"></span>
 						</div>
 						<div class="shop__joined">
 							<i class="fa-solid fa-check"></i>
 							<span class="shop__joined--title">Joined:</span>
-							<span class="shop__joined--info">21 months ago</span>
+							<span class="shop__joined--info jointime"></span>
 						</div>
 						<div class="shop__respontime">
 							<i class="fa-regular fa-comment-dots"></i>
@@ -530,17 +571,17 @@
 						<div class="shop__follower">
 							<i class="fa-solid fa-users"></i>
 							<span class="shop__follower--title">Followers:</span>
-							<span class="shop__follower--info">100k</span>
+							<span class="shop__follower--info follownumber"></span>
 						</div>
 						<div class="shop__following">
 							<i class="fa-solid fa-user-plus"></i>
 							<span class="shop__following--title">Following:</span>
-							<span class="shop__following--info">20</span>
+							<span class="shop__following--info following">20</span>
 						</div>
 						<div class="shop__rating">
 							<i class="fa-regular fa-star"></i>
 							<span class="shop__ratings--title">Ratings:</span>
-							<span class="shop__ratings--info">4.7 (46.3k)</span>
+							<span class="shop__ratings--info rating-number">4.7 (46.3k)</span>
 						</div>
                     </div>
                 </div>
@@ -550,8 +591,8 @@
                         <div class="home-filter hide-on-mobile-tablet" style="background-color: white;">
                             <div class="home-filter-control">
                                 <!-- <p class="home-filter-title">Sorted by:</p> -->
-                                <button class="btn btn--brown home-filter-btn">
-                                    <a href="">
+                                <button class="btn btn--brown home-filter-btn" onclick="loadProduct('', '<?=base_url('/viewshop/fetch')?>?sellerID='+curl.searchParams.get('sellerID'));">
+                                    <a href="#">
                                         All product
                                     </a>
                                 </button>
@@ -559,37 +600,37 @@
                                 <div class="btn home-filter-sort" style="min-width: 120px; padding-bottom: 0; background-color: rgba(130,50,50,0.1);">
                                     <p class="home-filter-sort-btn">Menu</p>                                  
                                     <ul class="home-filter-sort-list">
-                                        <li>
+                                        <li onclick="callLoadData('<?= base_url('viewshop/fetch?type=Bread')?>')">
                                             <a href="#" class="home-filter-sort-item-link">
                                                 Bread                                       
                                             </a>
                                         </li>
-                                        <li>
+                                        <li onclick="callLoadData('<?= base_url('viewshop/fetch?type=Candy')?>')">
                                             <a href="#" class="home-filter-sort-item-link">
                                                 Candy
                                             </a>
                                         </li>
-                                        <li>
+                                        <li onclick="callLoadData('<?= base_url('viewshop/fetch?type=Cake')?>')">
                                             <a href="#" class="home-filter-sort-item-link">                                               
                                                 Cake                                              
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
-                                <button class="btn home-filter-btn" style="background-color: rgba(130,50,50,0.1);">Oldest</button>
-                                <button class="btn home-filter-btn" style="background-color: rgba(130,50,50,0.1);">Latest</button>
-                                <button class="btn home-filter-btn" style="background-color: rgba(130,50,50,0.1);">Bestseller</button>
+                                <button class="btn home-filter-btn" style="background-color: rgba(130,50,50,0.1);" id = 'Oldest-id'>Oldest</button>
+                                <button class="btn home-filter-btn" style="background-color: rgba(130,50,50,0.1);" id = 'Latest-id'>Latest</button>
+                                <button class="btn home-filter-btn" style="background-color: rgba(130,50,50,0.1);" id = 'Bestseller-id'>Bestseller</button>
                                 <div class="btn home-filter-sort" style="min-width: 180px; padding-bottom: 0; background-color: rgba(130,50,50,0.1);">
                                     <p class="home-filter-sort-btn">Price</p>
                                     <i class="fas fa-sort-amount-down-alt"></i>
                                     <ul class="home-filter-sort-list">
-                                        <li>
+                                        <li id = 'price-htl'>
                                             <a href="#" class="home-filter-sort-item-link">
                                                 Price: Low to High
                                                 <i class="fas fa-sort-amount-down-alt"></i>
                                             </a>
                                         </li>
-                                        <li>
+                                        <li id = 'price-lth'>
                                             <a href="#" class="home-filter-sort-item-link">
                                                 
                                                 Price: Hight to Low
@@ -599,9 +640,74 @@
                                     </ul>
                                 </div>                    
                             </div>
-                            <div class="new-product">
-                                    <a href="">New Product</a>
+                            <?php if(session()->get('loged_user') == $seller['unitid']): ?>
+                            <button class="new-product" id = "myBtn"  style="border:none;"> 
+                                    New Product
+                            </button>
+                            <div id="myModal" class="modal">
+                              <!-- Modal content -->
+                              <div class="modal-content form-product">
+                                <span class="close">&times;</span>
+                                <div class="container ">
+                                    <div class="grid wide" >
+                                        <h1>NEW PRODUCT</h1>
+                                        <div class="">
+                                            <form class="form-up-product" id = 'form-input-product' method = 'post'  enctype="multipart/form-data">
+                                                <p class="product-name" >Name</p>
+                                                <span class="error_input" id = 'field_name'></span>
+                                                <input type="text" name = 'nameproduct' class="product-name-input form-input">
+                                                <p class="product-price">Price</p>
+                                                <span class="error_input" id = 'field_price'></span><br>
+                                                <input type="text" name = 'price' class="product-price-input form-input-other" placeholder="USD">
+
+                                                <p class="product-type-text">Type</p>
+                                                <select name="type" id="" class="product-type-select" onchange="productOtherWrite()">
+                                                    <option value="Bread">Bread</option>
+                                                    <option value="Cake">Cake</option>
+                                                    <option value="Candy">Candy</option>
+                                                    <option value="other">Other</option>
+                                                </select>
+                                                <input type="text" placeholder="write down..." class="form-product-other">
+                                                
+                                               
+
+                                                <p class="product-amount">Amount</p>
+                                                <span class="error_input" id = 'field_amount'></span><br>
+                                                <input type="text" class="product-amount-input form-input-other" name = 'amount'>
+
+                                                <p class="product-amount">Discount(%)</p>
+                                                <span class="error_input" id = 'field_discount'></span><br>
+                                                <input type="text" class="product-discount-input form-input-other" name = 'discount'>
+
+                                                <p class="product-weight">Size</p>
+                                                <span class="error_input" id = 'field_weight'></span><br>
+                                                <input type="text" class="product-weight-input form-input-other" placeholder="cm" name = 'weight'>
+
+                                                <p class="product-ingredient">Ingredient</p>
+                                                <textarea type="text" class="product-ingredient-input form-input" style="resize: none;" rows="1" name = 'ingredient'></textarea>
+
+                                                <p class="product-descripti on">Description</p>
+                                                <textarea type = 'text'class="product-description-input form-input" style="resize: none;" rows="7" name = 'info'></textarea> 
+
+                                                <p class="product-note">Note</p>
+                                                <textarea  type = 'text' class="product-note-input form-input" style="resize: none;" rows="7" name = 'note'> </textarea> 
+                                                <p class="product-photo" style="text-align: center;">Product photo</p>
+                                                <div>
+                                                    <input type="file" id = 'input-file-push' multiple style="display: none;" name = 'files[]'>
+                                                    <label for="input-file-push" id = 'lfpushproduct'>
+                                                        <i class="fas fa-upload"></i> &nbsp; Choose A Photo
+                                                    </label>
+                                                    <p id = "num-of-files" style="text-align: center; margin: 20px 0 30px 0;" class="error_input">No FILES Chosen</p>
+                                                    <div id = "images-on-push-product"></div>
+                                                </div>
+                                                <button class="product-save-btn" style = "text-align: center; display: block; width: 32%; height: 38px; font-size: 1.8rem; margin-left: 200px; cursor: pointer;" value="Save"> Save</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
                             </div>
+                            <?php endif?>
                         </div>
                     </div>
                 </div>
@@ -780,6 +886,7 @@
                                 </li>
                             </ul>
                         </div>
+
                         <div class="col l-2 m-4 c-6">
                             <h3 class="footer__heading">DOWNLOAD APP</h3>
                             <div class="footer-download">
@@ -966,7 +1073,7 @@
 
     <!-- script js -->
     <!-- <script src="<?= base_url()?>/assets/js/product.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+
     <script src="https://malsup.github.io/jquery.form.js"></script> 
     <script>
         let bigImg = document.querySelector('.big__img img')
@@ -1056,7 +1163,25 @@
 
     </script>
     <!-- loa du lieu thanh tim kiem -->
-    
+     <script>
+        var productType = document.getElementsByClassName("product-type-select");
+        var productOther = document.getElementsByClassName("form-product-other");
+        function productOtherWrite(){
+            
+            if(productType[0].value == "other"){
+
+                productOther[0].style.display="inline-block";
+                $('.form-product-other').change(function (e) {
+                    e.preventDefault();
+                    productType[0].options[3].value = $('.form-product-other').val();
+                });
+               
+            }
+            else {
+                productOther[0].style.display="none";
+            }
+        }
+    </script>
     <script >
         jQuery(document).ready(function($) {
              $(document).on('keyup', '#searchproduct', function() {
@@ -1095,22 +1220,22 @@
         }
     // load san pham
     function callLoadData(url, page, data) {
-        window.scrollTo({ top: 200, behavior: 'smooth' });
+        window.scrollTo({ top: 200, behavior: 'smooth'});
         var curl = new URL(document.URL);
-
+        page = !page ? curl.searchParams.get('page') : page;
         let data1 = {
             'sellerID' : curl.searchParams.get('sellerID'),
             'page' : page,
         };
         loadProduct(data1, url); 
-    } 
-
+    }
     function loadProduct(pdata, url) {
         $.ajax({
             url: url,
             data: pdata,
             type: 'get',
             success: function (response) {                  
+                console.log(response.test);
                 $('#list-product').html("");
                 $('#page').html(""); 
                 if (response.products !== null) {
@@ -1119,10 +1244,11 @@
                     $('#list-product').append("<div class='col l-2 home-product-item'>\
                         <a class='home-product-item-link' href='<?= base_url('showproduct')?>?id="+value.pid+"'>\
                         <div class='home-product-item__img' style='background-image:url(data:image/jpeg;base64,"+value.image+")'>\
-                            <div class='edit'>\
-                                <i class='fa-solid fa-pen-to-square icon-edit'></i>\
-                                <i class='fa-solid fa-trash-can icon-edit'></i>\
-                            </div>\
+                            <?php if(session()->get('loged_user') == $seller['unitid']):?>\
+                                <div class='edit'>\
+                                    <i class='fa-solid fa-trash-can icon-edit'></i>\
+                                </div>\
+                            <?php endif ?>\
                         </div>\
                         <div class='home-product-item__info'>\
                             <h4 class='home-product-item__name'>"+ value.nameproduct+"</h4>\
@@ -1149,7 +1275,7 @@
                             </div>\
                         </div>");
                     });
-                   
+                        
                         pageStart = Number(response.pageStart);
                         pageEnd = Number(response.pageEnd);
                         request = response.currentRequest.toString();
@@ -1221,7 +1347,188 @@
     }
     var curl = new URL(document.URL);
     loadProduct("", "<?=base_url('/viewshop/fetch')?>?sellerID="+curl.searchParams.get('sellerID'));
-    </script>
+    displayInfomation();
+    if(<?php if($seller['unitid'] == session()->get('loged_user')) echo 1; else {echo 0;} ?> == 1) { 
+
+             // form up san pham   
+        var modal = document.getElementById("myModal");
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        // When the user clicks the button, open the modal 
+       
+        btn.onclick = function() {
+        $.ajax({
+                url: '<?= base_url('viewshop/addresschecker')?>',
+                type: 'post',
+                success: function (data) {
+                    if(data != 1) window.alert('You need to update your address before adding the product!');
+                    else  modal.style.display = "block";
+                }
+            });
+        }
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+
+        $(document).ready(() => {
+                let fileInput = document.getElementById('input-file-push');
+                let imageContainer = document.getElementById('images-on-push-product');
+                let numOfFiles = document.getElementById('num-of-files');
+                $('#input-file-push').change(function (e) {
+                    e.preventDefault();
+                    imageContainer.innerHTML = '';
+                    if(fileInput.files.length < 5) {
+                        numOfFiles.textContent = 'Please select at least 5 photos';
+                        numOfFiles.classList.add('error_input');
+                        return false;
+                    }
+                    numOfFiles.textContent = fileInput.files.length+' Files Selected';
+                    for(i of fileInput.files) {
+                        let reader = new FileReader();
+                        let figure = document.createElement('figure');
+                        let figCap = document.createElement('figcaption');
+                        figCap.innerHTML = i.name;
+                        figure.appendChild(figCap);
+                        reader.onload=()=> {
+                            let img = document.createElement('img');
+                            img.setAttribute('src', reader.result);
+                            figure.insertBefore(img, figCap);
+                        }
+                        imageContainer.appendChild(figure);
+                        reader.readAsDataURL(i);
+                    }
+                });
+
+            });
+        $(document).ready(function() {
+            function statusOfField(field_name, tag_field, length_required, smg, typeNumber) { 
+                if(field_name.val().length < length_required && !typeNumber) {
+                    tag_field.text(smg);
+                    return false;
+                }
+                if((typeNumber && !isNumeric(field_name.val())) || Number(field_name.val()) <= 0) {
+                    tag_field.text(smg);
+                    return false;
+                }
+                tag_field.text("");
+                return true;
+            }
+            
+            $('.product-save-btn').on('click', function () {
+
+                $(document).on('submit', '#form-input-product', function() {
+                    return false;
+                });
+                
+                var status = [];
+                status.push(statusOfField($('.product-name-input'), $('#field_name'), 4, '*Name of product is requied and at least 4 character', 0));
+                status.push(statusOfField($('.product-price-input'), $('#field_price'), 4, '*Price of product is requied and and it must be a number greater than 0', 1));
+                status.push(statusOfField($('.product-amount-input'), $('#field_amount'), 4, '*Price of product is requied and and it must be a number greater than 0', 1));
+                status.push(statusOfField($('.product-discount-input'), $('#field_discount'), 4, '*Price of product is requied and and it must be a number greater than 0', 1));
+                var size = $('.product-weight-input').val();
+                var size_array = size.split(",");
+                for (var i = 0; i < size_array.length; i++) {
+                    if(size_array[i] < 0 || isNaN(size_array[i]) == true) {
+                        $('#field_weight').text('Invalid size');
+                        console.log(size_array[i]);
+                        return false;
+                    }
+                }
+                $('#field_weight').text('');
+                for(i of status) { 
+                    if(!i) return false;
+                }
+                let fileInput = document.getElementById('input-file-push');
+                if(fileInput.files.length < 5) {
+                    $('#num-of-files').text('Please select at least 5 photos');
+                    return false;
+                }
+                $('#form-input-product').ajaxForm({
+                    url : "<?=base_url('/viewshop/addToDB')?>",
+                    success: function(data) {
+                        window.alert(data);
+                        var curl = new URL(document.URL);
+                        loadProduct("", "<?=base_url('/viewshop/fetch')?>?sellerID="+curl.searchParams.get('sellerID'));
+                    }
+                });
+            });
+            
+        });
+        
+          // valid gia tri
+        function isNumeric(value) {
+            return /([0-9]+[\.|,][0-9]*)|([0-9]*[\.|,][0-9]+)|([0-9]+)/g.test(value);
+        }
+    }
+//them nguoi theo doi
+    $('.follow-button').on('click', function () {
+        $.ajax({
+                url: '<?= base_url('viewshop/addfollower')?>',
+                type: 'post',
+                data: {
+                    'shop' : '<?= $seller['unitid']?>'
+                },
+                success: function (data) {
+                   $('.follow-status').text(data);
+                }
+            });
+    });
+    //hien thi thong tin shop
+    function displayInfomation() {
+        $.ajax({
+                url: '<?=base_url('viewshop/display')?>',
+                type: 'get',
+                data: {
+                    'shop': '<?=$seller['unitid']?>'
+                },
+                success: function (data) {
+                    $('.productnumber').text(data.products);
+                    $('.jointime').text(data.join + " Month ago"); 
+                    $('.follownumber').text(data.follower);
+                    $('.following').text(Math.floor(Math.random() * 100));
+                    $('.rating-number').text(data.rating + ' (' + data.amountRating + ') ');
+                }
+            });
+    }
+    $('#Oldest-id').on('click', function () {
+        var curl = new URL(document.URL);
+        if(curl.searchParams.get('type') == null )
+            callLoadData('<?=base_url('viewshop/fetch/created_at/ASC')?>');
+        else callLoadData('<?=base_url('viewshop/fetch/created_at/ASC?type=')?>'+curl.searchParams.get('type'));
+    });
+    $('#Latest-id').on('click', function () {
+        var curl = new URL(document.URL);
+        if(curl.searchParams.get('type') == null )
+            callLoadData('<?=base_url('viewshop/fetch/created_at/DESC')?>');
+        else callLoadData('<?=base_url('viewshop/fetch/created_at/DESC?type=')?>'+curl.searchParams.get('type'));
+    });
+    $('#Bestseller-id').on('click', function () {
+        var curl = new URL(document.URL);
+        if(curl.searchParams.get('type') == null )
+            callLoadData('<?=base_url('viewshop/fetch/sold/ASC')?>');
+        else callLoadData('<?=base_url('viewshop/fetch/sold/ASC?type=')?>'+curl.searchParams.get('type'));
+    });
+    $('#price-htl').on('click', function () {
+        var curl = new URL(document.URL);
+        if(curl.searchParams.get('type') == null )
+            callLoadData('<?=base_url('viewshop/fetch/price/ASC')?>');
+        else callLoadData('<?=base_url('viewshop/fetch/price/ASC?type=')?>'+curl.searchParams.get('type'));
+    });
+    $('#price-lth').on('click', function () {
+        var curl = new URL(document.URL);
+        if(curl.searchParams.get('type') == null )
+            callLoadData('<?=base_url('viewshop/fetch/price/DESC')?>');
+        else callLoadData('<?=base_url('viewshop/fetch/price/DESC?type=')?>'+curl.searchParams.get('type'));
+    });
+</script>
 
 </body>
 

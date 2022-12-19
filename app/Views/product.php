@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="<?= base_url()?>./assets/css/product.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
@@ -666,23 +666,19 @@
                     </div>
                     <div class="col l-6 product-info">
                         <h1 class="product__name" style="padding-left: 10px">
-                            Bánh mì pate thơm ngon bổ dưỡng
+                            <?=$dataproduct['nameproduct']?>
                         </h1>
                         <div class="product__item-rating" style="padding-left: 10px">
                             <span class="product__quantity-rating">
-                                4.9
+                                <?=$dataproduct['star'] ?>
                             </span>
                             <div class="product-item__rating-star" style="padding-top: 6px;">
-                                <i class="star-checked far fa-star"></i>
-                                <i class="star-checked far fa-star"></i>
-                                <i class="star-checked far fa-star"></i>
-                                <i class="star-checked far fa-star"></i>
-                                <i class="star-checked far fa-star"></i>
+                                
                             </div>
                         </div>
                         <div class="product-item__price" style="padding-left: 10px">
-                            <p class="product-item__price-old">180USD</p>
-                            <p class="product-item__price-new">200USD</p>
+                            <p class="product-item__price-old"><?= round($dataproduct['price']-$dataproduct['price']*$dataproduct['discount']/100, 2)?> USD</p>
+                            <p class="product-item__price-new"><?=$dataproduct['price'] ?> USD</p>
                         </div>
                         <div class="row sm-gutter" style="padding-left: 10px">
                             <div class="col l-3">
@@ -692,31 +688,12 @@
                             </div>
                             <div class="col l-9">
                                 <div class="product-item__transport-info">
-                                    <span class="product-item__transport-label">Вяземский пер., 5/7, Санкт-Петербург, 1970222222222</span>
+                                    <span class="product-item__transport-label"><?= $seller['specificaddress'].', '.$seller['city'] ?></span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row sm-gutter" style="padding-left: 10px; display: none;">
-                            <div class="col l-2">
-                                <div class="product-item__shipping">
-                                    <span class="product-item__shipping-title">Shipping in city</span>
-                                </div>
-                            </div>
-                            <div class="col l-10">
-                                <div class="product-item__shipping-info">
-                                    <button class="product-item__shipping-info-btn">
-                                        <span class="product-item__shipping-info-btn-info">Moscow</span>
-                                    </button>
-                                    <button class="product-item__shipping-info-btn">
-                                        <span class="product-item__shipping-info-btn-info">Saint Peterburg</span>
-                                    </button>
-                                    <button class="product-item__shipping-info-btn">
-                                        <span class="product-item__shipping-info-btn-info">Kazan</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                       
 
                         <div class="row sm-gutter" style="padding-left: 10px">
                             <div class="col l-2">
@@ -739,9 +716,6 @@
                                     </button> -->
                                     <select id="country-state" name="country-state" class="shortenedSelect">
                                         <option value="">Select size</option>
-                                        <option value="ALT">24 cm</option>
-                                        <option value="ALT">26 cm</option>
-                                        <option value="AL">28 cm</option>
                                     </select>
                                 </div>
                             </div>
@@ -783,11 +757,26 @@
                     <div class="col l-4">
                         <div class="magazin__info">
                             <h3><?= $seller['fullname']?></h3>
-                            <span class="magazin__info-status">Active 3 Hours Ago</span>
-                            <button class="magazin__info-btn magazin__info-btn-active magazin__info-btn--chat">
+                            <?php if($seller['currentstatus'] == 'online'):?>
+                                    <span class="magazin__info-status" style="font-size:15px;color:#4cd137;"> Online</span>
+                                <?php else: ?>
+                                    <span class="magazin__info-status">Offline <?php 
+                                        date_default_timezone_set('Europe/Moscow');
+                                        $current = new DateTime();
+                                        $timelogout = new DateTime($seller['logout_time']);
+                                        $timelogoutcaculated = explode(',', $current->diff($timelogout, true)->format('%d,%h,%i'));
+                                        if($timelogoutcaculated[0]) echo $timelogoutcaculated[0],' days ago';
+                                        elseif($timelogoutcaculated[1]) echo $timelogoutcaculated[1],' hours ago';
+                                        elseif($timelogoutcaculated[2]) echo $timelogoutcaculated[2],' minutes ago';
+                                        else echo ' just now';
+                                    ?></span>
+                                <?php endif ?>
+                            <?php if($seller['unitid'] != session()->get('loged_user')): ?>
+                                <button class="magazin__info-btn magazin__info-btn-active magazin__info-btn--chat">
                                 <i class="magazin__info-btn-icon fa-solid fa-comments"></i>
                                 <span class="magazin__info-btn-label">Chat now</span>
                             </button>
+                            <?php endif ?>
                             <a href="<?= base_url('/viewshop')?>?sellerID=<?=$seller['unitid'] ?>">
                                 <button class="magazin__info-btn" style="min-width: 130px;">
                                     <i class="magazin__info-btn-icon fa-solid fa-shop"></i>
@@ -899,13 +888,10 @@
                     </div>
                     <div class="Product__description-info">
                         <span>
-                            BÁNH MỲ PHÔ MAI , ĐẬU ĐỎ
-                            - quy cách : thùng 1 kg
-                            - vị : phô mai , đậu đỏ
-                            - xuất xứ : thành phố Đức Châu , tỉnh Sơn Đông , Trung Quốc
-                            - hạn sử dụng : 2 tháng kể từ ngày sản xuất in trên vỏ bánh 👉bánh mỳ phô mai béo ngậy thơm vị sữa , bánh mỳ đậu đỏ thơm bùi tạo nên hương vị khó quên
-                            - bánh làm từ bột mì cao cấp , trứng sữa , phô mai , đậu đỏ toàn thành phần được tuyển chọn kĩ càng , buổi sáng chỉ cần một cái bánh và 1 ly sữa là đủ dinh dưỡng cho cả buổi sáng đầy năng lượng rồi
-                            - Mọi thắc mắc khách hàng vui lòng liên hệ : Trang ,sđt 0349977558 , địa chỉ 290 đoan tĩnh ,phường hải yên , thành phố móng cái , quảng ninh
+                           <?= $dataproduct['info'] ?>
+                        </span>
+                         <span>
+                           <?= $dataproduct['note'] ?>
                         </span>
                     </div>
 
@@ -941,20 +927,20 @@
                                     <input type="radio" id="star1" name="rate" value="1"/>
                                     <label for="star1" title="text">1 star</label>
                                 </div> -->
-                                <div class="stars">
+                               <!--  <div class="stars">
                                     <form action="">
                                         <input class="star star-5" id="star-5" type="radio" name="star"/>
-                                        <label class="star star-5" for="star-5"></label>
+                                        <label class="star star-5" for="star-5" onclick="changeS(5)"></label>
                                         <input class="star star-4" id="star-4" type="radio" name="star"/>
-                                        <label class="star star-4" for="star-4"></label>
+                                        <label class="star star-4" for="star-4"  onclick="changeS(4)"></label>
                                         <input class="star star-3" id="star-3" type="radio" name="star"/>
-                                        <label class="star star-3" for="star-3"></label>
+                                        <label class="star star-3" for="star-3"  onclick="changeS(3)"></label>
                                         <input class="star star-2" id="star-2" type="radio" name="star"/>
-                                        <label class="star star-2" for="star-2"></label>
+                                        <label class="star star-2" for="star-2"  onclick="changeS(2)"></label>
                                         <input class="star star-1" id="star-1" type="radio" name="star"/>
-                                        <label class="star star-1" for="star-1"></label>
+                                        <label class="star star-1" for="star-1"  onclick="changeS(1)"></label>
                                     </form>
-                                </div>
+                                </div> -->
                             </div>
                             <button class="btn home-filter-btn">All</button>
                             <button class="btn home-filter-btn product__rating-btn--active">
@@ -983,22 +969,26 @@
                 </div>
                 <!-- bình luận -->
 
-                <div class="row sm-gutter product__background" >
-                    <div class="col l-12">
-                        <div class="push__comment">
-                            <input type="file" id="file-input" accept="image/png, image/jpeg, image/jpg" onchange="preview()" multiple>
-                                <label for="file-input">
-                                    <i class="push__comment-icon push__comment-icon-append fas fa-paperclip"></i>
-                                </label>
-                            <input type="text" placeholder="Enter comment ...">
-                            </input>
-                            <i class="push__comment-icon push__comment-icon-send fas fa-location-arrow"></i>
-                        </div>
-                        <div class="push__comment-img">
-                            <div id="push__images"></div>
+                <?php if(session()->has('loged_user') && $seller['unitid'] != session()->get('loged_user')): ?>
+                    <div class="row sm-gutter product__background" >
+                        <div class="col l-12">
+                            <form action="#" method="post" id = 'form-coment'>
+                                <div class="push__comment">
+                                    <input type="file" id="file-comment" accept="image/png, image/jpeg, image/jpg" onchange="preview()" name='files[]' multiple>
+                                        <label for="file-comment">
+                                            <i class="push__comment-icon push__comment-icon-append fas fa-paperclip"></i>
+                                        </label>
+                                    <input type="text" id="comment-text" placeholder="Enter comment ...">
+                                    <button style="border: none;" class="send-comment"><i class="push__comment-icon push__comment-icon-send fas fa-location-arrow"></i></button>
+                                </div>
+                            
+                                <div class="push__comment-img">
+                                    <div id="push__images"></div>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                </div>
+                <?php endif ?>
 
                 <div class="row sm-gutter product__background"
                     style="border-bottom: 1px solid rgba(153, 153, 153, 0.3); padding-top: 10px;">
@@ -1040,15 +1030,15 @@
 
                         <div class="product__rating--images" style="margin-bottom: 10px;">
                             <div class="product__rating--image">
-                                <img src="<?= base_url()?>/assets/img/home/1.PNG" alt="" onclick="myFunction(this);">
+                                <img src="<?= base_url()?>/assets/img/home/1.PNG" alt="" onclick="myFunction(this, 1);">
 
                             </div>
                             <div class="product__rating--image">
-                                <img src="<?= base_url()?>/assets/img/home/2.PNG" alt="" onclick="myFunction(this);">
+                                <img src="<?= base_url()?>/assets/img/home/2.PNG" alt="" onclick="myFunction(this,1);">
 
                             </div>
                             <div class="product__rating--image">
-                                <img src="<?= base_url()?>/assets/img/home/3.PNG" alt="" onclick="myFunction(this);">
+                                <img src="<?= base_url()?>/assets/img/home/3.PNG" alt="" onclick="myFunction(this,1);">
 
                             </div>
 
@@ -1056,7 +1046,7 @@
 
                         <div class="fullImageComment" style="margin-bottom: 10px;">
                             <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-                            <img id="expandedImg" style="width:35%">
+                            <img id="expandedImg1" style="width:35%">
                             
                         </div>
                     </div>
@@ -1101,15 +1091,15 @@
 
                         <div class="product__rating--images" style="margin-bottom: 10px;">
                             <div class="product__rating--image">
-                                <img src="<?= base_url()?>/assets/img/home/1.PNG" alt="" onclick="myFunction(this);">
+                                <img src="<?= base_url()?>/assets/img/home/4.PNG" alt="" onclick="myFunction(this,2);">
 
                             </div>
                             <div class="product__rating--image">
-                                <img src="<?= base_url()?>/assets/img/home/2.PNG" alt="" onclick="myFunction(this);">
+                                <img src="<?= base_url()?>/assets/img/home/6.PNG" alt="" onclick="myFunction(this,2);">
 
                             </div>
                             <div class="product__rating--image">
-                                <img src="<?= base_url()?>/assets/img/home/3.PNG" alt="" onclick="myFunction(this);">
+                                <img src="<?= base_url()?>/assets/img/home/3.PNG" alt="" onclick="myFunction(this,2);">
 
                             </div>
 
@@ -1117,8 +1107,7 @@
 
                         <div class="fullImageComment" style="margin-bottom: 10px;">
                             <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-                            <img id="expandedImg" style="width:35%">
-                            
+                            <img id="expandedImg2" style="width:35%">
                         </div>
                     </div>
                 </div>
@@ -1135,7 +1124,7 @@
                             <div class="product__rating-info--name">
                                 <p>Lục Nhất Thiên</p>
                             </div>
-                            <div class="product__rating-item" style="display:none;">
+                            <div class="product__rating-item" style="display">
                                 <div class="product__rating-item-star">
                                     <i class="star-checked far fa-star"></i>
                                     <i class="star-checked far fa-star"></i>
@@ -1162,15 +1151,15 @@
 
                         <div class="product__rating--images" style="margin-bottom: 10px;">
                             <div class="product__rating--image">
-                                <img src="<?= base_url()?>/assets/img/home/4.PNG" alt="" onclick="myFunction(this);">
+                                <img src="<?= base_url()?>/assets/img/home/4.PNG" alt="" onclick="myFunction(this,3);">
 
                             </div>
                             <div class="product__rating--image">
-                                <img src="<?= base_url()?>/assets/img/home/2.PNG" alt="" onclick="myFunction(this);">
+                                <img src="<?= base_url()?>/assets/img/home/2.PNG" alt="" onclick="myFunction(this,3);">
 
                             </div>
                             <div class="product__rating--image">
-                                <img src="<?= base_url()?>/assets/img/home/3.PNG" alt="" onclick="myFunction(this);">
+                                <img src="<?= base_url()?>/assets/img/home/3.PNG" alt="" onclick="myFunction(this,3);">
 
                             </div>
 
@@ -1178,7 +1167,7 @@
 
                         <div class="fullImageComment" style="margin-bottom: 10px;">
                             <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-                            <img id="expandedImg" style="width:35%">
+                            <img id="expandedImg3" style="width:35%">
                             <!-- <div id="imgtext"></div> -->
                         </div>
                     </div>
@@ -1545,7 +1534,6 @@
             })
 
         })
-
         $(document).ready(()=>{
             $(".magazin__info-btn--chat").click(()=>{
                 if(<?= session()->has('loged_user') ? 0 : 1 ?>) {
@@ -1618,7 +1606,6 @@
          $(document).on('keyup', '#searchproduct', function() {
                 let product = $('#searchproduct').val();
                 showHints(product);
-
             });
     });
     function showHints(product) {
@@ -1653,7 +1640,7 @@
  </script>
 
 <script>
-    let fileInput = document.getElementById("file-input");
+    let fileInput = document.getElementById("file-comment");
     let imageContainer = document.getElementById("push__images");
     
     function preview() {
@@ -1678,12 +1665,97 @@
 </script>
 
 <script>
-    function myFunction(imgs) {
-        var expandImg = document.getElementById("expandedImg");
+    function myFunction(imgs, id) {
+        var expandImg = document.getElementById("expandedImg"+id);
         // var imgText = document.getElementById("imgtext");
         expandImg.src = imgs.src;
         // imgText.innerHTML = imgs.alt;
         expandImg.parentElement.style.display = "block";
+    }
+   // <i class="star-checked far fa-star"></i>
+    jQuery(document).ready(function($) {
+        for(i = 1; i <= <?= $dataproduct['star']?>; ++i) {
+            $('.product-item__rating-star').append('<i class="star-checked far fa-star"></i>');
+        }
+        var size_array = '<?= $dataproduct['weight']?>'.split(',');
+        size_array.forEach( function(size, index) {
+            $('.shortenedSelect').append('<option value="'+size+'">'+size+' cm</option>');
+        });
+    });
+    function changeS(x) {
+        window.star = x;
+    }
+    $('.send-comment').on('click', function () {
+        if( document.getElementById('comment-text').value == "" && document.getElementById('file-comment').files.length == 0) return false;
+        $(document).on('submit', '#form-coment', function() {
+                    return false;
+        });
+        if(window.star == null) {
+            var html = '<div class="stars">\
+                                    <form action="">\
+                                        <input class="star star-5" id="star-5" type="radio" name="star"/>\
+                                        <label class="star star-5" for="star-5" onclick="changeS(5)"></label>\
+                                        <input class="star star-4" id="star-4" type="radio" name="star"/>\
+                                        <label class="star star-4" for="star-4"  onclick="changeS(4)"></label>\
+                                        <input class="star star-3" id="star-3" type="radio" name="star"/>\
+                                        <label class="star star-3" for="star-3"  onclick="changeS(3)"></label>\
+                                        <input class="star star-2" id="star-2" type="radio" name="star"/>\
+                                        <label class="star star-2" for="star-2"  onclick="changeS(2)"></label>\
+                                        <input class="star star-1" id="star-1" type="radio" name="star"/>\
+                                        <label class="star star-1" for="star-1"  onclick="changeS(1)"></label>\
+                                    </form>\
+                                </div>';
+            Swal.fire({
+                icon: 'question',
+                title: 'Rate Us',
+                text: 'Tell others what you think about this product',
+                footer: html,
+                showCancelButton: true,
+            }).then(function(e){
+                if(e.value === true) {
+                    var data = new FormData();
+                    var totalfiles = document.getElementById('file-comment').files.length;
+                    for (var index = 0; index < totalfiles; index++) {
+                        data.append("files[]", document.getElementById('file-comment').files[index]);
+                    }
+                    if(window.star == null) window.star = 5;
+                    data.append("content", $('#comment-text').val());
+                    data.append("star", window.star);
+                    data.append("productid", <?= $dataproduct['pid']?>);    
+                    $.ajax({
+                            url: '<?=base_url('/showProduct/comment')?>',
+                            type: 'post',
+                            data: data,
+                            contentType: false,
+                            processData: false,
+                            success: function (data) {
+                                document.getElementById('comment-text').value = "";
+                                $('#push__images').html("");
+                            }
+                        });
+                }
+                window.star = null;
+            });
+        }
+        
+       
+    
+    });
+    function displayInfomation() {
+        $.ajax({
+                url: '<?=base_url('viewshop/display')?>',
+                type: 'get',
+                data: {
+                    'shop': '<?=$seller['unitid']?>'
+                },
+                success: function (data) {
+                    $('.productnumber').text(data.products);
+                    $('.jointime').text(data.join + " Month ago"); 
+                    $('.follownumber').text(data.follower);
+                    $('.following').text(Math.floor(Math.random() * 100));
+                    $('.rating-number').text(data.rating + ' (' + data.amountRating + ') ');
+                }
+            });
     }
 </script>
 

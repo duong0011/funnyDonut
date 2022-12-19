@@ -5,6 +5,8 @@ use App\Models\userModel;
 use App\Models\index_model;
 use App\Models\Product;
 use App\Models\savemessages;
+use App\Models\saveIMGProduct;
+use App\Models\followtable;
 class Viewshop extends Controller
 {
 	private $data;
@@ -14,22 +16,33 @@ class Viewshop extends Controller
 		$this->data = [];
 		$this->model = new index_model();
         $this->userModel = new userModel();
+        $this->db = new Product();
 	}
 	public function index() {
 		if(!isset($_GET['sellerID'])) return redirect()->to('Home');
 		$sellerID = $this->request->getVar('sellerID');
-		$this->data['seller'] = $this->userModel->select('avatar, fullname, login_time, logout_time, currentstatus')->getWhere(['unitid' => $sellerID])->getRowArray();
+		$followtable = new followtable();
+		$getFollower = $followtable->getWhere(['shop' => $sellerID])->getResultArray();
+		$this->data['followerStatus'] = 'Follow';
+		foreach ($getFollower as $key) {
+			if($key['follower'] == session()->get('loged_user')) $this->data['followerStatus'] = 'Followed';
+		}
+		$this->data['seller'] = $this->userModel->select('avatar, fullname, login_time, logout_time, currentstatus, unitid')->getWhere(['unitid' => $sellerID])->getRowArray();
 		$model = new index_model();
 		if(session()->has('loged_user')) {
         	$this->data['user'] = $model->getInfoUser(session()->get('loged_user'));
         }
 		return view('viewshop', $this->data);
 	}
-	public function fetch() {
+	public function fetch($attribute = '', $method = "") {
 		$sellerID = $this->request->getVar('sellerID');
 		$builder = new Product();
-
-		$result = $builder->select('pid,nameproduct, price, rating, image, discount, sold')->where(['owner' => $sellerID]);
+		$type = $this->request->getVar('type');
+		$this->data['test'] = $type;
+		if($type == '')
+			$result = $builder->select('pid,nameproduct, price, rating, image, discount, sold')->where(['owner' => $sellerID]);
+		else $result = $builder->select('pid,nameproduct, price, rating, image, discount, sold')->where(['owner' => $sellerID, 'type' => $type]);
+		$result = $this->model->sortQuery($result, $attribute, $method);
 		$this->data['products'] = $this->getDataIndex($result);;
 		return $this->response->setJSON($this->data);	
 	}
@@ -200,4 +213,76 @@ class Viewshop extends Controller
     	}
     	echo $output;
     }
+    public function addToDB()
+	{
+		if($this->request->getMethod() =='post') {
+			$builder = $this->db;
+			$userID = session()->get('loged_user');
+			$address = $this->userModel->select('city')->getWhere(['unitid' => $userID])->getRowArray();
+			$_POST['rating'] = random_int(1000,10000);
+			$_POST['sold'] = random_int(1000, 10000);
+			$_POST['owner'] = session()->get('loged_user');
+			$_POST['address'] = $address['city'];
+			$builder->save($_POST);
+			$id = $builder->insertID;
+			$builder->set([
+				'image' => base64_encode(file_get_contents($_FILES['files']['tmp_name'][0])),
+			]);
+			$builder->where('pid', $id)->update();
+			$saveIMG = new saveIMGProduct();
+			foreach ($_FILES['files']['name'] as $key => $value) {
+				$data = [
+					'pid' => $id,
+					'image' => base64_encode(file_get_contents($_FILES['files']['tmp_name'][$key]))
+				];
+				$saveIMG->save($data);
+			}
+			echo "This products had been added!";
+		}
+
+	}
+	public function addresschecker()
+	{
+		$userID = session()->get('loged_user');
+		$address = $this->userModel->select('city')->getWhere(['unitid' => $userID])->getRowArray();
+		if($address['city'] == "") echo 0;
+		else echo 1;
+	}
+	public function addfollower()
+	{
+		if($this->request->getMethod() == 'post') {
+			$sellerID = $this->request->getVar('shop');
+			$followtable = new followtable();
+			$getFollower = $followtable->getWhere(['shop' => $sellerID])->getResultArray();
+			foreach ($getFollower as $key) {
+				if($key['follower'] == session()->get('loged_user')){
+					$followtable->where(['shop' => $sellerID, 'follower' => $key['follower']])->delete();
+					echo 'Follow';
+					return;
+				}
+			}
+			$followtable->save(['shop' => $_POST['shop'], 'follower' => session()->get('loged_user')]);
+			echo "Followed";
+		}
+	}
+	public function display()
+	{
+		if($this->request->getMethod() == 'get') {
+			$id = $_GET['shop'];
+			$data['products'] = $this->db->where(['owner' => $id])->countAllResults();
+			date_default_timezone_set('Europe/Moscow');
+	        $jointime = date_create($this->userModel->select('created_at')->getWhere(['unitid' => $id])->getRowArray()['created_at']);
+	        $data['join'] = max(intval(date_diff(date_create(date("Y-m-d H:s:i")), $jointime)->format('%m')), 1);
+			$followtable = new followtable();
+			$data['follower'] = $followtable->where(['shop' => $id])->countAllResults();
+			$data['rating'] = $this->userModel->getWhere(['unitid' => $id])->getRowArray()['star'];
+			$amount = $this->db->getWhere(['owner' => $id])->getResultArray();
+			$sum = 0;
+			foreach ($amount as $key) {
+				$sum+= $key['rating'];
+			}
+			$data['amountRating'] = round($sum/1000, 2).'K';
+			return $this->response->setJSON($data);
+		}
+	}
 }

@@ -641,7 +641,7 @@
                                         <a href="<?= base_url('/profile') ?>">My profile</a>
                                     </li>
                                     <li class="header__nav-user-item">
-                                        <a href="#">Đơn mua</a>
+                                        <a href="<?= base_url('viewshop?sellerID=').session()->get('loged_user')?>">My shop</a>
                                     </li>
                                     <li class="header__nav-user-item">
                                         <a href="<?= base_url().'/login/logout' ?>" >Logout</a>
@@ -957,111 +957,6 @@
                                     </li>
                                 </ul>
                             </div> -->
-                            <div class="category-group" style="width: 100%;">
-                                <div class="category-group-title">State</div>
-                                <!-- <ul class="category-group-list">
-                                    <li class="category-group-item">
-                                        <input type="checkbox" class="category-group-item-check">
-                                        During the day
-                                    </li>
-                                    <li class="category-group-item">
-                                        <input type="checkbox" class="category-group-item-check">
-                                        Up to 3 days
-                                    </li>
-                                    <li class="category-group-item">
-                                        <input type="checkbox" class="category-group-item-check">
-                                        Up to 7 days
-                                    </li>
-                                
-
-                                </ul> -->
-                                <select id="country-state" name="country-state" class="shortenedSelect">
-                                    <option value="">Select State</option>
-                                    <option value="ALT">Altai Krai</option>
-                                    <option value="AL">Altai Republic</option>
-                                    <option value="AMU">Amur Oblast</option>
-                                    <option value="ARK">Arkhangelsk</option>
-                                    <option value="AST">Astrakhan Oblast</option>
-                                    <option value="BEL">Belgorod Oblast</option>
-                                    <option value="BRY">Bryansk Oblast</option>
-                                    <option value="CE">Chechen Republic</option>
-                                    <option value="CHE">Chelyabinsk Oblast</option>
-                                    <!-- <option value="CHU">Chukotka Autonomous Okrug</option> -->
-                                    <option value="CU">Chuvash Republic</option>
-                                    <option value="IRK">Irkutsk</option>
-                                    <option value="IVA">Ivanovo Oblast</option>
-                                    <!-- <option value="YEV">Jewish Autonomous Oblast</option> -->
-                                    <!-- <option value="KB">Kabardino-Balkar Republic</option> -->
-                                    <option value="KGD">Kaliningrad</option>
-                                    <option value="KLU">Kaluga Oblast</option>
-                                    <option value="KAM">Kamchatka Krai</option>
-                                    <!-- <option value="KC">Karachay-Cherkess Republic</option> -->
-                                    <option value="KEM">Kemerovo Oblast</option>
-                                    <option value="KHA">Khabarovsk Krai</option>
-                                    <!-- <option value="KHM">Khanty-Mansi Autonomous Okrug</option> -->
-                                    <option value="KIR">Kirov Oblast</option>
-                                    <option value="KO">Komi Republic</option>
-                                    <option value="KOS">Kostroma Oblast</option>
-                                    <option value="KDA">Krasnodar Krai</option>
-                                    <option value="KYA">Krasnoyarsk Krai</option>
-                                    <option value="KGN">Kurgan Oblast</option>
-                                    <option value="KRS">Kursk Oblast</option>
-                                    <option value="LEN">Leningrad Oblast</option>
-                                    <option value="LIP">Lipetsk Oblast</option>
-                                    <option value="MAG">Magadan Oblast</option>
-                                    <option value="ME">Mari El Republic</option>
-                                    <option value="MOW">Moscow</option>
-                                    <option value="MOS">Moscow Oblast</option>
-                                    <option value="MUR">Murmansk Oblast</option>
-                                    <!-- <option value="NEN">Nenets Autonomous Okrug</option> -->
-                                    <!-- <option value="NIZ">Nizhny Novgorod Oblast</option> -->
-                                    <option value="NGR">Novgorod Oblast</option>
-                                    <option value="NVS">Novosibirsk</option>
-                                    <option value="OMS">Omsk Oblast</option>
-                                    <option value="ORE">Orenburg Oblast</option>
-                                    <option value="ORL">Oryol Oblast</option>
-                                    <option value="PNZ">Penza Oblast</option>
-                                    <option value="PER">Perm Krai</option>
-                                    <option value="PRI">Primorsky Krai</option>
-                                    <option value="PSK">Pskov Oblast</option>
-                                    <option value="AD">Republic of Adygea</option>
-                                    <!-- <option value="BA">Republic of Bashkortostan</option> -->
-                                    <option value="BU">Republic of Buryatia</option>
-                                    <option value="DA">Republic of Dagestan</option>
-                                    <option value="IN">Republic of Ingushetia</option>
-                                    <option value="KL">Republic of Kalmykia</option>
-                                    <option value="KR">Republic of Karelia</option>
-                                    <option value="KK">Republic of Khakassia</option>
-                                    <option value="MO">Republic of Mordovia</option>
-                                    <!-- <option value="SE">Republic of North Ossetia-Alania</option> -->
-                                    <option value="TA">Republic of Tatarstan</option>
-                                    <option value="ROS">Rostov Oblast</option>
-                                    <option value="RYA">Ryazan Oblast</option>
-                                    <option value="SPE">Saint Petersburg</option>
-                                    <option value="SA">Sakha Republic</option>
-                                    <option value="SAK">Sakhalin</option>
-                                    <option value="SAM">Samara Oblast</option>
-                                    <option value="SAR">Saratov Oblast</option>
-                                    <option value="UA-40">Sevastopol</option>
-                                    <option value="SMO">Smolensk Oblast</option>
-                                    <option value="STA">Stavropol Krai</option>
-                                    <option value="SVE">Sverdlovsk</option>
-                                    <option value="TAM">Tambov Oblast</option>
-                                    <option value="TOM">Tomsk Oblast</option>
-                                    <option value="TUL">Tula Oblast</option>
-                                    <option value="TY">Tuva Republic</option>
-                                    <option value="TVE">Tver Oblast</option>
-                                    <option value="TYU">Tyumen Oblast</option>
-                                    <option value="UD">Udmurt Republic</option>
-                                    <option value="ULY">Ulyanovsk Oblast</option>
-                                    <option value="VLA">Vladimir Oblast</option>
-                                    <option value="VLG">Vologda Oblast</option>
-                                    <option value="VOR">Voronezh Oblast</option>
-                                    <!-- <option value="YAN">Yamalo-Nenets Autonomous Okrug</option> -->
-                                    <option value="YAR">Yaroslavl Oblast</option>
-                                    <option value="ZAB">Zabaykalsky Krai</option>
-                                </select>
-                            </div>
                             <!-- <div class="category-group">
                                 <div class="category-group-title">Lựa Chọn Thanh Toán</div>
                                 <ul class="category-group-list">
@@ -1869,8 +1764,7 @@
  </script>
 
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-
- <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script>
         let bigImg = document.querySelector('.big__img img')
         function showImg(pic) {
