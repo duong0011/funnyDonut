@@ -133,7 +133,7 @@
             border-radius: 15px;
         }
 
-        .new-product {
+        .new-product:hover {
             text-decoration: none;
             cursor: pointer;
             opacity: 0.9;

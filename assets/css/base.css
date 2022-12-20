@@ -129,6 +129,10 @@ html {
     background-color: var(--header-color);
 }
 
+.btn.btn--brown:hover {
+    opacity: 0.9;
+}
+
 .btn.btn-signin {
     height: 32px;
     font-size: 1.2rem;
