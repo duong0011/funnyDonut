@@ -129,6 +129,10 @@ html {
     background-color: var(--header-color);
 }
 
+.btn.btn--brown:hover {
+    opacity: 0.9;
+}
+
 .btn.btn-signin {
     height: 32px;
     font-size: 1.2rem;
@@ -154,6 +158,7 @@ html {
 
 .pagination-item .pagination-item-link:hover {
     box-shadow: 0 0 3px #333;
+    cursor: pointer;
 }
 
 .pagination-item-link {
@@ -166,6 +171,7 @@ html {
     line-height: 30px;
     min-width: 40px;
     border-radius: 3px;
+    border: none;
 }
 
 .pagination-item .pagination-item-link--disable:hover {

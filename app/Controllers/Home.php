@@ -39,7 +39,6 @@ class Home extends BaseController
         if($keyWord) $result = $this->model->getByKeyword($result,$keyWord);
         $gotData = $this->getDataIndex($result);
         $this->data['products'] = $result->countAllResults(false) ?  $gotData  : null;
-        //print_r($gotData);
         return $this->response->setJSON($this->data);
     }
     public function getDataIndex($result)

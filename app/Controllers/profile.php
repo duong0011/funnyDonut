@@ -38,7 +38,9 @@ class Profile extends Controller
 			$data = [
 				'fullname' => $this->request->getPost('fullname'),
 				'gender' => $this->request->getPost('gender'),
-				'DateOfBirth' => $this->request->getPost('DateOfBirth')
+				'DateOfBirth' => $this->request->getPost('DateOfBirth'),
+				'city' => $_POST['city'],
+				'specificaddress' => $_POST['specificaddress']
 			];
 			foreach($data as $value) {
 				if(!$value) return false;

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funny Donut</title>
+    <link rel="icon" href=" <?= base_url()?>/assets/img/logo/logo-web.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/Huan-base.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/Nga-base.css" >
@@ -388,7 +389,10 @@
                                         <a href="<?= base_url('/profile') ?>">My profile</a>
                                     </li>
                                     <li class="header__nav-user-item">
-                                        <a href="#">Đơn mua</a>
+                                        <a href="<?= base_url('viewshop?sellerID=').session()->get('loged_user')?>">My shop</a>
+                                    </li>
+                                    <li class="header__nav-user-item">
+                                        <a href="#">History</a>
                                     </li>
                                     <li class="header__nav-user-item">
                                         <a href="<?= base_url().'/login/logout' ?>" >Logout</a>
@@ -624,7 +628,7 @@
                         <input type="text" name = 'nameproduct' class="product-name-input form-input">
 
                         <p class="product-price">Price</p>
-                        <span class="error_input" id = 'field_price'></span><br>
+                        <span class="error_input" id = 'field_price'></span>
                         <input type="text" name = 'price' class="product-price-input form-input-other" placeholder="USD">
 
                         <p class="product-type-text">Type</p>
@@ -872,7 +876,7 @@
     </script>
 
     <!-- Preview Image -->
-	
+    
     <script>
         $(document).ready(() => {
             let fileInput = document.getElementById('input-file');
@@ -969,15 +973,15 @@
             var status = [];
             status.push(statusOfField($('.product-name-input'), $('#field_name'), 4, '*Name of product is requied and at least 4 character', 0));
             status.push(statusOfField($('.product-price-input'), $('#field_price'), 4, '*Price of product is requied and and it must be a number greater than 0', 1));
-            status.push(statusOfField($('.product-amount-input'), $('#field_amount'), 4, '*Price of product is requied and and it must be a number greater than 0', 1));
-            status.push(statusOfField($('.product-discount-input'), $('#field_discount'), 4, '*Price of product is requied and and it must be a number greater than 0', 1));
-            status.push(statusOfField($('.product-weight-input'), $('#field_weight'), 4, '*Price of product is requied and and it must be a number greater than 0', 1));
+            status.push(statusOfField($('.product-amount-input'), $('#field_amount'), 4, '*Amount of product is requied and and it must be a number greater than 0', 1));
+            status.push(statusOfField($('.product-discount-input'), $('#field_discount'), 4, '*Discount of product is requied and and it must be a number greater than 0', 1));
+            status.push(statusOfField($('.product-weight-input'), $('#field_weight'), 4, '*Weight of product is requied and and it must be a number greater than 0', 1));
             for(i of status) { 
                 if(!i) return false;
             }
             $('#form-input-product').ajaxForm({
                 success: function(data) {
-                    window.alert(data.result);
+                    window.alert(data);
                 }
             });
         });

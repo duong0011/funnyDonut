@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funny Donut</title>
+    <link rel="icon" href=" <?= base_url()?>/assets/img/logo/logo-web.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/Huan-base.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/Nga-base.css">
@@ -390,7 +391,10 @@
                                         <a href="<?= base_url('/profile') ?>">My profile</a>
                                     </li>
                                     <li class="header__nav-user-item">
-                                        <a href="#">Đơn mua</a>
+                                        <a href="<?= base_url('viewshop?sellerID=').session()->get('loged_user')?>">My shop</a>
+                                    </li>
+                                    <li class="header__nav-user-item">
+                                        <a href="#">History</a>
                                     </li>
                                     <li class="header__nav-user-item">
                                         <a href="<?= base_url().'/login/logout' ?>" >Logout</a>
@@ -661,17 +665,16 @@
                                         </li>
                                         <li class="profile-username">
                                             <span>Username</span>
-                                            <input type="text" value="<?= $user['username']?>" class="form-input" readonly> 
+                                            <p class="form-input" readonly><?= $user['username']?></p> 
                                         </li>
                                         <li class="profile-phone">
                                             <span>Phone number</span>
-                                            <p class="profile-phone"><?= $user['phonenumber'];?></p>
-                                            <a href="" class="profile-change">Change</a>
+                                            <input class="profile-phone form-input" value="<?= $user['phonenumber'];?>">
                                         </li>
                                         <li class="profile-address">
                                             <span>Address</span>
                                             <select id="country-state" name="country-state" class="shortenedSelect">
-                                                <option value="">Select State</option>
+                                                <option value=""><?= $user['city'] == '' ? "Select State" : $user['city'] ?></option>
                                                 <option value="ALT">Altai Krai</option>
                                                 <option value="AL">Altai Republic</option>
                                                 <option value="AMU">Amur Oblast</option>
@@ -756,7 +759,8 @@
                                                 <option value="YAR">Yaroslavl Oblast</option>
                                                 <option value="ZAB">Zabaykalsky Krai</option>
                                             </select>
-                                            <input type="text" class="form-input" placeholder="Specific address">
+                                            <input type="text" class="form-input" id = "specific-address" laceholder="Specific address" value="<?= $user['specificaddress'] ?>">
+                                            <span id = "error_address" class = "input-alert-error"></span>
                                         </li>
                                         <li class="profile-email">
                                             <span>Email</span>
@@ -1216,10 +1220,16 @@
         if(!gender) {
             $('#error_name').text("Name is requied");
         }
+        if($('#specific-address').val().length == 0 || $('#country-state option:selected').value == "") {
+            $('#error_address').text("You need to select the city and fill in your specific address");
+            return false;
+        }
         let data = {
             'fullname' :$('#fullnameuser').val(),
             'gender' : gender,
             'DateOfBirth': getDay,
+            'city' : $('#country-state option:selected').text(),
+            'specificaddress': $('#specific-address').val()
         }
         let img = new FormData();
         var file = $('#imageUpload')[0].files;
