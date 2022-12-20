@@ -655,7 +655,7 @@
                             </div>
                             <input type="text" name='idsend' value="<?= session()->get('loged_user');?>" hidden>
                             <input type="text" name='idget' id="sendto" value="" hidden>
-                            <textarea name="msg" class="form-control type_msg" id = "form-control" placeholder="Type your message..." ></textarea>
+                            <textarea name="msg" class="form-control type_msg" id = "form-control" placeholder="Type your message..." style="padding: 14px 0;"></textarea>
                             <div class="input-group-append">
                                 <button class="input-group-text send_btn"  style="border: none; outline: none;"> <i class="fas fa-location-arrow"></i></button>
                             </div>

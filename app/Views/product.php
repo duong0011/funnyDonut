@@ -117,7 +117,7 @@
 
         }
 
-        .push__comment-img {
+        .push__comment-img, .input-images__msg{
             background-color: #fff;
             width: 100%;
             margin: 0px auto;
@@ -126,10 +126,13 @@
 
         }
 
+        
+
         input[type="file"] {
             display: none;
         }
-        .push__comment-img label {
+
+        /* .push__comment-img label {
             display: block;
             position: relative;
             background-color : var(--header-color);
@@ -137,15 +140,14 @@
             height: 30px;
             color: white;
             font-size: 16px;
-            /* padding-left: 20px; */
             text-align: center;
             margin: 10px auto;
             border-radius:4px;            
 
 
-        }
+        } */
 
-        #push__images {
+        #push__images{
             width: 90%;
             border: 2px solid black;
             border-radius:10px;
@@ -155,9 +157,19 @@
             justify-content: space-evenly;
             gap: 5px;
             flex-wrap: wrap;
+        }
 
-
-
+        #input-img__msg {
+            display: flex;
+            width: 100%;
+            height: 50px;
+            border: 2px solid black;
+            border-radius:10px;
+            position: relative;
+            margin: 0 auto 4px;
+            justify-content: space-evenly;
+            gap: 3px;
+            flex-wrap: nowrap;
         }
 
         figure {
@@ -169,9 +181,16 @@
         img {
             border-radius: 5px;
             width: 100%;
+       
         }
 
         figcaption {
+            text-align: center;
+            font-size: 1.4rem;
+            margin-top: 1px;
+        }
+
+        figcaption__msg {
             text-align: center;
             font-size: 1.4rem;
             margin-top: 1px;
@@ -1203,20 +1222,23 @@
                     </div>
                     <div class="card-footer">
                         <form class="input-group" id="sendmess" method="post">
-                            <div class="input-group-append">
-                                <input type="file" id = 'input-file' multiple style="display: none;" name = 'files[]'>
-                                <label for="input-file" id = 'lfpushproduct' class="input-group-text attach_btn">
-                                    <span ><i class="fas fa-paperclip"></i></span> 
-                                </label>
-                                
-                                <div id = "images-on-push-product"></div>
+                            <div class="input-images__msg">
+                                <div id="input-img__msg"></div>
                             </div>
+                            <div class="input-group-append">
+                                <input type="file" id = 'input-file' accept="image/png, image/jpeg, image/jpg" multiple onchange="preview__msg()" name = 'files[]'>
+                                <label for="input-file" id = 'lfpushproduct' class="input-group-text attach_btn">
+                                    <span><i class="fas fa-paperclip"></i></span> 
+                                </label>
+                            </div>
+                            
                             <input type="text" name='idsend' value="<?= session()->get('loged_user');?>" hidden>
                             <input type="text" name='idget' id="sendto" value="" hidden>
-                            <textarea name="msg" class="form-control type_msg" id = "form-control" placeholder="Type your message..." ></textarea>
+                            <textarea name="msg" class="form-control type_msg" id = "form-control" placeholder="Type your message..." style="padding: 14px 0;"></textarea>
                             <div class="input-group-append">
                                 <button class="input-group-text send_btn"  style="border: none; outline: none;"> <i class="fas fa-location-arrow"></i></button>
                             </div>
+                            
                         </form>
                     </div>
                 </div>
@@ -1676,6 +1698,33 @@
         
     }
 </script>
+
+<script>
+    let fileInput__msg = document.getElementById("input-file");
+    let imageContainer__msg = document.getElementById("input-img__msg");
+    
+    function preview__msg() {
+        imageContainer__msg.innerHTML = "";
+        // let numOfFiles = ${fileInput.files.length};
+        for (i of fileInput__msg.files) {
+            let reader__msg = new FileReader();
+            let figure__msg = document.createElement("figure");
+            let figCap__msg = document.createElement("figcaption");
+            // figCap__msg.innerText = i.name;
+            // figure__msg.appendChild(figCap__msg);
+            reader__msg.onload =() => {
+                let img__msg = document.createElement("img");
+                img__msg.setAttribute("src", reader__msg.result);
+                // figure__msg.insertBefore(img__msg, figCap__msg);
+                figure__msg.insertBefore(img__msg);
+            }
+            imageContainer__msg.appendChild(figure__msg);
+            reader__msg.readAsDataURL(i);
+        }
+        
+    }
+</script>
+
 
 <script>
     function myFunction(imgs) {
