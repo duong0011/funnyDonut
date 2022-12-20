@@ -794,43 +794,29 @@
                             <div class="col l-4">
                                 <div class="magazin__parameter">
                                     <span class="magazin__parameter-info">Ratings</span>
-                                    <span class="magazin__parameter-info-quantity">46.3k</span>
-                                </div>
-
-                            </div>
-                            <div class="col l-4">
-                                <div class="magazin__parameter">
-                                    <span class="magazin__parameter-info">Response Rate</span>
-                                    <span class="magazin__parameter-info-quantity">96%</span>
+                                    <span class="magazin__parameter-info-quantity rating-number"></span>
                                 </div>
 
                             </div>
                             <div class="col l-4">
                                 <div class="magazin__parameter">
                                     <span class="magazin__parameter-info">Joined</span>
-                                    <span class="magazin__parameter-info-quantity">21 months ago</span>
+                                    <span class="magazin__parameter-info-quantity jointime"> months ago</span>
                                 </div>
                             </div>
                         </div>
                         <div class="row sm-gutter magazin__info-parameter">
                             <div class="col l-4">
                                 <div class="magazin__parameter">
-                                    <span class="magazin__parameter-info">Products</span>
-                                    <span class="magazin__parameter-info-quantity">46.3k</span>
-                                </div>
-
-                            </div>
-                            <div class="col l-4">
-                                <div class="magazin__parameter">
-                                    <span class="magazin__parameter-info">Response Time</span>
-                                    <span class="magazin__parameter-info-quantity">96%</span>
+                                    <span class="magazin__parameter-info ">Products</span>
+                                    <span class="magazin__parameter-info-quantity productnumber "></span>
                                 </div>
 
                             </div>
                             <div class="col l-4">
                                 <div class="magazin__parameter">
                                     <span class="magazin__parameter-info">Follower</span>
-                                    <span class="magazin__parameter-info-quantity">100k</span>
+                                    <span class="magazin__parameter-info-quantity follownumber"></span>
                                 </div>
                             </div>
                         </div>
@@ -915,9 +901,7 @@
                     <div class="col l-12">
                         <div class="product__rating-filter">
                             <div class="product__rating-filter--star">
-                                <span class="product__quantity-rating" style="font-size: 2.8rem; padding-bottom: 4px">
-                                    4.9
-                                </span>
+                                
                                 <!-- <div class="rate">
                                     <input type="radio" id="star5" name="rate" value="5"/>
                                     <label for="star5" title="text">5 stars</label>
@@ -945,26 +929,26 @@
                                     </form>
                                 </div> -->
                             </div>
-                            <button class="btn home-filter-btn">All</button>
-                            <button class="btn home-filter-btn product__rating-btn--active">
+                            <button class="btn home-filter-btn " onclick="fetchComment(0)">All</button>
+                            <button class="btn home-filter-btn product__rating-btn--active" onclick="fetchComment(5)">
                                 5 Star
-                                <p>(0)</p>
+                               
                             </button>
-                            <button class="btn home-filter-btn">
+                            <button class="btn home-filter-btn" onclick="fetchComment(4)">
                                 4 Star
-                                <p>(0)</p>
+                               
                             </button>
-                            <button class="btn home-filter-btn">
+                            <button class="btn home-filter-btn" onclick="fetchComment(3)">
                                 3 Star
-                                <p>(0)</p>
+                               
                             </button>
-                            <button class="btn home-filter-btn">
+                            <button class="btn home-filter-btn" onclick="fetchComment(2)">  
                                 2 Star
-                                <p>(0)</p>
+                                
                             </button>
-                            <button class="btn home-filter-btn">
+                            <button class="btn home-filter-btn" onclick="fetchComment(1)">
                                 1 Star
-                                <p>(0)</p>
+                                
                             </button>
                         </div>
                     </div>
@@ -993,67 +977,8 @@
                     </div>
                 <?php endif ?>
 
-                <div class="row sm-gutter product__background"
-                    style="border-bottom: 1px solid rgba(153, 153, 153, 0.3); padding-top: 10px;">
-                    <div class="col l-1">
-                        <div class="product__rating-avatar">
-                            <img src="https://sme.hust.edu.vn/wp-content/uploads/2022/02/Avatar-Facebook-trang.jpg"
-                                alt="">
-                        </div>
-                    </div>
-                    <div class="col l-11">
-                        <div class="product__rating-info">
-                            <div class="product__rating-info--name">
-                                <p>Lục Nhất Thiên</p>
-                            </div>
-                            <div class="product__rating-item" style="display:none;">
-                                <div class="product__rating-item-star">
-                                    <i class="star-checked far fa-star"></i>
-                                    <i class="star-checked far fa-star"></i>
-                                    <i class="star-checked far fa-star"></i>
-                                    <i class="star-checked far fa-star"></i>
-                                    <i class="star-uncheck far fa-star"></i>
-                                </div>
-                            </div>
-
-                            <div class="product__rating-date">
-                                <span style="font-size: 1.4rem; color: rgb(193, 193, 193); margin:10px 0 10px;">
-                                    25-10-2022</span>
-                            </div>
-
-                            <div class="Product__rating-label">
-                                <span>
-                                    shop đóng gói cực kì cẩn thận mình phải gỡ bnhiêu lâu mới mở ra được cho nên
-                                    gương k có bị vỡ còn lại thì giống mới mô tả ai đang băn khoăn thì mua ngay
-                                    đi nha vì gương giá rẻ còn đóng gói chắc chắn
-                                </span>
-                            </div>
-
-                        </div>
-
-                        <div class="product__rating--images" style="margin-bottom: 10px;">
-                            <div class="product__rating--image">
-                                <img src="<?= base_url()?>/assets/img/home/1.PNG" alt="" onclick="myFunction(this, 1);">
-
-                            </div>
-                            <div class="product__rating--image">
-                                <img src="<?= base_url()?>/assets/img/home/2.PNG" alt="" onclick="myFunction(this,1);">
-
-                            </div>
-                            <div class="product__rating--image">
-                                <img src="<?= base_url()?>/assets/img/home/3.PNG" alt="" onclick="myFunction(this,1);">
-
-                            </div>
-
-                        </div>
-
-                        <div class="fullImageComment" style="margin-bottom: 10px;">
-                            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-                            <img id="expandedImg1" style="width:35%">
-                            
-                        </div>
-                    </div>
-                </div>
+                <div class="comment-product">
+                    
                 <div class="row sm-gutter product__background"
                     style="border-bottom: 1px solid rgba(153, 153, 153, 0.3); padding-top: 10px;">
                     <div class="col l-1">
@@ -1175,10 +1100,7 @@
                         </div>
                     </div>
                 </div>
-                
-
             </div>
-        </div>
 
         <!-- container2 -->
 
@@ -1606,6 +1528,8 @@
     </script>
     <script>
     jQuery(document).ready(function($) {
+         displayInfomation();
+         fetchComment(0);
          $(document).on('keyup', '#searchproduct', function() {
                 let product = $('#searchproduct').val();
                 showHints(product);
@@ -1643,6 +1567,7 @@
  </script>
 
 <script>
+
     let fileInput = document.getElementById("file-comment");
     let imageContainer = document.getElementById("push__images");
     
@@ -1756,7 +1681,20 @@
                     $('.jointime').text(data.join + " Month ago"); 
                     $('.follownumber').text(data.follower);
                     $('.following').text(Math.floor(Math.random() * 100));
-                    $('.rating-number').text(data.rating + ' (' + data.amountRating + ') ');
+                    $('.rating-number').text(data.amountRating);
+                }
+            });
+    }
+    function fetchComment(star) {
+        $('.comment-product').html("");
+        $.ajax({
+                url: '<?=base_url('/showProduct/fetchComment').'/'.$dataproduct['pid']?>'+'/'+star,
+                type: 'get',
+                success: function (data) {
+                    console.log(data);
+                   data.forEach( function(element, index) {
+                       $('.comment-product').append(element);
+                   });
                 }
             });
     }

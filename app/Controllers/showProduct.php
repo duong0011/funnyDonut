@@ -53,24 +53,76 @@ class showproduct extends Controller
 		}
 		
 	}
-	public function display()
+	public function fetchComment($id, $star = 0)		
 	{
 		if($this->request->getMethod() == 'get') {
-			$id = $_GET['shop'];
-			$data['products'] = $this->db->where(['owner' => $id])->countAllResults();
-			date_default_timezone_set('Europe/Moscow');
-	        $jointime = date_create($this->userModel->select('created_at')->getWhere(['unitid' => $id])->getRowArray()['created_at']);
-	        $data['join'] = max(intval(date_diff(date_create(date("Y-m-d H:s:i")), $jointime)->format('%m')), 1);
-			$followtable = new followtable();
-			$data['follower'] = $followtable->where(['shop' => $id])->countAllResults();
-			$data['rating'] = $this->userModel->getWhere(['unitid' => $id])->getRowArray()['star'];
-			$amount = $this->db->getWhere(['owner' => $id])->getResultArray();
-			$sum = 0;
-			foreach ($amount as $key) {
-				$sum+= $key['rating'];
-			}
-			$data['amountRating'] = round($sum/1000, 2).'K';
-			return $this->response->setJSON($data);
+			$string  = "'none'";     
+            $comment = new comment();
+            if($star == 0)
+            	$commentSent = $comment->getWhere(['productid' => $id])->getResultArray();
+            else $commentSent = $comment->getWhere(['productid' => $id, 'star' => $star])->getResultArray();
+            $index = 0;
+            $output = array();
+           	foreach ($commentSent as  $value) {
+           		$user = $this->userModel->select('fullname, avatar')->getWhere(['unitid' => $value['unitid']])->getRowArray();
+           		$output[$index] ='<div class="row sm-gutter product__background"
+                    style="border-bottom: 1px solid rgba(153, 153, 153, 0.3); padding-top: 10px;">
+                    <div class="col l-1">
+                        <div class="product__rating-avatar">
+                            <img src="data:image/jpeg;base64,'.$user['avatar'].'"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="col l-11">
+                        <div class="product__rating-info">
+                            <div class="product__rating-info--name">
+                                <p>'.$user['fullname'].'</p>
+                            </div>
+                            <div class="product__rating-item" style="display;">
+                            	<div class="product__rating-item-star">';
+                for ($i=0; $i < $value['star']; $i++) { 
+                	$output[$index] .= '<i class="star-checked far fa-star"></i>';
+                }
+                $output[$index] .= '  </div>
+                            </div>
+
+                            <div class="product__rating-date">
+                                <span style="font-size: 1.4rem; color: rgb(193, 193, 193); margin:10px 0 10px;">
+                                    '.date_format(date_create($value['created_at']), 'd-M-Y').'</span>
+                            </div>
+
+                            <div class="Product__rating-label">
+                                <span>
+                                    '.$value['content'].'
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="product__rating--images" style="margin-bottom: 10px;">'; 
+                        
+                $imgComment = new imgComment();
+                $img = $imgComment->getWhere(['commentID' => $value['id']])->getResultArray();
+                foreach ($img as $image) {
+                	$output[$index].='
+                       	<div class="product__rating--image">
+                            <img src="data:image/jpeg;base64,'.$image['img'].'" alt="" onclick="myFunction(this, '.$index.');">
+                        </div>';
+                }
+
+
+                $output[$index] .='
+                </div>
+                <div class="fullImageComment" style="margin-bottom: 10px;">
+                             <span onclick="this.parentElement.style.display='.$string.' "class="closebtn">&times;</span>
+                             <img id="expandedImg'.$index.'" style="width:35%">
+                            
+                         </div>
+                     </div>
+                 </div>';
+                $index++;
+           	}
+
 		}
+		return $this->response->setJSON($output);
 	}
 }
