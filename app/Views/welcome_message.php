@@ -641,11 +641,10 @@
                                         <a href="<?= base_url('/profile') ?>">My profile</a>
                                     </li>
                                     <li class="header__nav-user-item">
-<<<<<<< HEAD
                                         <a href="<?= base_url('viewshop?sellerID=').session()->get('loged_user')?>">My shop</a>
-=======
+                                    </li>
+                                    <li class="header__nav-user-item">
                                         <a href="#">History</a>
->>>>>>> aa3ea2e610a86f8af5db118e671746492ff6e467
                                     </li>
                                     <li class="header__nav-user-item">
                                         <a href="<?= base_url().'/login/logout' ?>" >Logout</a>

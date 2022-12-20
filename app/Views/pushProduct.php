@@ -389,6 +389,9 @@
                                         <a href="<?= base_url('/profile') ?>">My profile</a>
                                     </li>
                                     <li class="header__nav-user-item">
+                                        <a href="<?= base_url('viewshop?sellerID=').session()->get('loged_user')?>">My shop</a>
+                                    </li>
+                                    <li class="header__nav-user-item">
                                         <a href="#">History</a>
                                     </li>
                                     <li class="header__nav-user-item">

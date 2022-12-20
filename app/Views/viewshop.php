@@ -138,6 +138,20 @@
             cursor: pointer;
             opacity: 0.9;
         }
+
+        .magazin__info-btn {
+            background-color: var(--header-color);
+            color: white;
+        }
+
+        .magazin__info-btn:hover,
+        .btn--brown:hover {
+            opacity: 0.9;
+        }
+
+        .home-filter-sort-btn {
+            margin-bottom: 0;
+        }
     </style>
 </head>
 
@@ -298,11 +312,10 @@
                                         <a href="<?= base_url('/profile') ?>">My profile</a>
                                     </li>
                                     <li class="header__nav-user-item">
-<<<<<<< HEAD
                                         <a href="<?= base_url('viewshop?sellerID=').session()->get('loged_user')?>">My shop</a>
-=======
+                                    </li>
+                                    <li class="header__nav-user-item">
                                         <a href="#">History</a>
->>>>>>> aa3ea2e610a86f8af5db118e671746492ff6e467
                                     </li>
                                     <li class="header__nav-user-item">
                                         <a href="<?= base_url().'/login/logout' ?>" >Logout</a>
@@ -538,11 +551,11 @@
 						</div>
                          <?php if(session()->get('loged_user') != $seller['unitid']): ?>
 						<div class="shop__description" style="margin-bottom:10px">
-                            <button class="magazin__info-btn follow-button" style="width: 180px;  height: 28px; font-size: 1.2em; border: 1px solid #888; border-radius: 4px;">
+                            <button class="magazin__info-btn follow-button" style="width: 180px;  height: 28px; font-size: 1.2em; border: none; border-radius: 4px;">
                                 <i class="magazin__info-btn-icon fa-solid fa-plus"></i>
                                 <span class="magazin__info-btn-label follow-status"><?=$followerStatus?></span>
                             </button>
-                            <button class="magazin__info-btn magazin__info-btn--chat" style="width: 180px; height: 28px; font-size: 1.2em; border: 1px solid #888; border-radius: 4px;">
+                            <button class="magazin__info-btn magazin__info-btn--chat" style="width: 180px; height: 28px; font-size: 1.2em; border: none; border-radius: 4px;">
                                 <i class="magazin__info-btn-icon fa-solid fa-comments"></i>
                                 <span class="magazin__info-btn-label">Chat now</span>
                             </button>
@@ -601,7 +614,7 @@
                                     </a>
                                 </button>
 
-                                <div class="btn home-filter-sort" style="min-width: 120px; padding-bottom: 0; background-color: rgba(130,50,50,0.1);">
+                                <div class="btn home-filter-sort" style="min-width: 120px; background-color: rgba(130,50,50,0.1);">
                                     <p class="home-filter-sort-btn">Menu</p>                                  
                                     <ul class="home-filter-sort-list">
                                         <li onclick="callLoadData('<?= base_url('viewshop/fetch?type=Bread')?>')">
@@ -624,7 +637,7 @@
                                 <button class="btn home-filter-btn" style="background-color: rgba(130,50,50,0.1);" id = 'Oldest-id'>Oldest</button>
                                 <button class="btn home-filter-btn" style="background-color: rgba(130,50,50,0.1);" id = 'Latest-id'>Latest</button>
                                 <button class="btn home-filter-btn" style="background-color: rgba(130,50,50,0.1);" id = 'Bestseller-id'>Bestseller</button>
-                                <div class="btn home-filter-sort" style="min-width: 180px; padding-bottom: 0; background-color: rgba(130,50,50,0.1);">
+                                <div class="btn home-filter-sort" style="min-width: 180px; background-color: rgba(130,50,50,0.1);">
                                     <p class="home-filter-sort-btn">Price</p>
                                     <i class="fas fa-sort-amount-down-alt"></i>
                                     <ul class="home-filter-sort-list">
