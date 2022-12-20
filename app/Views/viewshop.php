@@ -152,6 +152,93 @@
         .home-filter-sort-btn {
             margin-bottom: 0;
         }
+
+        .input-images__msg{
+            width: 100%;
+            margin: 0px auto;
+            /* padding: 20px 5px; */
+            height: auto;
+            background-color: rgb(243,245,246);
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        /* .push__comment-img label {
+            display: block;
+            position: relative;
+            background-color : var(--header-color);
+            width: 15%;
+            height: 30px;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            margin: 10px auto;
+            border-radius:4px;            
+
+
+        } */
+
+        textarea::placeholder {
+            color: white !important;
+        }
+
+        
+
+        #push__images{
+            width: 90%;
+            border: 2px solid black;
+            border-radius:10px;
+            position: relative;
+            margin: 0 auto 8px;
+            display: flex;
+            justify-content: space-evenly;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        #input-img__msg {
+            display: flex;
+            width: 100%;
+            /* height: 50px; */
+            border: 2px solid rgba(208,1,27,1);
+            border-radius: 10px;
+            position: relative;
+            margin: 0 auto 4px;
+            justify-content: flex-start;
+            gap: 3px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            background-color: rgb(243,245,246);
+        }
+
+
+        figure {
+            margin-top: 5px;
+            width: 20%;
+            
+        }
+        
+        img {
+            border-radius: 5px;
+            width: 100%;
+       
+        }
+
+        figcaption {
+            text-align: center;
+            font-size: 1.4rem;
+            margin-top: 1px;
+        }
+
+        figcaption_msg {
+            display: none;
+        }
+
+        figcaption_msg {
+            display: none;
+        }
     </style>
 </head>
 
@@ -768,10 +855,13 @@
                     </div>
                     <div class="card-footer">
                         <form class="input-group" id="sendmess" method="post">
+                            <div class="input-images__msg">
+                                <div id="input-img__msg"></div>
+                            </div>
                             <div class="input-group-append">
-                                <input type="file" id = 'input-file' multiple style="display: none;" name = 'files[]'>
+                                <input type="file" id = 'input-file' accept="image/png, image/jpeg, image/jpg" multiple onchange="preview__msg()" name = 'files[]'>
                                 <label for="input-file" id = 'lfpushproduct' class="input-group-text attach_btn">
-                                    <span ><i class="fas fa-paperclip"></i></span> 
+                                    <span><i class="fas fa-paperclip"></i></span> 
                                 </label>
                                 
                                 <div id = "images-on-push-product"></div>
@@ -1545,6 +1635,32 @@
             callLoadData('<?=base_url('viewshop/fetch/price/DESC')?>');
         else callLoadData('<?=base_url('viewshop/fetch/price/DESC?type=')?>'+curl.searchParams.get('type'));
     });
+</script>
+
+<script>
+    let fileInput__msg = document.getElementById("input-file");
+    let imageContainer__msg = document.getElementById("input-img__msg");
+    
+    function preview__msg() {
+        imageContainer__msg.innerHTML = "";
+        // let numOfFiles = ${fileInput.files.length};
+        for (i of fileInput__msg.files) {
+            let reader__msg = new FileReader();
+            let figure__msg = document.createElement("figure");
+            let figCap__msg = document.createElement("figcaption_msg");
+            figCap__msg.innerText = i.name;
+            figure__msg.appendChild(figCap__msg);
+            reader__msg.onload =() => {
+                let img__msg = document.createElement("img");
+                img__msg.setAttribute("src", reader__msg.result);
+                // /figure__msg.insertBefore(img__msg, figCap__msg);
+                figure__msg.insertBefore(img__msg, figCap__msg);
+            }
+            imageContainer__msg.appendChild(figure__msg);
+            reader__msg.readAsDataURL(i);
+        }
+        
+    }
 </script>
 
 </body>

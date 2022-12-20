@@ -117,7 +117,7 @@
 
         }
 
-        .push__comment-img, .input-images__msg{
+        .push__comment-img{
             background-color: #fff;
             width: 100%;
             margin: 0px auto;
@@ -125,8 +125,13 @@
             height: auto;
 
         }
-
-        
+        .input-images__msg{
+            width: 100%;
+            margin: 0px auto;
+            /* padding: 20px 5px; */
+            height: auto;
+            background-color: rgb(243,245,246);
+        }
 
         input[type="file"] {
             display: none;
@@ -147,6 +152,13 @@
 
         } */
 
+        textarea::placeholder {
+            color: white !important;
+            /* padding-left: 4px !important; */
+        }
+
+        
+
         #push__images{
             width: 90%;
             border: 2px solid black;
@@ -162,15 +174,18 @@
         #input-img__msg {
             display: flex;
             width: 100%;
-            height: 50px;
-            border: 2px solid black;
-            border-radius:10px;
+            /* height: 50px; */
+            border: 2px solid rgba(208,1,27,1);
+            border-radius: 10px;
             position: relative;
             margin: 0 auto 4px;
-            justify-content: space-evenly;
+            justify-content: flex-start;
             gap: 3px;
             flex-wrap: nowrap;
+            overflow-x: auto;
+            background-color: rgb(243,245,246);
         }
+
 
         figure {
             margin-top: 5px;
@@ -190,10 +205,8 @@
             margin-top: 1px;
         }
 
-        figcaption__msg {
-            text-align: center;
-            font-size: 1.4rem;
-            margin-top: 1px;
+        figcaption_msg {
+            display: none;
         }
 
         .product__rating--images img {
@@ -1148,7 +1161,7 @@
                             
                             <input type="text" name='idsend' value="<?= session()->get('loged_user');?>" hidden>
                             <input type="text" name='idget' id="sendto" value="" hidden>
-                            <textarea name="msg" class="form-control type_msg" id = "form-control" placeholder="Type your message..." style="padding: 14px 0;"></textarea>
+                            <textarea name="msg" class="form-control type_msg" id = "form-control" placeholder="Type your message..." style="padding: 14px 0; color: white;"></textarea>
                             <div class="input-group-append">
                                 <button class="input-group-text send_btn"  style="border: none; outline: none;"> <i class="fas fa-location-arrow"></i></button>
                             </div>
@@ -1624,14 +1637,14 @@
         for (i of fileInput__msg.files) {
             let reader__msg = new FileReader();
             let figure__msg = document.createElement("figure");
-            let figCap__msg = document.createElement("figcaption");
-            // figCap__msg.innerText = i.name;
-            // figure__msg.appendChild(figCap__msg);
+            let figCap__msg = document.createElement("figcaption_msg");
+            figCap__msg.innerText = i.name;
+            figure__msg.appendChild(figCap__msg);
             reader__msg.onload =() => {
                 let img__msg = document.createElement("img");
                 img__msg.setAttribute("src", reader__msg.result);
-                // figure__msg.insertBefore(img__msg, figCap__msg);
-                figure__msg.insertBefore(img__msg);
+                // /figure__msg.insertBefore(img__msg, figCap__msg);
+                figure__msg.insertBefore(img__msg, figCap__msg);
             }
             imageContainer__msg.appendChild(figure__msg);
             reader__msg.readAsDataURL(i);
