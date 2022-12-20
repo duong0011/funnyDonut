@@ -223,6 +223,8 @@
         img {
             border-radius: 5px;
             width: 100%;
+            margin-left: 4px;
+            margin-bottom: 5px;
        
         }
 
@@ -858,18 +860,17 @@
                             <div class="input-images__msg">
                                 <div id="input-img__msg"></div>
                             </div>
-                            <div class="input-group-append">
+                            <div class="input-group-append" style="width: 10%;">
                                 <input type="file" id = 'input-file' accept="image/png, image/jpeg, image/jpg" multiple onchange="preview__msg()" name = 'files[]'>
-                                <label for="input-file" id = 'lfpushproduct' class="input-group-text attach_btn">
+                                <label for="input-file" id = 'lfpushproduct' class="input-group-text attach_btn" style="height: 60px;">
                                     <span><i class="fas fa-paperclip"></i></span> 
                                 </label>
-                                
-                                <div id = "images-on-push-product"></div>
+                    
                             </div>
                             <input type="text" name='idsend' value="<?= session()->get('loged_user');?>" hidden>
                             <input type="text" name='idget' id="sendto" value="" hidden>
                             <textarea name="msg" class="form-control type_msg" id = "form-control" placeholder="Type your message..." style="padding: 14px 0;"></textarea>
-                            <div class="input-group-append">
+                            <div class="input-group-append" style="height: 60px;">
                                 <button class="input-group-text send_btn"  style="border: none; outline: none;"> <i class="fas fa-location-arrow"></i></button>
                             </div>
                         </form>
