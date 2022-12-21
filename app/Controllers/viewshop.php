@@ -286,4 +286,5 @@ class Viewshop extends Controller
 			return $this->response->setJSON($data);
 		}
 	}
+	
 }

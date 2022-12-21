@@ -498,7 +498,7 @@
                     <!-- header__cart--has-cart -->
                     <div class="header__cart header__cart--has-cart">
                         <i class="header__cart-icon fas fa-shopping-cart"></i>
-                        <div class="header__cart-count">4</div>
+                        <div class="header__cart-count"></div>
 
                         <div class="header__cart-list no-cart">
                             <img src="<?= base_url()?>/assets/img/sp/no-cart.png" class="header__no-cart-img">
@@ -507,135 +507,8 @@
 
                         <div class="header__cart-list has-cart">
                             <h4 class="header__cart-heading">Sản phẩm đã chọn</h4>
-                            <ul class="header__cart-list-item">
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/1.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Thanh Thanh 2000 1m57 46kg 88-62-89</h3>
-                                            <p class="header__cart-item-price">2.000USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 2</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/2.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Hồng Ánh 1998 1m62 48kg 89-64-91</h3>
-                                            <p class="header__cart-item-price">2.500USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 1</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/3.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
-                                            <p class="header__cart-item-price">2.800USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 1</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/4.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
-                                            <p class="header__cart-item-price">3.200USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 3</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/5.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Thanh Thanh 2000 1m57 46kg 88-62-89</h3>
-                                            <p class="header__cart-item-price">2.000USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 2</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/6.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Hồng Ánh 1998 1m62 48kg 89-64-91</h3>
-                                            <p class="header__cart-item-price">2.500USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 1</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/7.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
-                                            <p class="header__cart-item-price">2.800USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 1</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/8.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
-                                            <p class="header__cart-item-price">3.200USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 3</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                            <ul class="header__cart-list-item" id = "cart-list-item">
+                                
                             </ul>
                             <div class="header__cart-footer">
                                 <a href="#" class="btn btn--primary header__cart-see-cart">Xem giỏ hàng</a>
@@ -1225,6 +1098,7 @@
         }
 
         $(document).ready(()=>{
+            loadCartShopping()
             $(".chat-btn").click(()=>{
                 if(<?= session()->has('loged_user') ? 0 : 1 ?>) {
                     window.location.href = '<?= base_url('/login')?>';
@@ -1708,6 +1582,34 @@
             reader__msg.readAsDataURL(i);
         }
         
+    }
+     function loadCartShopping() {
+        $('#cart-list-item').html("");
+        $.ajax({
+                url: '<?=base_url('showProduct/loadCartShopping')?>',
+                type: 'post',
+                success: function (data) {
+                    var tmp = 0;
+                    if(data != "")
+                        data.forEach((x)=>{
+                            $('#cart-list-item').append(x);
+                            tmp++;   
+                        });
+                    $('.header__cart-count').text(tmp);
+                }
+            });
+    }
+    function deteleCartShopping(id) {
+        $.ajax({
+                url: '<?=base_url('showProduct/deteleCartShopping')?>',
+                type: 'post',
+                data: {
+                   'id' : id
+                },
+                success: function (data) {
+                    loadCartShopping();
+                }
+            });
     }
 </script>
 
