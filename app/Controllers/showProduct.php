@@ -209,9 +209,9 @@ class showproduct extends Controller
 			$favorite = new Favorite();
 			$tmp = $this->Product->getWhere(['pid'=> $tmp_post['productid']])->getRowArray()['favorite'];
 			$tmp_post['unitid'] = session()->get('loged_user');
-			$answer['like'] = false;
+			$answer['like'] = true;
 			if(count($favorite->getWhere($tmp_post)->getResultArray()) == 0) {
-				$answer['like'] = true;
+				$answer['like'] = false;
 			}
 			$answer['numberOfLikes'] = $favorite->where(['productid'=>$tmp_post['productid']])->countAllResults();
 			return $this->response->setJSON($answer);

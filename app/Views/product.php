@@ -641,10 +641,9 @@
                                         <label for="heart-save" class="far fa-heart"></label>
                                     </div>
                                     <span class="product__favourite-title">
-                                        Fovourite
+                                        Fovourite   
                                     </span>
-                                    <span class="product__favourite">
-                                        (1.98k)
+                                    <span class="product__favourite__">
                                     </span>
 
                                 </div>
@@ -1778,8 +1777,7 @@
                 }
             });
     }
-    function statusFavorite(argument) {
-        // body...
+    function statusFavorite() {
         
         $.ajax({
                 url: '<?=base_url('showProduct/numberOfLikes')?>',
@@ -1788,6 +1786,8 @@
                     productid : <?= $dataproduct['pid']?>
                 },
                 success: function (data) {
+                    $('.product__favourite__').html("");
+                        $('.product__favourite__').append("   ("+data.numberOfLikes+")");
                     if(data.like == true) {
                         document.getElementById("heart-save").checked = true;
                     }
