@@ -257,6 +257,7 @@
 
         .btn {
             color: black;
+            border-radius: 5px;
         }
     </style>
 </head>
