@@ -50,13 +50,14 @@ class Viewshop extends Controller
     {
         $this->data['currentRequest1'] = base_url('/viewshop').'?'.$_SERVER['QUERY_STRING'];
         $this->data['currentRequest'] = base_url(uri_string()).'?';
-        $builder = $result;
-        $_count = $builder->countAllResults(false);
+        $tmp = $result->get()->getResultArray();
+        $_count = count($tmp);
         $page = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
         $this->data['pageStart']  = $page;
         $this->data['pageEnd'] = ceil($_count/15);
         if($this->data['pageStart'] > $this->data['pageEnd'] && $this->data['pageEnd']) return "fail";
-        return $_count ? $this->model->getDataByPage($result, $page) : null;
+        $output = $page == 1 ? array_splice($tmp, 0, 15) : array_splice($tmp, ($page-1)*15, 15);
+        return $_count ? $output : null;
     }
     public function boxchat($idSeller)
     {
@@ -269,7 +270,7 @@ class Viewshop extends Controller
 	{
 		if($this->request->getMethod() == 'get') {
 			$id = $_GET['shop'];
-			$data['products'] = $this->db->where(['owner' => $id])->countAllResults();
+			$data['products'] = count($this->db->getWhere(['owner' => $id])->getResultArray());
 			date_default_timezone_set('Europe/Moscow');
 	        $jointime = date_create($this->userModel->select('created_at')->getWhere(['unitid' => $id])->getRowArray()['created_at']);
 	        $data['join'] = max(intval(date_diff(date_create(date("Y-m-d H:s:i")), $jointime)->format('%m')), 1);
