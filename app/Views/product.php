@@ -167,14 +167,15 @@
 
         #push__images{
             width: 90%;
-            border: 2px solid black;
-            border-radius:10px;
+            border: 1px solid var(--header-color);
+            border-radius: 10px;
             position: relative;
-            margin: 0 auto 8px;
+            margin: 0 55px 8px;
             display: flex;
             justify-content: space-evenly;
             gap: 5px;
             flex-wrap: wrap;
+            box-shadow: 0 0 2px var(--header-color);
         }
 
         #input-img__msg {

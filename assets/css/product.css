@@ -1008,6 +1008,10 @@
     height: 50px;
     margin: 10px 5px 10px;
     font-size: 1.4rem;
+    border: 1px solid var(--header-color);
+    border-radius: 18px;
+    box-shadow: 0 0 1px var(--header-color);
+    padding: 10px;
 }
 
 .push__comment-icon {
@@ -1015,7 +1019,7 @@
 }
 
 .push__comment-icon-append {
-    color: #999;
+    color: var(--header-color);
 }
 
 .push__comment-icon-send {
