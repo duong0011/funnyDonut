@@ -114,7 +114,7 @@
             position: absolute;
             bottom: 151px;
             right: 10px;
-            z-index: 99;
+            z-index: 5;
         }
 
         .edit:hover {

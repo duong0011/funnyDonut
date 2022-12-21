@@ -536,6 +536,7 @@ border-color: red green blue yellow */
     padding-left: 0;
     list-style: none;
     margin: 0;
+    z-index: 9;
 }
 
 .header__search-history-item {
