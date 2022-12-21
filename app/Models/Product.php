@@ -8,8 +8,8 @@ class Product extends Model
     protected $primaryKey = 'pid';
 
     protected $returnType = 'array';
-  
-    protected $allowedFields = ['nameproduct','price','like','rating','amount', 'info','owner','image','discount', 'type', 'address', 'ingredient', 'weight', 'sold','note'];
+    protected $useSoftDeletes = true;
+    protected $allowedFields = ['nameproduct','price','like','rating','amount', 'info','owner','image','discount', 'type', 'address', 'ingredient', 'weight', 'sold','note', 'favorite'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';

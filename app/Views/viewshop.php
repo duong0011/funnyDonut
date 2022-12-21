@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/up-product.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/reviewIMG.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha384-qlmct0AOBiA2VPZkMY3+2WqkHtIQ9lSdAsAn5RUJD/3vA5MKDgSGcdmIv4ycVxyn"crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
@@ -57,7 +58,7 @@
           margin: auto;
           padding: 20px;
           border: 1px solid #888;
-          width: 50%;
+          width: 30%;
         }
 
         /* The Close Button */
@@ -1182,7 +1183,8 @@
     <!-- script js -->
     <!-- <script src="<?= base_url()?>/assets/js/product.js"></script> -->
 
-    <script src="https://malsup.github.io/jquery.form.js"></script> 
+    <script src="https://malsup.github.io/jquery.form.js"></script>
+
     <script>
         let bigImg = document.querySelector('.big__img img')
         function showImg(pic) {
@@ -1250,6 +1252,7 @@
                             },
                             success: function (data) {
                                 document.querySelector('.msg_card_body').innerHTML = data;
+                                document.getElementById("input-img__msg").innerHTML = "";
                             }
                         });
                 }, 1000);
@@ -1471,7 +1474,13 @@
                 url: '<?= base_url('viewshop/addresschecker')?>',
                 type: 'post',
                 success: function (data) {
-                    if(data != 1) window.alert('You need to update your address before adding the product!');
+                    if(data != 1) {
+                        Swal.fire({
+                          icon: 'error',
+                          title: 'You need to update your address before adding the product!',
+                          footer: '<a href="<?= base_url('/profile') ?>">Go to update your address</a>'
+                        })
+                    }
                     else  modal.style.display = "block";
                 }
             });
@@ -1562,7 +1571,12 @@
                 $('#form-input-product').ajaxForm({
                     url : "<?=base_url('/viewshop/addToDB')?>",
                     success: function(data) {
-                        window.alert(data);
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Your work has been saved',
+                        });
+                        var modal = document.getElementById("myModal");
+                        modal.style.display = "none";
                         var curl = new URL(document.URL);
                         loadProduct("", "<?=base_url('/viewshop/fetch')?>?sellerID="+curl.searchParams.get('sellerID'));
                     }

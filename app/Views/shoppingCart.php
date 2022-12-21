@@ -557,7 +557,7 @@
                     </div>
                     <div class="right">
                         <h1 class="total">Total: <span>163.96</span>$</h1>
-                        <a class="btn btn--brown">Go to payment</a>
+                        <a class="btn btn--brown" href="<?= base_url('checkout') ?>">Go to payment</a>
                     </div>
 
                 </div>

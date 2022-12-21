@@ -1,7 +1,7 @@
 <?php namespace App\Models;
 
 use CodeIgniter\Model;
-
+use App\Models\Favorite;
 class Index_model extends Model
 {
     protected $db;
@@ -26,17 +26,17 @@ class Index_model extends Model
     {
         return $this->db->table('product')->select('address')->distinct()->orderBy('address')->get()->getResultArray();
     }   
-    public function getProductByQuery($type, $address, $minprice, $maxprice)
+    public function getProductByQuery($type, $address, $minprice, $maxprice, $star)
     {
         $builder = $this->db->table('product');
         if($address) $builder->whereIn('address', $address);
-
         if($type) $builder->whereIn('type', $type);
         if($minprice && $maxprice) {
             $builder->where('price >=', $minprice)->where('price <=', $maxprice);
             return $builder;
 
         }
+        if($star) $builder->whereIn('star', $star);
         if($maxprice) $builder->where('price >=', $minprice);
         if($minprice) $builder->where('price <=', $maxprice);
         return $builder;
@@ -51,10 +51,49 @@ class Index_model extends Model
     }
     public function hints($name='')
     {
-        return $this->db->table('product')->select('nameproduct')->like('nameproduct', $name);
+        return $this->db->table('product')->select('nameproduct, pid')->like('nameproduct', $name);
     }
     public function getByKeyword($data,$name)
     {
         return $data->like('nameproduct', $name);
+    }
+    public function _product($data)
+    {   
+        if($data == null) return;
+        $index =0;
+        $favorite = new Favorite();
+
+        foreach ($data as $value) {
+            $checker = "";
+            if($favorite->where(['unitid' => session()->get('loged_user'), 'productid' => $value['pid']])->countAllResults() != 0) $checker = "checked";
+            $output[$index] = "<div class='col l-2-4 home-product-item'>
+                            <a class='home-product-item-link' href='showproduct?id=".$value['pid']."'>
+                            <div class='home-product-item__img' style='background-image:url(data:image/jpeg;base64,".$value['image'].")'></div>
+                            <div class='home-product-item__info'>
+                                <h4 class='home-product-item__name'>".$value['nameproduct']."</h4>
+                                <div class='home-product-item__price'>
+                                    <p class='home-product-item__price-old'>".$value['price']."USD</p>
+                                    <p class='home-product-item__price-new'>".round(($value['price']-$value['price']*$value['discount']/100), 2)."USD</p>
+                                    <i class='home-product-item__ship fas fa-shipping-fast'></i>
+                                </div>
+                                <div class='home-product-item__footer'>
+                                    <div class='home-product-item__save'>
+                                        <input type='checkbox' name='save-check' id='heart-save' ".$checker." disabled=true>
+                                        <label for='heart-save' class='far fa-heart'></label>
+                                    </div>
+                                    <div class='home-product-item__rating-star'>
+                                ";
+                                            
+            for ($i=0; $i < $value['star'] ; $i++) $output[$index].="<i class='star-checked far fa-star'></i>";      
+            $output[$index].="
+                    </div>
+                         <div class='home-product-item__saled'>".$value['rating']."</div>
+                    </div>
+                    <div class='home-product-item__origin'>Sold(".$value['sold'].")</div>
+                </div><a/>
+            </div>";
+            $index++;
+        }
+        return $output;
     }
 }

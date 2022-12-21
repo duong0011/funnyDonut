@@ -1042,7 +1042,7 @@
         </footer>
     </div>
     
-    <!-- SCRIPT BUY-SELL
+  
     <script>
         var blockBuy = document.getElementsByClassName("block-buy");
         var blockSell = document.getElementsByClassName("block-sell");
@@ -1059,9 +1059,9 @@
             blockSell[0].style.display="block";
             block[5].style.display="block";
         }
-    </script> -->
+    </script> 
 
-    <!-- SCRIPT BUY-SELL
+  
     <script>
         var block = document.getElementsByClassName("block");
         var checkBlock = document.getElementsByClassName("block-sell");
@@ -1123,7 +1123,7 @@
             }
         }
         
-    </script> -->
+    </script> 
 
 
 </body>

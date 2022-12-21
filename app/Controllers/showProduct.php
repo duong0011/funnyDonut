@@ -6,7 +6,9 @@ use App\Models\index_model;
 use App\Models\Product;
 use App\Models\saveIMGProduct;
 use App\Models\comment;
+use App\Models\CartShopping;
 use App\Models\imgComment;
+use App\Models\Favorite;
 class showproduct extends Controller
 {
 	private $data;
@@ -55,7 +57,7 @@ class showproduct extends Controller
 	}
 	public function fetchComment($id, $star = 0)		
 	{
-		if($this->request->getMethod() == 'get') {
+		if($this->request->getMethod() == 'post') {
 			$string  = "'none'";     
             $comment = new comment();
             if($star == 0)
@@ -124,5 +126,95 @@ class showproduct extends Controller
 
 		}
 		return $this->response->setJSON($output);
+	}
+	public function addtoCart()
+	{
+		if($this->request->getMethod() == 'post') {
+			$CartShopping = new CartShopping();
+			$tmp_post = $_POST;
+			$product = $CartShopping->where(['unitid' => $tmp_post['unitid'], 'productid' => $tmp_post['productid'], 'size' => $tmp_post['size']]);
+			if(!$product->countAllResults(false)) $CartShopping->save($tmp_post);
+			else {
+				$tmp_post['quantity'] += $product->get()->getRowArray()['quantity'];
+				$product->set($tmp_post);
+				$product->where(['unitid' => $tmp_post['unitid'], 'productid' => $tmp_post['productid'], 'size' => $tmp_post['size']])->update();
+			}
+		}
+	}
+	public function loadCartShopping()
+	{
+		if($this->request->getMethod() == 'post') {
+			$CartShopping = new CartShopping();
+			$cart = $CartShopping->getWhere(['unitid' => session()->get('loged_user')])->getResultArray();
+			$index = 0;
+			foreach ($cart as $value) {
+				$product = $this->Product->getWhere(['pid' => $value['productid']])->getRowArray();
+				$output[$index] = '
+				
+				<li class="header__cart-item">
+					<a href = "showproduct?id='.$product['pid'].'">
+		                <img src="data:image/jpeg;base64,'.$product['image'].'" class="header__cart-item-img">
+		                <div class="header__cart-item-info">
+		                    <div class="header__cart-item-heading">
+		                        <h3 class="header__cart-item-name">'.$product['nameproduct'].'('.$value['size'].' cm)</h3>
+		                        <p class="header__cart-item-price">'.$product['price'].'USD</p>
+		                    </div>
+	                </a>
+	                    <div class="header__cart-item-body">
+	                        <p class="header__cart-item-number">x '.$value['quantity'].'</p>
+	                        <div class="header__cart-item-close" onclick = deteleCartShopping('.$value['id'].')>
+	                            Delete
+	                            <i class="fas fa-times"></i>
+	                        </div>
+	                    </div>
+	                </div>
+	            </li>';
+	            $index++;
+			}
+		}
+		if(isset($output)) return $this->response->setJSON($output);
+		else return null;
+	}
+	public function deteleCartShopping()
+	{
+		if($this->request->getMethod() == 'post') {
+			$tmp_post = $_POST;
+			$CartShopping = new CartShopping();
+			$CartShopping->where('id', $tmp_post['id'])->delete();
+		}
+	}
+	public function like()
+	{
+		if($this->request->getMethod()=='post') {
+			$tmp_post = $_POST;
+			$favorite = new Favorite();
+			$tmp = $this->Product->getWhere(['pid'=> $tmp_post['productid']])->getRowArray()['favorite'];
+			$tmp_post['unitid'] = session()->get('loged_user');
+			if(count($favorite->getWhere($tmp_post)->getResultArray()) == 0) {
+				$this->Product->set(['favorite' => $tmp+1]);
+				$this->Product->where('pid', $tmp_post['productid'])->update();
+				$favorite->save($tmp_post);
+			} else {
+				$favorite->where($tmp_post)->delete();
+				$this->Product->set(['favorite' => $tmp-1]);
+				$this->Product->where('pid', $tmp_post['productid'])->update();
+			}
+			
+		}
+	}
+	public function numberOfLikes()
+	{
+		if($this->request->getMethod()=='get') {
+			$tmp_post = $_GET;
+			$favorite = new Favorite();
+			$tmp = $this->Product->getWhere(['pid'=> $tmp_post['productid']])->getRowArray()['favorite'];
+			$tmp_post['unitid'] = session()->get('loged_user');
+			$answer['like'] = false;
+			if(count($favorite->getWhere($tmp_post)->getResultArray()) == 0) {
+				$answer['like'] = true;
+			}
+			$answer['numberOfLikes'] = $favorite->where(['productid'=>$tmp_post['productid']])->countAllResults();
+			return $this->response->setJSON($answer);
+		}
 	}
 }

@@ -28,7 +28,13 @@
             /* outline: none; */
             /* border: none; */
         }
-
+        .error_input {
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
         .shortenedSelect {
             display: block;
             width: 120px;
@@ -494,7 +500,7 @@
 
                         <div class="header__cart-list has-cart">
                             <h4 class="header__cart-heading">Sản phẩm đã chọn</h4>
-                            <ul class="header__cart-list-item">
+                            <ul class="header__cart-list-item" id = 'cart-list-item'>
                                 <li class="header__cart-item">
                                     <img src="<?= base_url()?>/assets/img/buy/1.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
@@ -511,70 +517,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/2.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Hồng Ánh 1998 1m62 48kg 89-64-91</h3>
-                                            <p class="header__cart-item-price">2.500USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 1</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/3.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
-                                            <p class="header__cart-item-price">2.800USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 1</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/4.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
-                                            <p class="header__cart-item-price">3.200USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 3</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/5.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Thanh Thanh 2000 1m57 46kg 88-62-89</h3>
-                                            <p class="header__cart-item-price">2.000USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 2</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                               
                                 <li class="header__cart-item">
                                     <img src="<?= base_url()?>/assets/img/buy/6.PNG" class="header__cart-item-img">
                                     <div class="header__cart-item-info">
@@ -685,7 +628,7 @@
                             <div class="col c-6">
                                 <div class="product__favourite">
                                     <div class="product__favourite__save">
-                                        <input type="checkbox" name="save-check" id="heart-save">
+                                        <input type="checkbox" name="save-check" id="heart-save" onclick="like()">
                                         <label for="heart-save" class="far fa-heart"></label>
                                     </div>
                                     <span class="product__favourite-title">
@@ -752,6 +695,7 @@
                                     <select id="country-state" name="country-state" class="shortenedSelect">
                                         <option value="">Select size</option>
                                     </select>
+                                    <p class="error_input size-not-select"></p>
                                 </div>
                             </div>
                         </div>
@@ -764,7 +708,7 @@
                             </div>
                             <div class="col l-10">
                                 <div class="product-item__quantity-info">
-                                    <input type="number" step="1" min="0" placeholder="Enter number"
+                                    <input id = "quantity-product" value="1" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" placeholder="Enter number"
                                         id="product-item__quantity-number" class="product-item__quantity-info-number">
                                 </div>
                             </div>
@@ -772,9 +716,9 @@
 
                         <div class="row sm-gutter" style="padding-left: 10px">
                             <!-- <div class="col l-4"> -->
-                            <div class="product-item__more-cart">
+                            <div class="product-item__more-cart" id="add-to-cart">
                                 <i class="product-item__more-cart-icon fa-solid fa-cart-plus"></i>
-                                <span class="product-item__more-cart-title">Add to Cart</span>
+                                <span class="product-item__more-cart-title" >Add to Cart</span>
                             </div>
                             <!-- </div> -->
                             <!-- <div class="col l-3"> -->
@@ -988,7 +932,7 @@
                 </div>
                 <!-- bình luận -->
 
-                <?php if(session()->has('loged_user') && $seller['unitid'] != session()->get('loged_user')): ?>
+                <?php if(session()->has('loged_user') ): ?>
                     <div class="row sm-gutter product__background" >
                         <div class="col l-12">
                             <form action="#" method="post" id = 'form-coment'>
@@ -1541,6 +1485,7 @@
                             },
                             success: function (data) {
                                 document.querySelector('.msg_card_body').innerHTML = data;
+                                document.getElementById("input-img__msg").innerHTML = "";
                             }
                         });
                 }, 1000);
@@ -1565,6 +1510,8 @@
     jQuery(document).ready(function($) {
          displayInfomation();
          fetchComment(0);
+         loadCartShopping();
+         statusFavorite();
          $(document).on('keyup', '#searchproduct', function() {
                 let product = $('#searchproduct').val();
                 showHints(product);
@@ -1721,6 +1668,7 @@
                             success: function (data) {
                                 document.getElementById('comment-text').value = "";
                                 $('#push__images').html("");
+                                fetchComment(0)
                             }
                         });
                 }
@@ -1751,12 +1699,101 @@
         $('.comment-product').html("");
         $.ajax({
                 url: '<?=base_url('/showProduct/fetchComment').'/'.$dataproduct['pid']?>'+'/'+star,
-                type: 'get',
+                type: 'post',
                 success: function (data) {
-                    console.log(data);
                    data.forEach( function(element, index) {
                        $('.comment-product').append(element);
                    });
+                }
+            });
+    }
+    $('.shortenedSelect').change(function (e) {
+        if($('.shortenedSelect :selected').val() != "") $('.size-not-select').text("");
+    });
+    $('#add-to-cart').on('click', function () {
+        if(<?php if(session()->has('loged_user')) echo 0; else {
+             echo 1;
+        }?>) {
+            window.location.href = "<?= base_url('login')?>";
+            return false;
+        }
+        var size = $('.shortenedSelect :selected').val();
+        var quantiny = Number($('#quantity-product').val());
+        if(size == "") {
+            $('.size-not-select').text('Please select product size first');
+            return false;
+        }
+        $.ajax({
+                url: '<?=base_url('showProduct/addtoCart') ?>',
+                type: 'post',
+                data: {
+                    'unitid' : '<?= session()->get('loged_user')?>',
+                    'size' : size,
+                    'quantity': quantiny,
+                    'productid': <?= $dataproduct['pid']?>
+                },
+                success: function (data) {
+                    Swal.fire({
+                        text : 'Item has been added to your shopping cart',
+                        icon : 'success'
+                    });
+                    loadCartShopping();
+                }
+            });
+    });
+    function loadCartShopping() {
+        $('#cart-list-item').html("");
+        $.ajax({
+                url: '<?=base_url('showProduct/loadCartShopping')?>',
+                type: 'post',
+                success: function (data) {
+                    var tmp = 0;
+                    if(data != "")
+                        data.forEach((x)=>{
+                            $('#cart-list-item').append(x);
+                            tmp++;   
+                        });
+                    $('.header__cart-count').text(tmp);
+                }
+            });
+    }
+    function deteleCartShopping(id) {
+        $.ajax({
+                url: '<?=base_url('showProduct/deteleCartShopping')?>',
+                type: 'post',
+                data: {
+                   'id' : id
+                },
+                success: function (data) {
+                    loadCartShopping();
+                }
+            });
+    }
+    function statusFavorite(argument) {
+        // body...
+        
+        $.ajax({
+                url: '<?=base_url('showProduct/numberOfLikes')?>',
+                type: 'get',
+                data: {
+                    productid : <?= $dataproduct['pid']?>
+                },
+                success: function (data) {
+                    if(data.like == true) {
+                        document.getElementById("heart-save").checked = true;
+                    }
+                }
+            });
+    }
+    function like() {
+        $.ajax({
+                url: '<?=base_url('showProduct/like')?>',
+                type: 'post',
+                data: {
+                    productid : <?= $dataproduct['pid']?>
+                },
+                success: function (data) {
+                    statusFavorite();
                 }
             });
     }

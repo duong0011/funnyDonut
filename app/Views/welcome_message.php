@@ -581,7 +581,7 @@
                 <nav class="header__navbar hide-on-mobile-tablet" style="padding-top: 10px;">
                     <ul class="header__nav-list">
                         <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Welcome <?php if(session()->has('loged_user')) echo $user['fullname']; ?>!</li>
-                        <li class="header__nav-item header__nav-item--hover header__nav-item--separate"><a href="<?= base_url().'/PushProduct' ?>" style="text-decoration: none; color: white;">Become seller</a></li>
+                       
                         <div class="header__qrcode">
                             <img src=" <?= base_url()?>/assets/img/qr/qr-code.png" class="header__qr">
                             <div class="header__apps">
@@ -766,7 +766,7 @@
                     <!-- header__cart--no-cart --><!-- header__cart--has-cart -->
                     <div class="header__cart header__cart--has-cart">
                         <i class="header__cart-icon fas fa-shopping-cart"></i>
-                        <div class="header__cart-count">4</div>
+                        <div class="header__cart-count"></div>
                         
                         <div class="header__cart-list no-cart">
                             <img src=" <?= base_url()?>/assets/img/sp/no-cart.png" class="header__no-cart-img">
@@ -775,138 +775,11 @@
                         
                         <div class="header__cart-list has-cart">
                             <h4 class="header__cart-heading">Sản phẩm đã chọn</h4>
-                            <ul class="header__cart-list-item">
-                                <li class="header__cart-item">
-                                    <img src=" <?= base_url()?>/assets/img/buy/1.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Thanh Thanh 2000 1m57 46kg 88-62-89</h3>
-                                            <p class="header__cart-item-price">2.000USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 2</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src=" <?= base_url()?>/assets/img/buy/2.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Hồng Ánh 1998 1m62 48kg 89-64-91</h3>
-                                            <p class="header__cart-item-price">2.500USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 1</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src=" <?= base_url()?>/assets/img/buy/3.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
-                                            <p class="header__cart-item-price">2.800USD</p>
-                                        </div>  
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 1</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src=" <?= base_url()?>/assets/img/buy/4.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
-                                            <p class="header__cart-item-price">3.200USD</p>
-                                        </div>  
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 3</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src=" <?= base_url()?>/assets/img/buy/5.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Thanh Thanh 2000 1m57 46kg 88-62-89</h3>
-                                            <p class="header__cart-item-price">2.000USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 2</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src=" <?= base_url()?>/assets/img/buy/6.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Hồng Ánh 1998 1m62 48kg 89-64-91</h3>
-                                            <p class="header__cart-item-price">2.500USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 1</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src=" <?= base_url()?>/assets/img/buy/7.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
-                                            <p class="header__cart-item-price">2.800USD</p>
-                                        </div>  
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 1</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src=" <?= base_url()?>/assets/img/buy/8.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
-                                            <p class="header__cart-item-price">3.200USD</p>
-                                        </div>  
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 3</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                            <ul class="header__cart-list-item" id = "cart-list-item">
+                                
                             </ul>
                             <div class="header__cart-footer">
-                                <a href="#" class="btn btn--primary header__cart-see-cart">Xem giỏ hàng</a>
+                                <a href="<?= base_url('shoppingCart') ?>" class="btn btn--primary header__cart-see-cart">Xem giỏ hàng</a>
                             </div>
                         </div>
                     </div>
@@ -994,7 +867,7 @@
                                 <ul class="category-group-list">
                                     <?php foreach ($menuType as  $value): ?>
                                         <li class="category-group-item">
-                                            <input type="checkbox" class="category-group-item-check type" value = "<?= $value['type']?>" >
+                                            <input type="checkbox" class="category-group-item-check type" onclick="myFunction()" value = "<?= $value['type']?>" >
                                                <?= $value['type']?>
                                         </li>
                                     <?php endforeach ?>
@@ -1006,7 +879,7 @@
                                     <ul class="category-group-list">
                                          <?php foreach ($menuAddress as  $value): ?>
                                             <li class="category-group-item">
-                                            <input type="checkbox" class="category-group-item-check address" value = "<?= $value['address']?>">
+                                            <input type="checkbox" class="category-group-item-check address" onclick="myFunction()" value = "<?= $value['address']?>">
                                                 <?= $value['address']; ?>
                                             </li>
                                         <?php endforeach ?>
@@ -1063,7 +936,7 @@
                             <div class="category-group">
                                 <div class="category-group-title">Ratings</div>
                                 <div class="rating-star">
-                                    <input type="checkbox" class="category-group-item-check">
+                                    <input type="checkbox" id = ""  onclick="myFunction()" value="5" class="category-group-item-check star-checked">
                                     <i class="star-checked far fa-star"></i>
                                     <i class="star-checked far fa-star"></i>
                                     <i class="star-checked far fa-star"></i>
@@ -1071,7 +944,7 @@
                                     <i class="star-checked far fa-star"></i>
                                 </div>
                                 <div class="rating-star">
-                                    <input type="checkbox" class="category-group-item-check">
+                                    <input type="checkbox" id = "star-checked"  onclick="myFunction()" value="4"  class="category-group-item-check star-checked">
                                     <i class="star-checked far fa-star"></i>
                                     <i class="star-checked far fa-star"></i>
                                     <i class="star-checked far fa-star"></i>
@@ -1079,7 +952,7 @@
                                     <i class="star-uncheck far fa-star"></i>
                                 </div>
                                 <div class="rating-star">
-                                    <input type="checkbox" class="category-group-item-check">
+                                    <input type="checkbox" id = "star-checked"  onclick="myFunction()" value="3"  class="category-group-item-check star-checked">
                                     <i class="star-checked far fa-star"></i>
                                     <i class="star-checked far fa-star"></i>
                                     <i class="star-checked far fa-star"></i>
@@ -1087,7 +960,7 @@
                                     <i class="star-uncheck far fa-star"></i>
                                 </div>
                                 <div class="rating-star">
-                                    <input type="checkbox" class="category-group-item-check">
+                                    <input type="checkbox" id = "star-checked"  onclick="myFunction()" value="2"  class="category-group-item-check star-checked">
                                     <i class="star-checked far fa-star"></i>
                                     <i class="star-checked far fa-star"></i>
                                     <i class="star-uncheck far fa-star"></i>
@@ -1095,7 +968,7 @@
                                     <i class="star-uncheck far fa-star"></i>
                                 </div>
                                 <div class="rating-star">
-                                    <input type="checkbox" class="category-group-item-check">
+                                    <input type="checkbox" id = "star-checked"  onclick="myFunction()" value="1"  class="category-group-item-check star-checked">
                                     <i class="star-checked far fa-star"></i>
                                     <i class="star-uncheck far fa-star"></i>
                                     <i class="star-uncheck far fa-star"></i>
@@ -1133,84 +1006,19 @@
                     </div>
                     <div class="col l-10 m-12 c-12">
                         <!-- shop liên quan đến từ khóa tìm kiếm-->
-                        <h4 class="Shop__related-to--keyword__search">Shop related to "<span class="keyword__search">Trieu Lo Tu</span>"</h4>
-                        <div class="home-search__result-shop">
-                            <div class="home__shop-img">
-                                <img src="https://znews-photo.zingcdn.me/w660/Uploaded/kbd_pilk/2022_08_24/na_trat1.jpg" alt="">
-                            </div>
-                            <div class="home-search__result-shop-info">
-                                <h2 class="shop__name">Co Luc Na Trat China</h2>
-                                <div class="home__shop-info">
-                                    <span class="home__shop-info-quantity--follower"> 
-                                        <p class="shop__info-quantity--follower">10</p>Followers
-                                    </span>
-                                    <span>
-                                        <p class="shop__info-quantity--follow">10</p>Follow
-                                    </span>
-                                </div>
-                                <button class="magazin__info-btn" style="min-width: 200px; margin-top: 10px;">
-                                    <i class="magazin__info-btn-icon fa-solid fa-shop"></i>
-                                    <span class="magazin__info-btn-label">View Shop</span>
-                                </button>
-                            </div>
-                            <div class="home-search__result-shop--description">
-                                <span class="shop__quantity-product">243</span>
-                                <p>products</p>
-                            </div>
-                            <div class="home-search__result-shop--description">
-                                <span class="shop__quantity-rating">5.0</span>
-                                <p>ratings</p>
-                            </div>
-                            <div class="home-search__result-shop--description" style="width:20%;">
-                                <span class="shop__quantity-rating-chat">96%</span>
-                                <p>chat response rate</p>
-                            </div>
-                            
-                        </div>
-                        <div class="home-search__result-shop">
-                            <div class="home__shop-img">
-                                <img src="https://znews-photo.zingcdn.me/w660/Uploaded/kbd_pilk/2022_08_24/na_trat1.jpg" alt="">
-                            </div>
-                            <div class="home-search__result-shop-info">
-                                <h2 class="shop__name">Co Luc Na Trat China</h2>
-                                <div class="home__shop-info">
-                                    <span class="home__shop-info-quantity--follower"> 
-                                        <p class="shop__info-quantity--follower">10</p>Followers
-                                    </span>
-                                    <span>
-                                        <p class="shop__info-quantity--follow">10</p>Follow
-                                    </span>
-                                </div>
-                                <button class="magazin__info-btn" style="min-width: 200px; margin-top: 10px;">
-                                    <i class="magazin__info-btn-icon fa-solid fa-shop"></i>
-                                    <span class="magazin__info-btn-label">View Shop</span>
-                                </button>
-                            </div>
-                            <div class="home-search__result-shop--description">
-                                <span class="shop__quantity-product">243</span>
-                                <p>products</p>
-                            </div>
-                            <div class="home-search__result-shop--description">
-                                <span class="shop__quantity-rating">5.0</span>
-                                <p>ratings</p>
-                            </div>
-                            <div class="home-search__result-shop--description" style="width:20%;">
-                                <span class="shop__quantity-rating-chat">96%</span>
-                                <p>chat response rate</p>
-                            </div>
+                        <div id = "shop-related">
                             
                         </div>
 
-                        <h4 class="Product__related-to--keyword__search">Product related to "<span class="keyword__search">Trieu Lo Tu</span>"</h4>
                         <!-- home filter -->
                         <div class="home-filter hide-on-mobile-tablet">
                             <div class="home-filter-control">
                                 <p class="home-filter-title" style="margin-bottom:0;">Sorted by:</p>
-                                <button class="btn btn--brown home-filter-btn type-sort" id = "sortBySold" value="sold">Oldest</button>
+                                <button class="btn btn--brown home-filter-btn type-sort" id = "sortByTime1" value="sold">Oldest</button>
                                 <button class="btn home-filter-btn" value="created_at" id = "sortByTime">
                                     Latest
                                 </button>
-                                <button class="btn home-filter-btn">Bestseller</button>
+                                <button class="btn home-filter-btn" id = "sortBySold">Bestseller</button>
                                 <div class="btn home-filter-sort" style="width:220px;">
                                     <p class="home-filter-sort-btn" style="margin-bottom:0;">Price</p>
                                     <i class="fas fa-sort-amount-down-alt"></i>
@@ -1625,6 +1433,9 @@
             $(document).on('click', '#sortByTime', function() {
                 callLoadData('home/showByRequset'+'/'+$('#sortByTime').val(), new URL(document.URL).searchParams.get('page'));
             });
+             $(document).on('click', '#sortByTime1', function() {
+                callLoadData('home/showByRequset'+'/'+$('#sortByTime').val()+'/DESC', new URL(document.URL).searchParams.get('page'));
+            });
             $(document).on('click', '#reloadData', function() {
                 callLoadData('home/showByRequset');
             });
@@ -1632,7 +1443,7 @@
                 searchData('home/showByRequset');
             });
             $(document).on('click', '#sortBySold', function() {
-                callLoadData('home/showByRequset'+'/'+$('#sortBySold').val(), new URL(document.URL).searchParams.get('page'));
+                callLoadData('home/showByRequset/sold', new URL(document.URL).searchParams.get('page'));
             });
             $(document).on('click', '#pageclick', function() {
                 let url = $('#pageclick').val();
@@ -1648,8 +1459,9 @@
          
         $(document).ready(function() {
             var curl = new URL(document.URL);
-            if(curl.searchParams.get('keyword'))
+            if(curl.searchParams.get('keyword')){
                 callLoadData("<?= base_url().'/home/showByRequset'?>");
+            }
             else  loadProduct("", "get", "<?= base_url().'/home/fetch'?>");
         });
         function callLoadData(url, page, data) {
@@ -1674,10 +1486,16 @@
                     $('.type').each(function() {
                         if($(this).is(":checked"))
                             type.push($(this).val());
+                    }); 
+                let star = [];
+                $('.star-checked').each(function() {
+                        if($(this).is(":checked"))
+                            star.push($(this).val());
                     });                    
                     let data = {
                         'type' : type,
                         'address' : address,
+                        'star' : star,
                         'minprice': minprice,
                         'maxprice': maxprice,
                         'keyword': keyWord,
@@ -1705,40 +1523,23 @@
                 async: true,
                 success: function (response) {
                     $('.loadProduct').html("");
-                    $('#page').html("");                       
+                    $('#page').html("");
+                    if(response.shop !== undefined) {
+                        $('#shop-found').html('');
+                        $('#shop-related').html('');
+                        $('#shop-related').append('<h4 class="Shop__related-to--keyword__search" >Shop related to "<span class="keyword__search"></span>"</h4>\
+                            <div id ="shop-found">\
+                            </div>');
+                        response.shop.forEach((item, index) => {
+                            console.log(index);
+                            $('#shop-found').append(item);
+                            $('.keyword__search').text(pdata.keyword);
+                        })
+                    }                      
                     if (response.products !== null) {
-                        
-                       
                         window.history.pushState('', '', response.currentRequest1);
-                        $.each(response.products , function(index, value) {
-                       
-                        $('.loadProduct').append("<div class='col l-2-4 home-product-item'>\
-                            <a class='home-product-item-link' href='<?= base_url('showproduct')?>?id="+value.pid+"'>\
-                            <div class='home-product-item__img' style='background-image:url(data:image/jpeg;base64,"+value.image+")'></div>\
-                            <div class='home-product-item__info'>\
-                                <h4 class='home-product-item__name'>"+ value.nameproduct+"</h4>\
-                                <div class='home-product-item__price'>\
-                                    <p class='home-product-item__price-old'>"+ value.price+"USD</p>\
-                                    <p class='home-product-item__price-new'>"+(value.price-value.price*value.discount/100).toFixed(2)+"USD</p>\
-                                    <i class='home-product-item__ship fas fa-shipping-fast'></i>\
-                                </div>\
-                                <div class='home-product-item__footer'>\
-                                    <div class='home-product-item__save'>\
-                                        <input type='checkbox' name='save-check' id='heart-save'>\
-                                        <label for='heart-save' class='far fa-heart'></label>\
-                                    </div>\
-                                    <div class='home-product-item__rating-star'>\
-                                            <i class='star-checked far fa-star'></i>\
-                                            <i class='star-checked far fa-star'></i>\
-                                            <i class='star-checked far fa-star'></i>\
-                                            <i class='star-checked far fa-star'></i>\
-                                            <i class='star-checked far fa-star'></i>\
-                                    </div>\
-                                         <div class='home-product-item__saled'>"+value.rating+"</div>\
-                                    </div>\
-                                    <div class='home-product-item__origin'>Sold("+value.sold+")</div>\
-                                </div>\
-                            </div>");
+                        $.each(response.output , function(index, value) {
+                            $('.loadProduct').append(value);
                         });
                         pageStart = Number(response.pageStart);
                         pageEnd = Number(response.pageEnd);
@@ -1806,6 +1607,8 @@
                         </div>\
                     </div>")
                     }
+
+                    console.log(1);
                 }
                                             
         });
@@ -1834,7 +1637,7 @@
                        $.each(response.hints, function(index,val) {
                              $('.hintsforproduct').append("\
                             <li class='header__search-history-item'>\
-                                <a href='#'>"+val.nameproduct+"</a>\
+                                <a href='<?=base_url('showProduct?id=')?>"+val.pid+"'>"+val.nameproduct+"</a>\
                             </li>");
                        });
                     }
@@ -1859,6 +1662,7 @@
         }
 
         $(document).ready(()=>{
+            loadCartShopping()
             $(".chat-btn").click(()=>{
                 if(<?= session()->has('loged_user') ? 0 : 1 ?>) {
                     window.location.href = '<?= base_url('/login')?>';
@@ -1919,6 +1723,7 @@
                             },
                             success: function (data) {
                                 document.querySelector('.msg_card_body').innerHTML = data;
+                                document.getElementById("input-img__msg").innerHTML = "";
                             }
                         });
                 }, 1000);
@@ -1963,6 +1768,37 @@
             reader__msg.readAsDataURL(i);
         }
         
+    }
+     function loadCartShopping() {
+        $('#cart-list-item').html("");
+        $.ajax({
+                url: '<?=base_url('showProduct/loadCartShopping')?>',
+                type: 'post',
+                success: function (data) {
+                    var tmp = 0;
+                    if(data != "")
+                        data.forEach((x)=>{
+                            $('#cart-list-item').append(x);
+                            tmp++;   
+                        });
+                    $('.header__cart-count').text(tmp);
+                }
+            });
+    }
+    function deteleCartShopping(id) {
+        $.ajax({
+                url: '<?=base_url('showProduct/deteleCartShopping')?>',
+                type: 'post',
+                data: {
+                   'id' : id
+                },
+                success: function (data) {
+                    loadCartShopping();
+                }
+            });
+    }
+    function myFunction() {
+        callLoadData('home/showByRequset');
     }
 </script>
 </body>
