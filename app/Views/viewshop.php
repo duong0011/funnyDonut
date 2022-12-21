@@ -59,7 +59,7 @@
           margin: auto;
           padding: 20px;
           border: 1px solid #888;
-          width: 30%;
+          width: 1000px;
         }
 
         /* The Close Button */
@@ -112,8 +112,14 @@
 
         .edit {
             position: absolute;
-            bottom: 2px;
-            right: 3px;
+            bottom: 151px;
+            right: 10px;
+            z-index: 99;
+        }
+
+        .edit:hover {
+            cursor: pointer;
+            opacity: 0.9;
         }
 
         .icon-edit{
@@ -258,6 +264,14 @@
         .btn {
             color: black;
             border-radius: 5px;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        .container {
+            background-color: white;
         }
     </style>
 </head>
@@ -1245,14 +1259,14 @@
                 if (response.products !== null) {
                     window.history.pushState('page2', 'Title', response.currentRequest1);
                     $.each(response.products , function(index, value) {
-                    $('#list-product').append("<div class='col l-2 home-product-item'>\
+                        $('#list-product').append("<div class='col l-2 home-product-item'>\
+                        <?php if(session()->get('loged_user') == $seller['unitid']):?>\
+                            <div class='edit'>\
+                                <i class='fa-solid fa-trash-can icon-edit'></i>\
+                            </div>\
+                        <?php endif ?>\
                         <a class='home-product-item-link' href='<?= base_url('showproduct')?>?id="+value.pid+"'>\
                         <div class='home-product-item__img' style='background-image:url(data:image/jpeg;base64,"+value.image+")'>\
-                            <?php if(session()->get('loged_user') == $seller['unitid']):?>\
-                                <div class='edit'>\
-                                    <i class='fa-solid fa-trash-can icon-edit'></i>\
-                                </div>\
-                            <?php endif ?>\
                         </div>\
                         <div class='home-product-item__info'>\
                             <h4 class='home-product-item__name'>"+ value.nameproduct+"</h4>\

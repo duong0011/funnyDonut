@@ -1242,6 +1242,7 @@ border-color: red green blue yellow */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    border-bottom: 1px solid var(--hover-color);
 }
 
 .home-product-item__info {
