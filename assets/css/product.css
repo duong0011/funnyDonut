@@ -372,7 +372,7 @@
     width: 120px;
     height: 30px;
     border-radius: 4px;
-    border: 1px solid rgb(212, 202, 203);
+    border: 1px solid var(--header-color);
     background-color: var(--white-color);
     cursor: pointer;
 }
@@ -380,10 +380,12 @@
 .magazin__info-btn-icon {
     font-size: 1.4rem;
     margin-right: 4px;
+    color: white;
 }
 
 .magazin__info-btn-label {
     font-size: 1.4rem;
+    color: white;
 }
 
 .magazin__info-btn-active {
