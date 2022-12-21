@@ -78,7 +78,6 @@
     right: 0;
     margin-top: 8px;
     width: 150px;
-    height: 120px;
     background-color: var(--white-color);
     list-style: none;
     z-index: 10;
@@ -663,7 +662,8 @@ border-color: red green blue yellow */
 }
 
 .header__cart-item-img {
-    height: 42px;
+    height: 80px;
+    width: 80px;
     margin: 8px;
     border: 1px solid #ccc;
 }
@@ -724,6 +724,9 @@ border-color: red green blue yellow */
 .header__cart-see-cart {
     float: right;
     margin: 12px;
+    width: 100px;
+    padding: 10px 5px;
+    text-decoration: none;
 }
 
 .header__cart-see-cart:hover {

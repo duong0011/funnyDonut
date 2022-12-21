@@ -229,10 +229,10 @@
         .push__comment-icon-send {
             color: var(--header-color);
         }
-    </style>
 
-    <style>
-        
+        .btn {
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
