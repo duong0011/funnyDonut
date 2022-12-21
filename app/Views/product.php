@@ -264,6 +264,10 @@
         .push__comment-icon-send {
             color: var(--header-color);
         }
+
+        .btn:focus {
+            box-shadow: none;
+        }
     </style>
 </head>
 
@@ -905,8 +909,8 @@
                                     </form>
                                 </div> -->
                             </div>
-                            <button class="btn home-filter-btn " onclick="fetchComment(0)">All</button>
-                            <button class="btn home-filter-btn product__rating-btn--active" onclick="fetchComment(5)">
+                            <button class="btn home-filter-btn product__rating-btn--active" onclick="fetchComment(0)">All</button>
+                            <button class="btn home-filter-btn" onclick="fetchComment(5)">
                                 5 Star
                                
                             </button>
@@ -1797,6 +1801,18 @@
                 }
             });
     }
+</script>
+
+<script>
+    const btnRate = Array.from(document.querySelectorAll('.btn.home-filter-btn'));
+    btnRate.forEach((btns) => {
+        btns.addEventListener('click', () => {
+            btnRate.forEach((btns) => {
+                btns.classList.remove('product__rating-btn--active');
+            });
+            btns.classList.add('product__rating-btn--active');
+        });
+    });
 </script>
 
 </body>
