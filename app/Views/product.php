@@ -268,6 +268,10 @@
         .btn:focus {
             box-shadow: none;
         }
+
+        button:focus {
+            outline: none;
+        }
     </style>
 </head>
 

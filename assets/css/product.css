@@ -85,7 +85,7 @@
 }
 
 .product__favourite__save input:checked+label {
-    color: var(--header-color);
+    color: rgb(208, 1, 27);
     font-weight: 900;
 }
 
@@ -104,17 +104,17 @@
 .product__quantity-rating {
     font-size: 2rem;
     margin-right: 3px;
-    color: var(--header-color);
+    color: rgb(208, 1, 27);
     font-weight: 500;
 }
 
 .product-item__rating-star .star-checked {
-    color: var(--header-color);
+    color: rgb(208, 1, 27);
     font-weight: 900;
 }
 
 .product-item__rating-star .star-uncheck {
-    color: var(--header-color);
+    color: rgb(208, 1, 27);
     font-weight: unset;
 }
 
@@ -135,7 +135,7 @@
 .product-item__price-new {
     margin: 0;
     font-size: 2.6rem;
-    color: var(--header-color);
+    color: rgb(208, 1, 27);
     margin-right: auto;
     margin-left: 5px;
 }
@@ -290,7 +290,7 @@
     justify-content: center;
     width: 150px;
     height: 40px;
-    border: 2px solid var(--header-color);
+    border: 2px solid rgb(208, 1, 27);
     border-radius: 4px;
     background-color: rgb(251, 235, 237);
     cursor: pointer;
@@ -304,12 +304,12 @@
 
 .product-item__more-cart-icon {
     font-size: 1.6rem;
-    color: var(--header-color);
+    color: rgb(208, 1, 27);
 }
 
 .product-item__more-cart-title {
     font-size: 1.6rem;
-    color: var(--header-color);
+    color: rgb(208, 1, 27);
     margin-left: 5px;
 }
 
@@ -320,7 +320,7 @@
     width: 120px;
     height: 40px;
     border-radius: 4px;
-    background-color: var(--header-color);
+    background-color: rgb(208, 1, 27);
     cursor: pointer;
     margin-left: 14px;
 }
@@ -372,7 +372,7 @@
     width: 120px;
     height: 30px;
     border-radius: 4px;
-    border: 1px solid var(--header-color);
+    border: 1px solid rgb(212, 202, 203);
     background-color: var(--white-color);
     cursor: pointer;
 }
@@ -380,12 +380,10 @@
 .magazin__info-btn-icon {
     font-size: 1.4rem;
     margin-right: 4px;
-    color: white;
 }
 
 .magazin__info-btn-label {
     font-size: 1.4rem;
-    color: white;
 }
 
 .magazin__info-btn-active {
