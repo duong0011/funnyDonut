@@ -10,6 +10,7 @@
     <link rel="icon" href="<?= base_url()?>/assets/img/logo/logo-web.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/base.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/Nga-base.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/grid.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/viewshop.css">
@@ -140,6 +141,10 @@
             opacity: 0.9;
         }
 
+        .new-product:focus{
+            outline: none;
+        }
+
         .magazin__info-btn {
             background-color: var(--header-color);
             color: white;
@@ -241,6 +246,17 @@
 
         figcaption_msg {
             display: none;
+        }
+
+        .close p {
+            font-size: 25px;
+            color: var(--header-color);
+            float: right;
+            padding: 5px;
+        }
+
+        .btn {
+            color: black;
         }
     </style>
 </head>
@@ -754,7 +770,9 @@
                             <div id="myModal" class="modal">
                               <!-- Modal content -->
                               <div class="modal-content form-product">
-                                <span class="close">&times;</span>
+                                <div class="close">
+                                    <p>x</p>
+                                </div>
                                 <div class="container ">
                                     <div class="grid wide" >
                                         <h1>NEW PRODUCT</h1>
@@ -764,10 +782,10 @@
                                                 <span class="error_input" id = 'field_name'></span>
                                                 <input type="text" name = 'nameproduct' class="product-name-input form-input">
                                                 <p class="product-price">Price</p>
-                                                <span class="error_input" id = 'field_price'></span><br>
+                                                <span class="error_input" id = 'field_price'></span>
                                                 <input type="text" name = 'price' class="product-price-input form-input-other" placeholder="USD">
-
                                                 <p class="product-type-text">Type</p>
+                                                <br>
                                                 <select name="type" id="" class="product-type-select" onchange="productOtherWrite()">
                                                     <option value="Bread">Bread</option>
                                                     <option value="Cake">Cake</option>
@@ -775,28 +793,28 @@
                                                     <option value="other">Other</option>
                                                 </select>
                                                 <input type="text" placeholder="write down..." class="form-product-other">
-                                                
-                                               
-
                                                 <p class="product-amount">Amount</p>
-                                                <span class="error_input" id = 'field_amount'></span><br>
+                                                <span class="error_input" id = 'field_amount'></span>
                                                 <input type="text" class="product-amount-input form-input-other" name = 'amount'>
 
                                                 <p class="product-amount">Discount(%)</p>
-                                                <span class="error_input" id = 'field_discount'></span><br>
+                                                <span class="error_input" id = 'field_discount'></span><
                                                 <input type="text" class="product-discount-input form-input-other" name = 'discount'>
 
                                                 <p class="product-weight">Size</p>
-                                                <span class="error_input" id = 'field_weight'></span><br>
+                                                <span class="error_input" id = 'field_weight'></span>
                                                 <input type="text" class="product-weight-input form-input-other" placeholder="cm" name = 'weight'>
 
                                                 <p class="product-ingredient">Ingredient</p>
+                                                <br>
                                                 <textarea type="text" class="product-ingredient-input form-input" style="resize: none;" rows="1" name = 'ingredient'></textarea>
 
                                                 <p class="product-descripti on">Description</p>
+                                                <br>
                                                 <textarea type = 'text'class="product-description-input form-input" style="resize: none;" rows="7" name = 'info'></textarea> 
 
                                                 <p class="product-note">Note</p>
+                                                <br>
                                                 <textarea  type = 'text' class="product-note-input form-input" style="resize: none;" rows="7" name = 'note'> </textarea> 
                                                 <p class="product-photo" style="text-align: center;">Product photo</p>
                                                 <div>
@@ -807,7 +825,7 @@
                                                     <p id = "num-of-files" style="text-align: center; margin: 20px 0 30px 0;" class="error_input">No FILES Chosen</p>
                                                     <div id = "images-on-push-product"></div>
                                                 </div>
-                                                <button class="product-save-btn" style = "text-align: center; display: block; width: 32%; height: 38px; font-size: 1.8rem; margin-left: 200px; cursor: pointer;" value="Save"> Save</button>
+                                                <button class="product-save-btn" style = "text-align: center; display: block; width: 32%; height: 38px; font-size: 1.8rem; margin: 30px auto; cursor: pointer;" value="Save"> Save</button>
                                             </form>
                                         </div>
                                     </div>

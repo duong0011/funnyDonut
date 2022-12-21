@@ -669,7 +669,8 @@ border-color: red green blue yellow */
 }
 
 .header__cart-item-img {
-    height: 42px;
+    height: 80px;
+    width: 80px;
     margin: 8px;
     border: 1px solid #ccc;
 }
@@ -694,6 +695,7 @@ border-color: red green blue yellow */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    padding: 14px;
 }
 
 .header__cart-item-price {
@@ -730,6 +732,7 @@ border-color: red green blue yellow */
 .header__cart-see-cart {
     float: right;
     margin: 12px;
+    width: 30px;
 }
 
 .header__cart-see-cart:hover {

@@ -1,15 +1,16 @@
 .container h1{
     text-align: center;
     color: var(--primary-color);
-    margin: 30px auto;
+    margin: 15px auto;
 }
 
 .form-product{
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--header-color);
     padding: 30px 50px 50px;
     margin: 0 250px 50px;
     border-radius: 5px;
-    box-shadow: 0 2px 10px var(--primary-color);
+    box-shadow: 0 2px 10px var(--header-color);
+    width: 1000px;
 }
 
 
