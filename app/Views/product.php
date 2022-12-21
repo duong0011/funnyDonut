@@ -40,7 +40,7 @@
             width: 120px;
             height: 35px;
             border: 1px solid #888;
-            border-radius: 4px;
+            border-radius: 10px;
             outline: none;
             font-size: 1.4rem;
         }
@@ -950,7 +950,7 @@
                                             <i class="push__comment-icon push__comment-icon-append fas fa-paperclip"></i>
                                         </label>
                                     <input type="text" id="comment-text" placeholder="Enter comment ...">
-                                    <button style="border: none;" class="send-comment"><i class="push__comment-icon push__comment-icon-send fas fa-location-arrow"></i></button>
+                                    <button style="border: none; background-color: white;" class="send-comment"><i class="push__comment-icon push__comment-icon-send fas fa-location-arrow"></i></button>
                                 </div>
                             
                                 <div class="push__comment-img">

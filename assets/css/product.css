@@ -281,7 +281,11 @@
 }
 
 .product-item__quantity-info input {
-    font-size: 1.4rem;
+    height: 33px;
+    width: 100px;
+    font-size: 1.8rem;
+    text-align: center;
+    border-radius: 9px;
 }
 
 .product-item__more-cart {
