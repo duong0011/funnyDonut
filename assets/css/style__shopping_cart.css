@@ -77,15 +77,15 @@ a {
 	width: 968px;
 }
 
-#cart {
+.cart {
 	width: 100%;
 }
 
-#cart h1 {
+.cart h1 {
 	font-weight: 300;
 }
 
-#cart a {
+.cart a {
 	color: var(--header-color);
 	text-decoration: none;
 
@@ -96,7 +96,7 @@ a {
 	transition: color .2s linear;
 }
 
-#cart a:hover {
+.cart a:hover {
 	color: #000;
 }
 

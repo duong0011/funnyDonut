@@ -51,12 +51,155 @@
             }
         }
     </style>
+
+    <style>
+        #site-header h1 {
+            text-align: center;
+            color: var(--header-color);
+            margin: 20px 0;
+            padding: 40px 0;
+            border: 1px solid var(--header-color);
+            border-radius: 5px;
+            box-shadow: 0 0 5px var(--header-color);
+        }
+
+        #site-header i {
+            font-size: 38px;
+            margin-right: 5px;
+        }
+
+        .cart {
+            border: 1px solid var(--header-color);
+            border-radius: 5px;
+            box-shadow: 0 0 5px var(--header-color);
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+
+        .product-list{
+            border: 1px solid var(--header-color);
+            border-radius: 5px;
+            box-shadow: 0 0 5px var(--header-color);
+            margin-top: 30px;
+            padding: 20px;
+        }
+
+        .product-detail{
+            font-size: 1.6rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            padding-bottom: 25px;
+        }
+
+        .product-detail span:nth-child(2){
+            text-align: start;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--header-color);
+        }
+
+        .shop {
+            font-size: 20px;
+            padding-top: 20px;
+            font-weight: 400;
+            border-top: 1px solid var(--header-color);
+        }
+
+        .shop-name {
+            color: var(--header-color);
+            padding: 10px 0 20px;
+            border-bottom: 1px dashed var(--header-color);
+        }
+
+        .product-shop-item{
+            font-size: 1.4rem;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .product-img img{
+            width: 150px;
+        }
+
+        .product-amount input {
+            width: 50px;
+            height: 30px;
+            font-size: 18px;
+            text-align: center;
+            background: white;
+            border: 1px solid #c7c0c0;
+            border-radius: 5px;
+        }
+
+        .product-amount input:focus {
+            outline: none;
+        }
+
+        .product-shop {
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            margin: 20px 18px;
+        }
+
+        input[type="checkbox"]{
+            width: 20px;
+            height: 20px;
+        }
+
+        .container {
+            width: 1200px;
+        }
+
+        .icon-delete {
+            font-size: 48px;
+            color: var(--header-color);
+            cursor: pointer;
+        }
+
+        .icon-delete:hover {
+            opacity: 0.9;
+        }
+
+        .total {
+            border: 1px solid var(--header-color);
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 5px var(--header-color);
+            padding: 35px 80px 32px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .total-payment {
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-submit {
+            background-color: var(--header-color);
+            color: white;
+            border: 1px solid var(--header-color);
+            border-radius: 5px;
+            padding: 6px 12px 5px;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover{
+            opacity: 0.9;
+        }
+
+        .btn-submit:focus {
+            outline: none;
+        }
+    </style>
 </head>
 
 
 <body>
     <!-- main -->
-    <div class="app" style="background-color: rgba(236, 238, 240, 0.6);">
+    <div class="app" style="background-color: white">
         <!-- header -->
         <header class="header">
             <div class="grid wide">
@@ -430,138 +573,140 @@
             <!-- Start DEMO HTML (Use the following code into your project)-->
             <header id="site-header">
                 <div class="container">
-                    <h1>Shopping cart </h1>
+                    <h1>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        SHOPPING CART </h1>
                 </div>
             </header>
 
             <div class="container">
-                <section id="cart">
-                    <article class="product">
-                        <header>
-                            <a class="remove">
-                                <img src="assets/img/shopping_cart/mouse.jpg" alt="Gamming Mouse">
-                                <h3>Remove product</h3>
-                            </a>
-                        </header>
-
-                        <div class="content">
-
-                            <h1>Mouse</h1>
-
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, numquam quis perspiciatis ea
-                            ad omnis provident laborum dolore in atque.
-
-                            <!-- <div title="You have selected this product to be shipped in the color yellow." style="top: 0"
-                                class="color yellow"></div> -->
-                            <!-- <div style="top: 43px" class="type small">XXL</div> -->
+                <div class="product-list">
+                    <div class="row product-detail">
+                        <input type="checkbox" name="" id="">
+                        <span class="col l-5">Product</span>
+                        <span class="col l-1">Size</span>
+                        <span class="col l-2">Unit price</span>
+                        <span class="col l-1">Amount</span>
+                        <span class="col l-2">Total</span>
+                    </div>
+                    <div class="shop row">
+                        <div class="shop-name">
+                            <div class="input-check">
+                                <input type="checkbox" name="" id="">
+                                <i class="fa-solid fa-store col l-6"></i>
+                                <span class="name-shop">cake_shop</span>
+                            </div>
                         </div>
-
-                        <footer class="content">
-                            <span class="qt-minus">-</span>
-                            <span class="qt">2</span>
-                            <span class="qt-plus">+</span>
-
-                            <h2 class="full-price">
-                                29.98$
-                            </h2>
-
-                            <h2 class="price">
-                                14.99$
-                            </h2>
-                        </footer>
-                    </article>
-
-                    <article class="product">
-                        <header>
-                            <a class="remove">
-                                <img src="assets/img/shopping_cart/keyboard.jpg" alt="Keyboard">
-                                <h3>Remove product</h3>
-                            </a>
-                        </header>
-
-                        <div class="content">
-
-                            <h1>Keyboard</h1>
-
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, numquam quis perspiciatis ea
-                            ad omnis provident laborum dolore in atque.
-
-                            <!-- <div title="You have selected this product to be shipped in the color red." style="top: 0"
-                                class="color red"></div> -->
-                            <!-- <div title="You have selected this product to be shipped sized Small." style="top: 43px"
-                                class="type small">Small</div> -->
+                        <div class="col l-12 product-shop-item">
+                            <div class="product-shop row">
+                                <div class="input-check">
+                                    <input type="checkbox" name="" id="">
+                                </div>
+                                <div class="col l-2 product-img">
+                                    <img src="<?= base_url()?>/assets/img/checkout/product-img.png" alt="">
+                                </div>
+                                <div class="col l-3 product-name">
+                                    <span>Bánh kem xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx yyy</span>
+                                </div>
+                                <div class="product-size col l-1">
+                                    <span>S</span>
+                                </div>
+                                <div class="col l-2 product-unit-price">100$</div>
+                                <div class="col l-1 product-amount">
+                                    <input type="number" name="" id="" value="1" class="amount-number">
+                                </div>
+                                <div class="col l-2 product-total" style="color:var(--header-color);">100$</div>
+                                <i class="fa-solid fa-trash-can icon-delete"></i>
+                            </div>
+                            <div class="product-shop row">
+                                <div class="input-check">
+                                    <input type="checkbox" name="" id="">
+                                </div>
+                                <div class="col l-2 product-img">
+                                    <img src="<?= base_url()?>/assets/img/checkout/product-img1.png" alt="">
+                                </div>
+                                <div class="col l-3 product-name">
+                                    <span>Bánh kem xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx yyy</span>
+                                </div>
+                                <div class="product-size col l-1">
+                                    <span>S</span>
+                                </div>
+                                <div class="col l-2 product-unit-price">100$</div>
+                                <div class="col l-1 product-amount">
+                                    <input type="number" name="" id="" value="1" class="amount-number">
+                                </div>
+                                <div class="col l-2 product-total" style="color:var(--header-color);">100$</div>
+                                <i class="fa-solid fa-trash-can icon-delete"></i>
+                            </div>
                         </div>
-
-                        <footer class="content">
-
-                            <span class="qt-minus">-</span>
-                            <span class="qt">1</span>
-                            <span class="qt-plus">+</span>
-
-                            <h2 class="full-price">
-                                79.99$
-                            </h2>
-
-                            <h2 class="price">
-                                79.99$
-                            </h2>
-                        </footer>
-                    </article>
-
-                    <article class="product">
-                        <header>
-                            <a class="remove">
-                                <img src="assets/img/shopping_cart/handfree.jpg" alt="Handfree">
-
-                                <h3>Remove product</h3>
-                            </a>
-                        </header>
-
-                        <div class="content">
-
-                            <h1>Handfree</h1>
-
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, numquam quis perspiciatis ea
-                            ad omnis provident laborum dolore in atque.
-
-                            <!-- <div title="You have selected this product to be shipped in the color blue." style="top: 0"
-                                class="color blue"></div> -->
-                            <!-- <div style="top: 43px" class="type small">Large</div> -->
+                    </div>
+                    <div class="shop row">
+                        <div class="shop-name">
+                            <div class="input-check">
+                                <input type="checkbox" name="" id="">
+                                <i class="fa-solid fa-store col l-6"></i>
+                                <span class="name-shop">cake_shop1</span>
+                            </div>
                         </div>
-
-                        <footer class="content">
-
-                            <span class="qt-minus">-</span>
-                            <span class="qt">3</span>
-                            <span class="qt-plus">+</span>
-
-                            <h2 class="full-price">
-                                53.99$
-                            </h2>
-
-                            <h2 class="price">
-                                17.99$
-                            </h2>
-                        </footer>
-                    </article>
-
-                </section>
+                        <div class="col l-12 product-shop-item">
+                            <div class="product-shop row">
+                                <div class="input-check">
+                                    <input type="checkbox" name="" id="">
+                                </div>
+                                <div class="col l-2 product-img">
+                                    <img src="<?= base_url()?>/assets/img/checkout/product-img.png" alt="">
+                                </div>
+                                <div class="col l-3 product-name">
+                                    <span>Bánh kem xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx yyy</span>
+                                </div>
+                                <div class="product-size col l-1">
+                                    <span>S</span>
+                                </div>
+                                <div class="col l-2 product-unit-price">100$</div>
+                                <div class="col l-1 product-amount">
+                                    <input type="number" name="" id="" value="1" class="amount-number">
+                                </div>
+                                <div class="col l-2 product-total" style="color:var(--header-color);">100$</div>
+                                <i class="fa-solid fa-trash-can icon-delete"></i>
+                            </div>
+                            <div class="product-shop row">
+                                <div class="input-check">
+                                    <input type="checkbox" name="" id="">
+                                </div>
+                                <div class="col l-2 product-img">
+                                    <img src="<?= base_url()?>/assets/img/checkout/product-img1.png" alt="">
+                                </div>
+                                <div class="col l-3 product-name">
+                                    <span>Bánh kem xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx yyy</span>
+                                </div>
+                                <div class="product-size col l-1">
+                                    <span>S</span>
+                                </div>
+                                <div class="col l-2 product-unit-price">100$</div>
+                                <div class="col l-1 product-amount">
+                                    <input type="number" name="" id="" value="1" class="amount-number">
+                                </div>
+                                <div class="col l-2 product-total" style="color:var(--header-color);">100$</div>
+                                <i class="fa-solid fa-trash-can icon-delete"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
-            <footer id="site-footer">
-                <div class="container clearfix">
-                    <div class="left">
-                        <h2 class="subtotal">Subtotal: <span>163.96</span>$</h2>
-                        <h3 class="shipping">Shipping: <span>0.00</span>$</h3>
+            <div class="total container">
+                <div class="row total-payment">
+                    <div class="col l-6">
+                        <span style="font-weight: 500; font-size: 25px;">Total</span>
+                        (<span>0</span> products):
+                        <span style="color: var(--header-color); font-weight: 600;">400$</span>
                     </div>
-                    <div class="right">
-                        <h1 class="total">Total: <span>163.96</span>$</h1>
-                        <a class="btn btn--brown" href="<?= base_url('checkout') ?>">Go to payment</a>
+                    <div class="col l-6">
+                        <a href="" class="btn-submit">Go to payment</a>
                     </div>
-
                 </div>
-            </footer>
+            </div>
 		    <!-- END EDMO HTML (Happy Coding!)-->
         </div>
         <!-- footer -->
@@ -879,10 +1024,10 @@
                 el.parent().parent().remove(); 
                 if($(".product").length == 0) {
                     if(check) {
-                        // $("#cart").html("<h1>The shop does not function, yet!</h1><p>If you liked my shopping cart, please take a second and heart this Pen on <a href='https://codepen.io/ziga-miklic/pen/xhpob'>CodePen</a>. Thank you!</p>");
+                        // $(".cart").html("<h1>The shop does not function, yet!</h1><p>If you liked my shopping cart, please take a second and heart this Pen on <a href='https://codepen.io/ziga-miklic/pen/xhpob'>CodePen</a>. Thank you!</p>");
                     } 
                     else {
-                        $("#cart").html("<h1>No products!</h1>");
+                        $(".cart").html("<h1>No products!</h1>");
                     }
                 }
                 changeTotal(); 
