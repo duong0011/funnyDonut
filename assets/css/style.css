@@ -1536,3 +1536,7 @@ border-color: red green blue yellow */
 .other-footer-more {
     margin: 8px 10px 0;
 }
+
+a.btn.btn--brown.header__cart-see-cart {
+    width: 130px;
+}

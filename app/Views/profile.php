@@ -995,11 +995,11 @@
 
                         <div class="header__cart-list no-cart">
                             <img src="<?= base_url()?>/assets/img/sp/no-cart.png" class="header__no-cart-img">
-                            <p class="header__no-cart-text">Chưa có sản phẩm</p>
+                            <p class="header__no-cart-text">No product</p>
                         </div>
 
                         <div class="header__cart-list has-cart">
-                            <h4 class="header__cart-heading">Sản phẩm đã chọn</h4>
+                            <h4 class="header__cart-heading">Selected product</h4>
                             <ul class="header__cart-list-item">
                                 <li class="header__cart-item">
                                     <img src="<?= base_url()?>/assets/img/buy/1.PNG" class="header__cart-item-img">
@@ -1131,7 +1131,7 @@
                                 </li>
                             </ul>
                             <div class="header__cart-footer">
-                                <a href="#" class="btn btn--primary header__cart-see-cart">Xem giỏ hàng</a>
+                                <a href="#" class="btn btn--brown header__cart-see-cart">View cart</a>
                             </div>
                         </div>
                     </div>
