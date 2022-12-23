@@ -1465,8 +1465,6 @@
             else  loadProduct("", "get", "<?= base_url().'/home/fetch'?>");
         });
         function callLoadData(url, page, data) {
-            document.body.scrollTop = 500;
-            document.documentElement.scrollTop = 500;
             var curl = new URL(document.URL);
             let keyWord = curl.searchParams.get('keyword');
             let minprice = $('#minprice').val();

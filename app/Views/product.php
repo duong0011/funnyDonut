@@ -1662,10 +1662,11 @@
                     for (var index = 0; index < totalfiles; index++) {
                         data.append("files[]", document.getElementById('file-comment').files[index]);
                     }
-                    if(window.star == null) window.star = 5;
+                    if(window.star == null) return false;
                     data.append("content", $('#comment-text').val());
                     data.append("star", window.star);
-                    data.append("productid", <?= $dataproduct['pid']?>);    
+                    data.append("productid", <?= $dataproduct['pid']?>);
+
                     $.ajax({
                             url: '<?=base_url('/showProduct/comment')?>',
                             type: 'post',
@@ -1676,6 +1677,7 @@
                                 document.getElementById('comment-text').value = "";
                                 $('#push__images').html("");
                                 fetchComment(0)
+                                document.getElementById('file-comment').value = "";
                             }
                         });
                 }

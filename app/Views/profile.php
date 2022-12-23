@@ -1159,7 +1159,6 @@
                 <div class="row">
                     <div class="c-2 info-list">
                         <div class="user-avatar-name">
-                            
                             <div class="user-avtar-upload">
                                 <img class="user-avatar" id="imgPreview" src="data:image/jpeg;base64,<?=$user['avatar']?>" alt="avatar"/>
                                 <input type="file" name="" id="imageUpload" accept=".png, .jpg, .jpeg"/>
@@ -2112,15 +2111,11 @@
     function hideNewPay(){
         modal.classList.remove('open');
     }
-    window.onclick = function(event) {
-        event.preventDefault();
+     window.onclick = function(event) {
         if(event.target == modal) {
             modal.classList.remove('open');
         }
     };
-    function roll(card) {
-        console.log(1);
-    }
  </script>
 </body>
 </html>
