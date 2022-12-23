@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funny Donut</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="icon" href="<?= base_url()?>/assets/img/logo/logo-web.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/base.css">
@@ -536,10 +536,10 @@
                 <div class="row sm-gutter product__background magazin__box" style="margin-bottom: 25px;">
                     <div class="col l-4" style="padding:0; background-color: rgba(139, 52, 52, 0.2); border-radius: 2px;">
                         <div class="shop__label">
-							<img src="data:image/jpeg;base64,<?= $seller['avatar'];?>" alt="" class="img__shop">
-							<div class="shop__name">
-								<h3><?= $seller['fullname'] ?></h3>
-								<?php if($seller['currentstatus'] == 'online'):?>
+                            <img src="data:image/jpeg;base64,<?= $seller['avatar'];?>" alt="" class="img__shop">
+                            <div class="shop__name">
+                                <h3><?= $seller['fullname'] ?></h3>
+                                <?php if($seller['currentstatus'] == 'online'):?>
                                     <span class="fa fa-circle" style="font-size:10px;color:#4cd137;"> Online</span>
                                 <?php else: ?>
                                     <span>Offline <?php 
@@ -553,10 +553,10 @@
                                         else echo ' just now';
                                     ?></span>
                                 <?php endif ?>
-							</div>
-						</div>
+                            </div>
+                        </div>
                          <?php if(session()->get('loged_user') != $seller['unitid']): ?>
-						<div class="shop__description" style="margin-bottom:10px">
+                        <div class="shop__description" style="margin-bottom:10px">
                             <button class="magazin__info-btn follow-button" style="width: 180px;  height: 28px; font-size: 1.2em; border: none; border-radius: 4px;">
                                 <i class="magazin__info-btn-icon fa-solid fa-plus"></i>
                                 <span class="magazin__info-btn-label follow-status"><?=$followerStatus?></span>
@@ -569,43 +569,43 @@
                         <?php endif ?>
                     </div>
 
-					<div class="col l-1">
+                    <div class="col l-1">
 
-					</div>
+                    </div>
 
                     <div class="shop__info col l-3" style="margin-right: 30px;">
-						<div class="shop__product">
-							<i class="fa-solid fa-shop"></i>
-							<span class="shop__product--title">Products:</span>
-							<span class="shop__product--info productnumber"></span>
-						</div>
-						<div class="shop__joined">
-							<i class="fa-solid fa-check"></i>
-							<span class="shop__joined--title">Joined:</span>
-							<span class="shop__joined--info jointime"></span>
-						</div>
-						<div class="shop__respontime">
-							<i class="fa-regular fa-comment-dots"></i>
-							<span class="shop_respontime--title">Response Time:</span>
-							<span class="shop__respontime--info">96%</span>
-						</div>
+                        <div class="shop__product">
+                            <i class="fa-solid fa-shop"></i>
+                            <span class="shop__product--title">Products:</span>
+                            <span class="shop__product--info productnumber"></span>
+                        </div>
+                        <div class="shop__joined">
+                            <i class="fa-solid fa-check"></i>
+                            <span class="shop__joined--title">Joined:</span>
+                            <span class="shop__joined--info jointime"></span>
+                        </div>
+                        <div class="shop__respontime">
+                            <i class="fa-regular fa-comment-dots"></i>
+                            <span class="shop_respontime--title">Response Time:</span>
+                            <span class="shop__respontime--info">96%</span>
+                        </div>
                     </div>
-					<div class="shop__info col l-3">
-						<div class="shop__follower">
-							<i class="fa-solid fa-users"></i>
-							<span class="shop__follower--title">Followers:</span>
-							<span class="shop__follower--info follownumber"></span>
-						</div>
-						<div class="shop__following">
-							<i class="fa-solid fa-user-plus"></i>
-							<span class="shop__following--title">Following:</span>
-							<span class="shop__following--info following">20</span>
-						</div>
-						<div class="shop__rating">
-							<i class="fa-regular fa-star"></i>
-							<span class="shop__ratings--title">Ratings:</span>
-							<span class="shop__ratings--info rating-number">4.7 (46.3k)</span>
-						</div>
+                    <div class="shop__info col l-3">
+                        <div class="shop__follower">
+                            <i class="fa-solid fa-users"></i>
+                            <span class="shop__follower--title">Followers:</span>
+                            <span class="shop__follower--info follownumber"></span>
+                        </div>
+                        <div class="shop__following">
+                            <i class="fa-solid fa-user-plus"></i>
+                            <span class="shop__following--title">Following:</span>
+                            <span class="shop__following--info following">20</span>
+                        </div>
+                        <div class="shop__rating">
+                            <i class="fa-regular fa-star"></i>
+                            <span class="shop__ratings--title">Ratings:</span>
+                            <span class="shop__ratings--info rating-number">4.7 (46.3k)</span>
+                        </div>
                     </div>
                 </div>
 
@@ -754,7 +754,7 @@
                     </div>
                 </div> -->
             
-			  <ul class="pagination home-product-pagination" id = "page">
+              <ul class="pagination home-product-pagination" id = "page">
                             
                           
                 
@@ -945,7 +945,7 @@
                         </div>
                     </div>
                 </div>
-				
+                
             </div>
             <!-- other footer -->
             <div class="other-footer">
@@ -1593,7 +1593,7 @@
     function delete_(id) {
         $.ajax({
             url: '<?=base_url('viewshop/deleteProduct')?>',
-            type: 'get',
+            type: 'post',
             data: {
                'id' : id
             },
