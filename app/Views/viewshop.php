@@ -1593,7 +1593,7 @@
     function delete_(id) {
         $.ajax({
             url: '<?=base_url('viewshop/deleteProduct')?>',
-            type: 'post',
+            type: 'get',
             data: {
                'id' : id
             },
