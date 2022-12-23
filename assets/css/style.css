@@ -643,7 +643,7 @@ border-color: red green blue yellow */
 }
 
 .header__cart--has-cart .header__cart-count {
-    display: none;
+    display: block;
 }
 
 .header__cart-heading {

@@ -42,7 +42,7 @@
         .modal {
           display: none; /* Hidden by default */
           position: fixed; /* Stay in place */
-          z-index: 1; /* Sit on top */
+          z-index: 10; /* Sit on top */
           padding-top: 100px; /* Location of the box */
           left: 0;
           top: 0;
@@ -684,9 +684,8 @@
                                                 <p class="product-amount">Amount</p>
                                                 <span class="error_input" id = 'field_amount'></span>
                                                 <input type="text" class="product-amount-input form-input-other" name = 'amount'>
-
                                                 <p class="product-amount">Discount(%)</p>
-                                                <span class="error_input" id = 'field_discount'></span><
+                                                <span class="error_input" id = 'field_discount'></span>
                                                 <input type="text" class="product-discount-input form-input-other" name = 'discount'>
 
                                                 <p class="product-weight">Size</p>
