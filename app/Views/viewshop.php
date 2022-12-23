@@ -693,12 +693,12 @@
                                                     <option value="other">Other</option>
                                                 </select>
                                                 <input type="text" placeholder="write down..." class="form-product-other">
-                                                <p class="product-amount">Amount</p>
+                                                <p class="product-amount" >Amount</p>
                                                 <span class="error_input" id = 'field_amount'></span>
-                                                <input type="text" class="product-amount-input form-input-other" name = 'amount'>
+                                                <input type="text" class="product-amount-input form-input-other" name = 'amount' oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
                                                 <p class="product-amount">Discount(%)</p>
-                                                <span class="error_input" id = 'field_discount'></span>
-                                                <input type="text" class="product-discount-input form-input-other" name = 'discount'>
+                                                
+                                                <input type="text" class="product-discount-input form-input-other" value= "0" name = 'discount'  oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
 
                                                 <p class="product-weight">Size</p>
                                                 <span class="error_input" id = 'field_weight'></span>
@@ -1435,7 +1435,7 @@
                 status.push(statusOfField($('.product-name-input'), $('#field_name'), 4, '*Name of product is requied and at least 4 character', 0));
                 status.push(statusOfField($('.product-price-input'), $('#field_price'), 4, '*Price of product is requied and and it must be a number greater than 0', 1));
                 status.push(statusOfField($('.product-amount-input'), $('#field_amount'), 4, '*Price of product is requied and and it must be a number greater than 0', 1));
-                status.push(statusOfField($('.product-discount-input'), $('#field_discount'), 4, '*Price of product is requied and and it must be a number greater than 0', 1));
+                
                 var size = $('.product-weight-input').val();
                 var size_array = size.split(",");
                 for (var i = 0; i < size_array.length; i++) {
