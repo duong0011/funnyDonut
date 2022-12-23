@@ -1723,7 +1723,7 @@
                             },
                             success: function (data) {
                                 document.querySelector('.msg_card_body').innerHTML = data;
-                                document.getElementById("input-img__msg").innerHTML = "";
+                                
                             }
                         });
                 }, 1000);
@@ -1738,6 +1738,7 @@
                 success: function(data) {
                     let test = document.getElementById('form-control');
                     test.value = "";
+                    document.getElementById("input-img__msg").innerHTML = "";
                 }
             });
         }

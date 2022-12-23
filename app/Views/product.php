@@ -1493,7 +1493,7 @@
                             },
                             success: function (data) {
                                 document.querySelector('.msg_card_body').innerHTML = data;
-                                document.getElementById("input-img__msg").innerHTML = "";
+                                
                             }
                         });
                 }, 1000);
@@ -1506,8 +1506,7 @@
             $('#sendmess').ajaxForm({
                 url : "<?=base_url('/viewshop/saveMess')?>",
                 success: function(data) {
-                    let test = document.getElementById('form-control');
-                    test.value = "";
+                    document.getElementById("input-img__msg").innerHTML = "";
                     loadListcontacts('<?= session()->get('loged_user');?>');
                 }
             });
