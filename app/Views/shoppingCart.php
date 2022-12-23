@@ -704,7 +704,7 @@
                     </div>
                 </div>
             </div>
-		    <!-- END EDMO HTML (Happy Coding!)-->
+            <!-- END EDMO HTML (Happy Coding!)-->
         </div>
         <!-- footer -->
         <footer class="footer">
@@ -988,7 +988,7 @@
         
         el.parent().children(".full-price").html( eq + "$" );
         
-        changeTotal();			
+        changeTotal();          
         }
 
         function changeTotal() {
