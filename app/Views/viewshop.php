@@ -1259,41 +1259,8 @@
                 if (response.products !== null) {
                     window.history.pushState('page2', 'Title', response.currentRequest1);
                     $.each(response.products , function(index, value) {
-                        $('#list-product').append("<div class='col l-2 home-product-item'>\
-                        <?php if(session()->get('loged_user') == $seller['unitid']):?>\
-                            <div class='edit'>\
-                                <i class='fa-solid fa-trash-can icon-edit'></i>\
-                            </div>\
-                        <?php endif ?>\
-                        <a class='home-product-item-link' href='<?= base_url('showproduct')?>?id="+value.pid+"'>\
-                        <div class='home-product-item__img' style='background-image:url(data:image/jpeg;base64,"+value.image+")'>\
-                        </div>\
-                        <div class='home-product-item__info'>\
-                            <h4 class='home-product-item__name'>"+ value.nameproduct+"</h4>\
-                            <div class='home-product-item__price'>\
-                                <p class='home-product-item__price-old'>"+ value.price+"USD</p>\
-                                <p class='home-product-item__price-new'>"+(value.price-value.price*value.discount/100).toFixed(2)+"USD</p>\
-                                <i class='home-product-item__ship fas fa-shipping-fast'></i>\
-                            </div>\
-                            <div class='home-product-item__footer'>\
-                                <div class='home-product-item__save'>\
-                                    <input type='checkbox' name='save-check' id='heart-save'>\
-                                    <label for='heart-save' class='far fa-heart'></label>\
-                                </div>\
-                                <div class='home-product-item__rating-star'>\
-                                        <i class='star-checked far fa-star'></i>\
-                                        <i class='star-checked far fa-star'></i>\
-                                        <i class='star-checked far fa-star'></i>\
-                                        <i class='star-checked far fa-star'></i>\
-                                        <i class='star-checked far fa-star'></i>\
-                                </div>\
-                                     <div class='home-product-item__saled'>"+value.rating+"</div>\
-                                </div>\
-                                <div class='home-product-item__origin'>Sold("+value.sold+")</div>\
-                            </div>\
-                        </div>");
+                        $('#list-product').append(value);
                     });
-                        
                         pageStart = Number(response.pageStart);
                         pageEnd = Number(response.pageEnd);
                         request = response.currentRequest.toString();
@@ -1609,7 +1576,23 @@
                 success: function (data) {
                     loadCartShopping();
                 }
-            });
+        });
+    }
+    function delete_(id) {
+        $.ajax({
+            url: '<?=base_url('viewshop/deleteProduct')?>',
+            type: 'post',
+            data: {
+               'id' : id
+            },
+            success: function (data) {
+                 Swal.fire({
+                          icon: 'success',
+                          title: 'Your product is deleted',
+                        })
+                loadProduct("", "<?=base_url('/viewshop/fetch')?>?sellerID="+curl.searchParams.get('sellerID'));
+            }
+        });
     }
 </script>
 

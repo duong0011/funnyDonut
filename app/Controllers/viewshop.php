@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\savemessages;
 use App\Models\saveIMGProduct;
 use App\Models\followtable;
+use App\Models\Favorite;
 class Viewshop extends Controller
 {
 	private $data;
@@ -40,13 +41,13 @@ class Viewshop extends Controller
 		$type = $this->request->getVar('type');
 		$this->data['test'] = $type;
 		if($type == '')
-			$result = $builder->select('pid,nameproduct, price, rating, image, discount, sold')->where(['owner' => $sellerID]);
-		else $result = $builder->select('pid,nameproduct, price, rating, image, discount, sold')->where(['owner' => $sellerID, 'type' => $type]);
+			$result = $builder->where(['owner' => $sellerID]);
+		else $result = $builder->where(['owner' => $sellerID, 'type' => $type]);
 		$result = $this->model->sortQuery($result, $attribute, $method);
-		$this->data['products'] = $this->getDataIndex($result);;
+		$this->data['products'] = $this->getDataIndex($result, $sellerID);;
 		return $this->response->setJSON($this->data);	
 	}
-	public function getDataIndex($result)
+	private function getDataIndex($result, $sellerID)
     {
         $this->data['currentRequest1'] = base_url('/viewshop').'?'.$_SERVER['QUERY_STRING'];
         $this->data['currentRequest'] = base_url(uri_string()).'?';
@@ -57,7 +58,7 @@ class Viewshop extends Controller
         $this->data['pageEnd'] = ceil($_count/15);
         if($this->data['pageStart'] > $this->data['pageEnd'] && $this->data['pageEnd']) return "fail";
         $output = $page == 1 ? array_splice($tmp, 0, 15) : array_splice($tmp, ($page-1)*15, 15);
-        return $_count ? $output : null;
+        return $_count ? $this->_product($output, $sellerID) : null;
     }
     public function boxchat($idSeller)
     {
@@ -286,5 +287,55 @@ class Viewshop extends Controller
 			return $this->response->setJSON($data);
 		}
 	}
-	
+	public function deleteProduct()
+	{
+		if($this->request->getMethod() == 'post') {
+			$product = new Product();
+			$product->where(['pid'=> $_POST['id']])->delete();
+		}
+	}
+	private function _product($data, $sellerID)
+    {   
+        if($data == null) return;
+        $index =0;
+        $favorite = new Favorite();
+
+        foreach ($data as $value) {
+            $checker = "";
+            if($favorite->where(['unitid' => session()->get('loged_user'), 'productid' => $value['pid']])->countAllResults() != 0) $checker = "checked";
+            $output[$index] = "<div class='col l-2-4 home-product-item'>";
+            if($sellerID == session()->get('loged_user')) $output[$index] .= "<div class='edit'>
+                                <i class='fa-solid fa-trash-can icon-edit' onclick=delete_(".$value['pid'].")></i>\
+                            </div>";
+            $output[$index] .="
+                            <a class='home-product-item-link' href='showproduct?id=".$value['pid']."'>
+                            <div class='home-product-item__img' style='background-image:url(data:image/jpeg;base64,".$value['image'].")'></div>
+                            <div class='home-product-item__info'>
+                                <h4 class='home-product-item__name'>".$value['nameproduct']."</h4>
+                                <div class='home-product-item__price'>
+                                    <p class='home-product-item__price-old'>".$value['price']."USD</p>
+                                    <p class='home-product-item__price-new'>".round(($value['price']-$value['price']*$value['discount']/100), 2)."USD</p>
+                                    <i class='home-product-item__ship fas fa-shipping-fast'></i>
+                                </div>
+                                <div class='home-product-item__footer'>
+                                    <div class='home-product-item__save'>
+                                        <input type='checkbox' name='save-check' id='heart-save' ".$checker." disabled=true>
+                                        <label for='heart-save' class='far fa-heart'></label>
+                                    </div>
+                                    <div class='home-product-item__rating-star'>
+                                ";
+                                            
+            for ($i=0; $i < $value['star'] ; $i++) $output[$index].="<i class='star-checked far fa-star'></i>";      
+            $output[$index].="
+                    </div>
+                         <div class='home-product-item__saled'>".$value['rating']."</div>
+                    </div>
+                    <div class='home-product-item__origin'>Sold(".$value['sold'].")</div>
+                </div><a/>
+            </div>";
+   
+            $index++;
+        }
+        return $output;
+    }
 }
