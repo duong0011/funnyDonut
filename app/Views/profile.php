@@ -152,47 +152,66 @@
         }
 
         .cc-number {
-          background: white;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: white;
-          : 0 1px 1px rgba(0, 0, 0, 0.3);
-          bottom: 75px;
-          font-size: 20px;
-          left: 30px;
-          position: absolute;
-          margin: 0 auto;
-          text-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+            background: white;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: white;
+            font-size: 38px;
+            left: 30px;
+            position: absolute;
+            margin: 0 auto;
+            top: 103px;
+            left: 19px;
         }
 
+        /* .info.row {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 160px;
+            padding: 12px;
+        } */
+
+        .info-name,
+        .info-date {
+            position: absolute;
+            margin: 0 auto;
+            top: 180px;
+            left: 19px;
+            font-size: 22px;
+            text-transform: capitalize;
+            color: white;
+        }
+
+        .info-date {
+            text-align: right;
+            left: auto;
+            right: 20px;
+        }
+
+        .card-holder {
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-shadow: none;
+            text-transform: uppercase;
+            font-weight: normal;
+            opacity: 0.5;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .expires {
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-shadow: none;
+            text-transform: uppercase;
+            font-weight: normal;
+            opacity: 0.5;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .card-holder-name,
         .cc-date {
-          background: linear-gradient(#eee, #999);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: white;
-          bottom: 40px;
-          left: 30px;
-          position: absolute;
-        }
-
-        .cc-date.expiry {
-          left: 125px;
-        }
-
-        .cc-date.expiry:after {
-          -webkit-text-fill-color: white;
-          font-size: 8px;
-          left: -30px;
-          position: absolute;
-          text-transform: none;
-          top: -10px;
-        }
-
-        .cc-name {
-          background: linear-gradient(#eee, #999);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: white;
-          bottom: 15px;
-          left: 30px;
-          position: absolute;
+            font-size: 20px;
         }
 
         /*
@@ -1423,10 +1442,16 @@
                                                 </g>
                                             </svg>
                                         </div>
-                                        <span class="cc-number">5032 9334 3764 9846</span>
-                                        <span class="cc-date expedition">01/14</span>
-                                        <span class="cc-date expiry">01/99</span>
-                                        <span class="cc-name">Cassio Cardoso</span>
+                                        <div class="info row">
+                                            <div class="info-name col l-6">
+                                                <span class="card-holder">CARD HOLDER</span>
+                                                <span class="card-holder-name">Cassio Cardoso</span>
+                                            </div>
+                                            <div class="info-date col l-6">
+                                                <span class="expires">EXPIRES</span>
+                                                <span class="cc-date">02/18</span>
+                                            </div>
+                                        </div>
                                     </div> 
                                     <div class="cc-back col l-5">
                                         <div class="black"></div>
