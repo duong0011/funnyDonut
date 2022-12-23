@@ -783,7 +783,7 @@
                             <p class="header__no-cart-text">No product</p>
                         </div>
                         
-                        <div class="header__cart-list has-cart">
+                        <div class="header__cart-list has-cart" style="display: block;">
                             <h4 class="header__cart-heading">Selected product</h4>
                             <ul class="header__cart-list-item" id = "cart-list-item">
                                 
@@ -1797,7 +1797,7 @@
     function deteleCartShopping(id) {
         $.ajax({
                 url: '<?=base_url('showProduct/deteleCartShopping')?>',
-                type: 'post',
+                type: 'get',
                 data: {
                    'id' : id
                 },

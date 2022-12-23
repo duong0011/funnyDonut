@@ -289,9 +289,9 @@ class Viewshop extends Controller
 	}
 	public function deleteProduct()
 	{
-		if($this->request->getMethod() == 'get') {
+		if($this->request->getMethod() == 'post') {
 			$product = new Product();
-			$product->where(['pid'=> $_GET['id']])->delete();
+			$product->where(['pid'=> $_POST['id']])->delete();
 		}
 	}
 	private function _product($data, $sellerID)
