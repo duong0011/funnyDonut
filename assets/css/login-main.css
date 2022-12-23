@@ -141,6 +141,7 @@
 
 .form-nav-link:hover{
     opacity: 0.9;
+    color: var(--primary-color)
 }
 
 .form-term {

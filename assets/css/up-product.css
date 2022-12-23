@@ -30,7 +30,7 @@
 .product-type-select,
 .form-product-other{
     outline: none;
-    border-radius: 3px;
+    border-radius: 5px;
     border: 1px solid #ddd;
     margin-bottom: 20px;
     font-size: 1.4rem;
