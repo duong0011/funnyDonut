@@ -1009,7 +1009,7 @@
             $(".subtotal span").html(price);
             $(".total span").html(fullPrice);
         }
-
+       
         $(document).ready(function(){
         
         $(".remove").click(function(){
