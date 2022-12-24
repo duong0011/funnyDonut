@@ -567,15 +567,15 @@
             display: none;
         }
         
-        .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.no-cart,
-        .header__cart--has-cart .header__cart-list.no-cart:hover {
+        
+        .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.has-cart,
+        .header__cart--has-cart .header__cart-list.has-cart:hover {
             display: flex;
         }
 
-        .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.has-cart,
-        .header__cart--has-cart .header__cart-count:hover~.header__cart-list.has-cart,
-        .header__cart--has-cart .header__cart-list.has-cart:hover {
-            display: none;
+        .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.no-cart,
+        .header__cart--has-cart .header__cart-list.no-cart:hover {
+            display: flex;
         }
     </style>
 
@@ -780,7 +780,7 @@
                             <p class="header__no-cart-text">No product</p>
                         </div>
                         
-                        <div class="header__cart-list has-cart" style="display: none;">
+                        <div class="header__cart-list has-cart">
                             <h4 class="header__cart-heading">Selected product</h4>
                             <ul class="header__cart-list-item" id = "cart-list-item">
                                 
@@ -1819,5 +1819,7 @@
         });
     });
 </script>
+
+
 </body>
 </html>
