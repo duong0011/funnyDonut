@@ -48,9 +48,7 @@ class showproduct extends Controller
 
 			$products = $this->Product->select('star')->getWhere('unitid', $_POST['unitid'])->getResultArray();
 			$sum = 0;
-			foreach ($products as $value) {
-				
-			}
+			
 
 			$comment->save($_POST);
 			if(isset($_FILES['files']['name'])) {
