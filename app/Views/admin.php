@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initiacol l-scale=1.0">
     <title>Funny Donut</title>
     <link rel="icon" href=" <?= base_url()?>/assets/img/logo/logo-web.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
@@ -12,12 +12,13 @@
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/Nga-base.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/header-footer.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/grid.css">
-    <link rel="stylesheet" href="<?= base_url()?>/assets/css/order-history.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/checkout.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/font/fontawesome-free-6.2.0-web/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
+    <!-- Style header -->
     <style>
         <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
@@ -71,162 +72,10 @@
             }
         }
 
-        div.stars {
-            /* width: 150px; */
-            display: inline-block;
-        }
-            
-        input.star { display: none; }
+    </style>
+    <!-- Style main -->
+    <style>
         
-        label.star {
-            float: right;
-            padding: 0 4px;
-            font-size: 22px;
-            color: #444;
-            transition: all .2s;
-        }
-        
-        input.star:checked ~ label.star:before {
-            content: '\f005';
-            color: #FD4;
-            transition: all .25s;
-        }
-        
-        input.star-5:checked ~ label.star:before {
-            color: #FE7;
-            text-shadow: 0 0 20px #952;
-        }
-        
-        input.star-1:checked ~ label.star:before { color: #F62; }
-        
-        label.star:hover { transform: rotate(-15deg) scale(1.3); }
-        
-        label.star:before {
-            content: '\f006';
-            font-family: FontAwesome;
-        }
-        
-        .product__rating-filter {
-            display: flex;
-            align-items: center;
-            width: 95%;
-            height: 100px;
-            margin: 10px 0 20px 34px;
-            border: 1px solid rgb(210, 205, 205);
-            background-color: rgba(239, 155, 122, 0.1);
-            border-radius: 10px;
-
-        }
-
-        .push__comment-img {
-            background-color: #fff;
-            width: 100%;
-            margin: 0px auto;
-            /* padding: 20px 5px; */
-            height: auto;
-
-        }
-
-        input[type="file"] {
-            display: none;
-        }
-        .push__comment-img label {
-            display: block;
-            position: relative;
-            background-color : var(--header-color);
-            width: 15%;
-            height: 30px;
-            color: white;
-            font-size: 16px;
-            /* padding-left: 20px; */
-            text-align: center;
-            margin: 10px auto;
-            border-radius:4px;            
-
-
-        }
-
-        #push__images {
-            width: 90%;
-            border: 2px solid black;
-            border-radius:10px;
-            position: relative;
-            margin: 0 auto 8px;
-            display: flex;
-            justify-content: space-evenly;
-            gap: 5px;
-            flex-wrap: wrap;
-
-
-
-        }
-
-        figure {
-            margin-top: 5px;
-            width: 20%;
-            
-        }
-        
-        img {
-            border-radius: 5px;
-            width: 100%;
-        }
-
-        figcaption {
-            text-align: center;
-            font-size: 1.4rem;
-            margin-top: 1px;
-        }
-
-        .product__rating--images img {
-            width: 100%;
-            height: auto;
-            border-radius: 2px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 0 5px #343436;
-            /* filter: brightness(1.1); */
-            /* transition: transform 0.25s ease; */
-            cursor: pointer;
-        }
-
-        .fullImageComment {
-            position: relative;
-            display: none;
-        }
-
-        .closebtn {
-            position: absolute;
-            top: -15px;
-            right: calc(65% - 35px);
-            color: red;
-            font-size: 40px;
-            cursor: pointer;
-        }
-
-        .push__comment {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .push__comment input {
-            width: 90%;
-            height: 50px;
-            margin: 10px 5px 10px;
-            font-size: 1.4rem;
-        }
-
-        .push__comment-icon {
-            font-size: 2.4rem;
-        }
-
-        .push__comment-icon-append {
-            color: #999;
-        }
-
-        .push__comment-icon-send {
-            color: var(--header-color);
-        }
     </style>
 </head>
 <body>
@@ -388,9 +237,6 @@
                                         <a href="<?= base_url('viewshop?sellerID=').session()->get('loged_user')?>">My shop</a>
                                     </li>
                                     <li class="header__nav-user-item">
-                                        <a href="#">History</a>
-                                    </li>
-                                    <li class="header__nav-user-item">
                                         <a href="<?= base_url().'/login/logout' ?>" >Logout</a>
                                     </li>
                                 </ul>
@@ -455,11 +301,11 @@
 
                         <div class="header__cart-list no-cart">
                             <img src="<?= base_url()?>/assets/img/sp/no-cart.png" class="header__no-cart-img">
-                            <p class="header__no-cart-text">Chưa có sản phẩm</p>
+                            <p class="header__no-cart-text">No product</p>
                         </div>
 
                         <div class="header__cart-list has-cart">
-                            <h4 class="header__cart-heading">Sản phẩm đã chọn</h4>
+                            <h4 class="header__cart-heading">Selected product</h4>
                             <ul class="header__cart-list-item">
                                 <li class="header__cart-item">
                                     <img src="<?= base_url()?>/assets/img/buy/1.PNG" class="header__cart-item-img">
@@ -591,7 +437,7 @@
                                 </li>
                             </ul>
                             <div class="header__cart-footer">
-                                <a href="#" class="btn btn--primary header__cart-see-cart">Xem giỏ hàng</a>
+                                <a href="#" class="btn btn--brown header__cart-see-cart">View cart</a>
                             </div>
                         </div>
                     </div>
@@ -613,205 +459,11 @@
             </ul> -->
         </header>
 
+
         <!-- CONTAINER BEGIN -->
         <div class="container">
             <div class="grid wide">
-                <div class="row">
-                    <div class="c-2 buy-sell">
-                        <div class="user-avatar-name">
-                            <p class="user-name">sr14</p>
-                            <div class="user-avtar">
-                                <img class="user-avatar-img" src="<?= base_url()?>/assets/img/profile/avatar_user.png" alt="avatar"/>
-                            </div>
-                        </div>
-                        <div class="buy-sell-list">
-                            <ul class="buy-sell-list-info">
-                                <li class="buy-sell-list-item buy" onclick="btnBuy()">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                    Buy
-                                </li>
-                                <li class="buy-sell-list-item sell" onclick="btnSell()">
-                                    <i class="fa-solid fa-shop"></i>
-                                    Sell
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- BLOCK BUY -->
-                    <div class="c-10 list-infor block-buy">               
-                        <div class="search">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" placeholder="Search by Order ID or Product Name">
-                        </div>
-
-                        <!-- ALL ORDER -->
-                        <div class="block block-all">
-                            <div class="Order">
-                                <div class="block_order">Order ID: <span>1234</span>
-                                
-                            </div>    
-                                    <div class="products">
-                                        <div class="product-img l-4">
-                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
-                                        </div>
-
-                                        <div class="product-infor l-8">
-                                            <p class="product-seller">Seller: <span>ABC</span></p>
-                                            <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
-                                            <p class="product-status">Status: <span>Delivering</span></p>
-                                            <p class="product-price">Price: 
-                                                <span>150</span> 
-                                                <span> $ </span>
-                                            </p> 
-                                            <p class="product-quantity">Quantity: 
-                                                <span>10</span>
-                                                <span> Pc </span>
-                                            </p> 
-                                            <p class="product-seller">Address: <span>Đây ghi địa chỉ đơn hàng</span></p>
-                                            <div class="block-price">
-                                                <span>Total: </span>
-                                                <span>1500</span>      
-                                            </div> 
-                                        </div>                                            
-                                    </div>
-                                    
-                                    <div class="products">
-                                        <div class="product-img l-4">
-                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img1.png" alt="">
-                                        </div>
-
-                                        <div class="product-infor l-8">
-                                            <p class="product-seller">Seller: <span>ABC1</span></p>
-                                            <p class="product-name">Product Name: <span>Blackforest Cream Cake</span></p>
-                                            <p class="product-status">Status: <span>Delivered</span></p>
-                                            <p class="product-price">Price: 
-                                                <span>220</span> 
-                                                <span> $ </span>
-                                            </p> 
-                                            <p class="product-quantity">Quantity: 
-                                                <span>5</span>
-                                                <span> Pc </span>
-                                            </p> 
-                                            <p class="product-seller">Address: <span>Đây ghi địa chỉ đơn</span></p>
-
-                                            <div class="block-price">
-                                                <span>Total: </span>
-                                                <span>1100</span>      
-                                            </div> 
-                                        </div> 
-                                    </div>
-                                <div class="block-total-price">
-                                    <span>Total: </span>
-                                    <span>2600</span>      
-                                </div>                                                    
-                                </div>    
-                            </div>
-
-                        </div>
-
-                    <!-- BLOCK SELL -->
-                    <div class="c-10 list-infor block-sell">               
-                        <div class="search">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" placeholder="Search by Order ID or Product Name">
-                        </div>
-
-                        <!-- ALL ORDER -->
-                        <div class="block block-all">
-                            <div class="Order">
-                                <div class="block_order">Order ID: <span>1234</span></div>    
-                                    <div class="products">
-                                        <div class="product-img l-4">
-                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
-                                        </div>
-
-                                        <div class="product-infor l-8">
-                                            <p class="product-seller">Buyer: <span>ABC</span></p>
-                                            <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
-                                            <p class="product-status">Status: <span>Delivering</span></p>
-                                            <p class="product-price">Price: 
-                                                <span>150</span> 
-                                                <span> $ </span>
-                                            </p> 
-                                            <p class="product-quantity">Quantity: 
-                                                <span>10</span>
-                                                <span> Pc </span>
-                                            </p> 
-                                            <p class="product-seller">Address: <span>Đây ghi địa chỉ đơn hàng</span></p>
-                                            <div class="block-price">
-                                                <span>Total: </span>
-                                                <span>1500</span>      
-                                            </div> 
-                                        </div>                                            
-                                    </div>
-                                    
-                                    <div class="products">
-                                        <div class="product-img l-4">
-                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img1.png" alt="">
-                                        </div>
-
-                                        <div class="product-infor l-8">
-                                            <p class="product-seller">Buyer: <span>ABC1</span></p>
-                                            <p class="product-name">Product Name: <span>Blackforest Cream Cake</span></p>
-                                            <p class="product-status">Status: <span>Delivered</span></p>
-                                            <p class="product-price">Price: 
-                                                <span>220</span> 
-                                                <span> $ </span>
-                                            </p> 
-                                            <p class="product-quantity">Quantity: 
-                                                <span>5</span>
-                                                <span> Pc </span>
-                                            </p> 
-                                            <p class="product-seller">Address: <span>Đây ghi địa chỉ đơn</span></p>
-
-                                            <div class="block-price">
-                                                <span>Total: </span>
-                                                <span>1100</span>      
-                                            </div> 
-                                        </div> 
-                                    </div>          
-                                <div class="block-total-price">
-                                    <span>Total: </span>
-                                    <span>2600</span>      
-                                </div>                                                    
-                            </div>
-            
-                            <div class="Order">
-                                <div class="block_order">Order ID: <span>1235</span></div>    
-                                    <div class="products">
-                                        <div class="product-img l-4">
-                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
-                                        </div>
-
-                                        <div class="product-infor l-8">
-                                            <p class="product-seller">Buyer: <span>ABC</span></p>
-                                            <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
-                                            <p class="product-status">Status: <span>Delivering</span></p>
-                                            <p class="product-price">Price: 
-                                                <span>150</span> 
-                                                <span> $ </span>
-                                            </p> 
-                                            <p class="product-quantity">Quantity: 
-                                                <span>10</span>
-                                                <span> Pc </span>
-                                            </p> 
-                                            <p class="product-seller">Address: <span>Đây ghi địa chỉ đơn hàng</span></p>
-                                            <div class="block-price">
-                                                <span>Total: </span>
-                                                <span>1500</span>      
-                                            </div> 
-                                        </div>                                            
-                                    </div>
-                                    <div class="block-total-price">
-                                        <span>Total: </span>
-                                        <span>2600</span>      
-                                    </div>
-                                </div>
-                                 
-                            </div>    
-                    </div>
-                </div>
+                
             </div>
         </div>
         <!-- CONTAINER END -->
@@ -990,91 +642,7 @@
                 </div>
             </div>
         </footer>
+
     </div>
-    
-  
-    <script>
-        var blockBuy = document.getElementsByClassName("block-buy");
-        var blockSell = document.getElementsByClassName("block-sell");
-        var block = document.getElementsByClassName("block");
-
-        function btnBuy(){
-            blockBuy[0].style.display="block";
-            blockSell[0].style.display="none";
-            block[0].style.display="block";
-        }
-
-        function btnSell(){
-            blockBuy[0].style.display="none";
-            blockSell[0].style.display="block";
-            block[5].style.display="block";
-        }
-    </script> 
-
-  
-    <script>
-        var block = document.getElementsByClassName("block");
-        var checkBlock = document.getElementsByClassName("block-sell");
-       
-        //list-buy
-        function listAll(){
-            for(i=0;i<10;i++){
-                block[i].style.display="none";
-                if(checkBlock[0].style.display=="none"){
-                    if(i==0) block[i].style.display="block";
-                }
-                else{
-                    if(i==5) block[i].style.display="block";
-                }
-            }
-        }
-        function listConfirm(){
-            for(i=0;i<10;i++){
-                block[i].style.display="none";
-                if(checkBlock[0].style.display=="none"){
-                    if(i==1) block[i].style.display="block";
-                }
-                else{
-                    if(i==6) block[i].style.display="block";
-                }
-            }
-        }
-        function listDelivering(){
-            for(i=0;i<10;i++){
-                block[i].style.display="none";
-                if(checkBlock[0].style.display=="none"){
-                    if(i==2) block[i].style.display="block";
-                }
-                else{
-                    if(i==7) block[i].style.display="block";
-                }
-            }
-        }
-        function listDelivered(){
-            for(i=0;i<10;i++){
-                block[i].style.display="none";
-                if(checkBlock[0].style.display=="none"){
-                    if(i==3) block[i].style.display="block";
-                }
-                else{
-                    if(i==8) block[i].style.display="block";
-                }
-            }
-        }
-        function listCancelled(){
-            for(i=0;i<10;i++){
-                block[i].style.display="none";
-                if(checkBlock[0].style.display=="none"){
-                    if(i==4) block[i].style.display="block";
-                }
-                else{
-                    if(i==9) block[i].style.display="block";
-                }
-            }
-        }
-        
-    </script> 
-
-
 </body>
 </html>
