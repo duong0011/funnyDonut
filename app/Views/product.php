@@ -658,10 +658,10 @@
                         </div>
                     </div>
                     <div class="col l-6 product-info">
-                        <h1 class="product__name" style="padding-left: 10px">
+                        <h1 class="product__name" style="padding-left: 10px;">
                             <?=$dataproduct['nameproduct']?>
                         </h1>
-                        <div class="product__item-rating" style="padding-left: 10px">
+                        <div class="product__item-rating" style="padding-left: 10px;">
                             <span class="product__quantity-rating">
                                 <?=$dataproduct['star'] ?>
                             </span>
