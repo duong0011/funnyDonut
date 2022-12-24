@@ -35,16 +35,21 @@
     border-radius: 8px;
     box-shadow: -3px 3px 8px var(--primary-color);
     cursor: pointer;
+    color: var(--primary-color);
 }
 
 .buy-sell-list-item:hover{
     color: var(--primary-color);
-    font-weight: 500;
+    font-weight: 600;
+}
+
+.buy {
+    font-weight: 600;
 }
 
 .buy-sell-list-item i{
     margin: 3px 5px;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .list-status{
@@ -100,7 +105,6 @@
     border-radius: 5px;
     margin-top: 10px;
     margin-bottom: 50px;
-    padding: 0 30px;
     border: 0.1px solid var(--primary-color);
     /* box-shadow: 0px 0px 12px var(--primary-color); */
     min-height: 700px;
@@ -122,7 +126,7 @@
 }
 
 .products{
-    margin-top: 25px;
+    margin: 15px;
     display: flex;
     border: 1px solid rgb(182, 159, 159);
     border-radius: 5px;
@@ -161,28 +165,32 @@
 }
 
 .block_order{
-    padding: 10px;
+    padding: 15px 5px 10px;
     display: block;
     background-color: #8b3434;
-    color: #ccc;
+    color: white;
     font-size: 25px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .block-price{
     padding: 10px;
-    display: block;
+    display: inline-block;
     background-color: #8b3434;
     color: #ccc;
     font-size: 25px;
 }
 
 .block-total-price {
-    margin-top: 25px;
-    padding: 10px;
+    margin-top: 15px;
+    padding: 12px;
     display: block;
     background-color: #8b3434;
-    color: #ccc;
+    color: white;
     font-size: 25px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 .block-sell{
     display: none;

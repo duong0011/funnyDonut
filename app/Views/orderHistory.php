@@ -228,6 +228,12 @@
             color: var(--header-color);
         }
     </style>
+
+    <style>
+        span.date-order {
+            margin-left: 158px;
+        }
+    </style>
 </head>
 <body>
     <div class="">
@@ -648,7 +654,7 @@
                         <!-- ALL ORDER -->
                         <div class="block block-all">
                             <div class="Order">
-                                <div class="block_order">Order ID: <span>1234</span>
+                                <div class="block_order">Order ID: <span>1234</span><span class="date-order">20/11/2022</span>
                                 
                             </div>    
                                     <div class="products">
@@ -657,8 +663,8 @@
                                         </div>
 
                                         <div class="product-infor l-8">
-                                            <p class="product-seller">Seller: <span>ABC</span></p>
                                             <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
+                                            <p class="product-seller">Seller: <span>ABC</span></p>
                                             <p class="product-status">Status: <span>Delivering</span></p>
                                             <p class="product-price">Price: 
                                                 <span>150</span> 
@@ -682,8 +688,8 @@
                                         </div>
 
                                         <div class="product-infor l-8">
-                                            <p class="product-seller">Seller: <span>ABC1</span></p>
                                             <p class="product-name">Product Name: <span>Blackforest Cream Cake</span></p>
+                                            <p class="product-seller">Seller: <span>ABC1</span></p>
                                             <p class="product-status">Status: <span>Delivered</span></p>
                                             <p class="product-price">Price: 
                                                 <span>220</span> 
@@ -720,15 +726,15 @@
                         <!-- ALL ORDER -->
                         <div class="block block-all">
                             <div class="Order">
-                                <div class="block_order">Order ID: <span>1234</span></div>    
+                                <div class="block_order">Order ID: <span>1234</span><span class="date-order">20/11/2022</span></div>    
                                     <div class="products">
                                         <div class="product-img l-4">
                                             <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
                                         </div>
 
                                         <div class="product-infor l-8">
-                                            <p class="product-seller">Buyer: <span>ABC</span></p>
                                             <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
+                                            <p class="product-seller">Buyer: <span>ABC</span></p>
                                             <p class="product-status">Status: <span>Delivering</span></p>
                                             <p class="product-price">Price: 
                                                 <span>150</span> 
@@ -752,8 +758,8 @@
                                         </div>
 
                                         <div class="product-infor l-8">
-                                            <p class="product-seller">Buyer: <span>ABC1</span></p>
                                             <p class="product-name">Product Name: <span>Blackforest Cream Cake</span></p>
+                                            <p class="product-seller">Buyer: <span>ABC1</span></p>
                                             <p class="product-status">Status: <span>Delivered</span></p>
                                             <p class="product-price">Price: 
                                                 <span>220</span> 
@@ -778,15 +784,15 @@
                             </div>
             
                             <div class="Order">
-                                <div class="block_order">Order ID: <span>1235</span></div>    
+                                <div class="block_order"><span>Order ID: </span><span>1235</span><span class="date-order">20/11/2022</span></div>    
                                     <div class="products">
                                         <div class="product-img l-4">
                                             <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
                                         </div>
 
                                         <div class="product-infor l-8">
-                                            <p class="product-seller">Buyer: <span>ABC</span></p>
                                             <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
+                                            <p class="product-seller">Buyer: <span>ABC</span></p>
                                             <p class="product-status">Status: <span>Delivering</span></p>
                                             <p class="product-price">Price: 
                                                 <span>150</span> 
@@ -996,85 +1002,23 @@
     <script>
         var blockBuy = document.getElementsByClassName("block-buy");
         var blockSell = document.getElementsByClassName("block-sell");
-        var block = document.getElementsByClassName("block");
+        var buyTxt = document.getElementsByClassName("buy");
+        var sellTxt = document.getElementsByClassName("sell");
 
         function btnBuy(){
             blockBuy[0].style.display="block";
             blockSell[0].style.display="none";
-            block[0].style.display="block";
+            buyTxt[0].style.fontWeight="600";
+            sellTxt[0].style.fontWeight="400";
         }
 
         function btnSell(){
             blockBuy[0].style.display="none";
             blockSell[0].style.display="block";
-            block[5].style.display="block";
+            buyTxt[0].style.fontWeight="400";
+            sellTxt[0].style.fontWeight="600";
         }
     </script> 
-
-  
-    <script>
-        var block = document.getElementsByClassName("block");
-        var checkBlock = document.getElementsByClassName("block-sell");
-       
-        //list-buy
-        function listAll(){
-            for(i=0;i<10;i++){
-                block[i].style.display="none";
-                if(checkBlock[0].style.display=="none"){
-                    if(i==0) block[i].style.display="block";
-                }
-                else{
-                    if(i==5) block[i].style.display="block";
-                }
-            }
-        }
-        function listConfirm(){
-            for(i=0;i<10;i++){
-                block[i].style.display="none";
-                if(checkBlock[0].style.display=="none"){
-                    if(i==1) block[i].style.display="block";
-                }
-                else{
-                    if(i==6) block[i].style.display="block";
-                }
-            }
-        }
-        function listDelivering(){
-            for(i=0;i<10;i++){
-                block[i].style.display="none";
-                if(checkBlock[0].style.display=="none"){
-                    if(i==2) block[i].style.display="block";
-                }
-                else{
-                    if(i==7) block[i].style.display="block";
-                }
-            }
-        }
-        function listDelivered(){
-            for(i=0;i<10;i++){
-                block[i].style.display="none";
-                if(checkBlock[0].style.display=="none"){
-                    if(i==3) block[i].style.display="block";
-                }
-                else{
-                    if(i==8) block[i].style.display="block";
-                }
-            }
-        }
-        function listCancelled(){
-            for(i=0;i<10;i++){
-                block[i].style.display="none";
-                if(checkBlock[0].style.display=="none"){
-                    if(i==4) block[i].style.display="block";
-                }
-                else{
-                    if(i==9) block[i].style.display="block";
-                }
-            }
-        }
-        
-    </script> 
-
 
 </body>
 </html>
