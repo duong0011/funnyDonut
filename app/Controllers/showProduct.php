@@ -45,6 +45,13 @@ class showproduct extends Controller
 			$this->Product->set(['star' => $star, 'rating' => $rating['rating']+1]);
 			$this->Product->where('pid', $_POST['productid'])->update();
 			$_POST['unitid'] = session()->get('loged_user');
+
+			$products = $this->Product->select('star')->getWhere('unitid', $_POST['unitid'])->getResultArray();
+			$sum = 0;
+			foreach ($products as $value) {
+				
+			}
+
 			$comment->save($_POST);
 			if(isset($_FILES['files']['name'])) {
 				$id = $comment->insertID;
