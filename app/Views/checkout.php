@@ -640,13 +640,15 @@
 
                 <div class="product-list">
                     <div class="row product-detail">
-                        <span class="col l-7">Product</span>
+                        <span class="col l-4">Product</span>
+                        <span class="col l-2">Shop</span>
+                        <span class="col l-1">Size</span>
                         <span class="col l-2">Unit price</span>
                         <span class="col l-1">Amount</span>
                         <span class="col l-2">Total</span>
                     </div>
                     <div class="row shop">
-                        <div class="col l-12 shop-name">
+                        <div class="col l-12 shop-name" style="display: none;">
                             <i class="fa-solid fa-store"></i>
                             <span class="name-shop">cake_shop</span>
                         </div>
@@ -655,11 +657,16 @@
                                 <div class="col l-2 product-img">
                                     <img src="<?= base_url()?>/assets/img/checkout/product-img.png" alt="">
                                 </div>
-                                <div class="col l-4 product-name">
+                                <div class="col l-2 product-name">
                                     <span>Bánh kem xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx yyy</span>
                                 </div>
+
+                                <div class="product__name--shop col l-2">
+                                    <span>Cake Shop</span>
+                                </div>
+
                                 <div class="product-size col l-1">
-                                    <span>Size: S</span>
+                                    <span>S</span>
                                 </div>
                                 <div class="col l-2 product-unit-price">100$</div>
                                 <div class="col l-1 product-amount">1</div>
@@ -671,11 +678,15 @@
                                 <div class="col l-2 product-img">
                                     <img src="<?= base_url()?>/assets/img/checkout/product-img1.png" alt="">
                                 </div>
-                                <div class="col l-4 product-name">
+                                <div class="col l-2 product-name">
                                     <span>Bánh kem xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx yyy</span>
                                 </div>
+
+                                <div class="product__name--shop col l-2">
+                                    <span>Cake Shop1</span>
+                                </div>
                                 <div class="product-size col l-1">
-                                    <span>Size: S</span>
+                                    <span>S</span>
                                 </div>
                                 <div class="col l-2 product-unit-price">100$</div>
                                 <div class="col l-1 product-amount">1</div>
@@ -684,7 +695,7 @@
                         </div>
                     </div>
                     <div class="row shop">
-                        <div class="col l-12 shop-name">
+                        <div class="col l-12 shop-name" style="display: none;">
                             <i class="fa-solid fa-store"></i>
                             <span class="name-shop">cake_shop1</span>
                         </div>
@@ -693,11 +704,15 @@
                                 <div class="col l-2 product-img">
                                     <img src="<?= base_url()?>/assets/img/checkout/product-img.png" alt="">
                                 </div>
-                                <div class="col l-4 product-name">
+                                <div class="col l-2 product-name">
                                     <span>Bánh kem xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx yyy</span>
                                 </div>
+
+                                <div class="product__name--shop col l-2">
+                                    <span>Cake Shop 1</span>
+                                </div>
                                 <div class="product-size col l-1">
-                                    <span>Size: S</span>
+                                    <span>S</span>
                                 </div>
                                 <div class="col l-2 product-unit-price">100$</div>
                                 <div class="col l-1 product-amount">1</div>
@@ -706,22 +721,22 @@
                         </div>
                     </div>
                     <div class="row note-delivery">
-                        <div class="col l-6 note">
+                        <div class="col l-12 note" style="border-right:none;">
                             <span>Note to seller:</span>
-                            <input type="text">
+                            <input type="text" style="width: 1040px;">
                         </div>
-                        <div class="col l-4">
+                        <div class="col l-4" style="display: none;">
                             <span>Shipping: </span>
                             <span>ABC</span>
                             <span class="btn-delivery-change">Change</span>
                         </div>
-                        <div class="col l-2">5$</div>
+                        <div class="col l-2" style="display: none;">5$</div>
                     </div>
                     <div class="row total-money">
                         <div class="col l-10 total-money-txt">
                             <span>Total payment: </span>
                         </div>
-                        <div class="col l-2"><span>305$</span></div>
+                        <div class="col l-2"><span>300$</span></div>
                     </div>
                 </div>
 
