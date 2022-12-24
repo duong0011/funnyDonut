@@ -8,7 +8,7 @@ use App\Models\saveIMGProduct;
 use App\Models\comment;
 use App\Models\CartShopping;
 use App\Models\imgComment;
-class checkout extends Controller
+class admin extends Controller
 {
 	private $data;
 	private $userModel;
