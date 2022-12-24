@@ -1681,10 +1681,12 @@
                             contentType: false,
                             processData: false,
                             success: function (data) {
+                                $('.product__quantity-rating').text(data);
                                 document.getElementById('comment-text').value = "";
                                 $('#push__images').html("");
                                 fetchComment(0)
                                 document.getElementById('file-comment').value = "";
+                                displayInfomation();
                             }
                         });
                 }
@@ -1708,6 +1710,7 @@
                     $('.follownumber').text(data.follower);
                     $('.following').text(Math.floor(Math.random() * 100));
                     $('.rating-number').text(data.amountRating);
+                    
                 }
             });
     }

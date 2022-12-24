@@ -221,8 +221,8 @@ class Viewshop extends Controller
 			$builder = $this->db;
 			$userID = session()->get('loged_user');
 			$address = $this->userModel->select('city')->getWhere(['unitid' => $userID])->getRowArray();
-			$_POST['rating'] = random_int(1000,10000);
-			$_POST['sold'] = random_int(1000, 10000);
+			$_POST['rating'] = 1;
+			$_POST['sold'] = 0;
 			$_POST['owner'] = session()->get('loged_user');
 			$_POST['address'] = $address['city'];
 			$builder->save($_POST);
@@ -325,7 +325,7 @@ class Viewshop extends Controller
                                     <div class='home-product-item__rating-star'>
                                 ";
                                             
-            for ($i=0; $i < $value['star'] ; $i++) $output[$index].="<i class='star-checked far fa-star'></i>";      
+            for ($i=0; $i < round($value['star'],0, PHP_ROUND_HALF_UP) ; $i++) $output[$index].="<i class='star-checked far fa-star'></i>";      
             $output[$index].="
                     </div>
                          <div class='home-product-item__saled'>".$value['rating']."</div>

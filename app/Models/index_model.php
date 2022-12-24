@@ -36,7 +36,16 @@ class Index_model extends Model
             return $builder;
 
         }
-        if($star) $builder->whereIn('star', $star);
+        
+        if($star) {
+            $maxs = 0;
+            $mins = 5; 
+            foreach ($star as $key) {
+                $maxs = max($key, $maxs);
+                $mins = min($key, $mins);
+            }
+            $builder->where(['star <=' => $maxs+0.5, 'star >' => $mins-0.5]);
+        }
         if($maxprice) $builder->where('price >=', $minprice);
         if($minprice) $builder->where('price <=', $maxprice);
         return $builder;
@@ -84,7 +93,7 @@ class Index_model extends Model
                                     <div class='home-product-item__rating-star'>
                                 ";
                                             
-            for ($i=0; $i < $value['star'] ; $i++) $output[$index].="<i class='star-checked far fa-star'></i>";      
+            for ($i=1; $i <= round($value['star'],0, PHP_ROUND_HALF_UP) ; $i++) $output[$index].="<i class='star-checked far fa-star'></i>";      
             $output[$index].="
                     </div>
                          <div class='home-product-item__saled'>".$value['rating']."</div>
