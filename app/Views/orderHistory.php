@@ -639,15 +639,7 @@
                     </div>
 
                     <!-- BLOCK BUY -->
-                    <div class="c-10 list-infor block-buy">
-                        <div class="list-status">
-                            <div class="status all-order" onclick="listAll()">All order</div>
-                            <div class="status confirm" onclick="listConfirm()">Confirmation</div>
-                            <div class="status delivering" onclick="listDelivering()">Delivering</div>
-                            <div class="status delivered" onclick="listDelivered()">Delivered</div>
-                            <div class="status cancelled" onclick="listCancelled()">Cancelled</div>
-                        </div>
-
+                    <div class="c-10 list-infor block-buy">               
                         <div class="search">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <input type="text" placeholder="Search by Order ID or Product Name">
@@ -655,111 +647,71 @@
 
                         <!-- ALL ORDER -->
                         <div class="block block-all">
-                            <div class="product">
-                                <div class="product-img">
-                                    <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
-                                </div>
-                                <div class="product-infor">
-                                    <p class="order-id">Order ID: <span>1234</span></p>
-                                    <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
-                                </div>
-                            </div>
-                            <div class="product">
-                                <div class="product-img">
-                                    <img src="<?= base_url()?>/assets/img/orderHistory/product-img1.png" alt="">
-                                </div>
-                                <div class="product-infor">
-                                    <p class="order-id">Order ID: <span>1234</span></p>
-                                    <p class="product-name">Product Name: <span>Blackforest Cream Cake</span></p>
-                                </div>
-                            </div>
-                        </div>
+                            <div class="Order">
+                                <div class="block_order">Order ID: <span>1234</span>
+                                
+                            </div>    
+                                    <div class="products">
+                                        <div class="product-img l-4">
+                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
+                                        </div>
 
-                        <!-- CONFIRM -->
-                        <div class="block block-confirm">
-                            <div class="div-empty">
-                                <i class="empty-icon fa-solid fa-basket-shopping"></i>
-                                <p>No orders yet</p>
-                            </div>
-                        </div>
+                                        <div class="product-infor l-8">
+                                            <p class="product-seller">Seller: <span>ABC</span></p>
+                                            <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
+                                            <p class="product-status">Status: <span>Delivering</span></p>
+                                            <p class="product-price">Price: 
+                                                <span>150</span> 
+                                                <span> $ </span>
+                                            </p> 
+                                            <p class="product-quantity">Quantity: 
+                                                <span>10</span>
+                                                <span> Pc </span>
+                                            </p> 
+                                            <p class="product-seller">Address: <span>Đây ghi địa chỉ đơn hàng</span></p>
+                                            <div class="block-price">
+                                                <span>Total: </span>
+                                                <span>1500</span>      
+                                            </div> 
+                                        </div>                                            
+                                    </div>
+                                    
+                                    <div class="products">
+                                        <div class="product-img l-4">
+                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img1.png" alt="">
+                                        </div>
 
-                        <!-- DELIVERING -->
-                        <div class="block block-delivering">
-                            <div class="product">
-                                <div class="product-img">
-                                    <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
-                                </div>
-                                <div class="product-infor">
-                                    <p class="order-id">Order ID: <span>1234</span></p>
-                                    <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
-                                </div>
-                            </div>
-                            <div class="product">
-                                <div class="product-img">
-                                    <img src="<?= base_url()?>/assets/img/orderHistory/product-img1.png" alt="">
-                                </div>
-                                <div class="product-infor">
-                                    <p class="order-id">Order ID: <span>1234</span></p>
-                                    <p class="product-name">Product Name: <span>Blackforest Cream Cake</span></p>
-                                </div>
-                            </div>
-                        </div>
+                                        <div class="product-infor l-8">
+                                            <p class="product-seller">Seller: <span>ABC1</span></p>
+                                            <p class="product-name">Product Name: <span>Blackforest Cream Cake</span></p>
+                                            <p class="product-status">Status: <span>Delivered</span></p>
+                                            <p class="product-price">Price: 
+                                                <span>220</span> 
+                                                <span> $ </span>
+                                            </p> 
+                                            <p class="product-quantity">Quantity: 
+                                                <span>5</span>
+                                                <span> Pc </span>
+                                            </p> 
+                                            <p class="product-seller">Address: <span>Đây ghi địa chỉ đơn</span></p>
 
-                        <!-- DELIVERED -->
-                        <div class="block block-delivered">
-                            <div class="product">
-                                <div class="product-img">
-                                    <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
-                                </div>
-                                <div class="product-infor">
-                                    <p class="order-id">Order ID: <span>1234</span></p>
-                                    <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
-                                </div>
+                                            <div class="block-price">
+                                                <span>Total: </span>
+                                                <span>1100</span>      
+                                            </div> 
+                                        </div> 
+                                    </div>
+                                <div class="block-total-price">
+                                    <span>Total: </span>
+                                    <span>2600</span>      
+                                </div>                                                    
+                                </div>    
                             </div>
-                            <div class="product">
-                                <div class="product-img">
-                                    <img src="<?= base_url()?>/assets/img/orderHistory/product-img1.png" alt="">
-                                </div>
-                                <div class="product-infor">
-                                    <p class="order-id">Order ID: <span>1234</span></p>
-                                    <p class="product-name">Product Name: <span>Blackforest Cream Cake</span></p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- CANCELLED -->
-                        <div class="block block-cancelled">
-                            <div class="product">
-                                <div class="product-img">
-                                    <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
-                                </div>
-                                <div class="product-infor">
-                                    <p class="order-id">Order ID: <span>1234</span></p>
-                                    <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
-                                </div>
-                            </div>
-                            <div class="product">
-                                <div class="product-img">
-                                    <img src="<?= base_url()?>/assets/img/orderHistory/product-img1.png" alt="">
-                                </div>
-                                <div class="product-infor">
-                                    <p class="order-id">Order ID: <span>1234</span></p>
-                                    <p class="product-name">Product Name: <span>Blackforest Cream Cake</span></p>
-                                </div>
-                            </div>
                         </div>
-                    </div>
 
                     <!-- BLOCK SELL -->
-                    <div class="c-10 list-infor block-sell">
-                        <div class="list-status">
-                            <div class="status all-order" onclick="listAll()">All order</div>
-                            <div class="status confirm" onclick="listConfirm()">Confirmation</div>
-                            <div class="status delivering" onclick="listDelivering()">Delivering</div>
-                            <div class="status delivered" onclick="listDelivered()">Delivered</div>
-                            <div class="status cancelled" onclick="listCancelled()">Cancelled</div>
-                        </div>
-
+                    <div class="c-10 list-infor block-sell">               
                         <div class="search">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <input type="text" placeholder="Search by Order ID or Product Name">
@@ -767,99 +719,97 @@
 
                         <!-- ALL ORDER -->
                         <div class="block block-all">
-                            <div class="product">
-                                <div class="product-img">
-                                    <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
-                                </div>
-                                <div class="product-infor">
-                                    <p class="order-id">Order ID: <span>1234</span></p>
-                                    <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
-                                </div>
-                            </div>
-                            <div class="product">
-                                <div class="product-img">
-                                    <img src="<?= base_url()?>/assets/img/orderHistory/product-img1.png" alt="">
-                                </div>
-                                <div class="product-infor">
-                                    <p class="order-id">Order ID: <span>1234</span></p>
-                                    <p class="product-name">Product Name: <span>Blackforest Cream Cake</span></p>
-                                </div>
-                            </div>
-                        </div>
+                            <div class="Order">
+                                <div class="block_order">Order ID: <span>1234</span></div>    
+                                    <div class="products">
+                                        <div class="product-img l-4">
+                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
+                                        </div>
 
-                        <!-- CONFIRM -->
-                        <div class="block block-confirm">
-                            <div class="div-empty">
-                                <i class="empty-icon fa-solid fa-basket-shopping"></i>
-                                <p>No orders yet</p>
-                            </div>
-                        </div>
+                                        <div class="product-infor l-8">
+                                            <p class="product-seller">Buyer: <span>ABC</span></p>
+                                            <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
+                                            <p class="product-status">Status: <span>Delivering</span></p>
+                                            <p class="product-price">Price: 
+                                                <span>150</span> 
+                                                <span> $ </span>
+                                            </p> 
+                                            <p class="product-quantity">Quantity: 
+                                                <span>10</span>
+                                                <span> Pc </span>
+                                            </p> 
+                                            <p class="product-seller">Address: <span>Đây ghi địa chỉ đơn hàng</span></p>
+                                            <div class="block-price">
+                                                <span>Total: </span>
+                                                <span>1500</span>      
+                                            </div> 
+                                        </div>                                            
+                                    </div>
+                                    
+                                    <div class="products">
+                                        <div class="product-img l-4">
+                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img1.png" alt="">
+                                        </div>
 
-                        <!-- DELIVERING -->
-                        <div class="block block-delivering">
-                            <div class="product">
-                                <div class="product-img">
-                                    <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
-                                </div>
-                                <div class="product-infor">
-                                    <p class="order-id">Order ID: <span>1234</span></p>
-                                    <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
-                                </div>
-                            </div>
-                            <div class="product">
-                                <div class="product-img">
-                                    <img src="<?= base_url()?>/assets/img/orderHistory/product-img1.png" alt="">
-                                </div>
-                                <div class="product-infor">
-                                    <p class="order-id">Order ID: <span>1234</span></p>
-                                    <p class="product-name">Product Name: <span>Blackforest Cream Cake</span></p>
-                                </div>
-                            </div>
-                        </div>
+                                        <div class="product-infor l-8">
+                                            <p class="product-seller">Buyer: <span>ABC1</span></p>
+                                            <p class="product-name">Product Name: <span>Blackforest Cream Cake</span></p>
+                                            <p class="product-status">Status: <span>Delivered</span></p>
+                                            <p class="product-price">Price: 
+                                                <span>220</span> 
+                                                <span> $ </span>
+                                            </p> 
+                                            <p class="product-quantity">Quantity: 
+                                                <span>5</span>
+                                                <span> Pc </span>
+                                            </p> 
+                                            <p class="product-seller">Address: <span>Đây ghi địa chỉ đơn</span></p>
 
-                        <!-- DELIVERED -->
-                        <div class="block block-delivered">
-                            <div class="product">
-                                <div class="product-img">
-                                    <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
-                                </div>
-                                <div class="product-infor">
-                                    <p class="order-id">Order ID: <span>1234</span></p>
-                                    <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
-                                </div>
+                                            <div class="block-price">
+                                                <span>Total: </span>
+                                                <span>1100</span>      
+                                            </div> 
+                                        </div> 
+                                    </div>          
+                                <div class="block-total-price">
+                                    <span>Total: </span>
+                                    <span>2600</span>      
+                                </div>                                                    
                             </div>
-                            <div class="product">
-                                <div class="product-img">
-                                    <img src="<?= base_url()?>/assets/img/orderHistory/product-img1.png" alt="">
-                                </div>
-                                <div class="product-infor">
-                                    <p class="order-id">Order ID: <span>1234</span></p>
-                                    <p class="product-name">Product Name: <span>Blackforest Cream Cake</span></p>
-                                </div>
-                            </div>
-                        </div>
+            
+                            <div class="Order">
+                                <div class="block_order">Order ID: <span>1235</span></div>    
+                                    <div class="products">
+                                        <div class="product-img l-4">
+                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
+                                        </div>
 
-                        <!-- CANCELLED -->
-                        <div class="block block-cancelled">
-                            <div class="product">
-                                <div class="product-img">
-                                    <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
+                                        <div class="product-infor l-8">
+                                            <p class="product-seller">Buyer: <span>ABC</span></p>
+                                            <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
+                                            <p class="product-status">Status: <span>Delivering</span></p>
+                                            <p class="product-price">Price: 
+                                                <span>150</span> 
+                                                <span> $ </span>
+                                            </p> 
+                                            <p class="product-quantity">Quantity: 
+                                                <span>10</span>
+                                                <span> Pc </span>
+                                            </p> 
+                                            <p class="product-seller">Address: <span>Đây ghi địa chỉ đơn hàng</span></p>
+                                            <div class="block-price">
+                                                <span>Total: </span>
+                                                <span>1500</span>      
+                                            </div> 
+                                        </div>                                            
+                                    </div>
+                                    <div class="block-total-price">
+                                        <span>Total: </span>
+                                        <span>2600</span>      
+                                    </div>
                                 </div>
-                                <div class="product-infor">
-                                    <p class="order-id">Order ID: <span>1234</span></p>
-                                    <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
-                                </div>
-                            </div>
-                            <div class="product">
-                                <div class="product-img">
-                                    <img src="<?= base_url()?>/assets/img/orderHistory/product-img1.png" alt="">
-                                </div>
-                                <div class="product-infor">
-                                    <p class="order-id">Order ID: <span>1234</span></p>
-                                    <p class="product-name">Product Name: <span>Blackforest Cream Cake</span></p>
-                                </div>
-                            </div>
-                        </div>
+                                 
+                            </div>    
                     </div>
                 </div>
             </div>

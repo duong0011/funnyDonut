@@ -121,7 +121,7 @@
     color: rgb(112, 111, 111);
 }
 
-.product{
+.products{
     margin-top: 25px;
     display: flex;
     border: 1px solid rgb(182, 159, 159);
@@ -134,7 +134,7 @@
 }
 
 .product-img{
-    width: 150px;
+    width: 200px;
 }
 
 .product-img img{
@@ -154,6 +154,36 @@
     font-weight: 500;
 }
 
+.Order {
+    border: 1px solid rgb(182, 159, 159);
+    border-radius: 5px;
+    margin: 30px;
+}
+
+.block_order{
+    padding: 10px;
+    display: block;
+    background-color: #8b3434;
+    color: #ccc;
+    font-size: 25px;
+}
+
+.block-price{
+    padding: 10px;
+    display: block;
+    background-color: #8b3434;
+    color: #ccc;
+    font-size: 25px;
+}
+
+.block-total-price {
+    margin-top: 25px;
+    padding: 10px;
+    display: block;
+    background-color: #8b3434;
+    color: #ccc;
+    font-size: 25px;
+}
 .block-sell{
     display: none;
 }
