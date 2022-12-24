@@ -34,11 +34,16 @@ class showproduct extends Controller
         $this->data['user'] = $model->getInfoUser(session()->get('loged_user'));
 		return view('product', $this->data);
 	}
-	public function comment($value='')
+	public function comment()
 	{
+
 		if($this->request->getMethod() == 'post'){
 			if(!isset($_FILES['files']['tmp_name']) && $_POST['content'] == null) return;
 			$comment = new comment();
+			$rating = $this->Product->select('rating, star')->getWhere(['pid' => $_POST['productid']])->getRowArray();
+			$star = round(($rating['star']*$rating['rating']+$_POST['star'])/($rating['rating']+1), 1);
+			$this->Product->set(['star' => $star, 'rating' => $rating['rating']+1]);
+			$this->Product->where('pid', $_POST['productid'])->update();
 			$_POST['unitid'] = session()->get('loged_user');
 			$comment->save($_POST);
 			if(isset($_FILES['files']['name'])) {
@@ -52,6 +57,7 @@ class showproduct extends Controller
 					$imgComment->save($data);
 				}
 			}
+			echo $this->Product->select('rating, star')->getWhere(['pid' => $_POST['productid']])->getRowArray()['star'];
 		}
 		
 	}

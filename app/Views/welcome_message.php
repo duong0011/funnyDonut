@@ -780,7 +780,11 @@
                             <p class="header__no-cart-text">No product</p>
                         </div>
                         
+<<<<<<< HEAD
                         <div class="header__cart-list has-cart">
+=======
+                        <div class="header__cart-list has-cart" style="display: flex;">
+>>>>>>> c8df879d36a7173dc6fb98cbf51f9e88443811c1
                             <h4 class="header__cart-heading">Selected product</h4>
                             <ul class="header__cart-list-item" id = "cart-list-item">
                                 
@@ -1450,7 +1454,7 @@
                 searchData('home/showByRequset');
             });
             $(document).on('click', '#sortBySold', function() {
-                callLoadData('home/showByRequset/sold', new URL(document.URL).searchParams.get('page'));
+                callLoadData('home/showByRequset/sold/DESC', new URL(document.URL).searchParams.get('page'));
             });
             $(document).on('click', '#pageclick', function() {
                 let url = $('#pageclick').val();
@@ -1775,7 +1779,7 @@
         }
         
     }
-     function loadCartShopping() {
+    function loadCartShopping() {
         $('#cart-list-item').html("");
         $.ajax({
                 url: '<?=base_url('showProduct/loadCartShopping')?>',
