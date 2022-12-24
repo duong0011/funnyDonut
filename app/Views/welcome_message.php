@@ -780,11 +780,7 @@
                             <p class="header__no-cart-text">No product</p>
                         </div>
                         
-<<<<<<< HEAD
                         <div class="header__cart-list has-cart">
-=======
-                        <div class="header__cart-list has-cart" style="display: flex;">
->>>>>>> c8df879d36a7173dc6fb98cbf51f9e88443811c1
                             <h4 class="header__cart-heading">Selected product</h4>
                             <ul class="header__cart-list-item" id = "cart-list-item">
                                 
