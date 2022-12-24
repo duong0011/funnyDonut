@@ -780,7 +780,7 @@
                             <p class="header__no-cart-text">No product</p>
                         </div>
                         
-                        <div class="header__cart-list has-cart" style="display: flex;">
+                        <div class="header__cart-list has-cart" style="display: none;">
                             <h4 class="header__cart-heading">Selected product</h4>
                             <ul class="header__cart-list-item" id = "cart-list-item">
                                 
@@ -826,10 +826,10 @@
                                 <!--radio buttons end-->
                                 <!--slide images start-->
                                 <div class="slide first">
-                                    <img src=" <?= base_url()?>/assets/img/slide home/1.jpg" alt="">
+                                    <img src=" <?= base_url()?>/assets/img/slide home/cake01.jpg" alt="">
                                 </div>
                                 <div class="slide">
-                                    <img src=" <?= base_url()?>/assets/img/slide home/1.png" alt="">
+                                    <img src=" <?= base_url()?>/assets/img/slide home/cake02.jpg" alt="">
                                 </div>
                                 <div class="slide">
                                     <img src=" <?= base_url()?>/assets/img/slide home/2.png" alt="">
@@ -1806,6 +1806,18 @@
     function myFunction() {
         callLoadData('home/showByRequset');
     }
+</script>
+
+<script>
+    const btnRate = Array.from(document.querySelectorAll('.btn.home-filter-btn'));
+    btnRate.forEach((btns) => {
+        btns.addEventListener('click', () => {
+            btnRate.forEach((btns) => {
+                btns.classList.remove('btn--brown');
+            });
+            btns.classList.add('btn--brown');
+        });
+    });
 </script>
 </body>
 </html>

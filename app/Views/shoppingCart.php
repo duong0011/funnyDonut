@@ -580,14 +580,15 @@
                 <div class="product-list">
                     <div class="row product-detail">
                         <input type="checkbox" name="" id="">
-                        <span class="col l-5">Product</span>
+                        <span class="col l-4">Product</span>
+                        <span class="col l-2">Shop</span>
                         <span class="col l-1">Size</span>
-                        <span class="col l-2">Unit price</span>
+                        <span class="col l-1">Price</span>
                         <span class="col l-1">Amount</span>
                         <span class="col l-2">Total</span>
                     </div>
                     <div class="shop row">
-                        <div class="shop-name">
+                        <div class="shop-name" style="display: none;">
                             <div class="input-check">
                                 <input type="checkbox" name="" id="">
                                 <i class="fa-solid fa-store col l-6"></i>
@@ -602,17 +603,20 @@
                                 <div class="col l-2 product-img">
                                     <img src="<?= base_url()?>/assets/img/checkout/product-img.png" alt="">
                                 </div>
-                                <div class="col l-3 product-name">
+                                <div class="col l-2 product-name">
                                     <span>Bánh kem xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx yyy</span>
                                 </div>
-                                <div class="product-size col l-1">
+                                <div class="product__name--shop col l-2">
+                                    <span>Cake Shop</span>
+                                </div>
+                                <div class="product-size col l-1" style="margin-left: 4px;">
                                     <span>S</span>
                                 </div>
-                                <div class="col l-2 product-unit-price">100$</div>
-                                <div class="col l-1 product-amount">
+                                <div class="col l-1 product-unit-price">100$</div>
+                                <div class="col l-1 product-amount" style="margin-left: 10px;">
                                     <input type="number" name="" id="" value="1" class="amount-number">
                                 </div>
-                                <div class="col l-2 product-total" style="color:var(--header-color);">100$</div>
+                                <div class="col l-2 product-total" style="color:var(--header-color); margin-left: 10px;">100$</div>
                                 <i class="fa-solid fa-trash-can icon-delete"></i>
                             </div>
                             <div class="product-shop row">
@@ -622,23 +626,27 @@
                                 <div class="col l-2 product-img">
                                     <img src="<?= base_url()?>/assets/img/checkout/product-img1.png" alt="">
                                 </div>
-                                <div class="col l-3 product-name">
+                                <div class="col l-2 product-name">
                                     <span>Bánh kem xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx yyy</span>
                                 </div>
-                                <div class="product-size col l-1">
+                                <div class="product__name--shop col l-2">
+                                    <span>Cake Shop</span>
+                                </div>
+
+                                <div class="product-size col l-1" style="margin-left: 4px;">
                                     <span>S</span>
                                 </div>
-                                <div class="col l-2 product-unit-price">100$</div>
-                                <div class="col l-1 product-amount">
+                                <div class="col l-1 product-unit-price">100$</div>
+                                <div class="col l-1 product-amount" style="margin-left: 10px;">
                                     <input type="number" name="" id="" value="1" class="amount-number">
                                 </div>
-                                <div class="col l-2 product-total" style="color:var(--header-color);">100$</div>
+                                <div class="col l-2 product-total" style="color:var(--header-color); margin-left: 10px;">100$</div>
                                 <i class="fa-solid fa-trash-can icon-delete"></i>
                             </div>
                         </div>
                     </div>
                     <div class="shop row">
-                        <div class="shop-name">
+                        <div class="shop-name" style="display: none;">
                             <div class="input-check">
                                 <input type="checkbox" name="" id="">
                                 <i class="fa-solid fa-store col l-6"></i>
@@ -653,17 +661,22 @@
                                 <div class="col l-2 product-img">
                                     <img src="<?= base_url()?>/assets/img/checkout/product-img.png" alt="">
                                 </div>
-                                <div class="col l-3 product-name">
+                                <div class="col l-2 product-name">
                                     <span>Bánh kem xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx yyy</span>
                                 </div>
-                                <div class="product-size col l-1">
+                                
+                                <div class="product__name--shop col l-2">
+                                    <span>Cake Shop 1</span>
+                                </div>
+                                <div class="product-size col l-1" style="margin-left: 4px;">
                                     <span>S</span>
                                 </div>
-                                <div class="col l-2 product-unit-price">100$</div>
-                                <div class="col l-1 product-amount">
+
+                                <div class="col l-1 product-unit-price">100$</div>
+                                <div class="col l-1 product-amount" style="margin-left: 10px;">
                                     <input type="number" name="" id="" value="1" class="amount-number">
                                 </div>
-                                <div class="col l-2 product-total" style="color:var(--header-color);">100$</div>
+                                <div class="col l-2 product-total" style="color:var(--header-color); margin-left: 10px;">100$</div>
                                 <i class="fa-solid fa-trash-can icon-delete"></i>
                             </div>
                             <div class="product-shop row">
@@ -673,17 +686,22 @@
                                 <div class="col l-2 product-img">
                                     <img src="<?= base_url()?>/assets/img/checkout/product-img1.png" alt="">
                                 </div>
-                                <div class="col l-3 product-name">
+                                <div class="col l-2 product-name">
                                     <span>Bánh kem xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx yyy</span>
                                 </div>
-                                <div class="product-size col l-1">
+
+                                <div class="product__name--shop col l-2">
+                                    <span>Cake Shop 1</span>
+                                </div>
+
+                                <div class="product-size col l-1" style="margin-left: 4px;">
                                     <span>S</span>
                                 </div>
-                                <div class="col l-2 product-unit-price">100$</div>
-                                <div class="col l-1 product-amount">
+                                <div class="col l-1 product-unit-price">100$</div>
+                                <div class="col l-1 product-amount" style="margin-left: 10px;">
                                     <input type="number" name="" id="" value="1" class="amount-number">
                                 </div>
-                                <div class="col l-2 product-total" style="color:var(--header-color);">100$</div>
+                                <div class="col l-2 product-total" style="color:var(--header-color); margin-left: 10px;">100$</div>
                                 <i class="fa-solid fa-trash-can icon-delete"></i>
                             </div>
                         </div>
