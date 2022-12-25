@@ -128,9 +128,9 @@ class Viewshop extends Controller
         		if($value['msg'] != "") {
         			$output .= '
         				<div class="d-flex justify-content-end mb-4">
-                            <div class="msg_cotainer_send">
+                            <div class="msg_cotainer_send"style="position: relative; max-width: 80%;">
                                 '.$value["msg"].'
-                                <span class="msg_time_send">'.$_date.'</span>
+                                <span class="msg_time_send" style="min-width: 80px;">'.$_date.'</span>
                             </div>
                             <div class="img_cont_msg">
                                 <img src="data:image/jpeg;base64,'.$avtsend['avatar'].'" class="rounded-circle user_img_msg">
