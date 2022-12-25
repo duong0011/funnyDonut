@@ -154,6 +154,18 @@
             cursor: pointer;
         }
 
+        .btn-sorted:hover,
+        .btn-sorted:focus {
+            opacity: 0.9;
+            cursor: pointer;
+        }
+
+        .btn-sorted.actived:hover,
+        .btn-sorted.actived:focus {
+            opacity: 1;
+            cursor: default;
+        }
+
         .grid.wide {
             max-width: 1500px;
         }
