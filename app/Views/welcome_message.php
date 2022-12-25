@@ -899,9 +899,9 @@
                                 <div class="category-group">
                                     <div class="category-group-title">Price Range</div>
                                     <div class="category-group-filter">
-                                        <input type="number" placeholder="From" class="category-group-filter-input" id = 'minprice'>
+                                        <input oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  placeholder="From" class="category-group-filter-input" id = 'minprice'>
                                         <i class="fas fa-arrow-right"></i>
-                                        <input type="number" placeholder="To" class="category-group-filter-input" id ="maxprice" >
+                                        <input oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  placeholder="To" class="category-group-filter-input" id ="maxprice" >
 
                                     </div>
                                     <br>
@@ -1446,9 +1446,10 @@
         function callLoadData(url, page, data) {
             var curl = new URL(document.URL);
             let keyWord = curl.searchParams.get('keyword');
-            let minprice = $('#minprice').val();
-            let maxprice = $('#maxprice').val();
-            if(minprice  && maxprice  && (minprice > maxprice) || minprice< 0 || maxprice < 0) {
+            let minprice = Number($('#minprice').val());
+            let maxprice = Number($('#maxprice').val());
+            if(minprice > maxprice) {
+                 console.log(minprice, maxprice);
                 error = "Please enter a valid value";
                 $('#loadError').text(error);
             } else {
