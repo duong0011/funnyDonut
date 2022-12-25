@@ -1449,7 +1449,6 @@
             let minprice = Number($('#minprice').val());
             let maxprice = Number($('#maxprice').val());
             if(minprice > maxprice) {
-                 console.log(minprice, maxprice);
                 error = "Please enter a valid value";
                 $('#loadError').text(error);
             } else {
@@ -1503,6 +1502,7 @@
                 success: function (response) {
                     $('.loadProduct').html("");
                     $('#page').html("");
+                   
                     if(response.shop !== undefined) {
                         $('#shop-found').html('');
                         $('#shop-related').html('');
@@ -1587,7 +1587,6 @@
                     </div>")
                     }
 
-                    console.log(1);
                 }
                                             
         });

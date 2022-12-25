@@ -38,8 +38,15 @@ class Home extends BaseController
         $minprice = $this->request->getVar('minprice');
         $maxprice = $this->request->getVar('maxprice');
         $keyWord = $this->request->getVar('keyword');
-        $result = $this->model->getProductByQuery($type, $address, $minprice, $maxprice, $star);
+        if($minprice == 0 && $maxprice == 0) {
+            $minprice = 0;
+            $maxprice = PHP_INT_MAX;
+        }
+       
+        $result = $this->model->getProductByQuery($type, $address, $star, $minprice, $maxprice);
         $result = $this->model->sortQuery($result, $attribute, $method);
+
+        
         if($keyWord){
             $result = $this->model->getByKeyword($result,$keyWord);
             $userModel = new userModel();

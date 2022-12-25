@@ -26,16 +26,12 @@ class Index_model extends Model
     {
         return $this->db->table('product')->select('address')->distinct()->orderBy('address')->get()->getResultArray();
     }   
-    public function getProductByQuery($type, $address, $minprice, $maxprice, $star)
+    public function getProductByQuery($type, $address,$star, $minprice = 0, $maxprice = PHP_INT_MAX)
     {
         $builder = $this->db->table('product');
         if($address) $builder->whereIn('address', $address);
         if($type) $builder->whereIn('type', $type);
-        if($minprice && $maxprice) {
-            $builder->where('price >=', $minprice)->where('price <=', $maxprice);
-            return $builder;
-
-        }
+       
         
         if($star) {
             $maxs = 0;
@@ -46,8 +42,7 @@ class Index_model extends Model
             }
             $builder->where(['star <=' => $maxs+0.5, 'star >' => $mins-0.5]);
         }
-        if($maxprice) $builder->where('price >=', $minprice);
-        if($minprice) $builder->where('price <=', $maxprice);
+        $builder->where(['price >=' => $minprice, 'price <=' => $maxprice]);
         return $builder;
     }
     public function sortQuery($data ,$attribute, $method = "ASC")
