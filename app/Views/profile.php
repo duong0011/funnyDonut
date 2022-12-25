@@ -1135,15 +1135,15 @@
                             <div class="block-form">
                                 <form action="">
                                     <ul class="profile-list">
+                                    <li class="profile-username">
+                                            <span>Username</span>
+                                            <p><?= $user['username']?></p> 
+                                        </li>
                                         <li class="profile-name">
                                             <span>Name</span>
                                             <input type="text" value="<?= $user['fullname']?>" class="form-input" id = "fullnameuser">
                                             <span id = "error_name" class = "input-alert-error"></span>
-                                        </li>
-                                        <li class="profile-username">
-                                            <span>Username</span>
-                                            <p class="form-input" readonly><?= $user['username']?></p> 
-                                        </li>
+                                        </li>                       
                                         <li class="profile-phone">
                                             <span>Phone number</span>
                                             <input class="profile-phone profile-phone-input form-input" value="<?= $user['phonenumber'];?>">
