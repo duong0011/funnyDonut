@@ -449,7 +449,7 @@
                                         <a href="<?= base_url('viewshop?sellerID=').session()->get('loged_user')?>">My shop</a>
                                     </li>
                                     <li class="header__nav-user-item">
-                                        <a href="<?= base_url('/orderhistory') ?>">History</a>
+                                        <a href="<?= base_url('/orderHistory') ?>">History</a>
                                     </li>
                                     <li class="header__nav-user-item">
                                         <a href="<?= base_url().'/login/logout' ?>" >Logout</a>
