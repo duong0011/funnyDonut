@@ -20,11 +20,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
     </script>
 
-<style>
-        <style>
-
-
-         .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.has-cart,
+    <style>
+        .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.has-cart,
         .header__cart--has-cart .header__cart-count:hover~.header__cart-list.has-cart,
         .header__cart--has-cart .header__cart-list.has-cart:hover {
             display: flex;
@@ -35,18 +32,21 @@
             display: flex;
         }
         
+        .pay-btn-new{
+            margin: 0 25px 30px;
+            color: var(--white-color);
+            background-color: var(--primary-color);
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
         .containercreditcard {
-          background: linear-gradient(to bottom, #245e69, #85aeaa);
-          bottom: 0;
           color: white;
           display: block;
-          left: 0;
           padding-top: 40px;
-          position: absolute;
-          right: 0;
           text-align: center;
-          top: 0;
-
         }
 
         .card-container {
@@ -228,6 +228,13 @@
             font-size: 20px;
         }
 
+        .number {
+            position: absolute;
+            margin: 0 auto;
+            top: 103px;
+            left: 19px;
+            font-size: 38px;
+        }
         /*
          * Card back
          */
@@ -1326,6 +1333,7 @@
                                                 </g>
                                             </svg>
                                         </div>
+                                        <div class="number">123 123 123 123</div>
                                         <div class="info row">
                                             <div class="info-name col l-6">
                                                 <span class="card-holder">CARD HOLDER</span>

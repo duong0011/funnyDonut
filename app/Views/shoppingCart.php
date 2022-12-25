@@ -124,7 +124,7 @@
         }
 
         .product-amount input {
-            width: 50px;
+            width: 65px;
             height: 30px;
             font-size: 18px;
             text-align: center;
@@ -193,6 +193,15 @@
 
         .btn-submit:focus {
             outline: none;
+        }
+
+        .product-name span {
+            display: -webkit-box;
+            /* max-width: 168px; */
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: normal;
         }
     </style>
 </head>

@@ -200,17 +200,6 @@
     opacity: 0.9;
 }
 
-.pay-btn-new{
-    margin: 0 25px 30px;
-    color: var(--white-color);
-    background-color: var(--primary-color);
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 15px;
-    cursor: pointer;
-}
-
 .pay-btn-new:hover {
     opacity: 0.9;
 }
