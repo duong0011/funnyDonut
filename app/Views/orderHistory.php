@@ -707,6 +707,123 @@
                                             </div> 
                                         </div> 
                                     </div>
+
+                                    <div class="products">
+                                        <div class="product-img l-4">
+                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
+                                        </div>
+
+                                        <div class="product-infor l-8">
+                                            <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
+                                            <p class="product-seller">Seller: <span>ABC</span></p>
+                                            <p class="product-status">Status: <span>Delivering</span></p>
+                                            <p class="product-price">Price: 
+                                                <span>150</span> 
+                                                <span> $ </span>
+                                            </p> 
+                                            <p class="product-quantity">Quantity: 
+                                                <span>10</span>
+                                                <span> Pc </span>
+                                            </p> 
+                                            <p class="product-seller">Address: <span>Đây ghi địa chỉ đơn hàng</span></p>
+                                            <div class="block-price">
+                                                <span>Total: </span>
+                                                <span>1500</span>      
+                                            </div> 
+                                        </div>                                            
+                                    </div><div class="products">
+                                        <div class="product-img l-4">
+                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
+                                        </div>
+
+                                        <div class="product-infor l-8">
+                                            <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
+                                            <p class="product-seller">Seller: <span>ABC</span></p>
+                                            <p class="product-status">Status: <span>Delivering</span></p>
+                                            <p class="product-price">Price: 
+                                                <span>150</span> 
+                                                <span> $ </span>
+                                            </p> 
+                                            <p class="product-quantity">Quantity: 
+                                                <span>10</span>
+                                                <span> Pc </span>
+                                            </p> 
+                                            <p class="product-seller">Address: <span>Đây ghi địa chỉ đơn hàng</span></p>
+                                            <div class="block-price">
+                                                <span>Total: </span>
+                                                <span>1500</span>      
+                                            </div> 
+                                        </div>                                            
+                                    </div><div class="products">
+                                        <div class="product-img l-4">
+                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
+                                        </div>
+
+                                        <div class="product-infor l-8">
+                                            <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
+                                            <p class="product-seller">Seller: <span>ABC</span></p>
+                                            <p class="product-status">Status: <span>Delivering</span></p>
+                                            <p class="product-price">Price: 
+                                                <span>150</span> 
+                                                <span> $ </span>
+                                            </p> 
+                                            <p class="product-quantity">Quantity: 
+                                                <span>10</span>
+                                                <span> Pc </span>
+                                            </p> 
+                                            <p class="product-seller">Address: <span>Đây ghi địa chỉ đơn hàng</span></p>
+                                            <div class="block-price">
+                                                <span>Total: </span>
+                                                <span>1500</span>      
+                                            </div> 
+                                        </div>                                            
+                                    </div><div class="products">
+                                        <div class="product-img l-4">
+                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
+                                        </div>
+
+                                        <div class="product-infor l-8">
+                                            <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
+                                            <p class="product-seller">Seller: <span>ABC</span></p>
+                                            <p class="product-status">Status: <span>Delivering</span></p>
+                                            <p class="product-price">Price: 
+                                                <span>150</span> 
+                                                <span> $ </span>
+                                            </p> 
+                                            <p class="product-quantity">Quantity: 
+                                                <span>10</span>
+                                                <span> Pc </span>
+                                            </p> 
+                                            <p class="product-seller">Address: <span>Đây ghi địa chỉ đơn hàng</span></p>
+                                            <div class="block-price">
+                                                <span>Total: </span>
+                                                <span>1500</span>      
+                                            </div> 
+                                        </div>                                            
+                                    </div><div class="products">
+                                        <div class="product-img l-4">
+                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
+                                        </div>
+
+                                        <div class="product-infor l-8">
+                                            <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
+                                            <p class="product-seller">Seller: <span>ABC</span></p>
+                                            <p class="product-status">Status: <span>Delivering</span></p>
+                                            <p class="product-price">Price: 
+                                                <span>150</span> 
+                                                <span> $ </span>
+                                            </p> 
+                                            <p class="product-quantity">Quantity: 
+                                                <span>10</span>
+                                                <span> Pc </span>
+                                            </p> 
+                                            <p class="product-seller">Address: <span>Đây ghi địa chỉ đơn hàng</span></p>
+                                            <div class="block-price">
+                                                <span>Total: </span>
+                                                <span>1500</span>      
+                                            </div> 
+                                        </div>                                            
+                                    </div>
                                 <div class="block-total-price">
                                     <span>Total: </span>
                                     <span>2600</span>      

@@ -163,6 +163,7 @@
     border-radius: 5px;
     margin: 30px;
     box-shadow: 0 0 5px var(--header-color);
+    overflow-y: scroll;
 }
 
 .block_order{

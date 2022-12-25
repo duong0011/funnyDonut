@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/Nga-base.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/header-footer.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/grid.css">
-    <link rel="stylesheet" href="<?= base_url()?>/assets/css/checkout.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/admin.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/font/fontawesome-free-6.2.0-web/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,7 +75,90 @@
     </style>
     <!-- Style main -->
     <style>
+
+        .section1 {
+            border: 1px solid var(--header-color);
+            margin-top: 76px;
+            border-radius: 5px;
+            height: 200px;
+            font-size: 18px;    
+        }
+
+        .section1 div {
+            margin-bottom: 15px;
+        }
+
+        .btn-sorted {
+            background-color: #f1e4e4;
+            border: 1px solid var(--header-color);
+            border-radius: 5px;
+            padding: 5px;
+            margin-right: 10px;
+            box-shadow: 0 0 3px var(--header-color);
+        }
+
+        .btn-sorted.actived {
+            background-color: var(--header-color);
+            color: white;
+        }
+
+        .user {
+            padding: 5px;
+            /* margin: 10px; */
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--header-color);
+            border: 1px solid var(--header-color);
+            box-shadow: 0 0 5px var(--header-color);
+            border-radius: 5px;
+        }
+
+        .user-name {
+            padding: 10px;
+        }
         
+        .user-product {
+            height: 500px;
+            overflow-y: scroll;
+            border-top: 1px solid var(--header-color);
+        }
+
+        .product {
+            height: 200px;
+            padding: 10px;
+        }
+
+        .product-img {
+            height: 100%;
+            width: 200px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+               
+        button.btn-block {
+            font-size: 18px;
+            background-color: var(--header-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 5px 2px;
+            margin-left: 5px;
+        }
+
+        button.btn-block:hover,
+        button.btn-block:focus {
+            opacity: 0.9;
+            cursor: pointer;
+        }
+
+        .grid.wide {
+            max-width: 1500px;
+        }
+
+
     </style>
 </head>
 <body>
@@ -462,8 +545,49 @@
 
         <!-- CONTAINER BEGIN -->
         <div class="container">
-            <div class="grid wide">
-                
+            <div class="grid wide row">
+                <div class="section1 col l-3">
+                    <p class="sorted-txt">Sorted by:</p>
+                    <div class="sorted-alphabet">
+                        <button class="btn-sorted actived">A->Z</button>
+                        <button class="btn-sorted">Z->A</button>
+                    </div>
+                    <div class="sorted-amount-product">
+                        <button class="btn-sorted">No product</button>
+                        <button class="btn-sorted">Has product</button>
+                    </div>
+                    <div class="sorted-report">
+                        <button class="btn-sorted">Least reported</button>
+                        <button class="btn-sorted">Most reported</button>
+                    </div>
+                </div>
+                <div class="section2 col l-9">
+                    <div class="search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Search by Username or Product Name">
+                    </div>
+                    <div class="admin">
+                        <div class="user">
+                            <div class="user-name">
+                                <span>shop1</span>
+                                <button class="btn-block">
+                                    Block
+                                    <i class="fa-solid fa-ban icon-block"></i>
+                                </button>
+                            </div>
+                            <div class="user-product">
+                                <div class="product">
+                                    <div class="product-img">
+                                        <img src="./assets/img/admin/product-img.png" alt="Product-img">
+                                    </div>
+                                    <div class="product-info">
+    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- CONTAINER END -->

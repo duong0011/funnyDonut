@@ -1,0 +1,31 @@
+.search{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 5px;
+    /* background-color: rgb(249, 247, 247); */
+}
+
+.search i{
+    color: #ccc;
+    position: relative;
+    top: 3px;
+    margin: 0 5px;
+    font-size: 18px;
+}
+
+.search input{
+    font-size: 18px;
+    border: none;
+    /* background-color: rgb(249, 247, 247); */
+    width: 100%;
+    outline: none;
+}
+
+.admin {
+    height: 1000px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
