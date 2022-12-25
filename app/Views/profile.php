@@ -22,6 +22,19 @@
 
 <style>
         <style>
+
+
+         .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.has-cart,
+        .header__cart--has-cart .header__cart-count:hover~.header__cart-list.has-cart,
+        .header__cart--has-cart .header__cart-list.has-cart:hover {
+            display: flex;
+        }
+
+        .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.no-cart,
+        .header__cart--has-cart .header__cart-list.no-cart:hover{
+            display: flex;
+        }
+        
         .containercreditcard {
           background: linear-gradient(to bottom, #245e69, #85aeaa);
           bottom: 0;
@@ -76,6 +89,7 @@
           height: auto;
           fill: #fff;
         }
+
         .cc-font,
         .cc-back {
           background: linear-gradient(135deg, #11998e, #38ef7d);
@@ -1042,13 +1056,13 @@
                     <div class="header__cart header__cart--has-cart">
                         <i class="header__cart-icon fas fa-shopping-cart"></i>
                         <div class="header__cart-count"></div>
-                        
+                         
                         <div class="header__cart-list no-cart">
                             <img src=" <?= base_url()?>/assets/img/sp/no-cart.png" class="header__no-cart-img">
                             <p class="header__no-cart-text">No product</p>
                         </div>
-                        
-                        <div class="header__cart-list has-cart" style="display: flex;">
+
+                        <div class="header__cart-list has-cart" >
                             <h4 class="header__cart-heading">Selected product</h4>
                             <ul class="header__cart-list-item" id = "cart-list-item">
                                 
@@ -1125,7 +1139,7 @@
                                         </li>
                                         <li class="profile-phone">
                                             <span>Phone number</span>
-                                            <input class="profile-phone form-input" value="<?= $user['phonenumber'];?>">
+                                            <input class="profile-phone profile-phone-input form-input" value="<?= $user['phonenumber'];?>">
                                         </li>
                                         <li class="profile-address">
                                             <span>Address</span>
@@ -1834,7 +1848,7 @@
         if(!gender) {
             $('#error_name').text("Name is requied");
         }
-        if($('#specific-address').val().length == 0 || $('#country-state option:selected').value == "") {
+        if($('#specific-address').val().length == 0 || $('#country-state option:selected').val() == "") {
             $('#error_address').text("You need to select the city and fill in your specific address");
             return false;
         }
@@ -1843,7 +1857,8 @@
             'gender' : gender,
             'DateOfBirth': getDay,
             'city' : $('#country-state option:selected').text(),
-            'specificaddress': $('#specific-address').val()
+            'specificaddress': $('#specific-address').val(),
+            'phonenumber' : $('.profile-phone-input').val()
         }
         let img = new FormData();
         var file = $('#imageUpload')[0].files;
@@ -2079,11 +2094,16 @@
                 type: 'post',
                 success: function (data) {
                     var tmp = 0;
-                    if(data != "")
+                    if(data != ""){
+                       $('.has-cart').css({"display": ""});
                         data.forEach((x)=>{
                             $('#cart-list-item').append(x);
                             tmp++;   
                         });
+                    }
+                    else {
+                         $('.has-cart').css({"display": "none"});
+                    }
                     $('.header__cart-count').text(tmp);
                 }
             });
