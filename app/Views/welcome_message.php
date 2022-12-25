@@ -16,8 +16,9 @@
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/home__search_result.css">
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/responsive.css">
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/reviewIMG.css">
+     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
         *{
@@ -1052,40 +1053,7 @@
                         </div>
                         <!-- home product -->
                         <div class="home-product">
-                            <nav class="mobile-category">
-                                <ul class="mobile-category-list">
-                                    <li class="mobile-category-item">
-                                        <a href="#" class="mobile-category-item-link">Thiết bị mạng</a>
-                                    </li>
-                                    <li class="mobile-category-item">
-                                        <a href="#" class="mobile-category-item-link">Chuột và bàn phím</a>
-                                    </li>
-                                    <li class="mobile-category-item">
-                                        <a href="#" class="mobile-category-item-link">USB</a>
-                                    </li>
-                                    <li class="mobile-category-item">
-                                        <a href="#" class="mobile-category-item-link">Link kiện máy tính</a>
-                                    </li>
-                                    <li class="mobile-category-item">
-                                        <a href="#" class="mobile-category-item-link">Wifi</a>
-                                    </li>
-                                    <li class="mobile-category-item">
-                                        <a href="#" class="mobile-category-item-link">Ổ cứng</a>
-                                    </li>
-                                    <li class="mobile-category-item">
-                                        <a href="#" class="mobile-category-item-link">CD/DVD</a>
-                                    </li>
-                                    <li class="mobile-category-item">
-                                        <a href="#" class="mobile-category-item-link">Tai nghe</a>
-                                    </li>
-                                    <li class="mobile-category-item">
-                                        <a href="#" class="mobile-category-item-link">Lót chuột</a>
-                                    </li>
-                                    <li class="mobile-category-item">
-                                        <a href="#" class="mobile-category-item-link">Micro</a>
-                                    </li>
-                                </ul>
-                            </nav>
+                            
                             <div id="list-product" class="row sm-gutter loadProduct">
                                
                             </div>
@@ -1423,6 +1391,7 @@
     <!-- script js -->
     <!-- <script src=" <?= base_url()?>/assets/js/product.js"></script> -->
 
+<script src="https://malsup.github.io/jquery.form.js"></script> 
     <script type="text/javascript">
         var counter = 1;
         setInterval(function(){
@@ -1661,10 +1630,9 @@
     }
  </script>
 
- <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
-<script src="https://malsup.github.io/jquery.form.js"></script> 
+
+
 <script>
         let bigImg = document.querySelector('.big__img img')
         function showImg(pic) {
