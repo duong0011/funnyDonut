@@ -44,17 +44,17 @@ class shoppingcart extends Controller
                             <div class="col l-2 product-name">
                                 <span>'.$product['nameproduct'].'</span>
                             </div>
-                            <div class="product__name--shop col l-2">
+                            <div class="product__name--shop col l-2" style="text-align:center;">
                                 <span>'.$shopName.'</span>
                             </div>
-                            <div class="product-size col l-1" style="margin-left: 4px;">
+                            <div class="product-size col l-1" style="text-align:center;">
                                 <span>'.$item['size'].' cm</span>
                             </div>
-                            <div class="col l-1 product-unit-price">'. round($price, 2).'$</div>
+                            <div class="col l-1 product-unit-price" style="text-align:center;">'. round($price, 2).'$</div>
                             <div class="col l-1 product-amount" style="margin-left: 10px;">
                                 <input id="id-product'.$item['id'].'"  type="number" value="'.$item['quantity'].'" min="1" class="amount-number" oninput="this.value = this.value.replace(/[^0-9.]/g, '.$__special.'); this.value = this.value.replace(/(\..*)\./g, '.$__special__.');" onchange=inputChange('.$item['id'].')>
                             </div>
-                            <div class="col l-2 product-total id-product'.$item['id'].'" style="color:var(--header-color); margin-left: 10px;">'.round($item['quantity']*$price,2).'$</div>
+                            <div class="col l-2 product-total id-product'.$item['id'].'" style="color:var(--header-color); text-align:center;">'.round($item['quantity']*$price,2).'$</div>
                             <button  onclick=deteleCartShopping('.$item['id'].') style="padding: 0;border: none;background: none;"><i class="fa-solid fa-trash-can icon-delete" ></i></button>
                         </div>';
                 array_push($output, $html);
