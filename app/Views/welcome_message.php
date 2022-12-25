@@ -16,8 +16,10 @@
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/home__search_result.css">
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/responsive.css">
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/reviewIMG.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha384-qlmct0AOBiA2VPZkMY3+2WqkHtIQ9lSdAsAn5RUJD/3vA5MKDgSGcdmIv4ycVxyn"crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
         *{
@@ -897,9 +899,9 @@
                                 <div class="category-group">
                                     <div class="category-group-title">Price Range</div>
                                     <div class="category-group-filter">
-                                        <input type="number" placeholder="From" class="category-group-filter-input" id = 'minprice'>
+                                        <input oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  placeholder="From" class="category-group-filter-input" id = 'minprice'>
                                         <i class="fas fa-arrow-right"></i>
-                                        <input type="number" placeholder="To" class="category-group-filter-input" id ="maxprice" >
+                                        <input oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  placeholder="To" class="category-group-filter-input" id ="maxprice" >
 
                                     </div>
                                     <br>
@@ -1052,40 +1054,7 @@
                         </div>
                         <!-- home product -->
                         <div class="home-product">
-                            <nav class="mobile-category">
-                                <ul class="mobile-category-list">
-                                    <li class="mobile-category-item">
-                                        <a href="#" class="mobile-category-item-link">Thiết bị mạng</a>
-                                    </li>
-                                    <li class="mobile-category-item">
-                                        <a href="#" class="mobile-category-item-link">Chuột và bàn phím</a>
-                                    </li>
-                                    <li class="mobile-category-item">
-                                        <a href="#" class="mobile-category-item-link">USB</a>
-                                    </li>
-                                    <li class="mobile-category-item">
-                                        <a href="#" class="mobile-category-item-link">Link kiện máy tính</a>
-                                    </li>
-                                    <li class="mobile-category-item">
-                                        <a href="#" class="mobile-category-item-link">Wifi</a>
-                                    </li>
-                                    <li class="mobile-category-item">
-                                        <a href="#" class="mobile-category-item-link">Ổ cứng</a>
-                                    </li>
-                                    <li class="mobile-category-item">
-                                        <a href="#" class="mobile-category-item-link">CD/DVD</a>
-                                    </li>
-                                    <li class="mobile-category-item">
-                                        <a href="#" class="mobile-category-item-link">Tai nghe</a>
-                                    </li>
-                                    <li class="mobile-category-item">
-                                        <a href="#" class="mobile-category-item-link">Lót chuột</a>
-                                    </li>
-                                    <li class="mobile-category-item">
-                                        <a href="#" class="mobile-category-item-link">Micro</a>
-                                    </li>
-                                </ul>
-                            </nav>
+                            
                             <div id="list-product" class="row sm-gutter loadProduct">
                                
                             </div>
@@ -1423,6 +1392,7 @@
     <!-- script js -->
     <!-- <script src=" <?= base_url()?>/assets/js/product.js"></script> -->
 
+
     <script type="text/javascript">
         var counter = 1;
         setInterval(function(){
@@ -1476,9 +1446,10 @@
         function callLoadData(url, page, data) {
             var curl = new URL(document.URL);
             let keyWord = curl.searchParams.get('keyword');
-            let minprice = $('#minprice').val();
-            let maxprice = $('#maxprice').val();
-            if(minprice  && maxprice  && (minprice > maxprice) || minprice< 0 || maxprice < 0) {
+            let minprice = Number($('#minprice').val());
+            let maxprice = Number($('#maxprice').val());
+            if(minprice > maxprice) {
+                 console.log(minprice, maxprice);
                 error = "Please enter a valid value";
                 $('#loadError').text(error);
             } else {
@@ -1661,10 +1632,9 @@
     }
  </script>
 
- <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
-<script src="https://malsup.github.io/jquery.form.js"></script> 
+
+
 <script>
         let bigImg = document.querySelector('.big__img img')
         function showImg(pic) {
