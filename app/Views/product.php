@@ -28,6 +28,7 @@
             /* outline: none; */
             /* border: none; */
         }
+
         .error_input {
             display: block;
             margin: 10px 0 5px;
@@ -283,6 +284,16 @@
         button:focus {
             outline: none;
         }
+        .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.has-cart,
+        .header__cart--has-cart .header__cart-count:hover~.header__cart-list.has-cart,
+        .header__cart--has-cart .header__cart-list.has-cart:hover {
+            display: flex;
+        }
+
+        .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.no-cart,
+        .header__cart--has-cart .header__cart-list.no-cart:hover{
+            display: flex;
+        }
     </style>
 </head>
 
@@ -504,90 +515,27 @@
                         </button>
                     </div>
                     <!-- header__cart--no-cart -->
-                    <!-- header__cart--has-cart -->
+                    <!-- header__cart--has-cart <--></-->
                     <div class="header__cart header__cart--has-cart">
                         <i class="header__cart-icon fas fa-shopping-cart"></i>
-                        <div class="header__cart-count">4</div>
-
+                        <div class="header__cart-count"></div>
+                         
                         <div class="header__cart-list no-cart">
-                            <img src="<?= base_url()?>/assets/img/sp/no-cart.png" class="header__no-cart-img">
+                            <img src=" <?= base_url()?>/assets/img/sp/no-cart.png" class="header__no-cart-img">
                             <p class="header__no-cart-text">No product</p>
                         </div>
 
-                        <div class="header__cart-list has-cart">
+                        <div class="header__cart-list has-cart" >
                             <h4 class="header__cart-heading">Selected product</h4>
-                            <ul class="header__cart-list-item" id = 'cart-list-item'>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/1.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Thanh Thanh 2000 1m57 46kg 88-62-89</h3>
-                                            <p class="header__cart-item-price">2.000USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 2</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                               
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/6.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Hồng Ánh 1998 1m62 48kg 89-64-91</h3>
-                                            <p class="header__cart-item-price">2.500USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 1</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/7.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
-                                            <p class="header__cart-item-price">2.800USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 1</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/8.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
-                                            <p class="header__cart-item-price">3.200USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 3</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                            <ul class="header__cart-list-item" id = "cart-list-item">
+                                
                             </ul>
                             <div class="header__cart-footer">
-                                <a href="#" class="btn btn--primary header__cart-see-cart">View cart</a>
+                                <a href="<?= base_url('shoppingCart') ?>" class="btn btn--primary header__cart-see-cart">View cart</a>
                             </div>
                         </div>
                     </div>
+                   
                 </div>
             </div>
             <!-- <ul class="header__sort-bar">
@@ -670,8 +618,10 @@
                             </div>
                         </div>
                         <div class="product-item__price" style="padding-left: 10px">
-                            <p class="product-item__price-old"><?= round($dataproduct['price']-$dataproduct['price']*$dataproduct['discount']/100, 2)?> USD</p>
-                            <p class="product-item__price-new"><?=$dataproduct['price'] ?> USD</p>
+                            <?php if($dataproduct['discount'] > 0):?>
+                                <p class="product-item__price-old"> <?=$dataproduct['price'] ?>$</p>
+                            <?php endif?>
+                            <p class="product-item__price-new"><?= round($dataproduct['price']-$dataproduct['price']*$dataproduct['discount']/100, 2)?>$</p>
                         </div>
                         <div class="row sm-gutter" style="padding-left: 10px">
                             <div class="col l-3">
@@ -1710,7 +1660,6 @@
                     $('.follownumber').text(data.follower);
                     $('.following').text(Math.floor(Math.random() * 100));
                     $('.rating-number').text(data.amountRating);
-                    
                 }
             });
     }
@@ -1767,11 +1716,16 @@
                 type: 'post',
                 success: function (data) {
                     var tmp = 0;
-                    if(data != "")
+                    if(data != ""){
+                       $('.has-cart').css({"display": ""});
                         data.forEach((x)=>{
                             $('#cart-list-item').append(x);
                             tmp++;   
                         });
+                    }
+                    else {
+                         $('.has-cart').css({"display": "none"});
+                    }
                     $('.header__cart-count').text(tmp);
                 }
             });

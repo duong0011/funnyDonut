@@ -781,7 +781,7 @@
                             <p class="header__no-cart-text">No product</p>
                         </div>
 
-                        <div class="header__cart-list has-cart" style="display: none;">
+                        <div class="header__cart-list has-cart">
                             <h4 class="header__cart-heading">Selected product</h4>
                             <ul class="header__cart-list-item" id = "cart-list-item">
                                 
@@ -1023,7 +1023,7 @@
                             <div class="home-filter-control">
                                 <p class="home-filter-title" style="margin-bottom:0;">Sorted by:</p>
                                 <button class="btn btn--brown home-filter-btn type-sort" id = "sortByTime1" value="sold">Oldest</button>
-                                <button class="btn home-filter-btn" value="created_at" id = "sortByTime">
+                                <button class="btn home-filter-btn" value="pid" id = "sortByTime">
                                     Latest
                                 </button>
                                 <button class="btn home-filter-btn" id = "sortBySold">Bestseller</button>
@@ -1783,11 +1783,17 @@
                 type: 'post',
                 success: function (data) {
                     var tmp = 0;
-                    if(data != "")
+                    if(data != ""){
+                        $('.has-cart').css({"display": ""});
                         data.forEach((x)=>{
                             $('#cart-list-item').append(x);
                             tmp++;   
                         });
+                    }
+                    else {
+
+                         $('.has-cart').css({"display": "none"})
+                    }
                     $('.header__cart-count').text(tmp);
                 }
             });

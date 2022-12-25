@@ -193,6 +193,16 @@
         .btn-submit:focus {
             outline: none;
         }
+         .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.has-cart,
+        .header__cart--has-cart .header__cart-count:hover~.header__cart-list.has-cart,
+        .header__cart--has-cart .header__cart-list.has-cart:hover {
+            display: flex;
+        }
+
+        .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.no-cart,
+        .header__cart--has-cart .header__cart-list.no-cart:hover{
+            display: flex;
+        }
     </style>
 </head>
 
@@ -415,25 +425,6 @@
                     </div>
                     <!-- header__cart--no-cart -->
                     <!-- header__cart--has-cart -->
-                    <div class="header__cart header__cart--has-cart">
-                        <i class="header__cart-icon fas fa-shopping-cart"></i>
-                        <div class="header__cart-count"></div>
-                        
-                        <div class="header__cart-list no-cart">
-                            <img src=" <?= base_url()?>/assets/img/sp/no-cart.png" class="header__no-cart-img">
-                            <p class="header__no-cart-text">No product</p>
-                        </div>
-                        
-                        <div class="header__cart-list has-cart" style="display: flex;">
-                            <h4 class="header__cart-heading">Selected product</h4>
-                            <ul class="header__cart-list-item" id = "cart-list-item">
-                                
-                            </ul>
-                            <div class="header__cart-footer">
-                                <a href="<?= base_url('shoppingCart') ?>" class="btn btn--primary header__cart-see-cart">View cart</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             
@@ -448,11 +439,10 @@
                         SHOPPING CART </h1>
                 </div>
             </header>
-
-            <div class="container">
-                <form class="product-list" action="<?= base_url('')?>">
+            <div class="container-list-product">
+                <div class="product-list" action="<?= base_url('')?>">
                     <div class="row product-detail">
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" onclick="selectAll(this)">
                         <span class="col l-4">Product</span>
                         <span class="col l-2">Shop</span>
                         <span class="col l-1">Size</span>
@@ -460,126 +450,11 @@
                         <span class="col l-1">Amount</span>
                         <span class="col l-2">Total</span>
                     </div>
-                    <div class="shop row">
-                        <div class="shop-name" style="display: none;">
-                            <div class="input-check">
-                                <input type="checkbox" name="" id="">
-                                <i class="fa-solid fa-store col l-6"></i>
-                                <span class="name-shop">cake_shop</span>
-                            </div>
-                        </div>
-                        <div class="col l-12 product-shop-item">
-                            <div class="product-shop row">
-                                <div class="input-check">
-                                    <input type="checkbox" name="" id="">
-                                </div>
-                                <div class="col l-2 product-img">
-                                    <img src="<?= base_url()?>/assets/img/checkout/product-img.png" alt="">
-                                </div>
-                                <div class="col l-2 product-name">
-                                    <span>Bánh kem xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx yyy</span>
-                                </div>
-                                <div class="product__name--shop col l-2">
-                                    <span>Cake Shop</span>
-                                </div>
-                                <div class="product-size col l-1" style="margin-left: 4px;">
-                                    <span>S</span>
-                                </div>
-                                <div class="col l-1 product-unit-price">100$</div>
-                                <div class="col l-1 product-amount" style="margin-left: 10px;">
-                                    <input type="number" name="" id="" value="1" class="amount-number">
-                                </div>
-                                <div class="col l-2 product-total" style="color:var(--header-color); margin-left: 10px;">100$</div>
-                                <i class="fa-solid fa-trash-can icon-delete"></i>
-                            </div>
-                            <div class="product-shop row">
-                                <div class="input-check">
-                                    <input type="checkbox" name="" id="">
-                                </div>
-                                <div class="col l-2 product-img">
-                                    <img src="<?= base_url()?>/assets/img/checkout/product-img1.png" alt="">
-                                </div>
-                                <div class="col l-2 product-name">
-                                    <span>Bánh kem xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx yyy</span>
-                                </div>
-                                <div class="product__name--shop col l-2">
-                                    <span>Cake Shop</span>
-                                </div>
-
-                                <div class="product-size col l-1" style="margin-left: 4px;">
-                                    <span>S</span>
-                                </div>
-                                <div class="col l-1 product-unit-price">100$</div>
-                                <div class="col l-1 product-amount" style="margin-left: 10px;">
-                                    <input type="number" name="" id="" value="1" class="amount-number">
-                                </div>
-                                <div class="col l-2 product-total" style="color:var(--header-color); margin-left: 10px;">100$</div>
-                                <i class="fa-solid fa-trash-can icon-delete"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shop row">
-                        <div class="shop-name" style="display: none;">
-                            <div class="input-check">
-                                <input type="checkbox" name="" id="">
-                                <i class="fa-solid fa-store col l-6"></i>
-                                <span class="name-shop">cake_shop1</span>
-                            </div>
-                        </div>
-                        <div class="col l-12 product-shop-item">
-                            <div class="product-shop row">
-                                <div class="input-check">
-                                    <input type="checkbox" name="" id="">
-                                </div>
-                                <div class="col l-2 product-img">
-                                    <img src="<?= base_url()?>/assets/img/checkout/product-img.png" alt="">
-                                </div>
-                                <div class="col l-2 product-name">
-                                    <span>Bánh kem xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx yyy</span>
-                                </div>
-                                
-                                <div class="product__name--shop col l-2">
-                                    <span>Cake Shop 1</span>
-                                </div>
-                                <div class="product-size col l-1" style="margin-left: 4px;">
-                                    <span>S</span>
-                                </div>
-
-                                <div class="col l-1 product-unit-price">100$</div>
-                                <div class="col l-1 product-amount" style="margin-left: 10px;">
-                                    <input type="number" name="" id="" value="1" class="amount-number">
-                                </div>
-                                <div class="col l-2 product-total" style="color:var(--header-color); margin-left: 10px;">100$</div>
-                                <i class="fa-solid fa-trash-can icon-delete"></i>
-                            </div>
-                            <div class="product-shop row">
-                                <div class="input-check">
-                                    <input type="checkbox" name="" id="">
-                                </div>
-                                <div class="col l-2 product-img">
-                                    <img src="<?= base_url()?>/assets/img/checkout/product-img1.png" alt="">
-                                </div>
-                                <div class="col l-2 product-name">
-                                    <span>Bánh kem xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx yyy</span>
-                                </div>
-
-                                <div class="product__name--shop col l-2">
-                                    <span>Cake Shop 1</span>
-                                </div>
-
-                                <div class="product-size col l-1" style="margin-left: 4px;">
-                                    <span>S</span>
-                                </div>
-                                <div class="col l-1 product-unit-price">100$</div>
-                                <div class="col l-1 product-amount" style="margin-left: 10px;">
-                                    <input type="number" name="" id="" value="1" class="amount-number">
-                                </div>
-                                <div class="col l-2 product-total" style="color:var(--header-color); margin-left: 10px;">100$</div>
-                                <i class="fa-solid fa-trash-can icon-delete"></i>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                    <div id = "list-produc-selected">
+                        
+                        
+                    </div>   
+                </div>
 
             </div>
 
@@ -587,8 +462,8 @@
                 <div class="row total-payment">
                     <div class="col l-6">
                         <span style="font-weight: 500; font-size: 25px;">Total</span>
-                        (<span>0</span> products):
-                        <span style="color: var(--header-color); font-weight: 600;">400$</span>
+                        (<span id = 'total-products'>0</span> products):
+                        <span id = 'total-payment' style="color: var(--header-color); font-weight: 600;">0$</span>
                     </div>
                     <div class="col l-6">
                         <a href="#" class="btn-submit">Go to payment</a>
@@ -954,6 +829,7 @@
         });
         });
         loadCartShopping();
+        fectdata();
         function loadCartShopping() {
             $('#cart-list-item').html("");
             $.ajax({
@@ -961,11 +837,17 @@
                     type: 'post',
                     success: function (data) {
                         var tmp = 0;
-                        if(data != "")
+                        if(data != ""){
+                            $('.has-cart').css({"display": ""});
                             data.forEach((x)=>{
                                 $('#cart-list-item').append(x);
                                 tmp++;   
                             });
+                        }
+                        else {
+
+                             $('.has-cart').css({"display": "none"})
+                        }
                         $('.header__cart-count').text(tmp);
                     }
                 });
@@ -979,9 +861,81 @@
                     },
                     success: function (data) {
                         loadCartShopping();
+                        fectdata();
                     }
                 });
         }
+
+        function fectdata() {
+            $.ajax({
+                    url: '<?= base_url('shoppingcart/orderitem') ?>',
+                    type: 'post',
+                    success: function (data) {
+                        $('#list-produc-selected').html('');
+                        if(data == 1) {
+                            $('.product-list').text('');
+                            $('.product-list').append('go to home to buy somthing');
+                        }                        
+                        data.forEach( function(element) {
+                            $('#list-produc-selected').append(element);
+                        });
+                    }
+                });
+        }
+        function inputChange(id) {
+            var valueInput = $('#id-product'+id).val();
+            $.ajax({
+                    url: 'shoppingcart/updateQuantity',
+                    type: 'post',
+                    data: {
+                        'id' : id,
+                        'quantity': valueInput
+                    },
+                    success: function (data) {
+                        totalPayment();
+                        $('.id-product'+id).text(data);
+                    }
+                });
+        }
+        function totalPayment() {
+            var selected = [];
+            $('.product-is-selected').each(function() {
+                if($(this).is(':checked')) {
+                    selected.push($(this).val());
+                }
+            });  
+            $.ajax({
+                    url: 'shoppingcart/totalPayment',
+                    type: 'post',
+                    data: {
+                        'products' : selected
+                    },
+                    success: function (data) {
+                        $('#total-products').text(selected.length);
+                        $('#total-payment').text(data);
+                    }
+                });
+        }
+        function selectAll(tagInput) {
+            if($(tagInput).is(':checked')) {
+                $('.product-is-selected').each(function() {
+                    if(!$(this).is(':checked')) {
+                        $(this).prop('checked', true);
+                    }
+                });
+                totalPayment();
+                return;  
+            }
+            if(!$(tagInput).is(':checked')) {
+                $('.product-is-selected').each(function() {
+                    if($(this).is(':checked')) {
+                        $(this).prop('checked', false);
+                    }
+                });
+                totalPayment();
+                return;  
+            }
+        }   
     </script>
 </body>
 

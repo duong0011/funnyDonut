@@ -81,8 +81,9 @@ class Index_model extends Model
                             <div class='home-product-item__info'>
                                 <h4 class='home-product-item__name'>".$value['nameproduct']."</h4>
                                 <div class='home-product-item__price'>
-                                    <p class='home-product-item__price-old'>".$value['price']."USD</p>
-                                    <p class='home-product-item__price-new'>".round(($value['price']-$value['price']*$value['discount']/100), 2)."USD</p>
+                                    ";
+            if($value['discount'] > 0) $output[$index].= "<p class='home-product-item__price-old'>".$value['price']."$</p>";
+            $output[$index].="<p class='home-product-item__price-new'>".round(($value['price']-$value['price']*$value['discount']/100), 2)."$</p>
                                     <i class='home-product-item__ship fas fa-shipping-fast'></i>
                                 </div>
                                 <div class='home-product-item__footer'>

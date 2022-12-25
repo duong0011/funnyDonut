@@ -22,6 +22,19 @@
 
 <style>
         <style>
+
+
+         .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.has-cart,
+        .header__cart--has-cart .header__cart-count:hover~.header__cart-list.has-cart,
+        .header__cart--has-cart .header__cart-list.has-cart:hover {
+            display: flex;
+        }
+
+        .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.no-cart,
+        .header__cart--has-cart .header__cart-list.no-cart:hover{
+            display: flex;
+        }
+        
         .containercreditcard {
           background: linear-gradient(to bottom, #245e69, #85aeaa);
           bottom: 0;
@@ -76,6 +89,7 @@
           height: auto;
           fill: #fff;
         }
+
         .cc-font,
         .cc-back {
           background: linear-gradient(135deg, #11998e, #38ef7d);
@@ -1042,13 +1056,13 @@
                     <div class="header__cart header__cart--has-cart">
                         <i class="header__cart-icon fas fa-shopping-cart"></i>
                         <div class="header__cart-count"></div>
-                        
+                         
                         <div class="header__cart-list no-cart">
                             <img src=" <?= base_url()?>/assets/img/sp/no-cart.png" class="header__no-cart-img">
                             <p class="header__no-cart-text">No product</p>
                         </div>
-                        
-                        <div class="header__cart-list has-cart" style="display: flex;">
+
+                        <div class="header__cart-list has-cart" >
                             <h4 class="header__cart-heading">Selected product</h4>
                             <ul class="header__cart-list-item" id = "cart-list-item">
                                 
@@ -2079,11 +2093,16 @@
                 type: 'post',
                 success: function (data) {
                     var tmp = 0;
-                    if(data != "")
+                    if(data != ""){
+                       $('.has-cart').css({"display": ""});
                         data.forEach((x)=>{
                             $('#cart-list-item').append(x);
                             tmp++;   
                         });
+                    }
+                    else {
+                         $('.has-cart').css({"display": "none"});
+                    }
                     $('.header__cart-count').text(tmp);
                 }
             });

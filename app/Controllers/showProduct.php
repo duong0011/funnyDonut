@@ -46,10 +46,10 @@ class showproduct extends Controller
 			$this->Product->where('pid', $_POST['productid'])->update();
 			$_POST['unitid'] = session()->get('loged_user');
 
-			$products = $this->Product->select('star')->getWhere('unitid', $_POST['unitid'])->getResultArray();
-			$sum = 0;
-			
-
+			// $products = $this->Product->select('star')->getWhere('unitid', $_POST['unitid'])->getResultArray();
+			// $sum = 0;
+			// foreach ($products as $value) $sum+= $product['star'];
+			// echo count($products);
 			$comment->save($_POST);
 			if(isset($_FILES['files']['name'])) {
 				$id = $comment->insertID;
@@ -72,8 +72,8 @@ class showproduct extends Controller
 			$string  = "'none'";     
             $comment = new comment();
             if($star == 0)
-            	$commentSent = $comment->getWhere(['productid' => $id])->getResultArray();
-            else $commentSent = $comment->getWhere(['productid' => $id, 'star' => $star])->getResultArray();
+            	$commentSent = $comment->where(['productid' => $id])->orderBy('id', 'DESC')->get()->getResultArray();
+            else $commentSent = $comment->where(['productid' => $id, 'star' => $star])->get()->getResultArray();
             $index = 0;
             $output = array();
            	foreach ($commentSent as  $value) {
@@ -136,7 +136,7 @@ class showproduct extends Controller
            	}
 
 		}
-		return $this->response->setJSON($output);
+		if(isset($output)) return $this->response->setJSON($output);
 	}
 	public function addtoCart()
 	{
@@ -168,7 +168,7 @@ class showproduct extends Controller
 		                <div class="header__cart-item-info">
 		                    <div class="header__cart-item-heading">
 		                        <h3 class="header__cart-item-name">'.$product['nameproduct'].'('.$value['size'].' cm)</h3>
-		                        <p class="header__cart-item-price">'.$product['price'].'USD</p>
+		                        <p class="header__cart-item-price">'.round($product['price']-$product['price']*$product['discount']/100, 2).'$</p>
 		                    </div>
 	                </a>
 	                    <div class="header__cart-item-body">
