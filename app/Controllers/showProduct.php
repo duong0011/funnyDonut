@@ -36,7 +36,6 @@ class showproduct extends Controller
 	}
 	public function comment()
 	{
-
 		if($this->request->getMethod() == 'post'){
 			if(!isset($_FILES['files']['tmp_name']) && $_POST['content'] == null) return;
 			$comment = new comment();
@@ -45,11 +44,6 @@ class showproduct extends Controller
 			$this->Product->set(['star' => $star, 'rating' => $rating['rating']+1]);
 			$this->Product->where('pid', $_POST['productid'])->update();
 			$_POST['unitid'] = session()->get('loged_user');
-
-			// $products = $this->Product->select('star')->getWhere('unitid', $_POST['unitid'])->getResultArray();
-			// $sum = 0;
-			// foreach ($products as $value) $sum+= $product['star'];
-			// echo count($products);
 			$comment->save($_POST);
 			if(isset($_FILES['files']['name'])) {
 				$id = $comment->insertID;
@@ -136,7 +130,15 @@ class showproduct extends Controller
            	}
 
 		}
-		if(isset($output)) return $this->response->setJSON($output);
+	 	$starComment = $comment->select('star')->getWhere(['productid'=> $id])->getResultArray();
+	    $_star = [1 => 0, 2=> 0, 3=>0, 4=>0, 5=>0];
+	    foreach ($starComment as $star) {
+	    	$_star[$star['star']]++;
+	    }
+		$data['output'] = $output;
+		$data['stars'] = $_star;
+		return $this->response->setJSON($data);
+		
 	}
 	public function addtoCart()
 	{

@@ -1139,7 +1139,7 @@
                                         </li>
                                         <li class="profile-phone">
                                             <span>Phone number</span>
-                                            <input class="profile-phone form-input" value="<?= $user['phonenumber'];?>">
+                                            <input class="profile-phone profile-phone-input form-input" value="<?= $user['phonenumber'];?>">
                                         </li>
                                         <li class="profile-address">
                                             <span>Address</span>
@@ -1848,7 +1848,7 @@
         if(!gender) {
             $('#error_name').text("Name is requied");
         }
-        if($('#specific-address').val().length == 0 || $('#country-state option:selected').value == "") {
+        if($('#specific-address').val().length == 0 || $('#country-state option:selected').val() == "") {
             $('#error_address').text("You need to select the city and fill in your specific address");
             return false;
         }
@@ -1857,7 +1857,8 @@
             'gender' : gender,
             'DateOfBirth': getDay,
             'city' : $('#country-state option:selected').text(),
-            'specificaddress': $('#specific-address').val()
+            'specificaddress': $('#specific-address').val(),
+            'phonenumber' : $('.profile-phone-input').val()
         }
         let img = new FormData();
         var file = $('#imageUpload')[0].files;

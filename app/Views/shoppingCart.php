@@ -22,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
     </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
     <style>
         .rung{
             animation:code-pro-rung-lac 2s ease infinite
@@ -466,7 +467,7 @@
                         <span id = 'total-payment' style="color: var(--header-color); font-weight: 600;">0$</span>
                     </div>
                     <div class="col l-6">
-                        <a href="#" class="btn-submit">Go to payment</a>
+                        <button style="border: none;" class="btn-submit">Go to payment</button>
                     </div>
                 </div>
             </div>
@@ -936,6 +937,75 @@
                 return;  
             }
         }   
+        $('.btn-submit').on('click', function () {
+            var selected = [];
+            $('.product-is-selected').each(function() {
+                if($(this).is(':checked')) {
+                    selected.push($(this).val());
+                }
+            });
+            if(!selected.length){
+                Swal.fire({
+                    icon : 'error',
+                    title : 'You have not selected any items for checkout'
+                });
+                return false;
+            }
+            $.ajax({
+                    url: '<?=base_url('shoppingcart/telephoneChecker') ?>',
+                    type: 'post',
+                    data: {},
+                    success: function (data) {
+                        if(data == "false") {
+                            Swal.fire({
+                                icon : 'error',
+                                text : 'Before going to the payment you need to update the phone number',
+                                footer: '<a href="<?= base_url('profile')?>">Go to profile</a>'
+                            });
+                            return false;
+                        }
+                        sessionStorage.clear('itemSelected');
+                        sessionStorage.setItem('itemSelected', JSON.stringify(selected));
+                        window.location.href = "<?=base_url('checkout') ?>";
+                    }
+                });
+           
+        });
+        jQuery(document).ready(function($) {
+         $(document).on('keyup', '#searchproduct', function() {
+                let product = $('#searchproduct').val(); 
+                showHints(product);
+            });
+    });
+    function showHints(product) {
+        if(!product) {
+            $('.hintsforproduct').html("");
+            return false;
+        }
+        $.ajax({
+                url: '<?=base_url('/home/showHints')?>',
+                type: 'get',
+                data: {'productName' : product},
+                success: function (response) {
+                    if(response.hints !== null) {
+                       $('.hintsforproduct').html(""); 
+                       $.each(response.hints, function(index,val) {
+                             $('.hintsforproduct').append("\
+                            <li class='header__search-history-item'>\
+                                <a href='<?=base_url('showProduct?id=')?>"+val.pid+"'>"+val.nameproduct+"</a>\
+                            </li>");
+                       });
+                    }
+                    else {
+                        $('.hintsforproduct').html("");
+                        $('.hintsforproduct').append("\
+                            <li class='header__search-history-item'>\
+                               No results were found \
+                            </li>");
+                    }
+                }
+            });
+    }
     </script>
 </body>
 

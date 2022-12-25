@@ -8,7 +8,6 @@
     <title>Funny Donut</title>
     <link rel="icon" href=" <?= base_url()?>/assets/img/logo/logo-web.png" type="image/x-icon">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/base.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/style.css">
@@ -687,7 +686,7 @@
                             </div>
                             <!-- </div> -->
                             <!-- <div class="col l-3"> -->
-                            <div class="product-item__buy-now">
+                            <div class="product-item__buy-now" onclick="buyNow()">
                                 <span class="product-item__buy-now-title">Buy now</span>
                             </div>
                             <!-- </div> -->
@@ -873,23 +872,23 @@
                             <button class="btn home-filter-btn product__rating-btn--active" onclick="fetchComment(0)">All</button>
                             <button class="btn home-filter-btn" onclick="fetchComment(5)">
                                 5 Star
-                               
+                               <p id='p-star-5'>(0)</p>
                             </button>
                             <button class="btn home-filter-btn" onclick="fetchComment(4)">
                                 4 Star
-                               
+                               <p id='p-star-4'>(0)</p>
                             </button>
                             <button class="btn home-filter-btn" onclick="fetchComment(3)">
                                 3 Star
-                               
+                               <p id='p-star-3'>(0)</p>
                             </button>
                             <button class="btn home-filter-btn" onclick="fetchComment(2)">  
                                 2 Star
-                                
+                               <p id='p-star-2'>(0)</p>
                             </button>
                             <button class="btn home-filter-btn" onclick="fetchComment(1)">
                                 1 Star
-                                
+                               <p id='p-star-1'>(0)</p>
                             </button>
                         </div>
                     </div>
@@ -1669,9 +1668,13 @@
                 url: '<?=base_url('/showProduct/fetchComment').'/'.$dataproduct['pid']?>'+'/'+star,
                 type: 'post',
                 success: function (data) {
-                   data.forEach( function(element, index) {
+                   data.output.forEach( function(element, index) {
                        $('.comment-product').append(element);
                    });
+                   for (const [key, value] of Object.entries(data.stars)) {
+                        $('#p-star-'+key).text('('+value+')');
+                   }
+                   
                 }
             });
     }
@@ -1770,6 +1773,35 @@
                     statusFavorite();
                 }
             });
+    }
+    function buyNow() {
+        if(<?php if(session()->has('loged_user')) echo 0; else {
+             echo 1;
+        }?>) {
+            window.location.href = "<?= base_url('login')?>";
+            return false;
+        }
+        var size = $('.shortenedSelect :selected').val();
+        var quantiny = Number($('#quantity-product').val());
+        if(size == "") {
+            $('.size-not-select').text('Please select product size first');
+            return false;
+        }
+        console.log(1);
+        $.ajax({
+            url: '<?=base_url('showProduct/addtoCart') ?>',
+            type: 'post',
+            data: {
+                'unitid' : '<?= session()->get('loged_user')?>',
+                'size' : size,
+                'quantity': quantiny,
+                'productid': <?= $dataproduct['pid']?>
+            },
+            success: function (data) {
+                window.location.href = "<?= base_url('shoppingcart')?>";
+            }
+        });
+    
     }
 </script>
 

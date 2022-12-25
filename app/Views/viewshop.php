@@ -107,16 +107,7 @@
             }
         }
 
-        .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.no-cart,
-        .header__cart--has-cart .header__cart-list.no-cart:hover {
-            display: flex;
-        }
-
-        .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.has-cart,
-        .header__cart--has-cart .header__cart-count:hover~.header__cart-list.has-cart,
-        .header__cart--has-cart .header__cart-list.has-cart:hover {
-            display: none;
-        }
+       
 
         .home-product-item__img {
             position: relative;
@@ -284,6 +275,16 @@
 
         .container {
             background-color: white;
+        }
+        .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.no-cart,
+        .header__cart--has-cart .header__cart-list.no-cart:hover {
+            display: flex;
+        }
+
+        .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.has-cart,
+        .header__cart--has-cart .header__cart-count:hover~.header__cart-list.has-cart,
+        .header__cart--has-cart .header__cart-list.has-cart:hover {
+            display: flex;
         }
     </style>
 </head>
@@ -1559,18 +1560,24 @@
         }
         
     }
-     function loadCartShopping() {
+    function loadCartShopping() {
         $('#cart-list-item').html("");
         $.ajax({
                 url: '<?=base_url('showProduct/loadCartShopping')?>',
                 type: 'post',
                 success: function (data) {
                     var tmp = 0;
-                    if(data != "")
+                    if(data != ""){
+                        $('.has-cart').css({"display": ""});
                         data.forEach((x)=>{
                             $('#cart-list-item').append(x);
                             tmp++;   
                         });
+                    }
+                    else {
+
+                         $('.has-cart').css({"display": "none"})
+                    }
                     $('.header__cart-count').text(tmp);
                 }
             });
@@ -1585,7 +1592,7 @@
                 success: function (data) {
                     loadCartShopping();
                 }
-        });
+            });
     }
     function delete_(id) {
         $.ajax({

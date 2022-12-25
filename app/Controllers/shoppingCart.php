@@ -31,7 +31,9 @@ class shoppingcart extends Controller
 				$__special__ = "'$1'";
 				$__product = new Product();
 				$product = $__product->getWhere(['pid' => $item['productid']])->getRowArray();
-				$price = round($product['price']-$product['price']*$product['discount']/100, 2);
+				$price =$product['price']-$product['price']*$product['discount']/100;
+				$shop = new userModel();
+				$shopName = $shop->getWhere(['unitid' => $product['owner']])->getRowArray()['fullname'];
 				$html = '<div class="product-shop row">
                             <div class="input-check">
                                 <input type="checkbox" onclick=totalPayment() class = "product-is-selected" value="'.$item['id'].'">
@@ -43,16 +45,16 @@ class shoppingcart extends Controller
                                 <span>'.$product['nameproduct'].'</span>
                             </div>
                             <div class="product__name--shop col l-2">
-                                <span>Cake Shop</span>
+                                <span>'.$shopName.'</span>
                             </div>
                             <div class="product-size col l-1" style="margin-left: 4px;">
                                 <span>'.$item['size'].' cm</span>
                             </div>
-                            <div class="col l-1 product-unit-price">'.$price.'$</div>
+                            <div class="col l-1 product-unit-price">'. round($price, 2).'$</div>
                             <div class="col l-1 product-amount" style="margin-left: 10px;">
                                 <input id="id-product'.$item['id'].'"  type="number" value="'.$item['quantity'].'" min="1" class="amount-number" oninput="this.value = this.value.replace(/[^0-9.]/g, '.$__special.'); this.value = this.value.replace(/(\..*)\./g, '.$__special__.');" onchange=inputChange('.$item['id'].')>
                             </div>
-                            <div class="col l-2 product-total id-product'.$item['id'].'" style="color:var(--header-color); margin-left: 10px;">'.$item['quantity']*$price.'$</div>
+                            <div class="col l-2 product-total id-product'.$item['id'].'" style="color:var(--header-color); margin-left: 10px;">'.round($item['quantity']*$price,2).'$</div>
                             <button  onclick=deteleCartShopping('.$item['id'].') style="padding: 0;border: none;background: none;"><i class="fa-solid fa-trash-can icon-delete" ></i></button>
                         </div>';
                 array_push($output, $html);
@@ -91,6 +93,16 @@ class shoppingcart extends Controller
 				echo round($output, 2);
 			}
 			else echo 0;	
+		}
+	}
+	public function telephoneChecker()
+	{
+		if($this->request->getMethod() == 'post') {
+			$user = new userModel();
+			$id = session()->get('loged_user');
+			$tmp =$user->select('phonenumber, city')->getWhere(['unitid' => $id])->getRowArray();
+			if( $tmp['phonenumber'] == "" || $tmp['city'] == "") return "false";
+			return "true";
 		}
 	}
 }
