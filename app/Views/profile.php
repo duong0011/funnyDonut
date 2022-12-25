@@ -233,7 +233,7 @@
             margin: 0 auto;
             top: 103px;
             left: 19px;
-            font-size: 38px;
+            font-size: 30px;
         }
         /*
          * Card back
@@ -498,6 +498,7 @@
           height: auto;
           fill: #fff;
         }
+
         .credit-card-box .front {
           z-index: 2;
           -webkit-transform: rotateY(0deg);
