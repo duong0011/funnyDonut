@@ -16,9 +16,10 @@
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/home__search_result.css">
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/responsive.css">
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/reviewIMG.css">
-     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha384-qlmct0AOBiA2VPZkMY3+2WqkHtIQ9lSdAsAn5RUJD/3vA5MKDgSGcdmIv4ycVxyn"crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
         *{
@@ -739,9 +740,6 @@
                                         <a href="<?= base_url('viewshop?sellerID=').session()->get('loged_user')?>">My shop</a>
                                     </li>
                                     <li class="header__nav-user-item">
-                                        <a href="<?= base_url('/orderhistory') ?>">History</a>
-                                    </li>
-                                    <li class="header__nav-user-item">
                                         <a href="<?= base_url().'/login/logout' ?>" >Logout</a>
                                     </li>
                                 </ul>
@@ -1394,7 +1392,7 @@
     <!-- script js -->
     <!-- <script src=" <?= base_url()?>/assets/js/product.js"></script> -->
 
-<script src="https://malsup.github.io/jquery.form.js"></script> 
+
     <script type="text/javascript">
         var counter = 1;
         setInterval(function(){
