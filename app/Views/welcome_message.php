@@ -16,8 +16,8 @@
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/home__search_result.css">
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/responsive.css">
     <link rel="stylesheet" href=" <?= base_url()?>/assets/css/reviewIMG.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
         *{
@@ -1422,6 +1422,7 @@
 
     <!-- script js -->
     <!-- <script src=" <?= base_url()?>/assets/js/product.js"></script> -->
+
     <script type="text/javascript">
         var counter = 1;
         setInterval(function(){
@@ -1520,6 +1521,7 @@
         }
     </script>
     <!-- show du lieu sau khi lay duoc tu DB -->
+
     <script>
         function loadProduct(pdata, ptype, url) {
             $.ajax({
@@ -1659,9 +1661,11 @@
     }
  </script>
 
-<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <script>
+ <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+<script src="https://malsup.github.io/jquery.form.js"></script> 
+<script>
         let bigImg = document.querySelector('.big__img img')
         function showImg(pic) {
             bigImg.src = pic;
@@ -1691,6 +1695,7 @@
                 $(".chat-box1").slideDown("slow");
                 $(".chat-box2").slideDown("slow");
                 var curl = new URL(document.URL);
+
                 loadChat(curl.searchParams.get('sellerID'));
                 loadListcontacts('<?= session()->get('loged_user');?>');
             })
@@ -1744,6 +1749,7 @@
                 success: function(data) {
                     let test = document.getElementById('form-control');
                     test.value = "";
+                    $(".msg_card_body").scrollTop($(".msg_card_body")[0].scrollHeight);
                     document.getElementById("input-img__msg").innerHTML = "";
                 }
             });

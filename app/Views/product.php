@@ -1380,8 +1380,7 @@
     <!-- script js -->
     <!-- <script src="<?= base_url()?>/assets/js/product.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
     <script src="https://malsup.github.io/jquery.form.js"></script> 
     <script>
         let bigImg = document.querySelector('.big__img img')
@@ -1463,6 +1462,7 @@
                 url : "<?=base_url('/viewshop/saveMess')?>",
                 success: function(data) {
                     document.getElementById("input-img__msg").innerHTML = "";
+                    $('#form-control').val('');
                     loadListcontacts('<?= session()->get('loged_user');?>');
                 }
             });
