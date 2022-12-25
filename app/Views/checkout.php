@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <!-- Style header -->
     <style>
         <style>
@@ -647,78 +647,8 @@
                         <span class="col l-1">Amount</span>
                         <span class="col l-2">Total</span>
                     </div>
-                    <div class="row shop">
-                        <div class="col l-12 shop-name" style="display: none;">
-                            <i class="fa-solid fa-store"></i>
-                            <span class="name-shop">cake_shop</span>
-                        </div>
-                        <div class="col l-12 product-shop-item">
-                            <div class="row">
-                                <div class="col l-2 product-img">
-                                    <img src="<?= base_url()?>/assets/img/checkout/product-img.png" alt="">
-                                </div>
-                                <div class="col l-2 product-name">
-                                    <span>Bánh kem xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx yyy</span>
-                                </div>
-
-                                <div class="product__name--shop col l-2">
-                                    <span>Cake Shop</span>
-                                </div>
-
-                                <div class="product-size col l-1">
-                                    <span>S</span>
-                                </div>
-                                <div class="col l-2 product-unit-price">100$</div>
-                                <div class="col l-1 product-amount">1</div>
-                                <div class="col l-2 product-total">100$</div>
-                            </div>
-                        </div>
-                        <div class="col l-12 product-shop-item">
-                            <div class="row">
-                                <div class="col l-2 product-img">
-                                    <img src="<?= base_url()?>/assets/img/checkout/product-img1.png" alt="">
-                                </div>
-                                <div class="col l-2 product-name">
-                                    <span>Bánh kem xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx yyy</span>
-                                </div>
-
-                                <div class="product__name--shop col l-2">
-                                    <span>Cake Shop1</span>
-                                </div>
-                                <div class="product-size col l-1">
-                                    <span>S</span>
-                                </div>
-                                <div class="col l-2 product-unit-price">100$</div>
-                                <div class="col l-1 product-amount">1</div>
-                                <div class="col l-2 product-total">100$</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row shop">
-                        <div class="col l-12 shop-name" style="display: none;">
-                            <i class="fa-solid fa-store"></i>
-                            <span class="name-shop">cake_shop1</span>
-                        </div>
-                        <div class="col l-12 product-shop-item">
-                            <div class="row">
-                                <div class="col l-2 product-img">
-                                    <img src="<?= base_url()?>/assets/img/checkout/product-img.png" alt="">
-                                </div>
-                                <div class="col l-2 product-name">
-                                    <span>Bánh kem xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx yyy</span>
-                                </div>
-
-                                <div class="product__name--shop col l-2">
-                                    <span>Cake Shop 1</span>
-                                </div>
-                                <div class="product-size col l-1">
-                                    <span>S</span>
-                                </div>
-                                <div class="col l-2 product-unit-price">100$</div>
-                                <div class="col l-1 product-amount">1</div>
-                                <div class="col l-2 product-total">100$</div>
-                            </div>
-                        </div>
+                    <div class="row shop " id= "row-shop-list">
+            
                     </div>
                     <div class="row note-delivery">
                         <div class="col l-12 note" style="border-right:none;">
@@ -736,7 +666,7 @@
                         <div class="col l-10 total-money-txt">
                             <span>Total payment: </span>
                         </div>
-                        <div class="col l-2"><span>300$</span></div>
+                        <div class="col l-2 total-payment"><span>$</span></div>
                     </div>
                 </div>
 
@@ -976,7 +906,28 @@
             modalAddress.classList.add('open');
         }
         function hideNewAddress(){
-            modalAddress.classList.remove('open');
+             odalAddress.classList.remove('open');
+        }
+
+
+
+        var itemSelected = JSON.parse(sessionStorage.getItem('itemSelected')); 
+        if(!itemSelected.length) window.location.href = "<?=base_url('home')?>";
+        fectdata();
+        function fectdata() {
+            $.ajax({
+                    url: '<?=base_url('checkout/fetch') ?>',
+                    type: 'post',
+                    data: {
+                        'itemSelected' : itemSelected
+                    },
+                    success: function (data) {
+                        data.output.forEach( function(x) {
+                            $('#row-shop-list').append(x);    
+                        });
+                        $('.total-payment').append(data.sum);
+                    }
+                });
         }
     </script>
 </body>

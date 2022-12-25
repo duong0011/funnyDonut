@@ -40,7 +40,8 @@ class Profile extends Controller
 				'gender' => $this->request->getPost('gender'),
 				'DateOfBirth' => $this->request->getPost('DateOfBirth'),
 				'city' => $_POST['city'],
-				'specificaddress' => $_POST['specificaddress']
+				'specificaddress' => $_POST['specificaddress'],
+				'phonenumber' => $_POST['phonenumber']
 			];
 			foreach($data as $value) {
 				if(!$value) return false;

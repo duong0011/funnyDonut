@@ -36,7 +36,6 @@ class showproduct extends Controller
 	}
 	public function comment()
 	{
-
 		if($this->request->getMethod() == 'post'){
 			if(!isset($_FILES['files']['tmp_name']) && $_POST['content'] == null) return;
 			$comment = new comment();
@@ -45,11 +44,6 @@ class showproduct extends Controller
 			$this->Product->set(['star' => $star, 'rating' => $rating['rating']+1]);
 			$this->Product->where('pid', $_POST['productid'])->update();
 			$_POST['unitid'] = session()->get('loged_user');
-
-			$products = $this->Product->select('star')->getWhere('unitid', $_POST['unitid'])->getResultArray();
-			$sum = 0;
-			
-
 			$comment->save($_POST);
 			if(isset($_FILES['files']['name'])) {
 				$id = $comment->insertID;
@@ -72,8 +66,8 @@ class showproduct extends Controller
 			$string  = "'none'";     
             $comment = new comment();
             if($star == 0)
-            	$commentSent = $comment->getWhere(['productid' => $id])->getResultArray();
-            else $commentSent = $comment->getWhere(['productid' => $id, 'star' => $star])->getResultArray();
+            	$commentSent = $comment->where(['productid' => $id])->orderBy('id', 'DESC')->get()->getResultArray();
+            else $commentSent = $comment->where(['productid' => $id, 'star' => $star])->get()->getResultArray();
             $index = 0;
             $output = array();
            	foreach ($commentSent as  $value) {
@@ -136,7 +130,15 @@ class showproduct extends Controller
            	}
 
 		}
-		return $this->response->setJSON($output);
+	 	$starComment = $comment->select('star')->getWhere(['productid'=> $id])->getResultArray();
+	    $_star = [1 => 0, 2=> 0, 3=>0, 4=>0, 5=>0];
+	    foreach ($starComment as $star) {
+	    	$_star[$star['star']]++;
+	    }
+		$data['output'] = $output;
+		$data['stars'] = $_star;
+		return $this->response->setJSON($data);
+		
 	}
 	public function addtoCart()
 	{
@@ -168,7 +170,7 @@ class showproduct extends Controller
 		                <div class="header__cart-item-info">
 		                    <div class="header__cart-item-heading">
 		                        <h3 class="header__cart-item-name">'.$product['nameproduct'].'('.$value['size'].' cm)</h3>
-		                        <p class="header__cart-item-price">'.$product['price'].'USD</p>
+		                        <p class="header__cart-item-price">'.round($product['price']-$product['price']*$product['discount']/100, 2).'$</p>
 		                    </div>
 	                </a>
 	                    <div class="header__cart-item-body">
