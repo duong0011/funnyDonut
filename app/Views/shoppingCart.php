@@ -83,6 +83,7 @@
             box-shadow: 0 0 5px var(--header-color);
             margin-top: 30px;
             padding: 20px;
+            font-size: 16px;
         }
 
         .product-detail{
@@ -183,7 +184,7 @@
             color: white;
             border: 1px solid var(--header-color);
             border-radius: 5px;
-            padding: 6px 12px 5px;
+            padding: 6px 12px 8px;
             cursor: pointer;
         }
 
@@ -202,6 +203,16 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
             line-height: normal;
+        }
+
+        a.link-go-home {
+            color: var(--header-color);
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        a.link-go-home:hover {
+            opacity: 0.9;
         }
     </style>
 </head>
@@ -896,7 +907,7 @@
                         $('#list-produc-selected').html('');
                         if(data == 1) {
                             $('.product-list').text('');
-                            $('.product-list').append('go to home to buy somthing');
+                            $('.product-list').append('Your shopping cart is empty. Go to <a href="http://localhost/funnyDonut" class="link-go-home">BUY</a> now!');
                         }                        
                         data.forEach( function(element) {
                             $('#list-produc-selected').append(element);
