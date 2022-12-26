@@ -1226,7 +1226,7 @@
                     <div class="row">
                         <div class="grid">
                             <p class="copyright-title">
-                                Student of ITMO University
+                            A product of ITMO University students 
                             </p>
                         </div>
                     </div>

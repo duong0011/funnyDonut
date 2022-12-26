@@ -510,122 +510,97 @@
             <!-- main footer -->
             <div class="main-footer">
                 <div class="grid wide">
-                    <div class="row sm-gutter main-footer-info">
-                        <div class="col l-2-4 m-4 c-6">
-                            <h3 class="footer__heading">CUSTOMER SERVICE</h3>
-                            <ul class="footer-list">
-                                <li>
-                                    <a href="#" class="footer-item-link">Help Center</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="footer-item-link">How to buy</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="footer-item-link">Payment</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="footer-item-link">Shipping</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="footer-item-link">Return & Refund</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="footer-item-link">Contact Us</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <div class="col l-2-4 m-4 c-6">
-                            <h3 class="footer__heading">ABOUT SHOP</h3>
-                            <ul class="footer-list">
-                                <li>
-                                    <a href="#" class="footer-item-link">About Us</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="footer-item-link">Shop Policies</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="footer-item-link">Privacy Policy</a>
-                                </li>
-                                <a href="#" class="footer-item-link">Media Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col l-2-4 m-4 c-12 pay-and-ship">
-                            <div>
-                                <h3 class="footer__heading">PAY MENT</h3>
-                                <div class="footer-sale-ship">
-                                    <img src="<?= base_url()?>/assets/img/pay/1.PNG" class="footer-item-sale-ship">
-                                    <img src="<?= base_url()?>/assets/img/pay/2.PNG" class="footer-item-sale-ship">
-
-                                </div>
+                        <div class="row sm-gutter main-footer-info">
+                            <div class="col l-2 m-4" style="margin-left:15px;">
+                                <h3 class="footer__heading">CUSTOMER SERVICE</h3>
+                                <ul class="footer-list">                                
+                                    <li>
+                                        <a href="<?= base_url()?>/assets/pdf_files/Payment-Agreement.pdf" class="footer-item-link">Payment</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?= base_url()?>/assets/pdf_files/shipping-policy.pdf" class="footer-item-link">Shipping</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?= base_url()?>/assets/pdf_files/return-refund-policy.pdf" class="footer-item-link">Return & Refund</a>
+                                    </li>                       
+                                </ul>
                             </div>
-                            <!-- <div>
-                                    <h3 class="footer__heading">ĐƠN VỊ VẬN CHUYỂN</h3>
+                            <div class="col l-2 m-4 c-6">
+                                <h3 class="footer__heading">ABOUT SHOP</h3>
+                                <ul class="footer-list">
+                                    <li>
+                                        <a href="#" class="footer-item-link">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?= base_url()?>/assets/pdf_files/shop-policy.pdf" class="footer-item-link">Shop Policies</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?= base_url()?>/assets/pdf_files/policy.pdf" class="footer-item-link">Privacy Policy</a>
+                                    </li>                                                          
+                                </ul>
+                            </div>
+                            <div class="col l-2 m-4 c-12 pay-and-ship">
+                                <div>
+                                    <h3 class="footer__heading">PAY MENT</h3>
                                     <div class="footer-sale-ship">
-                                        <img src="<?= base_url()?>/assets/img/ship/1.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>/assets/img/ship/2.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>/assets/img/ship/3.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>/assets/img/ship/4.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>/assets/img/ship/5.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>/assets/img/ship/6.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>/assets/img/ship/7.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>/assets/img/ship/8.PNG" class="footer-item-sale-ship">
-                                        <img src="<?= base_url()?>/assets/img/ship/9.PNG" class="footer-item-sale-ship">
+                                        <img src=" <?= base_url()?>/assets/img/pay/1.PNG" class="footer-item-sale-ship">
+                                        <img src=" <?= base_url()?>/assets/img/pay/2.PNG" class="footer-item-sale-ship">
+                                                                       
                                     </div>
-                                </div> -->
-                        </div>
-                        <div class="col l-2-4 m-4 c-6">
-                            <h3 class="footer__heading">FOLLOW US</h3>
-                            <ul class="footer-list">
-                                <li>
-                                    <a href="#" class="footer-item-link footer-item-link-fb">
-                                        <i class="footer-item-icon fa-brands fa-vk"></i>
-                                        VKontakte
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="footer-item-link footer-item-link-is">
-                                        <i class="footer-item-icon fab fa-instagram-square"></i>
-                                        Instagram
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="footer-item-link footer-item-link-li">
-                                        <i class="footer-item-icon fab fa-telegram"></i>
-                                        Telegram
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col l-2-4 m-8 c-6">
-                            <h3 class="footer__heading">DOWNLOAD APP</h3>
-                            <div class="footer-download">
-                                <a href="#" class="footer-download-link">
-                                    <img src="<?= base_url()?>/assets/img/qr/qr-code.png" class="footer-download-qr">
-                                </a>
-                                <div class="footer-download-app">
+                                </div>
+                        
+                            </div>
+                            <div class="col l-2 m-4 c-6">
+                                <h3 class="footer__heading">FOLLOW US</h3>
+                                <ul class="footer-list">
+                                    <li>
+                                        <a href="#" class="footer-item-link footer-item-link-fb">
+                                            <i class="footer-item-icon fa-brands fa-vk"></i>
+                                            VKontakte
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="footer-item-link footer-item-link-is">
+                                            <i class="footer-item-icon fab fa-instagram-square"></i>
+                                            Instagram
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="footer-item-link footer-item-link-li">
+                                            <i class="footer-item-icon fab fa-telegram"></i>
+                                            Telegram
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col l-2 m-4 c-6">
+                                <h3 class="footer__heading">DOWNLOAD APP</h3>
+                                <div class="footer-download">
                                     <a href="#" class="footer-download-link">
-                                        <img src="<?= base_url()?>/assets/img/qr/gg-play.png" class="footer-download-app-img">
+                                        <img src=" <?= base_url()?>/assets/img/qr/qr-code.png" class="footer-download-qr">
                                     </a>
-                                    <a href="#" class="footer-download-link">
-                                        <img src="<?= base_url()?>/assets/img/qr/app-store.png" class="footer-download-app-img">
-                                    </a>
-                                    <a href="#" class="footer-download-link">
-                                        <img src="<?= base_url()?>/assets/img/qr/app-gallery.png" class="footer-download-app-img">
-                                    </a>
-                                    <a href="#" class="footer-download-link">
-                                        <img src="<?= base_url()?>/assets/img/qr/ltp-img.png" class="footer-download-app-img">
-                                    </a>
+                                    <div class="footer-download-app">
+                                        <a href="#" class="footer-download-link">
+                                            <img src=" <?= base_url()?>/assets/img/qr/gg-play.png" class="footer-download-app-img">
+                                        </a>
+                                        <a href="#" class="footer-download-link">
+                                            <img src=" <?= base_url()?>/assets/img/qr/app-store.png" class="footer-download-app-img">
+                                        </a>
+                                        <a href="#" class="footer-download-link">
+                                            <img src=" <?= base_url()?>/assets/img/qr/app-gallery.png" class="footer-download-app-img">
+                                        </a>
+                                        <a href="#" class="footer-download-link">
+                                            <img src=" <?= base_url()?>/assets/img/qr/ltp-img.png" class="footer-download-app-img">
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <!-- copyright -->
                     <div class="row">
                         <div class="grid">
                             <p class="copyright-title">
-                                Student of ITMO University
+                            A product of ITMO University students 
                             </p>
                         </div>
                     </div>
@@ -636,22 +611,22 @@
                 <div class="grid wide">
                     <div class="row other-footer-heading">
                         <div class="col l-2">
-                            <a href="#" class="other-footer-link">
+                            <a href="<?= base_url()?>/assets/pdf_files/policy.pdf" class="other-footer-link">
                                 PRIVACY POLICY
                             </a>
                         </div>
                         <div class="col l-2">
-                            <a href="#" class="other-footer-link">
+                            <a href="<?= base_url()?>/assets/pdf_files/Terms-of-Service-and-violation.pdf" class="other-footer-link">
                                 TERM OF SERVICE
                             </a>
                         </div>
                         <div class="col l-2">
-                            <a href="#" class="other-footer-link">
+                            <a href="<?= base_url()?>/assets/pdf_files/shipping-policy.pdf" class="other-footer-link">
                                 SHIPPING POLICY
                             </a>
                         </div>
                         <div class="col l-2">
-                            <a href="#" class="other-footer-link">
+                            <a href="<?= base_url()?>/assets/pdf_files/Terms-of-Service-and-violation.pdf" class="other-footer-link">
                                 VIOLATION
                             </a>
                         </div>
