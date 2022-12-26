@@ -1606,7 +1606,7 @@
                        $.each(response.hints, function(index,val) {
                              $('.hintsforproduct').append("\
                             <li class='header__search-history-item'>\
-                                <a href='<?=base_url('showProduct?id=')?>"+val.pid+"'>"+val.nameproduct+"</a>\
+                                <a href='<?=base_url().('/showProduct?id=')?>"+val.pid+"'>"+val.nameproduct+"</a>\
                             </li>");
                        });
                     }

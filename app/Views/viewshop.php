@@ -559,8 +559,8 @@
                          <?php if(session()->get('loged_user') != $seller['unitid']): ?>
 						<div class="shop__description" style="margin-bottom:10px">
                             <button class="magazin__info-btn follow-button" style="width: 180px;  height: 28px; font-size: 1.2em; border: none; border-radius: 4px;">
-                                <i class="magazin__info-btn-icon fa-solid fa-plus"></i>
-                                <span class="magazin__info-btn-label follow-status"><?=$followerStatus?></span>
+                                <i id="follow" class="magazin__info-btn-icon fa-solid fa-plus"></i>
+                                <span class="magazin__info-btn-label follow-status" onclick="changeIcon()"><?=$followerStatus?></span>
                             </button>
                             <button class="magazin__info-btn magazin__info-btn--chat" style="width: 180px; height: 28px; font-size: 1.2em; border: none; border-radius: 4px;">
                                 <i class="magazin__info-btn-icon fa-solid fa-comments"></i>
@@ -1585,6 +1585,10 @@
                 loadProduct("", "<?=base_url('/viewshop/fetch')?>?sellerID="+curl.searchParams.get('sellerID'));
             }
         });
+    }
+    function changeIcon() {
+        document.getElementById("follow").classList.add("fa-check");
+        document.getElementById("follow").classList.remove("fa-plus");
     }
 </script>
 
