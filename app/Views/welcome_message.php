@@ -740,6 +740,9 @@
                                         <a href="<?= base_url('viewshop?sellerID=').session()->get('loged_user')?>">My shop</a>
                                     </li>
                                     <li class="header__nav-user-item">
+                                        <a href="<?= base_url('/orderHistory') ?>">History</a>
+                                    </li>
+                                    <li class="header__nav-user-item">
                                         <a href="<?= base_url().'/login/logout' ?>" >Logout</a>
                                     </li>
                                 </ul>
@@ -1134,28 +1137,18 @@
             <div class="main-footer">
                 <div class="grid wide">
                         <div class="row sm-gutter main-footer-info">
-                            <div class="col l-2-4" style="margin-left:15px;">
+                            <div class="col l-2 m-4" style="margin-left:15px;">
                                 <h3 class="footer__heading">CUSTOMER SERVICE</h3>
-                                <ul class="footer-list">
+                                <ul class="footer-list">                                
                                     <li>
-                                        <a href="#" class="footer-item-link">Help Center</a>
+                                        <a href="<?= base_url()?>/assets/pdf_files/Payment-Agreement.pdf" class="footer-item-link">Payment</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="footer-item-link">How to buy</a>
+                                        <a href="<?= base_url()?>/assets/pdf_files/shipping-policy.pdf" class="footer-item-link">Shipping</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="footer-item-link">Payment</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link">Shipping</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link">Return & Refund</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-item-link">Contact Us</a>
-                                    </li>
-                                
+                                        <a href="<?= base_url()?>/assets/pdf_files/return-refund-policy.pdf" class="footer-item-link">Return & Refund</a>
+                                    </li>                       
                                 </ul>
                             </div>
                             <div class="col l-2 m-4 c-6">
@@ -1165,13 +1158,11 @@
                                         <a href="#" class="footer-item-link">About Us</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="footer-item-link">Shop Policies</a>
+                                        <a href="<?= base_url()?>/assets/pdf_files/shop-policy.pdf" class="footer-item-link">Shop Policies</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="footer-item-link">Privacy Policy</a>
-                                    </li>
-                                        <a href="#" class="footer-item-link">Media Contact</a>
-                                    </li>
+                                        <a href="<?= base_url()?>/assets/pdf_files/policy.pdf" class="footer-item-link">Privacy Policy</a>
+                                    </li>                                                          
                                 </ul>
                             </div>
                             <div class="col l-2 m-4 c-12 pay-and-ship">
@@ -1208,7 +1199,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col l-2 m-8 c-6">
+                            <div class="col l-2 m-4 c-6">
                                 <h3 class="footer__heading">DOWNLOAD APP</h3>
                                 <div class="footer-download">
                                     <a href="#" class="footer-download-link">
@@ -1235,7 +1226,7 @@
                     <div class="row">
                         <div class="grid">
                             <p class="copyright-title">
-                                Student of ITMO University
+                            A product of ITMO University students 
                             </p>
                         </div>
                     </div>
@@ -1246,31 +1237,31 @@
                 <div class="grid wide">
                     <div class="row other-footer-heading">
                         <div class="col l-2">
-                            <a href="#" class="other-footer-link">
+                            <a href="<?= base_url()?>/assets/pdf_files/policy.pdf" class="other-footer-link">
                                 PRIVACY POLICY
                             </a>
                         </div>
                         <div class="col l-2">
-                            <a href="#" class="other-footer-link">
+                            <a href="<?= base_url()?>/assets/pdf_files/Terms-of-Service-and-violation.pdf" class="other-footer-link">
                                 TERM OF SERVICE
                             </a>
                         </div>
                         <div class="col l-2">
-                            <a href="#" class="other-footer-link">
+                            <a href="<?= base_url()?>/assets/pdf_files/shipping-policy.pdf" class="other-footer-link">
                                 SHIPPING POLICY
                             </a>
                         </div>
                         <div class="col l-2">
-                            <a href="#" class="other-footer-link">
+                            <a href="<?= base_url()?>/assets/pdf_files/Terms-of-Service-and-violation.pdf" class="other-footer-link">
                                 VIOLATION
                             </a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="grid other-footer-info">
-                            <p class="other-footer-title">About Shop</p>
+                            <p class="other-footer-title">About Us</p>
                             <p class="other-footer-more">
-                                Address: ITMO University.Support call center: 8(921)xxx xx xx - Email: abc@funnydonut.com
+                                Address: ITMO University      -      Support hotline: +7 (931) 358 23 89      -       Email: cake@funnydonut.com
                             </p>
                             <!-- <p class="other-footer-more">
                                 Chịu Trách Nhiệm Quản Lý Nội Dung: Nguyễn Đức Trí -
