@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
     </script>
-
+     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
     <style>
         .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.has-cart,
         .header__cart--has-cart .header__cart-count:hover~.header__cart-list.has-cart,
@@ -1161,11 +1161,12 @@
                                         <li class="profile-phone">
                                             <span>Phone number</span>
                                             <input class="profile-phone profile-phone-input form-input" value="<?= $user['phonenumber'];?>">
+                                            <span id = "error_cell-phone" class = "input-alert-error"></span>
                                         </li>
                                         <li class="profile-address">
                                             <span>Address</span>
                                             <select id="country-state" name="country-state" class="shortenedSelect">
-                                                <option value=""><?= $user['city'] == '' ? "Select State" : $user['city'] ?></option>
+                                                <option value="<?= $user['city'] == '' ? "Select State" : $user['city'] ?>"><?= $user['city'] == '' ? "Select State" : $user['city'] ?></option>
                                                 <option value="ALT">Altai Krai</option>
                                                 <option value="AL">Altai Republic</option>
                                                 <option value="AMU">Amur Oblast</option>
@@ -1323,73 +1324,7 @@
                                 PAY
                             </p>
                             <div class="containercreditcard">
-                                <div class="card-container row">
-                                    <div class="cc-font col l-5">
-                                        <span class="chip"></span>
-                                        <span class="nubank-logo"></span>
-                                        <div class="logo">
-                                            <svg version="1.1" id="visa" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                                width="47.834px" height="47.834px" viewBox="0 0 47.834 47.834" style="enable-background:new 0 0 47.834 47.834;">
-                                                <g>
-                                                    <g>
-                                                        <path d="M44.688,16.814h-3.004c-0.933,0-1.627,0.254-2.037,1.184l-5.773,13.074h4.083c0,0,0.666-1.758,0.817-2.143
-                                                         c0.447,0,4.414,0.006,4.979,0.006c0.116,0.498,0.474,2.137,0.474,2.137h3.607L44.688,16.814z M39.893,26.01
-                                                         c0.32-0.819,1.549-3.987,1.549-3.987c-0.021,0.039,0.317-0.825,0.518-1.362l0.262,1.23c0,0,0.745,3.406,0.901,4.119H39.893z
-                                                         M34.146,26.404c-0.028,2.963-2.684,4.875-6.771,4.875c-1.743-0.018-3.422-0.361-4.332-0.76l0.547-3.193l0.501,0.228
-                                                         c1.277,0.532,2.104,0.747,3.661,0.747c1.117,0,2.313-0.438,2.325-1.393c0.007-0.625-0.501-1.07-2.016-1.77
-                                                         c-1.476-0.683-3.43-1.827-3.405-3.876c0.021-2.773,2.729-4.708,6.571-4.708c1.506,0,2.713,0.31,3.483,0.599l-0.526,3.092
-                                                         l-0.351-0.165c-0.716-0.288-1.638-0.566-2.91-0.546c-1.522,0-2.228,0.634-2.228,1.227c-0.008,0.668,0.824,1.108,2.184,1.77
-                                                         C33.126,23.546,34.163,24.783,34.146,26.404z M0,16.962l0.05-0.286h6.028c0.813,0.031,1.468,0.29,1.694,1.159l1.311,6.304
-                                                         C7.795,20.842,4.691,18.099,0,16.962z M17.581,16.812l-6.123,14.239l-4.114,0.007L3.862,19.161
-                                                         c2.503,1.602,4.635,4.144,5.386,5.914l0.406,1.469l3.808-9.729L17.581,16.812L17.581,16.812z M19.153,16.8h3.89L20.61,31.066
-                                                         h-3.888L19.153,16.8z"/>
-                                                    </g>
-                                                </g>
-                                            </svg>
-                                        </div>
-                                        <div class="number">123 123 123 123</div>
-                                        <div class="info row">
-                                            <div class="info-name col l-6">
-                                                <span class="card-holder">CARD HOLDER</span>
-                                                <span class="card-holder-name">Cassio Cardoso</span>
-                                            </div>
-                                            <div class="info-date col l-6">
-                                                <span class="expires">EXPIRES</span>
-                                                <span class="cc-date">02/18</span>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                    <div class="cc-back col l-5">
-                                        <div class="black"></div>
-                                        <p>CVV</p>
-                                        <div class="cvv-input">
-                                            <input type="text" name="" id="">
-                                        </div>
-                                        <div class="logo">
-                                            <svg version="1.1" id="visa" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                                width="47.834px" height="47.834px" viewBox="0 0 47.834 47.834" style="enable-background:new 0 0 47.834 47.834;">
-                                                <g>
-                                                    <g>
-                                                        <path d="M44.688,16.814h-3.004c-0.933,0-1.627,0.254-2.037,1.184l-5.773,13.074h4.083c0,0,0.666-1.758,0.817-2.143
-                                                         c0.447,0,4.414,0.006,4.979,0.006c0.116,0.498,0.474,2.137,0.474,2.137h3.607L44.688,16.814z M39.893,26.01
-                                                         c0.32-0.819,1.549-3.987,1.549-3.987c-0.021,0.039,0.317-0.825,0.518-1.362l0.262,1.23c0,0,0.745,3.406,0.901,4.119H39.893z
-                                                         M34.146,26.404c-0.028,2.963-2.684,4.875-6.771,4.875c-1.743-0.018-3.422-0.361-4.332-0.76l0.547-3.193l0.501,0.228
-                                                         c1.277,0.532,2.104,0.747,3.661,0.747c1.117,0,2.313-0.438,2.325-1.393c0.007-0.625-0.501-1.07-2.016-1.77
-                                                         c-1.476-0.683-3.43-1.827-3.405-3.876c0.021-2.773,2.729-4.708,6.571-4.708c1.506,0,2.713,0.31,3.483,0.599l-0.526,3.092
-                                                         l-0.351-0.165c-0.716-0.288-1.638-0.566-2.91-0.546c-1.522,0-2.228,0.634-2.228,1.227c-0.008,0.668,0.824,1.108,2.184,1.77
-                                                         C33.126,23.546,34.163,24.783,34.146,26.404z M0,16.962l0.05-0.286h6.028c0.813,0.031,1.468,0.29,1.694,1.159l1.311,6.304
-                                                         C7.795,20.842,4.691,18.099,0,16.962z M17.581,16.812l-6.123,14.239l-4.114,0.007L3.862,19.161
-                                                         c2.503,1.602,4.635,4.144,5.386,5.914l0.406,1.469l3.808-9.729L17.581,16.812L17.581,16.812z M19.153,16.8h3.89L20.61,31.066
-                                                         h-3.888L19.153,16.8z"/>
-                                                    </g>
-                                                </g>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="icon-del">
-                                        <i class="fa-solid fa-trash-can"></i>
-                                    </div>
-                                </div>
+                                
                             </div>
                             <br>
                             <input type="button" value="New card" class="pay-btn-new" onclick="showNewPay()">
@@ -1853,6 +1788,10 @@
             $('#error_address').text("You need to select the city and fill in your specific address");
             return false;
         }
+        if(!validatePhoneNumber($('.profile-phone-input').val())) {
+           $('#error_cell-phone').text("Invalid phone number");
+            return false;
+        }
         let data = {
             'fullname' :$('#fullnameuser').val(),
             'gender' : gender,
@@ -2026,7 +1965,7 @@
          return date instanceof Date && !isNaN(date.getTime());
     }
     function validatePhoneNumber(input_str) {
-      var re = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+      var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
       return re.test(input_str);
     }
     // them the ngang hang
@@ -2143,7 +2082,20 @@
           contentType: false,
           processData: false,
           success: function (data) {
-            console.log(data);
+            $('#credit-card-error').html('');
+            if(data == 1) {
+              modal.classList.remove('open');
+              Swal.fire({
+                icon :  'success',
+                text : "Successfully"
+              });
+              return;
+            }
+            Swal.fire({
+                icon :  'error',
+                text : "This card number already exists"
+              });
+           
           }
         });
     }
@@ -2180,6 +2132,30 @@
                 }
             });
     }
+    function cardFetch() {
+      $.ajax({
+          url: '<?=base_url('profile/fetchCard')?>',
+          type: 'post',
+          data: {},
+          success: function (data) {
+            $('.containercreditcard').html('');
+            data.forEach( function(item, index) {
+               $('.containercreditcard').append(item);
+            });
+          }
+        });
+    }
+    function deleteCard(id) {
+      $.ajax({
+          url: '<?=base_url('profile/deleteCard')?>/' + id,
+          type: 'post',
+          
+          success: function (data) {
+            cardFetch();
+          }
+        });
+    }
+    cardFetch();
  </script>
 </body>
 </html>

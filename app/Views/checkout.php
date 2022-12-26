@@ -657,32 +657,8 @@
                                     <h3>New notification received</h3>
                                 </header>
                                 <ul class="header__notifi-list">
-                                    <li class="header__notifi-item">
-                                        <a href="#" class="header__notifi-link">
-                                            <img src="<?= base_url()?>/assets/img/sp/casio.png" class="header__notifi-img">
-                                            <div class="header__notifi-info">
-                                                <div class="header__notifi-name">
-                                                    Casio fx 580 VN Plus
-                                                </div>
-                                                <div class="header__notifi-desc">
-                                                    Mua Casio 580 của LTP bao xịn, bao mượt, bao đẹp
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="header__notifi-item">
-                                        <a href="#" class="header__notifi-link">
-                                            <img src="<?= base_url()?>/assets/img/sp/iphone.png" class="header__notifi-img">
-                                            <div class="header__notifi-info">
-                                                <div class="header__notifi-name">
-                                                    Điện Thoại iPhone 13 Pro 128GB - Hàng Nhập Khẩu
-                                                </div>
-                                                <div class="header__notifi-desc">
-                                                    3 Camera: Ống kính góc rộng f/1.5 - Tele f/2.8 - Siêu rộng f/1.8
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
+                                   
+                                    
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
                                             <img src="<?= base_url()?>/assets/img/sp/iphone2.png" class="header__notifi-img">
@@ -864,8 +840,8 @@
                     <i class="fa-solid fa-location-dot"></i>
                     <span>Delivery address</span>
                     <div class="address-user">
-                        <span class="address-name">Tran A (+84) 342446542</span>
-                        <span>123 Đường Số 1, Phường Cổ Nhuế 1, Quận Bắc Từ Liêm, Hà Nội</span>
+                        <span class="address-name" id = "name-default"><?=$user['fullname'].' '.$user['phonenumber']?> </span>
+                        <span id = "address-default"><?=$user['specificaddress'].', '.$user['city']  ?></span>
                         <span class="address-default">default</span>
                         <span class="address-change" onclick="showNewAddress()">Change</span>
                     </div>
@@ -910,10 +886,9 @@
                         </div>
                         <div class="col l-12 choose-method method-cash">
                             <label class="">
-                                <input type="radio" name="radio" id="input-cash" checked>
+                                <input type="radio" name="radio" id="input-cash"  checked>
                                 Cash
                             </label>
-                            <p>Cash collection fee: <span>0$</span></p>
                         </div>
                         <div class="col l-12 choose-method method-card">
                             <label class="">
@@ -1142,12 +1117,14 @@
         <div class="modal-addr-container">
             <form action="" class="form-addr-new">
                 <p class="modal-text">New address</p>
-                <input type="text" placeholder="Name" class="addr-new-input">
+                <input type="text" placeholder="Name" id = 'new-name' class="addr-new-input">
                 <br>
-                <input type="tel" placeholder="Phone number" class="addr-new-input">
+                <input type="tel" placeholder="Phone number" id = 'new-cell-phone' class="addr-new-input">
                 <br>
-                <input type="text" placeholder="Address" class="addr-new-input">
+                <p class="" id='cell-phone-error'></p>
+                <input type="text" placeholder="Address" class="addr-new-input" id ='new-address'>
                 <br>
+                <p class="" id = "name-address-error"></p>
                 <input type="button" value="Save" class="addr-new-btn" onclick="hideNewAddress()">
                 <input type="button" value="Back" class="addr-new-btn add-new-btn-back" onclick="hideNewAddress()">
             </form>
@@ -1170,6 +1147,21 @@
             modalAddress.classList.add('open');
         }
         function hideNewAddress(){
+            var error = false;
+            if(!validatePhoneNumber($('#new-cell-phone').val())) {
+                $('#cell-phone-error').html('Invalid phonenumber');
+                error = true;
+            }
+            if($('#new-name').val().length == 0 || $('#new-address').val() == 0) {
+                $('#name-address-error').html('Name and address is requied');
+                error = true;
+            }
+            if(error) return false;
+            $('#cell-phone-error').html('');
+             $('#name-address-error').html('');
+            $('#name-default').text($('#new-name').val() + ' ' + $('#new-cell-phone').val());
+            $('#address-default').text($('#new-address').val());
+
             modalAddress.classList.remove('open');
         }
 
@@ -1193,6 +1185,7 @@
                     }
                 });
         }
+        
         function loadCartShopping() {
         $('#cart-list-item').html("");
         $.ajax({
@@ -1226,6 +1219,10 @@
                     loadCartShopping();
                 }
             });
+    }
+    function validatePhoneNumber(input_str) {
+      var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+      return re.test(input_str);
     }
     </script>
 

@@ -6,6 +6,7 @@ use App\Models\index_model;
 use App\Models\Product;
 use App\Models\saveIMGProduct;
 use App\Models\comment;
+use App\Models\CreditCard;
 use App\Models\CartShopping;
 use App\Models\imgComment;
 class checkout extends Controller
@@ -21,10 +22,11 @@ class checkout extends Controller
 		$model = new index_model();
 		if(session()->has('loged_user')) {
         	$user = new userModel();
-        	$this->data['user'] = $user->select('fullname, avatar, phonenumber')->getWhere(['unitid' => session()->get('loged_user')])->getRowArray();
+        	$this->data['user'] = $user->select('fullname, avatar, phonenumber, city, specificaddress')->getWhere(['unitid' => session()->get('loged_user')])->getRowArray();
         }else {
         	return redirect()->to(base_url().'/login');
         }
+        
 		return view('checkout', $this->data);
 	}
 	public function fetch()
