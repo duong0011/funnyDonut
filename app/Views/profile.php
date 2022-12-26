@@ -1706,6 +1706,7 @@
                   <input type="text" id="card-ccv" maxlength="3" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"/>
                 </fieldset>
                 <button class="btn" onclick="saveCreditCard()"><i class="fa fa-lock"></i> submit</button>
+                <p class="input-alert-error" id = 'credit-card-error'></p>
               </form>
             </div>
         </div>
@@ -2021,7 +2022,6 @@
             if ($t.val().length > 3) {
                 $t.next().focus();
               }
-              
               var card_number = '';
               $('.input-cart-number').each(function(){
                 card_number += $(this).val() + ' ';
@@ -2030,13 +2030,12 @@
                 }
               })
         $('.credit-card-box .number').html(card_number);
-        data.append('card_number', card_number);
     });
      
     $('#card-holder').on('keyup change', function(){
       $t = $(this);
       $('.credit-card-box .card-holder div').html($t.val());
-      data.append('card_holder', $t.val());
+      
     });
      
      
@@ -2047,7 +2046,35 @@
       $('.card-expiration-date div').html(m + '/' + y);
 
     })
-     
+    function saveCreditCard() {
+      var data = new FormData();
+      $('.input-cart-number').on('keyup change', function(){
+          $t = $(this);
+              if ($t.val().length > 3) {
+                  $t.next().focus();
+                }
+                
+                var card_number = '';
+                $('.input-cart-number').each(function(){
+                  card_number += $(this).val() + ' ';
+                  if ($(this).val().length == 4) {
+                    $(this).next().focus();
+                  }
+                })
+          data.append('card_number', card_number);
+      });
+       
+      $('#card-holder').on('keyup change', function(){
+        $t = $(this);
+        data.append('card_holder', $t.val());
+      });
+       
+      $('#expire-month, #expire-year').change(function(){
+        m = $('#expire-month option').index($('#expire-month option:selected'));
+        m = (m < 10) ? '0' + m : m;
+        y = $('#expire-year').val().substr(2,2);
+      })
+    }
     $('#card-ccv').on('focus', function(){
       $('.credit-card-box').addClass('hover');
     }).on('blur', function(){
@@ -2074,36 +2101,38 @@
     };
     loadCartShopping();
     function saveCreditCard() {
-      var data = new FormData();
-      $('.input-cart-number').on('keyup change', function(){
-          $t = $(this);
-              if ($t.val().length > 3) {
-                  $t.next().focus();
-                }
-                
-                var card_number = '';
-                $('.input-cart-number').each(function(){
-                  card_number += $(this).val() + ' ';
-                  if ($(this).val().length == 4) {
-                    $(this).next().focus();
-                  }
-                })
-          data.append('card_number', card_number);
-      });
-       
-      $('#card-holder').on('keyup change', function(){
-        $t = $(this);
-        data.append('card_holder', $t.val());
-      });
-       
-       
-      $('#expire-month, #expire-year').change(function(){
-        m = $('#expire-month option').index($('#expire-month option:selected'));
-        m = (m < 10) ? '0' + m : m;
-        y = $('#expire-year').val().substr(2,2);
-        $('.card-expiration-date div').html(m + '/' + y);
-
+      var _data = new FormData();
+      var card_number = '';
+      var getError = false;
+      $('.input-cart-number').each(function(){
+        card_number += $(this).val() + ' ';
       })
+      if(card_number.length != 20) getError = true;
+      _data.append('card_number', card_number);
+      $t = $('#card-holder');
+      if(!$t.val().length ) getError = true;
+      _data.append('card_holder', $t.val());    
+      m = $('#expire-month option').index($('#expire-month option:selected'));
+      m = (m < 10) ? '0' + m : m;
+      y = $('#expire-year').val().substr(2,2);
+      _data.append('date', m+'/'+y);
+      if(!(m.length && y.length)) getError = true;
+      _data.append('ccv', $('#card-ccv').val());
+      if(!$('#card-ccv').val().length) getError = true;
+      if(getError) {
+        $('#credit-card-error').html('Please fill out the information completely');
+        return 0;
+      }
+      $.ajax({
+          url: '<?=base_url('profile/saveCreditCard')?>',
+          type: 'post',
+          data: _data,
+          contentType: false,
+          processData: false,
+          success: function (data) {
+            console.log(data);
+          }
+        });
     }
     function loadCartShopping() {
         $('#cart-list-item').html("");

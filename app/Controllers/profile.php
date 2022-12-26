@@ -99,4 +99,8 @@ class Profile extends Controller
 			$builder->where('aid', $id)->delete();
 		}
 	}
+	public function saveCreditCard()
+	{
+		print_r($_POST);
+	}
 }
