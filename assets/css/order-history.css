@@ -169,13 +169,14 @@
 }
 
 .block_order{
-    padding: 15px 5px 10px;
+    padding: 15px 17px 10px;
     display: block;
     background-color: #8b3434;
     color: white;
     font-size: 25px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    /* padding-left: 20px; */
 }
 
 .block-price{

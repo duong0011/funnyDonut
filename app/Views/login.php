@@ -149,7 +149,7 @@
 
         <!-- Footer Begin-->
         <footer class="footer">
-            <p class="footer-copyright">Student of ITMO university</p>
+            <p class="footer-copyright">Product of students of ITMO university</p>
         </footer>
         <!-- Footer End-->
     </div>    

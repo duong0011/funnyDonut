@@ -231,7 +231,7 @@
 
     <style>
         span.date-order {
-            margin-left: 158px;
+            float: right;          
         }
     </style>
 </head>
