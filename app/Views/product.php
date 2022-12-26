@@ -276,7 +276,7 @@
         }
 
         .push__comment-icon-append {
-            color: #999;
+            color: var(--header-color);
         }
 
         .push__comment-icon-send {
