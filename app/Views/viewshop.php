@@ -948,9 +948,9 @@
                     </div>
                     <div class="row">
                         <div class="grid other-footer-info">
-                            <p class="other-footer-title">About Shop</p>
+                            <p class="other-footer-title">About Us</p>
                             <p class="other-footer-more">
-                                Address: ITMO University.Support call center: 8(921)xxx xx xx - Email: abc@funnydonut.com
+                                Address: ITMO University      -      Support hotline: +7 (931) 358 23 89      -       Email: cake@funnydonut.com
                             </p>
                             <!-- <p class="other-footer-more">
                                 Chịu Trách Nhiệm Quản Lý Nội Dung: Nguyễn Đức Trí -
