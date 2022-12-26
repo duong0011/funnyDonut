@@ -32,8 +32,20 @@
             display: flex;
         }
         
+        .icon-del {
+            color: var(--header-color);
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        .icon-del i:hover {
+            cursor: pointer;
+            opacity: 0.9;
+        }
+
         .pay-btn-new{
-            margin: 0 25px 30px;
+            margin: 0 9px 30px;
             color: var(--white-color);
             background-color: var(--primary-color);
             font-size: 18px;
@@ -343,9 +355,7 @@
           min-height: 100%;
           font-family: 'Open sans', sans-serif;
         }
-        body {
-          background: linear-gradient(130deg, #74ebd5, #ACB6E5);
-        }
+
         .form fieldset {
           border: none;
           padding: 0;
@@ -1375,6 +1385,9 @@
                                                 </g>
                                             </svg>
                                         </div>
+                                    </div>
+                                    <div class="icon-del">
+                                        <i class="fa-solid fa-trash-can"></i>
                                     </div>
                                 </div>
                             </div>
