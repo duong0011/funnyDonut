@@ -17,7 +17,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+    <script src="https://malsup.github.io/jquery.form.js"></script> 
     <style>
         <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
@@ -295,6 +298,17 @@
             color: var(--header-color);
             font-weight: 500;
         }
+
+        .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.has-cart,
+        .header__cart--has-cart .header__cart-count:hover~.header__cart-list.has-cart,
+        .header__cart--has-cart .header__cart-list.has-cart:hover {
+            display: flex;
+        }
+
+        .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.no-cart,
+        .header__cart--has-cart .header__cart-list.no-cart:hover{
+            display: flex;
+        }
     </style>
     
 </head>
@@ -520,147 +534,20 @@
                     <!-- header__cart--has-cart -->
                     <div class="header__cart header__cart--has-cart">
                         <i class="header__cart-icon fas fa-shopping-cart"></i>
-                        <div class="header__cart-count">4</div>
-
+                        <div class="header__cart-count"></div>
+                        
                         <div class="header__cart-list no-cart">
-                            <img src="<?= base_url()?>/assets/img/sp/no-cart.png" class="header__no-cart-img">
-                            <p class="header__no-cart-text">Chưa có sản phẩm</p>
+                            <img src=" <?= base_url()?>/assets/img/sp/no-cart.png" class="header__no-cart-img">
+                            <p class="header__no-cart-text">No product</p>
                         </div>
 
                         <div class="header__cart-list has-cart">
-                            <h4 class="header__cart-heading">Sản phẩm đã chọn</h4>
-                            <ul class="header__cart-list-item">
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/1.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Thanh Thanh 2000 1m57 46kg 88-62-89</h3>
-                                            <p class="header__cart-item-price">2.000USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 2</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/2.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Hồng Ánh 1998 1m62 48kg 89-64-91</h3>
-                                            <p class="header__cart-item-price">2.500USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 1</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/3.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
-                                            <p class="header__cart-item-price">2.800USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 1</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/4.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
-                                            <p class="header__cart-item-price">3.200USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 3</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/5.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Thanh Thanh 2000 1m57 46kg 88-62-89</h3>
-                                            <p class="header__cart-item-price">2.000USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 2</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/6.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Hồng Ánh 1998 1m62 48kg 89-64-91</h3>
-                                            <p class="header__cart-item-price">2.500USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 1</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/7.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
-                                            <p class="header__cart-item-price">2.800USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 1</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/8.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
-                                            <p class="header__cart-item-price">3.200USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 3</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                            <h4 class="header__cart-heading">Selected product</h4>
+                            <ul class="header__cart-list-item" id = "cart-list-item">
+                                
                             </ul>
                             <div class="header__cart-footer">
-                                <a href="#" class="btn btn--primary header__cart-see-cart">Xem giỏ hàng</a>
+                                <a href="<?= base_url('shoppingCart') ?>" class="btn btn--primary header__cart-see-cart">View cart</a>
                             </div>
                         </div>
                     </div>
@@ -688,9 +575,9 @@
                 <div class="row">
                     <div class="c-2 buy-sell">
                         <div class="user-avatar-name">
-                            <p class="user-name">sr14</p>
+                            <p class="user-name"><?= $user['fullname'] ?></p>
                             <div class="user-avtar">
-                                <img class="user-avatar-img" src="<?= base_url()?>/assets/img/profile/avatar_user.png" alt="avatar"/>
+                                <img class="user-avatar-img" src="data:image/jped;base64,<?=$user['avatar'] ?>"> 
                             </div>
                         </div>
                         <div class="buy-sell-list">
@@ -716,201 +603,10 @@
 
                         <!-- ALL ORDER -->
                         <div class="block block-all">
-                            <div class="Order">
-                                <div class="block_order">Order ID: <span>1234</span></div>
-                                <div class="products">
-                                    <div class="infor-receiver">
-                                        <p class="date-order">Order date: <span>20/11/2022</span></p>
-                                        <p class="order-receiver">Receiver: <span>Tran Thuy Nga</span></p>
-                                        <p class="order-delivery-addr">Delivery address: <span>133 duong ABC huyen BCD thanh pho HN</span></p>
-                                    </div>
-                                    <div class="product">
-                                        <div class="product-img ">
-                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
-                                        </div>
-
-                                        <div class="product-infor">
-                                            <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
-                                            <p class="product-seller">Seller: <span>ABC</span></p>
-                                            <p class="product-status">Status: <span>Delivering</span></p>
-                                            <p class="product-price">Price: 
-                                                <span>150</span> 
-                                                <span> $ </span>
-                                            </p> 
-                                            <p class="product-quantity">Quantity: 
-                                                <span>10</span>
-                                                <span> Pc </span>
-                                            </p> 
-                                            <div class="block-price">
-                                                <span>Total: </span>
-                                                <span>1500</span>      
-                                            </div> 
-                                        </div>                                            
-                                    </div>
-                                    
-                                    <div class="product">
-                                        <div class="product-img ">
-                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img1.png" alt="">
-                                        </div>
-
-                                        <div class="product-infor">
-                                            <p class="product-name">Product Name: <span>Blackforest Cream Cake</span></p>
-                                            <p class="product-seller">Seller: <span>ABC1</span></p>
-                                            <p class="product-status">Status: <span>Delivered</span></p>
-                                            <p class="product-price">Price: 
-                                                <span>220</span> 
-                                                <span> $ </span>
-                                            </p> 
-                                            <p class="product-quantity">Quantity: 
-                                                <span>5</span>
-                                                <span> Pc </span>
-                                            </p> 
-                                            <div class="block-price">
-                                                <span>Total: </span>
-                                                <span>1100</span>      
-                                            </div> 
-                                        </div> 
-                                    </div>
-
-                                    <div class="product">
-                                        <div class="product-img ">
-                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
-                                        </div>
-
-                                        <div class="product-infor">
-                                            <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
-                                            <p class="product-seller">Seller: <span>ABC</span></p>
-                                            <p class="product-status">Status: <span>Delivering</span></p>
-                                            <p class="product-price">Price: 
-                                                <span>150</span> 
-                                                <span> $ </span>
-                                            </p> 
-                                            <p class="product-quantity">Quantity: 
-                                                <span>10</span>
-                                                <span> Pc </span>
-                                            </p> 
-                                            <div class="block-price">
-                                                <span>Total: </span>
-                                                <span>1500</span>      
-                                            </div> 
-                                        </div>                                            
-                                    </div>
-                                    
-                                    <div class="product">
-                                        <div class="product-img ">
-                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
-                                        </div>
-
-                                        <div class="product-infor">
-                                            <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
-                                            <p class="product-seller">Seller: <span>ABC</span></p>
-                                            <p class="product-status">Status: <span>Delivering</span></p>
-                                            <p class="product-price">Price: 
-                                                <span>150</span> 
-                                                <span> $ </span>
-                                            </p> 
-                                            <p class="product-quantity">Quantity: 
-                                                <span>10</span>
-                                                <span> Pc </span>
-                                            </p> 
-                                            <div class="block-price">
-                                                <span>Total: </span>
-                                                <span>1500</span>      
-                                            </div> 
-                                        </div>                                            
-                                    </div>
-                                    
-                                    <div class="product">
-                                        <div class="product-img ">
-                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
-                                        </div>
-
-                                        <div class="product-infor">
-                                            <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
-                                            <p class="product-seller">Seller: <span>ABC</span></p>
-                                            <p class="product-status">Status: <span>Delivering</span></p>
-                                            <p class="product-price">Price: 
-                                                <span>150</span> 
-                                                <span> $ </span>
-                                            </p> 
-                                            <p class="product-quantity">Quantity: 
-                                                <span>10</span>
-                                                <span> Pc </span>
-                                            </p> 
-                                            <div class="block-price">
-                                                <span>Total: </span>
-                                                <span>1500</span>      
-                                            </div> 
-                                        </div>                                            
-                                    </div>
-                                    
-                                    <div class="product">
-                                        <div class="product-img ">
-                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
-                                        </div>
-
-                                        <div class="product-infor">
-                                            <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
-                                            <p class="product-seller">Seller: <span>ABC</span></p>
-                                            <p class="product-status">Status: <span>Delivering</span></p>
-                                            <p class="product-price">Price: 
-                                                <span>150</span> 
-                                                <span> $ </span>
-                                            </p> 
-                                            <p class="product-quantity">Quantity: 
-                                                <span>10</span>
-                                                <span> Pc </span>
-                                            </p> 
-                                            <div class="block-price">
-                                                <span>Total: </span>
-                                                <span>1500</span>      
-                                            </div> 
-                                        </div>                                            
-                                    </div>
-                                    
-                                    <div class="product">
-                                        <div class="product-img ">
-                                            <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
-                                        </div>
-
-                                        <div class="product-infor">
-                                            <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
-                                            <p class="product-seller">Seller: <span>ABC</span></p>
-                                            <p class="product-status">Status: <span>Delivering</span></p>
-                                            <p class="product-price">Price: 
-                                                <span>150</span> 
-                                                <span> $ </span>
-                                            </p> 
-                                            <p class="product-quantity">Quantity: 
-                                                <span>10</span>
-                                                <span> Pc </span>
-                                            </p> 
-                                            <div class="block-price">
-                                                <span>Total: </span>
-                                                <span>1500</span>      
-                                            </div> 
-                                        </div>                                            
-                                    </div>
-                                </div>  
-                                <div class="block-total-price">
-                                    <span>Total: </span>
-                                    <span>2600</span>      
-                                </div> 
+                            <div id = 'fecthBuy'>
+                                
                             </div>
-                            <ul class="pagination home-product-pagination" id="page">
-                                <li class="pagination-item">
-                                    <button class="pagination-item-link pagination-item-link--disable"><i class="fas fa-chevron-left"></i></button>
-                                </li>
-                                <li class="pagination-item pagination-item--active">
-                                    <button class="pagination-item-link">1</button>                            
-                                </li>
-                                <li class="pagination-item">                                
-                                    <button class="pagination-item-link">2</button>                            
-                                </li>
-                                <li class="pagination-item">                                
-                                    <button class="pagination-item-link"><i class="fas fa-chevron-right"></i>                                </button>                            
-                                </li>
-                            </ul>   
+                            
                         </div>
                     </div>
                     <!-- BLOCK SELL -->
@@ -922,124 +618,13 @@
 
                         <!-- ALL ORDER -->
                         <div class="block block-all">
-                            <div class="Order">
-                                <div class="block_order">
-                                    Order ID: <span>1234</span></span>
-                                </div>    
-                                    <div class="products">
-                                        <div class="infor-receiver">
-                                            <p class="date-order">Order date: <span>20/11/2022</span></p>
-                                            <p class="order-receiver">Receiver: <span>Tran Thuy Nga</span></p>
-                                            <p class="order-delivery-addr">Delivery address: <span>133 duong ABC huyen BCD thanh pho HN</span></p>
-                                        </div>
-                                        <div class="product">
-                                            <div class="product-img ">
-                                                <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
-                                            </div>
-    
-                                            <div class="product-infor">
-                                                <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
-                                                <p class="product-seller">Buyer: <span>ABC</span></p>
-                                                <p class="product-status">Status: <span>Delivering</span></p>
-                                                <p class="product-price">Price: 
-                                                    <span>150</span> 
-                                                    <span> $ </span>
-                                                </p> 
-                                                <p class="product-quantity">Quantity: 
-                                                    <span>10</span>
-                                                    <span> Pc </span>
-                                                </p> 
-                                                <div class="block-price">
-                                                    <span>Total: </span>
-                                                    <span>1500</span>      
-                                                </div> 
-                                            </div>                                            
-                                        </div>
-                                        
-                                        <div class="product">
-                                            <div class="product-img ">
-                                                <img src="<?= base_url()?>/assets/img/orderHistory/product-img1.png" alt="">
-                                            </div>
-    
-                                            <div class="product-infor">
-                                                <p class="product-name">Product Name: <span>Blackforest Cream Cake</span></p>
-                                                <p class="product-seller">Buyer: <span>ABC1</span></p>
-                                                <p class="product-status">Status: <span>Delivered</span></p>
-                                                <p class="product-price">Price: 
-                                                    <span>220</span> 
-                                                    <span> $ </span>
-                                                </p> 
-                                                <p class="product-quantity">Quantity: 
-                                                    <span>5</span>
-                                                    <span> Pc </span>
-                                                </p> 
-    
-                                                <div class="block-price">
-                                                    <span>Total: </span>
-                                                    <span>1100</span>      
-                                                </div> 
-                                            </div> 
-                                        </div>          
-                                    </div>
-                                
-                                <div class="block-total-price">
-                                    <span>Total: </span>
-                                    <span>2600</span>      
-                                </div>                                                    
-                            </div>
+                             <div id = 'fecthSell'>
+                                   
             
-                            <div class="Order">
-                                <div class="block_order"><span>Order ID: </span><span>1235</span></div>    
-                                    <div class="products">
-                                        <div class="infor-receiver">
-                                            <p class="date-order">Order date: <span>20/11/2022</span></p>
-                                            <p class="order-receiver">Receiver: <span>Tran Thuy Nga</span></p>
-                                            <p class="order-delivery-addr">Delivery address: <span>133 duong ABC huyen BCD thanh pho HN</span></p>
-                                        </div>
-                                        <div class="product">
-                                            <div class="product-img ">
-                                                <img src="<?= base_url()?>/assets/img/orderHistory/product-img.png" alt="">
-                                            </div>
-    
-                                            <div class="product-infor">
-                                                <p class="product-name">Product Name: <span>Toothsome Chocolate Cake</span></p>
-                                                <p class="product-seller">Buyer: <span>ABC</span></p>
-                                                <p class="product-status">Status: <span>Delivering</span></p>
-                                                <p class="product-price">Price: 
-                                                    <span>150</span> 
-                                                    <span> $ </span>
-                                                </p> 
-                                                <p class="product-quantity">Quantity: 
-                                                    <span>10</span>
-                                                    <span> Pc </span>
-                                                </p> 
-                                                <div class="block-price">
-                                                    <span>Total: </span>
-                                                    <span>1500</span>      
-                                                </div> 
-                                            </div>                                            
-                                        </div>
-                                    </div>
-                                    <div class="block-total-price">
-                                        <span>Total: </span>
-                                        <span>2600</span>      
-                                    </div>
-                                </div>
-                                <ul class="pagination home-product-pagination" id="page">
-                                    <li class="pagination-item">
-                                        <button class="pagination-item-link pagination-item-link--disable"><i class="fas fa-chevron-left"></i></button>
-                                    </li>
-                                    <li class="pagination-item pagination-item--active">
-                                        <button class="pagination-item-link">1</button>                            
-                                    </li>
-                                    <li class="pagination-item">                                
-                                        <button class="pagination-item-link">2</button>                            
-                                    </li>
-                                    <li class="pagination-item">                                
-                                        <button class="pagination-item-link"><i class="fas fa-chevron-right"></i>                                </button>                            
-                                    </li>
-                                </ul>      
-                            </div>       
+                      
+                            </div>
+                            
+                                  <!--toi day  -->
                         </div>
                 </div>
             </div>
@@ -1217,6 +802,68 @@
             buyTxt[0].style.fontWeight="400";
             sellTxt[0].style.fontWeight="600";
         }
+        function fecthBuy() {
+            $.ajax({
+                    url: '<?=base_url('orderHistory/fetchBuy') ?>',
+                    type: 'post',
+                    data: {},
+                    success: function (data) {
+                        
+                        data.forEach((x)=>{
+                            $('#fecthBuy').append(x);   
+                        });
+                    }
+                });
+        }
+         function loadCartShopping() {
+        $('#cart-list-item').html("");
+        $.ajax({
+                url: '<?=base_url('showProduct/loadCartShopping')?>',
+                type: 'post',
+                success: function (data) {
+                    var tmp = 0;
+                    if(data != ""){
+                        $('.has-cart').css({"display": ""});
+                        data.forEach((x)=>{
+                            $('#cart-list-item').append(x);
+                            tmp++;   
+                        });
+                    }
+                    else {
+
+                         $('.has-cart').css({"display": "none"})
+                    }
+                    $('.header__cart-count').text(tmp);
+                }
+            });
+    }
+    function deteleCartShopping(id) {
+        $.ajax({
+                url: '<?=base_url('showProduct/deteleCartShopping')?>',
+                type: 'post',
+                data: {
+                   'id' : id
+                },
+                success: function (data) {
+                    loadCartShopping();
+                }
+            });
+    }
+        function fecthSell() {
+            $.ajax({
+                    url: '<?=base_url('orderHistory/fetchSell') ?>',
+                    type: 'post',
+                    data: {},
+                    success: function (data) {
+                        data.forEach((x)=>{
+                            $('#fecthSell').append(x);   
+                        });
+                    }
+                });
+        }
+        fecthBuy();
+        fecthSell();
+        loadCartShopping();
     </script> 
 
 </body>

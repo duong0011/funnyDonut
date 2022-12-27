@@ -57,7 +57,7 @@ class Home extends BaseController
                     $products = new Product();
                     $product = $products->getWhere(['owner'=>$value['unitid']])->getResultArray();
                     if(count($product)){
-                        if($indedx > 4) break;
+                        if($indedx > 2) break;
                         $sum = 0;
                         foreach ($product as $key) {
                             $sum+= $key['rating'];

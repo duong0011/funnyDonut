@@ -24,7 +24,7 @@ class Login extends Controller
 		if($this->request->getMethod() == "post") {
 			$rules = [
 				'username' => [
-					'rules' => 'required|min_length[8]',
+					'rules' => 'required|min_length[6]',
 				],
 				'password' => [
 					'rules' => 'required|min_length[8]',

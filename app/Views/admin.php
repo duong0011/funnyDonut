@@ -17,7 +17,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+    <script src="https://malsup.github.io/jquery.form.js"></script> 
     <!-- Style header -->
     <style>
         <style>
@@ -289,6 +292,16 @@
             border-radius: 3px;
             border: none;
         }
+         .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.has-cart,
+        .header__cart--has-cart .header__cart-count:hover~.header__cart-list.has-cart,
+        .header__cart--has-cart .header__cart-list.has-cart:hover {
+            display: flex;
+        }
+
+        .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.no-cart,
+        .header__cart--has-cart .header__cart-list.no-cart:hover{
+            display: flex;
+        }
     </style>
 </head>
 <body>
@@ -511,149 +524,22 @@
                     </div>
                     <!-- header__cart--no-cart -->
                     <!-- header__cart--has-cart -->
-                    <div class="header__cart header__cart--has-cart">
+                   <div class="header__cart header__cart--has-cart">
                         <i class="header__cart-icon fas fa-shopping-cart"></i>
-                        <div class="header__cart-count">4</div>
-
+                        <div class="header__cart-count"></div>
+                        
                         <div class="header__cart-list no-cart">
-                            <img src="<?= base_url()?>/assets/img/sp/no-cart.png" class="header__no-cart-img">
+                            <img src=" <?= base_url()?>/assets/img/sp/no-cart.png" class="header__no-cart-img">
                             <p class="header__no-cart-text">No product</p>
                         </div>
 
                         <div class="header__cart-list has-cart">
                             <h4 class="header__cart-heading">Selected product</h4>
-                            <ul class="header__cart-list-item">
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/1.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Thanh Thanh 2000 1m57 46kg 88-62-89</h3>
-                                            <p class="header__cart-item-price">2.000USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 2</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/2.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Hồng Ánh 1998 1m62 48kg 89-64-91</h3>
-                                            <p class="header__cart-item-price">2.500USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 1</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/3.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
-                                            <p class="header__cart-item-price">2.800USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 1</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/4.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
-                                            <p class="header__cart-item-price">3.200USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 3</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/5.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Thanh Thanh 2000 1m57 46kg 88-62-89</h3>
-                                            <p class="header__cart-item-price">2.000USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 2</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/6.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Hồng Ánh 1998 1m62 48kg 89-64-91</h3>
-                                            <p class="header__cart-item-price">2.500USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 1</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/7.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Quỳnh Như 1999 1m65 49kg 90-62-89</h3>
-                                            <p class="header__cart-item-price">2.800USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 1</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="header__cart-item">
-                                    <img src="<?= base_url()?>/assets/img/buy/8.PNG" class="header__cart-item-img">
-                                    <div class="header__cart-item-info">
-                                        <div class="header__cart-item-heading">
-                                            <h3 class="header__cart-item-name">Kim Ngân 2001 1m55 45kg 86-60-87</h3>
-                                            <p class="header__cart-item-price">3.200USD</p>
-                                        </div>
-                                        <div class="header__cart-item-body">
-                                            <p class="header__cart-item-number">x 3</p>
-                                            <div class="header__cart-item-close">
-                                                Xoá
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                            <ul class="header__cart-list-item" id = "cart-list-item">
+                                
                             </ul>
                             <div class="header__cart-footer">
-                                <a href="#" class="btn btn--brown header__cart-see-cart">View cart</a>
+                                <a href="<?= base_url('shoppingCart') ?>" class="btn btn--primary header__cart-see-cart">View cart</a>
                             </div>
                         </div>
                     </div>
@@ -681,7 +567,7 @@
             <div class="grid wide">
                 <div class="search">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" placeholder="Search by Username or Product Name">
+                        <input type="text" placeholder="Search by Username or Product Name" id = "seeach-user-product">
                 </div>
                 <div class="btn-block">
                     <button class="btn-user actived" onclick="displayBtnUser()">USER</button>
@@ -703,270 +589,7 @@
                         <span class="user-reported">Reported</span>
                         <span class="user-action">Action</span>
                     </div>
-
-                    <div class="user-info">
-                        <span class="user-link"><a href="">Link profile</a></span>
-                        <span class="user-id">16</span>
-                        <span class="user-fullname">Nga Thúy Trần</span>
-                        <span class="user-username">swan0408</span>
-                        <span class="user-gender">female</span>
-                        <span class="user-date-of-birth">14-01-2000</span>
-                        <span class="user-email">tranngasr@gmail.com</span>
-                        <span class="user-phonenumber">79219698056</span>
-                        <span class="user-date-created">10-12-2022</span>
-                        <span class="user-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div>
-
-                    <div class="user-info">
-                        <span class="user-link"><a href="">Link profile</a></span>
-                        <span class="user-id">16</span>
-                        <span class="user-fullname">Nga Thúy Trần</span>
-                        <span class="user-username">swan0408</span>
-                        <span class="user-gender">female</span>
-                        <span class="user-date-of-birth">14-01-2000</span>
-                        <span class="user-email">tranngasr@gmail.com</span>
-                        <span class="user-phonenumber">79219698056</span>
-                        <span class="user-date-created">10-12-2022</span>
-                        <span class="user-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="user-info">
-                        <span class="user-link"><a href="">Link profile</a></span>
-                        <span class="user-id">16</span>
-                        <span class="user-fullname">Nga Thúy Trần</span>
-                        <span class="user-username">swan0408</span>
-                        <span class="user-gender">female</span>
-                        <span class="user-date-of-birth">14-01-2000</span>
-                        <span class="user-email">tranngasr@gmail.com</span>
-                        <span class="user-phonenumber">79219698056</span>
-                        <span class="user-date-created">10-12-2022</span>
-                        <span class="user-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="user-info">
-                        <span class="user-link"><a href="">Link profile</a></span>
-                        <span class="user-id">16</span>
-                        <span class="user-fullname">Nga Thúy Trần</span>
-                        <span class="user-username">swan0408</span>
-                        <span class="user-gender">female</span>
-                        <span class="user-date-of-birth">14-01-2000</span>
-                        <span class="user-email">tranngasr@gmail.com</span>
-                        <span class="user-phonenumber">79219698056</span>
-                        <span class="user-date-created">10-12-2022</span>
-                        <span class="user-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="user-info">
-                        <span class="user-link"><a href="">Link profile</a></span>
-                        <span class="user-id">16</span>
-                        <span class="user-fullname">Nga Thúy Trần</span>
-                        <span class="user-username">swan0408</span>
-                        <span class="user-gender">female</span>
-                        <span class="user-date-of-birth">14-01-2000</span>
-                        <span class="user-email">tranngasr@gmail.com</span>
-                        <span class="user-phonenumber">79219698056</span>
-                        <span class="user-date-created">10-12-2022</span>
-                        <span class="user-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="user-info">
-                        <span class="user-link"><a href="">Link profile</a></span>
-                        <span class="user-id">16</span>
-                        <span class="user-fullname">Nga Thúy Trần</span>
-                        <span class="user-username">swan0408</span>
-                        <span class="user-gender">female</span>
-                        <span class="user-date-of-birth">14-01-2000</span>
-                        <span class="user-email">tranngasr@gmail.com</span>
-                        <span class="user-phonenumber">79219698056</span>
-                        <span class="user-date-created">10-12-2022</span>
-                        <span class="user-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="user-info">
-                        <span class="user-link"><a href="">Link profile</a></span>
-                        <span class="user-id">16</span>
-                        <span class="user-fullname">Nga Thúy Trần</span>
-                        <span class="user-username">swan0408</span>
-                        <span class="user-gender">female</span>
-                        <span class="user-date-of-birth">14-01-2000</span>
-                        <span class="user-email">tranngasr@gmail.com</span>
-                        <span class="user-phonenumber">79219698056</span>
-                        <span class="user-date-created">10-12-2022</span>
-                        <span class="user-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="user-info">
-                        <span class="user-link"><a href="">Link profile</a></span>
-                        <span class="user-id">16</span>
-                        <span class="user-fullname">Nga Thúy Trần</span>
-                        <span class="user-username">swan0408</span>
-                        <span class="user-gender">female</span>
-                        <span class="user-date-of-birth">14-01-2000</span>
-                        <span class="user-email">tranngasr@gmail.com</span>
-                        <span class="user-phonenumber">79219698056</span>
-                        <span class="user-date-created">10-12-2022</span>
-                        <span class="user-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="user-info">
-                        <span class="user-link"><a href="">Link profile</a></span>
-                        <span class="user-id">16</span>
-                        <span class="user-fullname">Nga Thúy Trần</span>
-                        <span class="user-username">swan0408</span>
-                        <span class="user-gender">female</span>
-                        <span class="user-date-of-birth">14-01-2000</span>
-                        <span class="user-email">tranngasr@gmail.com</span>
-                        <span class="user-phonenumber">79219698056</span>
-                        <span class="user-date-created">10-12-2022</span>
-                        <span class="user-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="user-info">
-                        <span class="user-link"><a href="">Link profile</a></span>
-                        <span class="user-id">16</span>
-                        <span class="user-fullname">Nga Thúy Trần</span>
-                        <span class="user-username">swan0408</span>
-                        <span class="user-gender">female</span>
-                        <span class="user-date-of-birth">14-01-2000</span>
-                        <span class="user-email">tranngasr@gmail.com</span>
-                        <span class="user-phonenumber">79219698056</span>
-                        <span class="user-date-created">10-12-2022</span>
-                        <span class="user-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="user-info">
-                        <span class="user-link"><a href="">Link profile</a></span>
-                        <span class="user-id">16</span>
-                        <span class="user-fullname">Nga Thúy Trần</span>
-                        <span class="user-username">swan0408</span>
-                        <span class="user-gender">female</span>
-                        <span class="user-date-of-birth">14-01-2000</span>
-                        <span class="user-email">tranngasr@gmail.com</span>
-                        <span class="user-phonenumber">79219698056</span>
-                        <span class="user-date-created">10-12-2022</span>
-                        <span class="user-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="user-info">
-                        <span class="user-link"><a href="">Link profile</a></span>
-                        <span class="user-id">16</span>
-                        <span class="user-fullname">Nga Thúy Trần</span>
-                        <span class="user-username">swan0408</span>
-                        <span class="user-gender">female</span>
-                        <span class="user-date-of-birth">14-01-2000</span>
-                        <span class="user-email">tranngasr@gmail.com</span>
-                        <span class="user-phonenumber">79219698056</span>
-                        <span class="user-date-created">10-12-2022</span>
-                        <span class="user-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="user-info">
-                        <span class="user-link"><a href="">Link profile</a></span>
-                        <span class="user-id">16</span>
-                        <span class="user-fullname">Nga Thúy Trần</span>
-                        <span class="user-username">swan0408</span>
-                        <span class="user-gender">female</span>
-                        <span class="user-date-of-birth">14-01-2000</span>
-                        <span class="user-email">tranngasr@gmail.com</span>
-                        <span class="user-phonenumber">79219698056</span>
-                        <span class="user-date-created">10-12-2022</span>
-                        <span class="user-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="user-info">
-                        <span class="user-link"><a href="">Link profile</a></span>
-                        <span class="user-id">16</span>
-                        <span class="user-fullname">Nga Thúy Trần</span>
-                        <span class="user-username">swan0408</span>
-                        <span class="user-gender">female</span>
-                        <span class="user-date-of-birth">14-01-2000</span>
-                        <span class="user-email">tranngasr@gmail.com</span>
-                        <span class="user-phonenumber">79219698056</span>
-                        <span class="user-date-created">10-12-2022</span>
-                        <span class="user-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="user-info">
-                        <span class="user-link"><a href="">Link profile</a></span>
-                        <span class="user-id">16</span>
-                        <span class="user-fullname">Nga Thúy Trần</span>
-                        <span class="user-username">swan0408</span>
-                        <span class="user-gender">female</span>
-                        <span class="user-date-of-birth">14-01-2000</span>
-                        <span class="user-email">tranngasr@gmail.com</span>
-                        <span class="user-phonenumber">79219698056</span>
-                        <span class="user-date-created">10-12-2022</span>
-                        <span class="user-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="user-info">
-                        <span class="user-link"><a href="">Link profile</a></span>
-                        <span class="user-id">16</span>
-                        <span class="user-fullname">Nga Thúy Trần</span>
-                        <span class="user-username">swan0408</span>
-                        <span class="user-gender">female</span>
-                        <span class="user-date-of-birth">14-01-2000</span>
-                        <span class="user-email">tranngasr@gmail.com</span>
-                        <span class="user-phonenumber">79219698056</span>
-                        <span class="user-date-created">10-12-2022</span>
-                        <span class="user-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="user-info">
-                        <span class="user-link"><a href="">Link profile</a></span>
-                        <span class="user-id">16</span>
-                        <span class="user-fullname">Nga Thúy Trần</span>
-                        <span class="user-username">swan0408</span>
-                        <span class="user-gender">female</span>
-                        <span class="user-date-of-birth">14-01-2000</span>
-                        <span class="user-email">tranngasr@gmail.com</span>
-                        <span class="user-phonenumber">79219698056</span>
-                        <span class="user-date-created">10-12-2022</span>
-                        <span class="user-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="user-info">
-                        <span class="user-link"><a href="">Link profile</a></span>
-                        <span class="user-id">16</span>
-                        <span class="user-fullname">Nga Thúy Trần</span>
-                        <span class="user-username">swan0408</span>
-                        <span class="user-gender">female</span>
-                        <span class="user-date-of-birth">14-01-2000</span>
-                        <span class="user-email">tranngasr@gmail.com</span>
-                        <span class="user-phonenumber">79219698056</span>
-                        <span class="user-date-created">10-12-2022</span>
-                        <span class="user-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="user-info">
-                        <span class="user-link"><a href="">Link profile</a></span>
-                        <span class="user-id">16</span>
-                        <span class="user-fullname">Nga Thúy Trần</span>
-                        <span class="user-username">swan0408</span>
-                        <span class="user-gender">female</span>
-                        <span class="user-date-of-birth">14-01-2000</span>
-                        <span class="user-email">tranngasr@gmail.com</span>
-                        <span class="user-phonenumber">79219698056</span>
-                        <span class="user-date-created">10-12-2022</span>
-                        <span class="user-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="user-info">
-                        <span class="user-link"><a href="">Link profile</a></span>
-                        <span class="user-id">16</span>
-                        <span class="user-fullname">Nga Thúy Trần</span>
-                        <span class="user-username">swan0408</span>
-                        <span class="user-gender">female</span>
-                        <span class="user-date-of-birth">14-01-2000</span>
-                        <span class="user-email">tranngasr@gmail.com</span>
-                        <span class="user-phonenumber">79219698056</span>
-                        <span class="user-date-created">10-12-2022</span>
-                        <span class="user-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div>
+                    <div id = "show-user"></div>
                 </div>
                 <!-- Block product -->
                 <div class="block-info block-product">
@@ -983,251 +606,10 @@
                         <span class="product-action">Action</span>
                     </div>
 
-                    <div class="product-info">
-                        <span class="user-link"><a href="">Link product</a></span>
-                        <span class="product-id">275</span>
-                        <span class="product-name">LIFVER Coasters for Drinks, Absorbent Drink Coasters Set 6 Pcs, Absorbent Coasters Set with Cork Bas</span>
-                        <span class="product-price">10.82$</span>
-                        <span class="product-type">Bread</span>
-                        <span class="product-amount">21</span>
-                        <span class="product-seller"><a href="">Trương Tấn Dương</a></span>
-                        <span class="product-date-created">19-12-2022</span>
-                        <span class="product-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div>
-                    <div class="product-info">
-                        <span class="user-link"><a href="">Link product</a></span>
-                        <span class="product-id">275</span>
-                        <span class="product-name">LIFVER Coasters for Drinks, Absorbent Drink Coasters Set 6 Pcs, Absorbent Coasters Set with Cork Bas</span>
-                        <span class="product-price">10.82$</span>
-                        <span class="product-type">Bread</span>
-                        <span class="product-amount">21</span>
-                        <span class="product-seller"><a href="">Trương Tấn Dương</a></span>
-                        <span class="product-date-created">19-12-2022</span>
-                        <span class="product-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="product-info">
-                        <span class="user-link"><a href="">Link product</a></span>
-                        <span class="product-id">275</span>
-                        <span class="product-name">LIFVER Coasters for Drinks, Absorbent Drink Coasters Set 6 Pcs, Absorbent Coasters Set with Cork Bas</span>
-                        <span class="product-price">10.82$</span>
-                        <span class="product-type">Bread</span>
-                        <span class="product-amount">21</span>
-                        <span class="product-seller"><a href="">Trương Tấn Dương</a></span>
-                        <span class="product-date-created">19-12-2022</span>
-                        <span class="product-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="product-info">
-                        <span class="user-link"><a href="">Link product</a></span>
-                        <span class="product-id">275</span>
-                        <span class="product-name">LIFVER Coasters for Drinks, Absorbent Drink Coasters Set 6 Pcs, Absorbent Coasters Set with Cork Bas</span>
-                        <span class="product-price">10.82$</span>
-                        <span class="product-type">Bread</span>
-                        <span class="product-amount">21</span>
-                        <span class="product-seller"><a href="">Trương Tấn Dương</a></span>
-                        <span class="product-date-created">19-12-2022</span>
-                        <span class="product-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="product-info">
-                        <span class="user-link"><a href="">Link product</a></span>
-                        <span class="product-id">275</span>
-                        <span class="product-name">LIFVER Coasters for Drinks, Absorbent Drink Coasters Set 6 Pcs, Absorbent Coasters Set with Cork Bas</span>
-                        <span class="product-price">10.82$</span>
-                        <span class="product-type">Bread</span>
-                        <span class="product-amount">21</span>
-                        <span class="product-seller"><a href="">Trương Tấn Dương</a></span>
-                        <span class="product-date-created">19-12-2022</span>
-                        <span class="product-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="product-info">
-                        <span class="user-link"><a href="">Link product</a></span>
-                        <span class="product-id">275</span>
-                        <span class="product-name">LIFVER Coasters for Drinks, Absorbent Drink Coasters Set 6 Pcs, Absorbent Coasters Set with Cork Bas</span>
-                        <span class="product-price">10.82$</span>
-                        <span class="product-type">Bread</span>
-                        <span class="product-amount">21</span>
-                        <span class="product-seller"><a href="">Trương Tấn Dương</a></span>
-                        <span class="product-date-created">19-12-2022</span>
-                        <span class="product-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="product-info">
-                        <span class="user-link"><a href="">Link product</a></span>
-                        <span class="product-id">275</span>
-                        <span class="product-name">LIFVER Coasters for Drinks, Absorbent Drink Coasters Set 6 Pcs, Absorbent Coasters Set with Cork Bas</span>
-                        <span class="product-price">10.82$</span>
-                        <span class="product-type">Bread</span>
-                        <span class="product-amount">21</span>
-                        <span class="product-seller"><a href="">Trương Tấn Dương</a></span>
-                        <span class="product-date-created">19-12-2022</span>
-                        <span class="product-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="product-info">
-                        <span class="user-link"><a href="">Link product</a></span>
-                        <span class="product-id">275</span>
-                        <span class="product-name">LIFVER Coasters for Drinks, Absorbent Drink Coasters Set 6 Pcs, Absorbent Coasters Set with Cork Bas</span>
-                        <span class="product-price">10.82$</span>
-                        <span class="product-type">Bread</span>
-                        <span class="product-amount">21</span>
-                        <span class="product-seller"><a href="">Trương Tấn Dương</a></span>
-                        <span class="product-date-created">19-12-2022</span>
-                        <span class="product-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="product-info">
-                        <span class="user-link"><a href="">Link product</a></span>
-                        <span class="product-id">275</span>
-                        <span class="product-name">LIFVER Coasters for Drinks, Absorbent Drink Coasters Set 6 Pcs, Absorbent Coasters Set with Cork Bas</span>
-                        <span class="product-price">10.82$</span>
-                        <span class="product-type">Bread</span>
-                        <span class="product-amount">21</span>
-                        <span class="product-seller"><a href="">Trương Tấn Dương</a></span>
-                        <span class="product-date-created">19-12-2022</span>
-                        <span class="product-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="product-info">
-                        <span class="user-link"><a href="">Link product</a></span>
-                        <span class="product-id">275</span>
-                        <span class="product-name">LIFVER Coasters for Drinks, Absorbent Drink Coasters Set 6 Pcs, Absorbent Coasters Set with Cork Bas</span>
-                        <span class="product-price">10.82$</span>
-                        <span class="product-type">Bread</span>
-                        <span class="product-amount">21</span>
-                        <span class="product-seller"><a href="">Trương Tấn Dương</a></span>
-                        <span class="product-date-created">19-12-2022</span>
-                        <span class="product-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="product-info">
-                        <span class="user-link"><a href="">Link product</a></span>
-                        <span class="product-id">275</span>
-                        <span class="product-name">LIFVER Coasters for Drinks, Absorbent Drink Coasters Set 6 Pcs, Absorbent Coasters Set with Cork Bas</span>
-                        <span class="product-price">10.82$</span>
-                        <span class="product-type">Bread</span>
-                        <span class="product-amount">21</span>
-                        <span class="product-seller"><a href="">Trương Tấn Dương</a></span>
-                        <span class="product-date-created">19-12-2022</span>
-                        <span class="product-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="product-info">
-                        <span class="user-link"><a href="">Link product</a></span>
-                        <span class="product-id">275</span>
-                        <span class="product-name">LIFVER Coasters for Drinks, Absorbent Drink Coasters Set 6 Pcs, Absorbent Coasters Set with Cork Bas</span>
-                        <span class="product-price">10.82$</span>
-                        <span class="product-type">Bread</span>
-                        <span class="product-amount">21</span>
-                        <span class="product-seller"><a href="">Trương Tấn Dương</a></span>
-                        <span class="product-date-created">19-12-2022</span>
-                        <span class="product-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="product-info">
-                        <span class="user-link"><a href="">Link product</a></span>
-                        <span class="product-id">275</span>
-                        <span class="product-name">LIFVER Coasters for Drinks, Absorbent Drink Coasters Set 6 Pcs, Absorbent Coasters Set with Cork Bas</span>
-                        <span class="product-price">10.82$</span>
-                        <span class="product-type">Bread</span>
-                        <span class="product-amount">21</span>
-                        <span class="product-seller"><a href="">Trương Tấn Dương</a></span>
-                        <span class="product-date-created">19-12-2022</span>
-                        <span class="product-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="product-info">
-                        <span class="user-link"><a href="">Link product</a></span>
-                        <span class="product-id">275</span>
-                        <span class="product-name">LIFVER Coasters for Drinks, Absorbent Drink Coasters Set 6 Pcs, Absorbent Coasters Set with Cork Bas</span>
-                        <span class="product-price">10.82$</span>
-                        <span class="product-type">Bread</span>
-                        <span class="product-amount">21</span>
-                        <span class="product-seller"><a href="">Trương Tấn Dương</a></span>
-                        <span class="product-date-created">19-12-2022</span>
-                        <span class="product-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="product-info">
-                        <span class="user-link"><a href="">Link product</a></span>
-                        <span class="product-id">275</span>
-                        <span class="product-name">LIFVER Coasters for Drinks, Absorbent Drink Coasters Set 6 Pcs, Absorbent Coasters Set with Cork Bas</span>
-                        <span class="product-price">10.82$</span>
-                        <span class="product-type">Bread</span>
-                        <span class="product-amount">21</span>
-                        <span class="product-seller"><a href="">Trương Tấn Dương</a></span>
-                        <span class="product-date-created">19-12-2022</span>
-                        <span class="product-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="product-info">
-                        <span class="user-link"><a href="">Link product</a></span>
-                        <span class="product-id">275</span>
-                        <span class="product-name">LIFVER Coasters for Drinks, Absorbent Drink Coasters Set 6 Pcs, Absorbent Coasters Set with Cork Bas</span>
-                        <span class="product-price">10.82$</span>
-                        <span class="product-type">Bread</span>
-                        <span class="product-amount">21</span>
-                        <span class="product-seller"><a href="">Trương Tấn Dương</a></span>
-                        <span class="product-date-created">19-12-2022</span>
-                        <span class="product-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="product-info">
-                        <span class="user-link"><a href="">Link product</a></span>
-                        <span class="product-id">275</span>
-                        <span class="product-name">LIFVER Coasters for Drinks, Absorbent Drink Coasters Set 6 Pcs, Absorbent Coasters Set with Cork Bas</span>
-                        <span class="product-price">10.82$</span>
-                        <span class="product-type">Bread</span>
-                        <span class="product-amount">21</span>
-                        <span class="product-seller"><a href="">Trương Tấn Dương</a></span>
-                        <span class="product-date-created">19-12-2022</span>
-                        <span class="product-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="product-info">
-                        <span class="user-link"><a href="">Link product</a></span>
-                        <span class="product-id">275</span>
-                        <span class="product-name">LIFVER Coasters for Drinks, Absorbent Drink Coasters Set 6 Pcs, Absorbent Coasters Set with Cork Bas</span>
-                        <span class="product-price">10.82$</span>
-                        <span class="product-type">Bread</span>
-                        <span class="product-amount">21</span>
-                        <span class="product-seller"><a href="">Trương Tấn Dương</a></span>
-                        <span class="product-date-created">19-12-2022</span>
-                        <span class="product-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="product-info">
-                        <span class="user-link"><a href="">Link product</a></span>
-                        <span class="product-id">275</span>
-                        <span class="product-name">LIFVER Coasters for Drinks, Absorbent Drink Coasters Set 6 Pcs, Absorbent Coasters Set with Cork Bas</span>
-                        <span class="product-price">10.82$</span>
-                        <span class="product-type">Bread</span>
-                        <span class="product-amount">21</span>
-                        <span class="product-seller"><a href="">Trương Tấn Dương</a></span>
-                        <span class="product-date-created">19-12-2022</span>
-                        <span class="product-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div><div class="product-info">
-                        <span class="user-link"><a href="">Link product</a></span>
-                        <span class="product-id">275</span>
-                        <span class="product-name">LIFVER Coasters for Drinks, Absorbent Drink Coasters Set 6 Pcs, Absorbent Coasters Set with Cork Bas</span>
-                        <span class="product-price">10.82$</span>
-                        <span class="product-type">Bread</span>
-                        <span class="product-amount">21</span>
-                        <span class="product-seller"><a href="">Trương Tấn Dương</a></span>
-                        <span class="product-date-created">19-12-2022</span>
-                        <span class="product-reported">0</span>
-                        <span class="action block">Block</span>
-                        <span class="action unblock">Unblock</span>
-                    </div>
+                    <div id = "show-product"></div>
                 </div>
                         
-                <ul class="pagination home-product-pagination" id="page">
+               <!--  <ul class="pagination home-product-pagination" id="page">
                     <li class="pagination-item">
                         <button class="pagination-item-link pagination-item-link--disable"><i class="fas fa-chevron-left"></i></button>
                     </li>
@@ -1240,7 +622,7 @@
                     <li class="pagination-item">                                
                         <button class="pagination-item-link"><i class="fas fa-chevron-right"></i>                                </button>                            
                     </li>
-                </ul>                
+                </ul>                 -->
 
             </div>
         </div>
@@ -1415,6 +797,78 @@
             blockUser[0].style.display="none";
             blockProduct[0].style.display="block";
         }
+          function loadCartShopping() {
+        $('#cart-list-item').html("");
+        $.ajax({
+                url: '<?=base_url('showProduct/loadCartShopping')?>',
+                type: 'post',
+                success: function (data) {
+                    var tmp = 0;
+                    if(data != ""){
+                        $('.has-cart').css({"display": ""});
+                        data.forEach((x)=>{
+                            $('#cart-list-item').append(x);
+                            tmp++;   
+                        });
+                    }
+                    else {
+
+                         $('.has-cart').css({"display": "none"})
+                    }
+                    $('.header__cart-count').text(tmp);
+                }
+            });
+    }
+    function deteleCartShopping(id) {
+        $.ajax({
+                url: '<?=base_url('showProduct/deteleCartShopping')?>',
+                type: 'post',
+                data: {
+                   'id' : id
+                },
+                success: function (data) {
+                    loadCartShopping();
+                }
+            });
+    }
+    function fectUser(key = "!") {
+        $('#show-user').html('');
+        $.ajax({
+                url: '<?=base_url('admin/fetchUser')?>'+'/'+key,
+                type: 'post',
+                data: {},
+                success: function (data) {
+                    data.forEach((item) =>{
+                       
+                        $('#show-user').append(item);
+                    });
+                }
+            });
+    }
+    function fectProduct(key ="!") {
+        $('#show-product').html('');
+        $.ajax({
+                url: '<?=base_url('admin/fetchProduct')?>/'+key,
+                type: 'post',
+                data: {},
+                success: function (data) {
+             
+                     data.forEach((item) =>{
+                       
+                         $('#show-product').append(item);
+                     });
+                }
+            });
+    }      
+    fectUser();
+    loadCartShopping();
+   fectProduct();
+    $('#seeach-user-product').on('keyup', function(event) {
+        var val = $('#seeach-user-product').val();
+        if(!val) val = '!';
+        fectProduct(val);
+        fectUser(val);
+    });
     </script>
 </body>
 </html>

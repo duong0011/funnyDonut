@@ -31,7 +31,7 @@ class Register extends Controller
 					
 				],
 				'username' => [
-					'rules' => 'required|min_length[8]',
+					'rules' => 'required|min_length[6]',
 					
 				],
 				'password' => [

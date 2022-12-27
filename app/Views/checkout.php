@@ -12,17 +12,72 @@
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/Nga-base.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/header-footer.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/grid.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/modal.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/checkout.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/font/fontawesome-free-6.2.0-web/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
       <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
     <script src="https://malsup.github.io/jquery.form.js"></script> 
     <!-- Style header -->
     <style>
         <style>
+
+
+
+    /* CSS  button 59*/
+    .button-59 {
+      align-items: center;
+      background-color: #fff;
+      border: 3px solid #000;
+      box-sizing: border-box;
+      color: #000;
+      cursor: pointer;
+      display: inline-flex;
+      fill: #000;
+      font-family: Inter,sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      height: 48px;
+      justify-content: center;
+      letter-spacing: -.8px;
+      line-height: 24px;
+      min-width: 140px;
+      outline: 0;
+      padding: 0 17px;
+      text-align: center;
+      text-decoration: none;
+      transition: all .3s;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .button-59:focus {
+      color: #171e29;
+    }
+
+    .button-59:hover {
+      border-color: #06f;
+      color: #06f;
+      fill: #06f;
+    }
+
+    .button-59:active {
+      border-color: #06f;
+      color: #06f;
+      fill: #06f;
+    }
+
+    @media (min-width: 768px) {
+      .button-59 {
+        min-width: 170px;
+      }
+    }
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
         *{
             margin: 0;
@@ -78,7 +133,7 @@
             /* width: 150px; */
             display: inline-block;
         }
-            
+        
         input.star { display: none; }
         
         label.star {
@@ -795,24 +850,7 @@
                     </div>
                     <!-- header__cart--no-cart -->
                     <!-- header__cart--has-cart -->
-                     <div class="header__cart header__cart--has-cart">
-                        <i class="header__cart-icon fas fa-shopping-cart"></i>
-                        <div class="header__cart-count"></div>
-                        
-                        <div class="header__cart-list no-cart">
-                            <img src=" <?= base_url()?>/assets/img/sp/no-cart.png" class="header__no-cart-img">
-                            <p class="header__no-cart-text">No product</p>
-                        </div>
-
-                        <div class="header__cart-list has-cart" style="display: none;">
-                            <h4 class="header__cart-heading">Selected product</h4>
-                            <ul class="header__cart-list-item" id = "cart-list-item">
-                                
-                            </ul>
-                            <div class="header__cart-footer">
-                                <a href="<?= base_url('shoppingCart') ?>" class="btn btn--primary header__cart-see-cart">View cart</a>
-                            </div>
-                        </div>
+                    
                     </div>
                 </div>
             </div>
@@ -840,7 +878,7 @@
                     <i class="fa-solid fa-location-dot"></i>
                     <span>Delivery address</span>
                     <div class="address-user">
-                        <span class="address-name" id = "name-default"><?=$user['fullname'].' '.$user['phonenumber']?> </span>
+                        <span class="address-name" id = "name-default"><?=$user['fullname'].'('.$user['phonenumber']?>) </span>
                         <span id = "address-default"><?=$user['specificaddress'].', '.$user['city']  ?></span>
                         <span class="address-default">default</span>
                         <span class="address-change" onclick="showNewAddress()">Change</span>
@@ -862,7 +900,7 @@
                     <div class="row note-delivery">
                         <div class="col l-12 note" style="border-right:none;">
                             <span>Note to seller:</span>
-                            <input type="text" style="width: 1040px;">
+                            <input type="text" style="width: 1040px;" id = "note-to-seller">
                         </div>
                         <div class="col l-4" style="display: none;">
                             <span>Shipping: </span>
@@ -875,7 +913,7 @@
                         <div class="col l-10 total-money-txt">
                             <span>Total payment: </span>
                         </div>
-                        <div class="col l-2 total-payment"><span>$</span></div>
+                        <div class="col l-2 total-payment"><span></span></div>
                     </div>
                 </div>
 
@@ -886,70 +924,19 @@
                         </div>
                         <div class="col l-12 choose-method method-cash">
                             <label class="">
-                                <input type="radio" name="radio" id="input-cash"  checked>
+                                <input type="radio" name="radio-method" id="input-cash"  value="Cash" checked>
                                 Cash
                             </label>
                         </div>
+                        
                         <div class="col l-12 choose-method method-card">
-                            <label class="">
-                                <input type="radio" name="radio" id="input-card">
-                                Card
-                            </label>
-                            <div class="card-select" style="width:200px; margin: 15px 15px 0;">
-                                <select>
-                                    <option value="0">Change card:</option>
-                                    <option value="1">Card 1</option>
-                                    <option value="2">Card 2</option>
-                                </select>
-                            </div>
-                            <div class="containercreditcard">
-                                <div class="card-container row">
-                                    <div class="cc-font col l-5">
-                                        <span class="chip"></span>
-                                        <span class="nubank-logo"></span>
-                                        <div class="logo">
-                                            <svg version="1.1" id="visa" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                                width="47.834px" height="47.834px" viewBox="0 0 47.834 47.834" style="enable-background:new 0 0 47.834 47.834;">
-                                                <g>
-                                                    <g>
-                                                        <path d="M44.688,16.814h-3.004c-0.933,0-1.627,0.254-2.037,1.184l-5.773,13.074h4.083c0,0,0.666-1.758,0.817-2.143
-                                                         c0.447,0,4.414,0.006,4.979,0.006c0.116,0.498,0.474,2.137,0.474,2.137h3.607L44.688,16.814z M39.893,26.01
-                                                         c0.32-0.819,1.549-3.987,1.549-3.987c-0.021,0.039,0.317-0.825,0.518-1.362l0.262,1.23c0,0,0.745,3.406,0.901,4.119H39.893z
-                                                         M34.146,26.404c-0.028,2.963-2.684,4.875-6.771,4.875c-1.743-0.018-3.422-0.361-4.332-0.76l0.547-3.193l0.501,0.228
-                                                         c1.277,0.532,2.104,0.747,3.661,0.747c1.117,0,2.313-0.438,2.325-1.393c0.007-0.625-0.501-1.07-2.016-1.77
-                                                         c-1.476-0.683-3.43-1.827-3.405-3.876c0.021-2.773,2.729-4.708,6.571-4.708c1.506,0,2.713,0.31,3.483,0.599l-0.526,3.092
-                                                         l-0.351-0.165c-0.716-0.288-1.638-0.566-2.91-0.546c-1.522,0-2.228,0.634-2.228,1.227c-0.008,0.668,0.824,1.108,2.184,1.77
-                                                         C33.126,23.546,34.163,24.783,34.146,26.404z M0,16.962l0.05-0.286h6.028c0.813,0.031,1.468,0.29,1.694,1.159l1.311,6.304
-                                                         C7.795,20.842,4.691,18.099,0,16.962z M17.581,16.812l-6.123,14.239l-4.114,0.007L3.862,19.161
-                                                         c2.503,1.602,4.635,4.144,5.386,5.914l0.406,1.469l3.808-9.729L17.581,16.812L17.581,16.812z M19.153,16.8h3.89L20.61,31.066
-                                                         h-3.888L19.153,16.8z"/>
-                                                    </g>
-                                                </g>
-                                            </svg>
-                                        </div>
-                                        <div class="number">123 123 123 123</div>
-                                        <div class="info row">
-                                            <div class="info-name col l-6">
-                                                <span class="card-holder">CARD HOLDER</span>
-                                                <span class="card-holder-name">Cassio Cardoso</span>
-                                            </div>
-                                            <div class="info-date col l-6">
-                                                <span class="expires">EXPIRES</span>
-                                                <span class="cc-date">02/18</span>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                </div>
-                            </div>
+                            
                         </div>
-
-                        
-                        
-
+                        <button class="button-59" role="button" id="myBtn">Pay With New Card</button>
                         <div class="col l-12 pay-total">
-                            <p>Total amount of product: <span>300$</span></p>
-                            <p>Shipping fee: <span>5$</span></p>
-                            <p>Total payment: <span>305$</span></p>
+                            <p>Total amount of product: <span class="total-payment2"></span></p>
+                            <p>Shipping fee: <span id = "ship-fee"> </span></p>
+                            <p>Total payment: <span id = 'payment-fee'></span></p>
                         </div>
                         <div class="col l-12 pay-btn">
                             <input type="button" value="Order" onclick="submitOrder()">
@@ -1139,10 +1126,139 @@
             <button onclick="submitOrderNo()">No</button>
         </div>
     </div>
-
+    <div id="myModal" class="modal-1">
+        <!-- Modal content -->
+        <div class="">
+            <div class="modal-addr-container modal-content-1">
+                <span class="close-1">&times;</span>
+                <div class="checkout">
+                  <div class="credit-card-box">
+                    <div class="flip">
+                      <div class="front">
+                        <div class="chip"></div>
+                        <div class="logo">
+                          <svg version="1.1" id="visa" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                               width="47.834px" height="47.834px" viewBox="0 0 47.834 47.834" style="enable-background:new 0 0 47.834 47.834;">
+                            <g>
+                              <g>
+                                <path d="M44.688,16.814h-3.004c-0.933,0-1.627,0.254-2.037,1.184l-5.773,13.074h4.083c0,0,0.666-1.758,0.817-2.143
+                                         c0.447,0,4.414,0.006,4.979,0.006c0.116,0.498,0.474,2.137,0.474,2.137h3.607L44.688,16.814z M39.893,26.01
+                                         c0.32-0.819,1.549-3.987,1.549-3.987c-0.021,0.039,0.317-0.825,0.518-1.362l0.262,1.23c0,0,0.745,3.406,0.901,4.119H39.893z
+                                         M34.146,26.404c-0.028,2.963-2.684,4.875-6.771,4.875c-1.743-0.018-3.422-0.361-4.332-0.76l0.547-3.193l0.501,0.228
+                                         c1.277,0.532,2.104,0.747,3.661,0.747c1.117,0,2.313-0.438,2.325-1.393c0.007-0.625-0.501-1.07-2.016-1.77
+                                         c-1.476-0.683-3.43-1.827-3.405-3.876c0.021-2.773,2.729-4.708,6.571-4.708c1.506,0,2.713,0.31,3.483,0.599l-0.526,3.092
+                                         l-0.351-0.165c-0.716-0.288-1.638-0.566-2.91-0.546c-1.522,0-2.228,0.634-2.228,1.227c-0.008,0.668,0.824,1.108,2.184,1.77
+                                         C33.126,23.546,34.163,24.783,34.146,26.404z M0,16.962l0.05-0.286h6.028c0.813,0.031,1.468,0.29,1.694,1.159l1.311,6.304
+                                         C7.795,20.842,4.691,18.099,0,16.962z M17.581,16.812l-6.123,14.239l-4.114,0.007L3.862,19.161
+                                         c2.503,1.602,4.635,4.144,5.386,5.914l0.406,1.469l3.808-9.729L17.581,16.812L17.581,16.812z M19.153,16.8h3.89L20.61,31.066
+                                         h-3.888L19.153,16.8z"/>
+                              </g>
+                            </g>
+                          </svg>
+                        </div>
+                        <div class="number"></div>
+                        <div class="card-holder">
+                          <label>Card holder</label>
+                          <div></div>
+                        </div>
+                        <div class="card-expiration-date">
+                          <label>Expires</label>
+                          <div></div>
+                        </div>
+                      </div>
+                      <div class="back">
+                        <div class="strip"></div>
+                        <div class="logo">
+                          <svg version="1.1" id="visa" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                               width="47.834px" height="47.834px" viewBox="0 0 47.834 47.834" style="enable-background:new 0 0 47.834 47.834;">
+                            <g>
+                              <g>
+                                <path d="M44.688,16.814h-3.004c-0.933,0-1.627,0.254-2.037,1.184l-5.773,13.074h4.083c0,0,0.666-1.758,0.817-2.143
+                                         c0.447,0,4.414,0.006,4.979,0.006c0.116,0.498,0.474,2.137,0.474,2.137h3.607L44.688,16.814z M39.893,26.01
+                                         c0.32-0.819,1.549-3.987,1.549-3.987c-0.021,0.039,0.317-0.825,0.518-1.362l0.262,1.23c0,0,0.745,3.406,0.901,4.119H39.893z
+                                         M34.146,26.404c-0.028,2.963-2.684,4.875-6.771,4.875c-1.743-0.018-3.422-0.361-4.332-0.76l0.547-3.193l0.501,0.228
+                                         c1.277,0.532,2.104,0.747,3.661,0.747c1.117,0,2.313-0.438,2.325-1.393c0.007-0.625-0.501-1.07-2.016-1.77
+                                         c-1.476-0.683-3.43-1.827-3.405-3.876c0.021-2.773,2.729-4.708,6.571-4.708c1.506,0,2.713,0.31,3.483,0.599l-0.526,3.092
+                                         l-0.351-0.165c-0.716-0.288-1.638-0.566-2.91-0.546c-1.522,0-2.228,0.634-2.228,1.227c-0.008,0.668,0.824,1.108,2.184,1.77
+                                         C33.126,23.546,34.163,24.783,34.146,26.404z M0,16.962l0.05-0.286h6.028c0.813,0.031,1.468,0.29,1.694,1.159l1.311,6.304
+                                         C7.795,20.842,4.691,18.099,0,16.962z M17.581,16.812l-6.123,14.239l-4.114,0.007L3.862,19.161
+                                         c2.503,1.602,4.635,4.144,5.386,5.914l0.406,1.469l3.808-9.729L17.581,16.812L17.581,16.812z M19.153,16.8h3.89L20.61,31.066
+                                         h-3.888L19.153,16.8z"/>
+                              </g>
+                            </g>
+                          </svg>
+                 
+                        </div>
+                        <div class="ccv">
+                          <label>CCV</label>
+                          <div></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <form class="form" autocomplete="off"  action="#" novalidate>
+                    <fieldset>
+                      <label for="card-number">Card Number</label>
+                      <input type="num" id="card-number" class="input-cart-number" maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  />
+                      <input type="num" id="card-number-1" class="input-cart-number" maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"/>
+                      <input type="num" id="card-number-2" class="input-cart-number" maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"/>
+                      <input type="num" id="card-number-3" class="input-cart-number" maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"/>
+                    </fieldset>
+                    <fieldset>
+                      <label for="card-holder">Card holder</label>
+                      <input type="text" id="card-holder" />
+                    </fieldset>
+                    <fieldset class="card-expire">
+                      <label for="expire-month">Expire date</label>
+                      <div class="select">
+                        <select id="expire-month">
+                          <option></option>
+                          <option>01</option>
+                          <option>02</option>
+                          <option>03</option>
+                          <option>04</option>
+                          <option>05</option>
+                          <option>06</option>
+                          <option>07</option>
+                          <option>08</option>
+                          <option>09</option>
+                          <option>10</option>
+                          <option>11</option>
+                          <option>12</option>
+                        </select>
+                      </div>
+                      <div class="select">
+                        <select id="expire-year">
+                          <option></option>
+                          <option>2016</option>
+                          <option>2017</option>
+                          <option>2018</option>
+                          <option>2019</option>
+                          <option>2020</option>
+                          <option>2021</option>
+                          <option>2022</option>
+                          <option>2023</option>
+                          <option>2024</option>
+                          <option>2025</option>
+                        </select>
+                      </div>
+                    </fieldset>
+                    <fieldset class="fieldset-ccv">
+                      <label for="card-ccv">CCV</label>
+                      <input type="text" id="card-ccv" maxlength="3" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"/>
+                    </fieldset>
+                    <button class="btn" onclick="saveCreditCard()"><i class="fa fa-lock"></i> submit</button>
+                    <p class="input-alert-error" id = 'credit-card-error'></p>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         const modalAddress = document.querySelector('.modal-address');
         loadCartShopping();
+        var itemSelected = JSON.parse(sessionStorage.getItem('itemSelected')); 
+        if(!itemSelected.length) window.location.href = "<?=base_url('home')?>";
         function showNewAddress(){
             modalAddress.classList.add('open');
         }
@@ -1158,17 +1274,12 @@
             }
             if(error) return false;
             $('#cell-phone-error').html('');
-             $('#name-address-error').html('');
-            $('#name-default').text($('#new-name').val() + ' ' + $('#new-cell-phone').val());
+            $('#name-address-error').html('');
+            $('#name-default').text($('#new-name').val() + '(' + $('#new-cell-phone').val() +')');
             $('#address-default').text($('#new-address').val());
 
             modalAddress.classList.remove('open');
         }
-
-
-
-        var itemSelected = JSON.parse(sessionStorage.getItem('itemSelected')); 
-        if(!itemSelected.length) window.location.href = "<?=base_url('home')?>";
         fectdata();
         function fectdata() {
             $.ajax({
@@ -1181,7 +1292,11 @@
                         data.output.forEach( function(x) {
                             $('#row-shop-list').append(x);    
                         });
-                        $('.total-payment').append(data.sum);
+                        $('.total-payment').append(data.sum+'$');
+                        $('.total-payment2').append(data.sum+'$');
+                        var x = parseFloat(Math.min(10,(Number(data.sum)/10))).toFixed(2)
+                        $('#ship-fee').append(x + '$');
+                        $('#payment-fee').append(parseFloat(Number(x)+Number(data.sum)).toFixed(2)+'$');
                     }
                 });
         }
@@ -1224,25 +1339,244 @@
       var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
       return re.test(input_str);
     }
+    function paymentMethod() {
+        $.ajax({
+                url: '<?= base_url('checkout/paymentMethod') ?>',
+                type: 'post',
+                data: {},
+                success: function (data) {
+                    $('.method-card').html('');
+                    $('.method-card').append(data.html);
+                    if(data.case == 2) {
+                        var blockCard = document.getElementsByClassName('containercreditcard');
+                        if(document.getElementById('input-card').checked){
+                            blockCard[0].style.display = 'block';
+                        }
+                        fetchCard();
+                    }
+                }
+            });
+    }
+    paymentMethod();
+    function fetchCard() {
+        $.ajax({
+                url: '<?=base_url('checkout/fetchCard')?>',
+                type: 'post',
+                data: {
+                    'cardID' : $('#card-selected option:selected').val()
+                },
+                success: function (data) {
+                    $('.containercreditcard').html('');
+                    $('.containercreditcard').append(data);
+                }
+            });
+    }
+     const modalSubmit = document.querySelector('.modal-submit');
+        function submitOrder(){
+            Swal.fire({
+                icon : 'question',
+                showCancelButton: true,
+                text :'Are you sure you want to make a order?'
+            }).then((result) => {
+              /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                  
+                    var method = $('input[name=radio-method]:checked').val();
+                    if(method != 'Card' && method != 'Cash') {
+                        Swal.fire({
+                            icon : 'error',
+                            title : '!!!!!!!!!!!!!!!!!!'
+                        });
+                    }
+                    
+                    card_number = $('#card-selected').val();
+                    $.ajax({
+                            url: '<?=base_url('checkout/addOrder') ?>',
+                            type: 'post',
+                            data: {
+                                'method' : method,
+                                'item' : itemSelected,
+                                'number_card': card_number,
+                                'note' :  $('#note-to-seller').val(),
+                                'receiver': $('#name-default').text(),
+                                'address': $('#address-default').text()
+                            },
+                            success: function (data) {
+                                Swal.fire({
+                                    icon : 'success',
+                                    title : 'Order Success'
+                                }).then((result) =>{
+                                    if(result.isConfirmed) {
+                                        window.location.href = "<?= base_url('orderHistory')?>";
+                                    }
+                                });
+                            }
+                        });
+                }
+            });
+        }
+        
+        $('.input-cart-number').on('keyup change', function(){
+        $t = $(this);
+            if ($t.val().length > 3) {
+                $t.next().focus();
+              }
+              var card_number = '';
+              $('.input-cart-number').each(function(){
+                card_number += $(this).val() + ' ';
+                if ($(this).val().length == 4) {
+                  $(this).next().focus();
+                }
+              })
+        $('.credit-card-box .number').html(card_number);
+    });
+     
+    $('#card-holder').on('keyup change', function(){
+      $t = $(this);
+      $('.credit-card-box .card-holder div').html($t.val());
+      
+    });
+     
+     
+    $('#expire-month, #expire-year').change(function(){
+      m = $('#expire-month option').index($('#expire-month option:selected'));
+      m = (m < 10) ? '0' + m : m;
+      y = $('#expire-year').val().substr(2,2);
+      $('.card-expiration-date div').html(m + '/' + y);
+
+    })
+    function saveCreditCard() {
+      var data = new FormData();
+      $('.input-cart-number').on('keyup change', function(){
+          $t = $(this);
+              if ($t.val().length > 3) {
+                  $t.next().focus();
+                }
+                
+                var card_number = '';
+                $('.input-cart-number').each(function(){
+                  card_number += $(this).val() + ' ';
+                  if ($(this).val().length == 4) {
+                    $(this).next().focus();
+                  }
+                })
+          data.append('card_number', card_number);
+      });
+       
+      $('#card-holder').on('keyup change', function(){
+        $t = $(this);
+        data.append('card_holder', $t.val());
+      });
+       
+      $('#expire-month, #expire-year').change(function(){
+        m = $('#expire-month option').index($('#expire-month option:selected'));
+        m = (m < 10) ? '0' + m : m;
+        y = $('#expire-year').val().substr(2,2);
+      })
+    }
+    $('#card-ccv').on('focus', function(){
+      $('.credit-card-box').addClass('hover');
+    }).on('blur', function(){
+      $('.credit-card-box').removeClass('hover');
+    }).on('keyup change', function(){
+      $('.ccv div').html($(this).val());
+    });     
+    setTimeout(function(){
+      $('#card-ccv').focus().delay(1000).queue(function(){
+        $(this).blur().dequeue();
+      });
+    }, 500);
+    var modal = document.getElementById('modal-pay-card');
+    function showNewPay(){
+            modal.classList.add('open');
+        }
+    function hideNewPay(){
+        modal.classList.remove('open');
+    }
+     window.onclick = function(event) {
+        if(event.target == modal) {
+            modal.classList.remove('open');
+        }
+    };
+
+    function saveCreditCard() {
+      var _data = new FormData();
+      var card_number = '';
+      var getError = false;
+      $('.input-cart-number').each(function(){
+        card_number += $(this).val() + ' ';
+      })
+      if(card_number.length != 20) getError = true;
+      _data.append('card_number', card_number);
+      $t = $('#card-holder');
+      if(!$t.val().length ) getError = true;
+      _data.append('card_holder', $t.val());    
+      m = $('#expire-month option').index($('#expire-month option:selected'));
+      m = (m < 10) ? '0' + m : m;
+      y = $('#expire-year').val().substr(2,2);
+      _data.append('date', m+'/'+y);
+      if(!(m.length && y.length)) getError = true;
+      _data.append('ccv', $('#card-ccv').val());
+      if(!$('#card-ccv').val().length) getError = true;
+      if(getError) {
+        $('#credit-card-error').html('Please fill out the information completely');
+        return 0;
+      }
+      $.ajax({
+          url: '<?=base_url('profile/saveCreditCard')?>',
+          type: 'post',
+          data: _data,
+          contentType: false,
+          processData: false,
+          success: function (data) {
+            $('#credit-card-error').html('');
+            if(data == 1) {
+                paymentMethod();
+                Swal.fire({
+                    icon :  'success',
+                    text : "Successfully"
+                });
+                return;
+            }
+            Swal.fire({
+                icon :  'error',
+                text : "This card number already exists"
+              });
+          }
+        });
+    }
+    var modal = document.getElementById("myModal");
+                            // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close-1")[0];
+
+    // When the user clicks the button, open the modal 
+
+
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
     </script>
 
     <!-- JS card -->
-    <script>
-        var blockCard = document.getElementsByClassName('containercreditcard');
-
-        if(document.getElementById('input-card').checked){
-            blockCard[0].style.display = 'block';
-        }
-    </script>
+    
 
     <script>
-        const modalSubmit = document.querySelector('.modal-submit');
-        function submitOrder(){
-            modalSubmit.classList.add('open');
-        }
-        function submitOrderNo(){
-            modalSubmit.classList.remove('open');
-        }
+       
     </script>
 </body>
 </html>
