@@ -300,6 +300,20 @@
         .header__cart--has-cart .header__cart-list.no-cart:hover{
             display: flex;
         }
+
+        .icon-block {
+            font-size: 45px;
+            display: inline-block;
+            color: var(--header-color);
+            position: absolute;
+            bottom: 5px;
+            right: 15px;
+            cursor: pointer;
+        }
+
+        .icon-block:hover {
+            opacity: 0.9;
+        }
     </style>
 </head>
 
@@ -701,6 +715,7 @@
                             </div>
                             <!-- </div> -->
                         </div>
+                        <div class="icon-block"><i class="fa-solid fa-triangle-exclamation"></i></div>
                     </div>
                 </div>
                 <div class="row sm-gutter product__background magazin__box" style="margin-bottom: 20px; padding-bottom: 10px;">

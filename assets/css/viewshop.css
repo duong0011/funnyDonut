@@ -24,8 +24,8 @@
     margin-top: 6px;
 }
 .img__shop {
-    width: 25%;
-    height: auto;
+    width: 100px;
+    height: 100px;
     margin: 15px 10px 10px 20px;
     border-radius: 50%;
     border: 1px solid #666;

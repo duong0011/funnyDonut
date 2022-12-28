@@ -286,6 +286,20 @@
         .header__cart--has-cart .header__cart-list.has-cart:hover {
             display: flex;
         }
+
+        .icon-block {
+            font-size: 35px;
+            display: inline-block;
+            color: var(--header-color);
+            position: absolute;
+            bottom: 0px;
+            right: 12px;
+            cursor: pointer;
+        }
+
+        .icon-block:hover {
+            opacity: 0.9;
+        }
     </style>
 </head>
 
@@ -534,7 +548,7 @@
         <!-- container -->
         <div class="container-fluid" style="background-color: rgb(245,245,245); padding-top: 24px;">
             <div class="grid wide">
-                <div class="row sm-gutter product__background magazin__box" style="margin-bottom: 25px;">
+                <div class="row sm-gutter product__background magazin__box" style="margin-bottom: 25px; position: relative;">
                     <div class="col l-4" style="padding:0; background-color: rgba(139, 52, 52, 0.2); border-radius: 2px;">
                         <div class="shop__label">
 							<img src="data:image/jpeg;base64,<?= $seller['avatar'];?>" alt="" class="img__shop">
@@ -570,11 +584,11 @@
                         <?php endif ?>
                     </div>
 
-					<div class="col l-1">
+					<!-- <div class="col l-1">
 
-					</div>
+					</div> -->
 
-                    <div class="shop__info col l-3" style="margin-right: 30px;">
+                    <div class="shop__info col l-3" style="margin: 0 30px;">
 						<div class="shop__product">
 							<i class="fa-solid fa-shop"></i>
 							<span class="shop__product--title">Products:</span>
@@ -608,6 +622,8 @@
 							<span class="shop__ratings--info rating-number">4.7 (46.3k)</span>
 						</div>
                     </div>
+
+                    <div class="icon-block"><i class="fa-solid fa-triangle-exclamation"></i></div>
                 </div>
 
                 <div class="row sm-gutter product__background magazin__box">
