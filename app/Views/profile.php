@@ -851,6 +851,10 @@
             border-radius: 5px;
         }
 
+        .user-list-item-show {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
 
     </style>
 </head>
@@ -1125,7 +1129,7 @@
                         </div>
                         <div class="user-list">
                             <ul class="user-list-info">
-                                <li class="user-list-item user-profile" onclick="navProfile()">
+                                <li class="user-list-item user-list-item-show user-profile" onclick="navProfile()">
                                     <i class="fa-solid fa-id-card"></i>
                                     Profile
                                 </li>
@@ -2157,5 +2161,17 @@
     }
     cardFetch();
  </script>
+
+    <script>
+        const btnRate = Array.from(document.querySelectorAll('.user-list-item'));
+        btnRate.forEach((btns) => {
+            btns.addEventListener('click', () => {
+                btnRate.forEach((btns) => {
+                    btns.classList.remove('user-list-item-show');
+                });
+                btns.classList.add('user-list-item-show');
+            });
+        });
+    </script>
 </body>
 </html>

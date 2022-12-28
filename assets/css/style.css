@@ -131,7 +131,7 @@
 
 .header__nav-user-item a:hover {
     background-color: var(--hover-color);
-    color: lightseagreen;
+    color: var(--header-color);
 }
 
 .header__nav-item--separate {
@@ -587,6 +587,7 @@ border-color: red green blue yellow */
 }
 
 .header__cart-list {
+    height: 207px;
     position: absolute;
     top: 100%;
     right: 30%;

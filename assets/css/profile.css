@@ -61,14 +61,14 @@
 }
 
 .user-list-item i{
-    color: var(--secondary-color);
+    color: var(--header-color);
     margin-right: 5px;
     width: 15px;
 }
 
 .user-list-item:hover{
     color: var(--primary-color);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .info-change{

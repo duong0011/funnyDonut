@@ -573,7 +573,7 @@
         .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.has-cart,
         .header__cart--has-cart .header__cart-count:hover~.header__cart-list.has-cart,
         .header__cart--has-cart .header__cart-list.has-cart:hover {
-            display: flex;
+            display: block;
         }
 
         .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.no-cart,
