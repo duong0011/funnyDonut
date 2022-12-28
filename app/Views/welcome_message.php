@@ -580,6 +580,10 @@
         .header__cart--has-cart .header__cart-list.no-cart:hover{
             display: flex;
         }
+
+        a.header__notifi-link:hover {
+            text-decoration: none;
+        }
     </style>
 
 </head>
@@ -705,9 +709,9 @@
                                         </a>
                                     </li>
                                 </ul>
-                                <footer class="header__notifi-footer">
+                                <!-- <footer class="header__notifi-footer">
                                     <a href="#" class="header__notifi-footer-btn">See all</a>
-                                </footer>
+                                </footer> -->
                             </div>
                         </li>
                         <li class="header__nav-item">
