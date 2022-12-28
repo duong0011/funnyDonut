@@ -364,9 +364,9 @@
                                         </a>
                                     </li>
                                 </ul>
-                                <footer class="header__notifi-footer">
+                                <!-- <footer class="header__notifi-footer">
                                     <a href="#" class="header__notifi-footer-btn">Xem tất cả</a>
-                                </footer>
+                                </footer> -->
                             </div>
                         </li>
                         <li class="header__nav-item">
