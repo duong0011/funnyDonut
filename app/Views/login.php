@@ -101,13 +101,13 @@
                     </div>
                     <div class="navbar__item">
                         <span class="navbar__item-contact">Need help? Contact us</span>
-                        <a href="" class="navbar__item-contact-link">
+                        <a href="https://vk.com/funnydonutvn" class="navbar__item-contact-link">
                             <i class="navbar__item-contact-link-icon fa-brands fa-vk"></i>
                         </a>
-                        <a href="" class="navbar__item-contact-link-icon navbar__item-contact-link">
+                        <a href="https://vk.com/funnydonutvn" class="navbar__item-contact-link-icon navbar__item-contact-link">
                             <i class="fa-brands fa-square-instagram"></i>
                         </a>
-                        <a href="" class="navbar__item-contact-link-icon navbar__item-contact-link">
+                        <a href="https://vk.com/funnydonutvn" class="navbar__item-contact-link-icon navbar__item-contact-link">
                             <i class="fa-brands fa-telegram"></i>
                         </a>
                     </div>

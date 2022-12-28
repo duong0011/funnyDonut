@@ -577,13 +577,13 @@ border-color: red green blue yellow */
 }
 
 .header__cart-list {
+    height: 207px;
     position: absolute;
     top: 100%;
     right: 30%;
     margin-top: 12px;
     background-color: var(--white-color);
     width: 400px;
-    min-height: 260px;
     border-radius: 3px;
     box-shadow: 0 0 5px #999;
     justify-content: center;

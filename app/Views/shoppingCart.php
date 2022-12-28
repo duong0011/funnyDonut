@@ -8,12 +8,12 @@
     <title>Funny Donut</title>
     <link rel="icon" href=" <?= base_url()?>/assets/img/logo/logo-web.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/style__shopping_cart.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/Huan-base.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/base.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/header-footer.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/grid.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/demo__shopping_cart.css">
-    <link rel="stylesheet" href="<?= base_url()?>/assets/css/style__shopping_cart.css">
     <!-- <link rel="stylesheet" href="<?= base_url()?>/assets/css/profile.css"> -->
     <link rel="stylesheet" href="<?= base_url()?>/assets/font/fontawesome-free-6.2.0-web/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -253,13 +253,13 @@
                         </div>
                         <li class="header__nav-item">
                             Follow us on
-                            <a href="#" class="header__nav-icon-link">
+                            <a href="https://vk.com/funnydonutvn" class="header__nav-icon-link">
                                 <i class="header__nav-icon fa-brands fa-vk"></i>
                             </a>
-                            <a href="#" class="header__nav-icon-link">
+                            <a href="https://vk.com/funnydonutvn" class="header__nav-icon-link">
                                 <i class="header__nav-icon fab fa-telegram"></i>
                             </a>
-                            <a href="#" class="header__nav-icon-link">
+                            <a href="https://vk.com/funnydonutvn" class="header__nav-icon-link">
                                 <i class="header__nav-icon fab fa-instagram"></i>
                             </a>
                         </li>
@@ -554,19 +554,19 @@
                                 <h3 class="footer__heading">FOLLOW US</h3>
                                 <ul class="footer-list">
                                     <li>
-                                        <a href="#" class="footer-item-link footer-item-link-fb">
+                                        <a href="https://vk.com/funnydonutvn" class="footer-item-link footer-item-link-fb">
                                             <i class="footer-item-icon fa-brands fa-vk"></i>
                                             VKontakte
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="footer-item-link footer-item-link-is">
+                                        <a href="https://vk.com/funnydonutvn" class="footer-item-link footer-item-link-is">
                                             <i class="footer-item-icon fab fa-instagram-square"></i>
                                             Instagram
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="footer-item-link footer-item-link-li">
+                                        <a href="https://vk.com/funnydonutvn" class="footer-item-link footer-item-link-li">
                                             <i class="footer-item-icon fab fa-telegram"></i>
                                             Telegram
                                         </a>
