@@ -82,21 +82,16 @@
             white-space: nowrap;
         }
 
-        .grid.wide {
-            min-width: 1500px;
-            white-space: nowrap;
-        }
-
         .btn-block {
             margin: 10px 0;
-            font-size: 20px;
+            font-size: 12px;
         }
 
         .btn-block button {
             background-color: white;
             border: 1px solid var(--header-color);
             border-radius: 5px;
-            width: 120px;
+            width: 100px;
             padding: 6px 0 4px;
         }
 
@@ -116,10 +111,11 @@
         }
 
         .block-info {
-            font-size: 18px;
+            font-size: 12px;
             border: 1px solid var(--header-color);
             padding: 5px;
             border-radius: 5px;
+            margin-bottom: 58px;
         }
 
         .user-info-menu span,
@@ -140,17 +136,17 @@
 
         span.user-link,
         span.product-link {
-            width: 120px;
+            width: 70px;
         }
         
         span.user-id,
         span.product-id {
-            width: 60px;
+            width: 55px;
         }
 
         span.user-fullname,
         span.product-seller {
-            width: 210px;
+            width: 160px;
         }
 
         span.user-username {
@@ -158,15 +154,15 @@
         }
 
         span.user-gender {
-            width: 90px;
+            width: 50px;
         }
 
         span.user-date-of-birth {
-            width: 130px;
+            width: 80px;
         }
 
         span.user-email {
-            min-width: 240px;
+            min-width: 190px;
         }
 
         span.user-phonenumber {
@@ -175,23 +171,23 @@
 
         span.user-date-created,
         span.product-date-created {
-            width: 120px;
+            width: 80px;
         }
 
         span.user-reported,
         span.product-reported {
-            width: 90px;
+            width: 60px;
         }
 
         span.user-action,
         span.product-action {
-            width: 91px;
+            width: 70px;
         }
 
         span.action {
-            width: 91px;
+            width: 70px;
             /* border: 1px solid var(--header-color); */
-            padding: 10px;
+            padding: 5px;
             border-radius: 5px;
             background-color: var(--header-color);
             color: white;
@@ -208,7 +204,7 @@
 
         .user-info,
         .product-info {
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
         a {
@@ -242,11 +238,11 @@
         }
 
         span.product-type {
-            width: 100px;
+            width: 60px;
         }
 
         span.product-amount {
-            width: 100px;
+            width: 80px;
         }
 
     </style>
@@ -564,66 +560,67 @@
 
         <!-- CONTAINER BEGIN -->
         <div class="container">
-            <div class="grid wide">
-                <div class="search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" placeholder="Search by Username or Product Name" id = "seeach-user-product">
-                </div>
-                <div class="btn-block">
-                    <button class="btn-user actived" onclick="displayBtnUser()">USER</button>
-                    <button class="btn-product" onclick="displayBtnProduct()">PRODUCT</button>
-                </div>
-
-                <!-- Block user -->
-                <div class="block-info block-user">
-                    <div class="user-info-menu">
-                        <span class="user-link">Link</span>
-                        <span class="user-id">ID</span>
-                        <span class="user-fullname">Fullname</span>
-                        <span class="user-username">Username</span>
-                        <span class="user-gender">Gender</span>
-                        <span class="user-date-of-birth">Date of birth</span>
-                        <span class="user-email">Email</span>
-                        <span class="user-phonenumber">Phone number</span>
-                        <span class="user-date-created">Date created</span>
-                        <span class="user-reported">Reported</span>
-                        <span class="user-action">Action</span>
+            <div style="text-align: center;">
+                <div style="display: inline-block;">
+                    <div class="search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Search by Username or Product Name" id = "seeach-user-product">
                     </div>
-                    <div id = "show-user"></div>
-                </div>
-                <!-- Block product -->
-                <div class="block-info block-product">
-                    <div class="product-info-menu">
-                        <span class="user-link">Link</span>
-                        <span class="product-id">ID</span>
-                        <span class="product-name">Name</span>
-                        <span class="product-price">Price</span>
-                        <span class="product-type">Type</span>
-                        <span class="product-amount">Amount</span>
-                        <span class="product-seller">Seller</span>
-                        <span class="product-date-created">Date created</span>
-                        <span class="product-reported">Reported</span>
-                        <span class="product-action">Action</span>
+                    <div class="btn-block">
+                        <button class="btn-user actived" onclick="displayBtnUser()">USER</button>
+                        <button class="btn-product" onclick="displayBtnProduct()">PRODUCT</button>
                     </div>
-
-                    <div id = "show-product"></div>
+    
+                    <!-- Block user -->
+                    <div class="block-info block-user">
+                        <div class="user-info-menu">
+                            <span class="user-link">Link</span>
+                            <span class="user-id">ID</span>
+                            <span class="user-fullname">Fullname</span>
+                            <span class="user-username">Username</span>
+                            <span class="user-gender">Gender</span>
+                            <span class="user-date-of-birth">Date of birth</span>
+                            <span class="user-email">Email</span>
+                            <span class="user-phonenumber">Phone number</span>
+                            <span class="user-date-created">Date created</span>
+                            <span class="user-reported">Reported</span>
+                            <span class="user-action">Action</span>
+                        </div>
+                        <div id = "show-user"></div>
+                    </div>
+                    <!-- Block product -->
+                    <div class="block-info block-product">
+                        <div class="product-info-menu">
+                            <span class="user-link">Link</span>
+                            <span class="product-id">ID</span>
+                            <span class="product-name">Name</span>
+                            <span class="product-price">Price</span>
+                            <span class="product-type">Type</span>
+                            <span class="product-amount">Amount</span>
+                            <span class="product-seller">Seller</span>
+                            <span class="product-date-created">Date created</span>
+                            <span class="product-reported">Reported</span>
+                            <span class="product-action">Action</span>
+                        </div>
+    
+                        <div id = "show-product"></div>
+                    </div>
+                    
+                    <!-- <ul class="pagination home-product-pagination" id="page">
+                        <li class="pagination-item">
+                            <button class="pagination-item-link pagination-item-link--disable"><i class="fas fa-chevron-left"></i></button>
+                        </li>
+                        <li class="pagination-item pagination-item--active">
+                            <button class="pagination-item-link">1</button>                            
+                        </li>
+                        <li class="pagination-item">                                
+                            <button class="pagination-item-link">2</button>                            
+                        </li>
+                        <li class="pagination-item">                                
+                            <button class="pagination-item-link"><i class="fas fa-chevron-right"></i>                                </button>                            
+                        </li>
+                    </ul>                 -->
                 </div>
-                        
-               <!--  <ul class="pagination home-product-pagination" id="page">
-                    <li class="pagination-item">
-                        <button class="pagination-item-link pagination-item-link--disable"><i class="fas fa-chevron-left"></i></button>
-                    </li>
-                    <li class="pagination-item pagination-item--active">
-                        <button class="pagination-item-link">1</button>                            
-                    </li>
-                    <li class="pagination-item">                                
-                        <button class="pagination-item-link">2</button>                            
-                    </li>
-                    <li class="pagination-item">                                
-                        <button class="pagination-item-link"><i class="fas fa-chevron-right"></i>                                </button>                            
-                    </li>
-                </ul>                 -->
-
             </div>
         </div>
         <!-- CONTAINER END -->

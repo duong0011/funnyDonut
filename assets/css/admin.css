@@ -13,11 +13,11 @@
     position: relative;
     top: 3px;
     margin: 0 5px;
-    font-size: 18px;
+    font-size: 12px;
 }
 
 .search input{
-    font-size: 18px;
+    font-size: 14px;
     border: none;
     /* background-color: rgb(249, 247, 247); */
     width: 100%;

@@ -614,13 +614,13 @@
                         </div>
                         <li class="header__nav-item">
                             Follow us on
-                            <a href="#" class="header__nav-icon-link">
+                            <a href="https://vk.com/funnydonutvn" class="header__nav-icon-link">
                                 <i class="header__nav-icon fa-brands fa-vk"></i>
                             </a>
-                            <a href="#" class="header__nav-icon-link">
+                            <a href="https://vk.com/funnydonutvn" class="header__nav-icon-link">
                                 <i class="header__nav-icon fab fa-telegram"></i>
                             </a>
-                            <a href="#" class="header__nav-icon-link">
+                            <a href="https://vk.com/funnydonutvn" class="header__nav-icon-link">
                                 <i class="header__nav-icon fab fa-instagram"></i>
                             </a>
                         </li>
@@ -1167,7 +1167,7 @@
                             </div>
                             <div class="col l-2 m-4 c-12 pay-and-ship">
                                 <div>
-                                    <h3 class="footer__heading">PAY MENT</h3>
+                                    <h3 class="footer__heading">PAYMENT</h3>
                                     <div class="footer-sale-ship">
                                         <img src=" <?= base_url()?>/assets/img/pay/1.PNG" class="footer-item-sale-ship">
                                         <img src=" <?= base_url()?>/assets/img/pay/2.PNG" class="footer-item-sale-ship">
@@ -1180,19 +1180,19 @@
                                 <h3 class="footer__heading">FOLLOW US</h3>
                                 <ul class="footer-list">
                                     <li>
-                                        <a href="#" class="footer-item-link footer-item-link-fb">
+                                        <a href="https://vk.com/funnydonutvn" class="footer-item-link footer-item-link-fb">
                                             <i class="footer-item-icon fa-brands fa-vk"></i>
                                             VKontakte
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="footer-item-link footer-item-link-is">
+                                        <a href="https://vk.com/funnydonutvn" class="footer-item-link footer-item-link-is">
                                             <i class="footer-item-icon fab fa-instagram-square"></i>
                                             Instagram
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="footer-item-link footer-item-link-li">
+                                        <a href="https://vk.com/funnydonutvn" class="footer-item-link footer-item-link-li">
                                             <i class="footer-item-icon fab fa-telegram"></i>
                                             Telegram
                                         </a>
