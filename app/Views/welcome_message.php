@@ -706,7 +706,7 @@
                                     </li>
                                 </ul>
                                 <footer class="header__notifi-footer">
-                                    <a href="#" class="header__notifi-footer-btn">Xem tất cả</a>
+                                    <a href="#" class="header__notifi-footer-btn">See all</a>
                                 </footer>
                             </div>
                         </li>

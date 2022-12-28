@@ -37,7 +37,7 @@
 
         .error_input {
             display: block;
-            margin: 10px 0 5px;
+            margin: 7px 10px 5px;
             font-size: 1.2rem;
             font-weight: 500;
             color: var(--primary-color);

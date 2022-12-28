@@ -309,6 +309,22 @@
         .header__cart--has-cart .header__cart-list.no-cart:hover{
             display: flex;
         }
+
+        .block-empty {
+            text-align: center;
+            margin: 130px 0;
+            font-size: 20px;
+        }
+
+        .empty-txt a {
+            text-decoration: none;
+            color: var(--header-color);
+            font-weight: 600;
+        }
+
+        p.empty-txt {
+            margin: 50px 0;
+        }
     </style>
     
 </head>
@@ -594,15 +610,21 @@
                         </div>
                     </div>
 
+                    
                     <!-- BLOCK BUY -->
                     <div class="c-10 list-infor block-buy">               
                         <div class="search">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <input type="text" placeholder="Search by Order ID or Product Name">
                         </div>
-
+                        
                         <!-- ALL ORDER -->
                         <div class="block block-all">
+                            <!-- empty -->
+                            <div class="с-10 block-empty">
+                                <img src=" http://localhost/funnyDonut/assets/img/sp/no-cart.png" class="header__no-cart-img">
+                                <p class="empty-txt">You don't have any orders yet. Go to <a href="http://localhost/funnyDonut">BUY</a> now!</p>
+                            </div>
                             <div id = 'fecthBuy'>
                                 
                             </div>
@@ -618,6 +640,11 @@
 
                         <!-- ALL ORDER -->
                         <div class="block block-all">
+                            <!-- empty -->
+                            <div class="с-10 block-empty">
+                                <img src=" http://localhost/funnyDonut/assets/img/sp/no-cart.png" class="header__no-cart-img">
+                                <p class="empty-txt">You don't have any orders yet. Go to <a href="http://localhost/funnyDonut">BUY</a> now!</p>
+                            </div>
                              <div id = 'fecthSell'>
                                    
             
