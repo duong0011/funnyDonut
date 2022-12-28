@@ -1457,10 +1457,11 @@ border-color: red green blue yellow */
     width: 55px;
     height: 29px;
     margin: 4px;
+    margin-left: 0px;
 }
 
 .footer-item-link-fb:hover {
-    color: dodgerblue;
+    color: orangered;
 }
 
 .footer-item-link-is:hover {
@@ -1468,7 +1469,7 @@ border-color: red green blue yellow */
 }
 
 .footer-item-link-li:hover {
-    color: royalblue;
+    color: orangered;
 }
 
 .footer-download {

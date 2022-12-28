@@ -346,8 +346,8 @@
 
 .magazin-img {
     width: 100%;
-    height: auto;
-    margin: 15px 10px 10px 20px;
+    height: 100%;
+    margin: 5px 10px 10px 20px;
     border-radius: 50%;
     border: 1px solid #666;
 }
