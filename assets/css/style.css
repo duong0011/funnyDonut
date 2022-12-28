@@ -132,6 +132,7 @@
 .header__nav-user-item a:hover {
     background-color: var(--hover-color);
     color: var(--header-color);
+    font-weight: 700;
 }
 
 .header__nav-item--separate {
