@@ -393,7 +393,11 @@
                                     
                                     
                                 </ul>
+<<<<<<< HEAD
                                <!--  <footer class="header__notifi-footer">
+=======
+                                <!-- <footer class="header__notifi-footer">
+>>>>>>> 3c76681c40e6bf8e59757f92864c131856c21fd3
                                     <a href="#" class="header__notifi-footer-btn">See all</a>
                                 </footer> -->
                             </div>
