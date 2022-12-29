@@ -41,7 +41,7 @@
     box-shadow: -3px 3px 10px var(--primary-color);
     border-radius: 10px;
     margin-right: 25px;
-    margin-left: 25px;
+    margin-left: 10px;
     min-width: 150px;
     /* background-color: rgb(255, 255, 255); */
 }
