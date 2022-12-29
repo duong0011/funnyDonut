@@ -41,6 +41,10 @@ class Login extends Controller
 					$this->session->set('success', 'Username incorect');
 					return view('login', $data);
 				}
+				if($gdata['block'] == 1) {
+					$this->session->set('success', "Your account has been locked contact the manager for details");
+					return view('login', $data);
+				}
 				if($gdata['status'] != 'active') {
 					$this->session->set('success', "You haven't activated your account yet! Please check your email for activation!");
 					return view('login', $data);
@@ -97,6 +101,10 @@ class Login extends Controller
 					return redirect()->to(base_url().'/home');
 				}
 				$ndata = $this->db->verifyUsername($gdata['id']);
+				if($ndata['block'] == 1) {
+					$this->session->set('success', "Your account has been locked contact the manager for details");
+					return view('login', $data);
+				}
 				$this->session->set('loged_user', $ndata['unitid']);
 				date_default_timezone_set('Europe/Moscow');
 				$this->db2->set(['login_time' => date('Y-m-d h:i:s'), 'currentstatus' => 'online']);

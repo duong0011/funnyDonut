@@ -325,6 +325,11 @@
         p.empty-txt {
             margin: 50px 0;
         }
+         .header__notifi-list { 
+    padding-left: 0; 
+    max-height: 300px; 
+    overflow-y: scroll; 
+}
     </style>
     
 </head>
@@ -374,90 +379,23 @@
                         </li>
                     </ul>
                     <ul class="header__nav-list">
-                        <li class="header__nav-item header__show-note">
-                            <a href="#" class="header__nav-item-link">
-                                <!-- nếu có thông báo thì thêm class "rung" vào dòng lệnh i-->
-                                <!-- <i class="header__nav-icon far fa-bell rung"></i>  -->
-                                <i class="header__nav-icon far fa-bell"></i>
-                                Notifications
+                       <li class="header__nav-item header__show-note">
+                            <a href="#" class="header__nav-item-link" id = "new-notification">
+                               
                             </a>
                             <!-- thông báo -->
                             <div class="header__notifi">
                                 <header class="header__notifi-header">
-                                    <h3>New notifications received</h3>
+                                    <h3 id = 'title-notifi'>New notifications received</h3>
                                 </header>
-                                <ul class="header__notifi-list">
-                                    <li class="header__notifi-item">
-                                        <a href="#" class="header__notifi-link">
-                                            <img src=" <?= base_url()?>/assets/img/sp/sp1.jpg" class="header__notifi-img">
-                                            <div class="header__notifi-info">
-                                                <div class="header__notifi-name">
-                                                    Banh mi
-                                                </div>
-                                                <div class="header__notifi-desc">
-                                                    Traditional Vietnamese cake are waiting for you. Buy now!
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                <ul class="header__notifi-list">
-                                    <li class="header__notifi-item">
-                                        <a href="#" class="header__notifi-link">
-                                            <img src=" <?= base_url()?>/assets/img/sp/sp2.jpg" class="header__notifi-img">
-                                            <div class="header__notifi-info">
-                                                <div class="header__notifi-name">
-                                                    Red Velvet Cake
-                                                </div>
-                                                <div class="header__notifi-desc">
-                                                    You have received a 30% discount code. Buy now!
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="header__notifi-item">
-                                        <a href="#" class="header__notifi-link">
-                                            <img src=" <?= base_url()?>/assets/img/sp/sp4.jpg" class="header__notifi-img">
-                                            <div class="header__notifi-info">
-                                                <div class="header__notifi-name">
-                                                    Pumpkin Spice Cake
-                                                </div>
-                                                <div class="header__notifi-desc">
-                                                    Your order is still on hold. Let's finish it!
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="header__notifi-item">
-                                        <a href="#" class="header__notifi-link">
-                                            <img src=" <?= base_url()?>/assets/img/sp/sp5.jpg" class="header__notifi-img">
-                                            <div class="header__notifi-info">
-                                                <div class="header__notifi-name">
-                                                    New York baked cheesecake
-                                                </div>
-                                                <div class="header__notifi-desc">
-                                                    Your order has been received. Please give feedback!
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="header__notifi-item">
-                                        <a href="#" class="header__notifi-link">
-                                            <img src=" <?= base_url()?>/assets/img/sp/sp6.jpg" class="header__notifi-img">
-                                            <div class="header__notifi-info">
-                                                <div class="header__notifi-name">
-                                                    Chocolate mud cupcakes
-                                                </div>
-                                                <div class="header__notifi-desc">
-                                                They say good things come in small packages and cupcakes are the proof. 
-                                                Unleash your creative side with these mini works of art that are as fun to make as they are to eat.
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
+                            
+                                <ul class="header__notifi-list" id = "show-notification">
+                                    
+                                    
                                 </ul>
-                                <footer class="header__notifi-footer">
+                               <!--  <footer class="header__notifi-footer">
                                     <a href="#" class="header__notifi-footer-btn">See all</a>
-                                </footer>
+                                </footer> -->
                             </div>
                         </li>
                         <li class="header__nav-item">
@@ -608,10 +546,7 @@
                         <!-- ALL ORDER -->
                         <div class="block block-all">
                             <!-- empty -->
-                            <div class="с-10 block-empty">
-                                <img src=" http://localhost/funnyDonut/assets/img/sp/no-cart.png" class="header__no-cart-img">
-                                <p class="empty-txt">You don't have any orders yet. Go to <a href="http://localhost/funnyDonut">BUY</a> now!</p>
-                            </div>
+                           
                             <div id = 'fecthBuy'>
                                 
                             </div>
@@ -628,10 +563,10 @@
                         <!-- ALL ORDER -->
                         <div class="block block-all">
                             <!-- empty -->
-                            <div class="с-10 block-empty">
+                            <!-- <div class="с-10 block-empty">
                                 <img src=" http://localhost/funnyDonut/assets/img/sp/no-cart.png" class="header__no-cart-img">
                                 <p class="empty-txt">You don't have any orders yet. Go to <a href="http://localhost/funnyDonut">BUY</a> now!</p>
-                            </div>
+                            </div> -->
                              <div id = 'fecthSell'>
                                    
             
@@ -822,7 +757,12 @@
                     type: 'post',
                     data: {},
                     success: function (data) {
-                        
+                        if(data.length == 0) {
+                           $('#fecthBuy').append('<div class="с-10 block-empty">\
+                                    <img src=" http://localhost/funnyDonut/assets/img/sp/no-cart.png" class="header__no-cart-img">\
+                                    <p class="empty-txt">You dont have any orders yet. Go to <a href="http://localhost/funnyDonut">BUY</a> now!</p>\
+                                </div>'); 
+                        }
                         data.forEach((x)=>{
                             $('#fecthBuy').append(x);   
                         });
@@ -869,6 +809,12 @@
                     type: 'post',
                     data: {},
                     success: function (data) {
+                        if(data.length == 0) {
+                           $('#fecthSell').append('<div class="с-10 block-empty">\
+                                    <img src=" http://localhost/funnyDonut/assets/img/sp/no-cart.png" class="header__no-cart-img">\
+                                    <p class="empty-txt">You dont have any orders yet. Go to <a href="http://localhost/funnyDonut">BUY</a> now!</p>\
+                                </div>'); 
+                        }
                         data.forEach((x)=>{
                             $('#fecthSell').append(x);   
                         });
@@ -878,6 +824,57 @@
         fecthBuy();
         fecthSell();
         loadCartShopping();
+        function notification() {
+        $.ajax({
+                url: '<?= base_url('home/notification') ?>',
+                type: 'post',
+                // data: {},
+                success: function (data) {
+                     $('#new-notification').html('');
+                    $('#show-notification').html('');
+                    if(data.length == 0) {
+                        $('#title-notifi').html('');
+                        $('#title-notifi').html('There are currently no announcements');
+                         $('#new-notification').append(' <!-- nếu có thông báo thì thêm class "rung" vào dòng lệnh i-->\
+                                <i class="header__nav-icon far fa-bell"></i> \
+                                <!-- \
+                                 -->\
+                                Notifications');
+                        return false;
+                    }
+                   
+                    console.log(data);
+                    if(data.k == 1) {
+                        $('#new-notification').append(' <!-- nếu có thông báo thì thêm class "rung" vào dòng lệnh i-->\
+                                <i class="header__nav-icon far fa-bell rung" ></i> \
+                                <!-- \
+                                 -->\
+                                Notifications');
+                    }
+                    else {
+                        $('#new-notification').append(' <!-- nếu có thông báo thì thêm class "rung" vào dòng lệnh i-->\
+                                <i class="header__nav-icon far fa-bell"></i> \
+                                <!-- \
+                                 -->\
+                                Notifications');
+                    }
+                    data.html.forEach((x)=> {
+                        $('#show-notification').append(x);
+                    });
+                }
+            });
+    }
+    $('#new-notification').mouseover(function(event) {
+        $.ajax({
+                url: '<?=base_url('home/updateNoti') ?>',
+                type: 'post',
+                data: {},
+                success: function (data) {
+                    notification();
+                }
+            });
+    });
+    notification();
     </script> 
 
 </body>

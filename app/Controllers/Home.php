@@ -5,6 +5,8 @@ use App\Models\index_model;
 use App\Models\userModel;
 use App\Models\Product;
 use App\Models\followtable;
+use App\Models\OrderContent;
+use App\Models\Notification;
 class Home extends BaseController
 {
     private $model;
@@ -128,5 +130,57 @@ class Home extends BaseController
         $count = $result->countAllResults(false);
         $this->data['hints'] = $count ? $result->get(5)->getResultArray() : null;
         return $this->response->setJSON($this->data);
+    }
+    public function notification()
+    {
+        if(!session()->has('loged_user')) return;
+        if($this->request->getMethod() == "post"){
+            $follow = new followtable();
+            $tmp = array();
+            foreach ($follow->select('shop')->getWhere(['follower'=> session()->get('loged_user')])->getResultArray() as $shop) {
+                array_push($tmp, $shop['shop']);
+            }
+            if(sizeof($tmp) == 0) return;
+            $notification = new Notification();
+            $products = new Product();
+            foreach($products->whereIn('owner', $tmp)->get()->getResultArray() as $product) {
+                if(!$notification->where('productid', $product['pid'])->countAllResults()) {
+                    $notification->save(['unitid' => session()->get('loged_user'), 'productid' => $product['pid']]);
+                }
+            }
+            $output['html'] = array();
+            $output['k'] = 0;
+            $user = new userModel();
+            foreach($notification->where(['unitid' => session()->get('loged_user')])->orderBy('productid', 'DESC')->get()->getResultArray() as $value) {
+                if(!$value['status']) $output['k'] = 1;
+                $product = $products->getWhere(['pid'=> $value['productid']])->getRowArray();
+                $u = $user->getWhere(['unitid' => $product['owner']])->getRowArray();
+                $html = '<li class="header__notifi-item">
+                                        <a href="showproduct?id='.$value['productid'].'" class="header__notifi-link">
+                                            <img src="data:image/jpeg;base64,'.$product['image'].'" class="header__notifi-img">
+                                            <div class="header__notifi-info">
+                                                <div class="header__notifi-name">
+                                                    Shop "'.$u['fullname'].'" just posted a new product
+                                                    
+                                                </div> 
+                                                <div class="header__notifi-desc">
+                                                    '.$product['nameproduct'].'
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>';
+                array_push($output['html'], $html);
+            }
+            return $this->response->setJSON($output);
+        }
+
+    }
+    public function updateNoti()
+    {
+        if($this->request->getMethod() == 'post') {
+            $noti = new Notification();
+            $noti->set(['status' => 1]);
+            $noti->where('unitid', session()->get('loged_user'))->update();
+        }
     }
 }

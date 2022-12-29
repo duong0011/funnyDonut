@@ -175,6 +175,8 @@ class checkout extends Controller
 				$data['seller'] = $t['owner'];
 				$data['buyer'] = session()->get('loged_user');
 				$orderContent->save($data);
+				$products->set(['sold' => $t['sold']+$product['quantity']]);
+				$products->where('pid', $product['productid'])->update(); 
 			}
 		}
 	}

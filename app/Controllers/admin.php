@@ -56,7 +56,7 @@ class admin extends Controller
                         <span class="user-phonenumber">'.$value['DateOfBirth'].'</span>
                         <span class="user-date-created">'.date_format($date,'d-m-Y').'</span>
                         <span class="user-reported">'.$value['reported'].'</span>
-                        <span class="action block">'.$block.'</span>
+                        <span class="action block" onclick = block('.$value['uid'].')>'.$block.'</span>
                     </div>';
 				array_push($output, $html);
 			}
@@ -85,12 +85,36 @@ class admin extends Controller
                         <span class="product-seller"><a href="">'.$t->getWhere(['unitid' => $value['owner']])->getRowArray()['fullname'].'</a></span>
                         <span class="product-date-created">'.date_format($date,'d-m-Y').'</span>
                         <span class="product-reported">'.$value['reported'].'</span>
-                        <span class="action block">Delete</span>
+                        <span class="action block" onclick=deleteP('.$value['pid'].')>Delete</span>
                     </div>';
 				array_push($output, $html);
 			}
 			return $this->response->setJSON($output);
 		}
 		
+	}
+	public function block()
+	{
+
+		if($this->request->getMethod() == 'post') {
+			$user = new userModel();
+			$tmp = $user->getWhere(['uid' => $_POST['id']])->getRowArray();
+			if($tmp['block'] == 0) {
+				$user->set(['block' => 1]);
+				$user->where('uid', $_POST['id'])->update();
+			}
+			else {
+				$user->set(['block' => 0]);
+				$user->where('uid', $_POST['id'])->update();
+			}
+		}
+	}
+	public function deleteP()
+	{
+		
+		if($this->request->getMethod() == 'post') {
+			$product = new Product();
+			$product->where('pid', $_POST['id'])->delete();
+		}
 	}
 }

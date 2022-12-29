@@ -12,7 +12,7 @@ class LoginModel extends Model
    	public function verifyUsername($username)
    	{
    		$builder = $this->db->table('user_of_shop');
-   		$builder->select('username, password, status,unitid');
+   		$builder->select('username, password, status,unitid, block');
    		$result = $builder->where('username', $username)->get();
    		return (count($result->getResultArray())) ? $result->getRowArray() : false;
    	}
