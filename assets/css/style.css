@@ -588,7 +588,7 @@ border-color: red green blue yellow */
 }
 
 .header__cart-list {
-    height: 207px;
+    min-height: 100px;
     position: absolute;
     top: 100%;
     right: 30%;
@@ -661,12 +661,17 @@ border-color: red green blue yellow */
 .header__cart-list-item {
     padding-left: 0;
     list-style: none;
-    max-height: calc(58px * 5);
-    overflow-y: auto;
+    overflow-y: scroll;
+    min-height: 111px;
+    max-height: 200px;
 }
 
 .header__cart-item {
     display: flex;
+}
+
+.header__cart-item a:hover {
+    text-decoration: none;
 }
 
 .header__cart-item:hover {
