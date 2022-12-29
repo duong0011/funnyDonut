@@ -656,6 +656,22 @@
         .modal-submit-order button:hover {
             opacity: 0.9;
         }
+
+        button#myBtn:hover {
+            background-color: #f4e9e9;
+        }
+        
+        button#myBtn {
+            background-color: white;
+            color: var(--header-color);
+            border: 1px solid var(--header-color);
+            border-radius: 5px;
+            padding: 5px 0;
+            width: 140px;
+            box-shadow: 0 0 2px var(--header-color);
+            margin-left: 29px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -942,7 +958,7 @@
                             <p>Shipping fee: <span id = "ship-fee"> </span></p>
                             <p>Total payment: <span id = 'payment-fee'></span></p>
                         </div>
-                        <div class="col l-12 pay-btn">
+                        <div class="col l-12 pay-btn" style="margin-top: 15px;">
                             <input type="button" value="Order" onclick="submitOrder()">
                         </div>
                     </div>
