@@ -910,8 +910,7 @@
                                     <div class="category-group-filter">
                                         <input oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  placeholder="From" class="category-group-filter-input" id = 'minprice'>
                                         <i class="fas fa-arrow-right"></i>
-                                        <input oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  placeholder="To" class="category-group-filter-input" id ="maxprice" >
-
+                                        <input oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  placeholder="To" class="category-group-filter-input" id ="maxprice">
                                     </div>
                                     <br>
                                     <div id = "loadError" class="error_input"></div>
