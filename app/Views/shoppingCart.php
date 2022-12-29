@@ -966,7 +966,7 @@
                         if(data == "false") {
                             Swal.fire({
                                 icon : 'error',
-                                text : 'Before going to the payment you need to update the phone number',
+                                text : 'Before going to the payment you need to update the phone number and address',
                                 footer: '<a href="<?= base_url('profile')?>">Go to profile</a>'
                             });
                             return false;

@@ -173,6 +173,7 @@ class checkout extends Controller
 				$data['quantity'] = $product['quantity'];
 				$data['total'] = round($product['quantity']*($t['price']-$t['price']*$t['discount']/100), 2);
 				$data['seller'] = $t['owner'];
+				$data['buyer'] = session()->get('loged_user');
 				$orderContent->save($data);
 			}
 		}

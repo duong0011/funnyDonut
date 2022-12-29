@@ -10,7 +10,7 @@ class OrderContent extends Model
     protected $returnType = 'array';
     // protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['orderID', 'productid', 'size', 'quantity', 'total', 'seller'];
+    protected $allowedFields = ['orderID', 'productid', 'size', 'quantity', 'total', 'seller', 'buyer'];
 
     // protected $useTimestamps = false;
     // protected $createdField  = 'created_at';
