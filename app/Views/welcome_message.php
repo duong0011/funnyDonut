@@ -1728,7 +1728,8 @@
                 type: 'post',
                 // data: {},
                 success: function (data) {
-                     $('#new-notification').html('');
+                     console.log(data);
+                    $('#new-notification').html('');
                     $('#show-notification').html('');
                     if(data.length == 0) {
                         $('#title-notifi').html('');
@@ -1741,7 +1742,7 @@
                         return false;
                     }
                    
-                    console.log(data);
+                   
                     if(data.k == 1) {
                         $('#new-notification').append(' <!-- nếu có thông báo thì thêm class "rung" vào dòng lệnh i-->\
                                 <i class="header__nav-icon far fa-bell rung" ></i> \

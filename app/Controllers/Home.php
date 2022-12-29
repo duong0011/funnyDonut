@@ -141,10 +141,11 @@ class Home extends BaseController
                 array_push($tmp, $shop['shop']);
             }
             if(sizeof($tmp) == 0) return;
+
             $notification = new Notification();
             $products = new Product();
             foreach($products->whereIn('owner', $tmp)->get()->getResultArray() as $product) {
-                if(!$notification->where('productid', $product['pid'])->countAllResults()) {
+                if(!$notification->where(['productid'=> $product['pid'], 'unitid' => session()->get('loged_user')])->countAllResults()) {
                     $notification->save(['unitid' => session()->get('loged_user'), 'productid' => $product['pid']]);
                 }
             }
@@ -153,6 +154,7 @@ class Home extends BaseController
             $user = new userModel();
             foreach($notification->where(['unitid' => session()->get('loged_user')])->orderBy('productid', 'DESC')->get()->getResultArray() as $value) {
                 if(!$value['status']) $output['k'] = 1;
+
                 $product = $products->getWhere(['pid'=> $value['productid']])->getRowArray();
                 $u = $user->getWhere(['unitid' => $product['owner']])->getRowArray();
                 $html = '<li class="header__notifi-item">
@@ -171,6 +173,7 @@ class Home extends BaseController
                                     </li>';
                 array_push($output['html'], $html);
             }
+
             return $this->response->setJSON($output);
         }
 
