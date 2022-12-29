@@ -284,25 +284,7 @@
         .header__cart--has-cart .header__cart-icon:hover~.header__cart-list.has-cart,
         .header__cart--has-cart .header__cart-count:hover~.header__cart-list.has-cart,
         .header__cart--has-cart .header__cart-list.has-cart:hover {
-            display: block;
-        }
-
-        .icon-block {
-            font-size: 35px;
-            display: inline-block;
-            color: var(--header-color);
-            position: absolute;
-            bottom: 0px;
-            right: 12px;
-            cursor: pointer;
-        }
-
-        .icon-block:hover {
-            opacity: 0.9;
-        }
-
-        .btn {
-            font-weight: 400;
+            display: flex;
         }
     </style>
 </head>
@@ -342,13 +324,13 @@
                         </div>
                         <li class="header__nav-item">
                             Follow us on
-                            <a href="https://vk.com/funnydonutvn" class="header__nav-icon-link">
+                            <a href="#" class="header__nav-icon-link">
                                 <i class="header__nav-icon fa-brands fa-vk"></i>
                             </a>
-                            <a href="https://vk.com/funnydonutvn" class="header__nav-icon-link">
+                            <a href="#" class="header__nav-icon-link">
                                 <i class="header__nav-icon fab fa-telegram"></i>
                             </a>
-                            <a href="https://vk.com/funnydonutvn" class="header__nav-icon-link">
+                            <a href="#" class="header__nav-icon-link">
                                 <i class="header__nav-icon fab fa-instagram"></i>
                             </a>
                         </li>
@@ -356,85 +338,88 @@
                     <ul class="header__nav-list">
                         <li class="header__nav-item header__show-note">
                             <a href="#" class="header__nav-item-link">
-                                <!-- <i class="header__nav-icon far fa-bell rung"></i> -->
+                                <!-- nếu có thông báo thì thêm class "rung" vào dòng lệnh i-->
+                                <!-- <i class="header__nav-icon far fa-bell rung"></i>  -->
                                 <i class="header__nav-icon far fa-bell"></i>
                                 Notifications
                             </a>
                             <!-- thông báo -->
                             <div class="header__notifi">
                                 <header class="header__notifi-header">
-                                    <h3>New notification received</h3>
+                                    <h3>New notifications received</h3>
                                 </header>
                                 <ul class="header__notifi-list">
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="<?= base_url()?>/assets/img/sp/casio.png" class="header__notifi-img">
+                                            <img src=" <?= base_url()?>/assets/img/sp/sp1.jpg" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
-                                                    Casio fx 580 VN Plus
+                                                    Banh mi
                                                 </div>
                                                 <div class="header__notifi-desc">
-                                                    Mua Casio 580 của LTP bao xịn, bao mượt, bao đẹp
+                                                    Traditional Vietnamese cake are waiting for you. Buy now!
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                <ul class="header__notifi-list">
+                                    <li class="header__notifi-item">
+                                        <a href="#" class="header__notifi-link">
+                                            <img src=" <?= base_url()?>/assets/img/sp/sp2.jpg" class="header__notifi-img">
+                                            <div class="header__notifi-info">
+                                                <div class="header__notifi-name">
+                                                    Red Velvet Cake
+                                                </div>
+                                                <div class="header__notifi-desc">
+                                                    You have received a 30% discount code. Buy now!
                                                 </div>
                                             </div>
                                         </a>
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="<?= base_url()?>/assets/img/sp/iphone.png" class="header__notifi-img">
+                                            <img src=" <?= base_url()?>/assets/img/sp/sp4.jpg" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
-                                                    Điện Thoại iPhone 13 Pro 128GB - Hàng Nhập Khẩu
+                                                    Pumpkin Spice Cake
                                                 </div>
                                                 <div class="header__notifi-desc">
-                                                    3 Camera: Ống kính góc rộng f/1.5 - Tele f/2.8 - Siêu rộng f/1.8
+                                                    Your order is still on hold. Let's finish it!
                                                 </div>
                                             </div>
                                         </a>
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="<?= base_url()?>/assets/img/sp/iphone2.png" class="header__notifi-img">
+                                            <img src=" <?= base_url()?>/assets/img/sp/sp5.jpg" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
-                                                    Apple iPhone 12 Pro Max 128GB
+                                                    New York baked cheesecake
                                                 </div>
                                                 <div class="header__notifi-desc">
-                                                    iPhone 12 Pro Max. Màn hình Super Retina XDR 6.7 inch
+                                                    Your order has been received. Please give feedback!
                                                 </div>
                                             </div>
                                         </a>
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src="<?= base_url()?>/assets/img/sp/laptop.png" class="header__notifi-img">
+                                            <img src=" <?= base_url()?>/assets/img/sp/sp6.jpg" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
-                                                    Laptop HP 650 g1 siêu khỏe bền
+                                                    Chocolate mud cupcakes
                                                 </div>
                                                 <div class="header__notifi-desc">
-                                                    Laptop siêu bền, HP 650 g1 siêu khỏe bền ssd 120gb 15,6inh FULL HD
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="header__notifi-item">
-                                        <a href="#" class="header__notifi-link">
-                                            <img src="<?= base_url()?>/assets/img/sp/laptop2.png" class="header__notifi-img">
-                                            <div class="header__notifi-info">
-                                                <div class="header__notifi-name">
-                                                    Laptop thinkpad x240 chất mỏng nhẹ i5 4300u Ram 4gb Ssd 128gb
-                                                </div>
-                                                <div class="header__notifi-desc">
-                                                    HP 650 g1 chip M đời 4, cpu i5 4200M ram 4gb -8gb
+                                                They say good things come in small packages and cupcakes are the proof. 
+                                                Unleash your creative side with these mini works of art that are as fun to make as they are to eat.
                                                 </div>
                                             </div>
                                         </a>
                                     </li>
                                 </ul>
-                                <!-- <footer class="header__notifi-footer">
-                                    <a href="#" class="header__notifi-footer-btn">Xem tất cả</a>
-                                </footer> -->
+                                <footer class="header__notifi-footer">
+                                    <a href="#" class="header__notifi-footer-btn">See all</a>
+                                </footer>
                             </div>
                         </li>
                         <li class="header__nav-item">
@@ -443,8 +428,8 @@
                                 Help
                             </a>
                         </li>
-
-                         <?php if(!session()->has('loged_user')){ ?>
+                        
+                       <?php if(!session()->has('loged_user')){ ?>
                             <li class="header__nav-item header__nav-item--bold header__nav-item--separate">
                                 <a href="<?= base_url().'/register' ?>" class="header__nav-item-link">Sign Up</a>
                             </li>
@@ -467,7 +452,7 @@
                                         <a href="<?= base_url('viewshop?sellerID=').session()->get('loged_user')?>">My shop</a>
                                     </li>
                                     <li class="header__nav-user-item">
-                                        <a href="<?= base_url('/orderhistory') ?>">History</a>
+                                        <a href="<?= base_url('/orderHistory') ?>">History</a>
                                     </li>
                                     <li class="header__nav-user-item">
                                         <a href="<?= base_url().'/login/logout' ?>" >Logout</a>
@@ -475,21 +460,6 @@
                                 </ul>
                             </li> 
                         <?php }?>
-                        <!-- <li class="header__nav-item header__nav-user">
-                            <img src="<?= base_url()?>/assets/img/user.png" class="header__nav-user-avt">
-                            <a href="#" class="header__nav-item-link header__nav-item--bold">Lục Thiên Phong</a>
-                            <ul class="header__nav-user-menu">
-                                <li class="header__nav-user-item">
-                                    <a href="#">Tài khoản của tôi</a>
-                                </li>
-                                <li class="header__nav-user-item">
-                                    <a href="#">Đơn mua</a>
-                                </li>
-                                <li class="header__nav-user-item">
-                                    <a href="#">Đăng xuất</a>
-                                </li>
-                            </ul>
-                        </li> -->
                     </ul>
                 </nav>
                 <!-- search -->
@@ -552,7 +522,7 @@
         <!-- container -->
         <div class="container-fluid" style="background-color: rgb(245,245,245); padding-top: 24px;">
             <div class="grid wide">
-                <div class="row sm-gutter product__background magazin__box" style="margin-bottom: 25px; position: relative;">
+                <div class="row sm-gutter product__background magazin__box" style="margin-bottom: 25px;">
                     <div class="col l-4" style="padding:0; background-color: rgba(139, 52, 52, 0.2); border-radius: 2px;">
                         <div class="shop__label">
 							<img src="data:image/jpeg;base64,<?= $seller['avatar'];?>" alt="" class="img__shop">
@@ -577,8 +547,7 @@
                          <?php if(session()->get('loged_user') != $seller['unitid']): ?>
 						<div class="shop__description" style="margin-bottom:10px">
                             <button class="magazin__info-btn follow-button" style="width: 180px;  height: 28px; font-size: 1.2em; border: none; border-radius: 4px;">
-                                <i id="follow" class="magazin__info-btn-icon fa-solid fa-plus"></i>
-                                <span class="magazin__info-btn-label follow-status" onclick="changeIcon()"><?=$followerStatus?></span>
+                                <span class="magazin__info-btn-label follow-status"><?=$followerStatus?></span>
                             </button>
                             <button class="magazin__info-btn magazin__info-btn--chat" style="width: 180px; height: 28px; font-size: 1.2em; border: none; border-radius: 4px;">
                                 <i class="magazin__info-btn-icon fa-solid fa-comments"></i>
@@ -588,11 +557,8 @@
                         <?php endif ?>
                     </div>
 
-					<!-- <div class="col l-1">
-
-					</div> -->
-
-                    <div class="shop__info col l-3" style="margin: 0 30px;">
+					<div class="col l-1"></div>
+                    <div class="shop__info col l-3" style="margin-right: 30px;">
 						<div class="shop__product">
 							<i class="fa-solid fa-shop"></i>
 							<span class="shop__product--title">Products:</span>
@@ -626,8 +592,6 @@
 							<span class="shop__ratings--info rating-number">4.7 (46.3k)</span>
 						</div>
                     </div>
-
-                    <div class="icon-block"><i class="fa-solid fa-triangle-exclamation"></i></div>
                 </div>
 
                 <div class="row sm-gutter product__background magazin__box">
@@ -889,19 +853,19 @@
                                 <h3 class="footer__heading">FOLLOW US</h3>
                                 <ul class="footer-list">
                                     <li>
-                                        <a href="https://vk.com/funnydonutvn" class="footer-item-link footer-item-link-fb">
+                                        <a href="#" class="footer-item-link footer-item-link-fb">
                                             <i class="footer-item-icon fa-brands fa-vk"></i>
                                             VKontakte
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://vk.com/funnydonutvn" class="footer-item-link footer-item-link-is">
+                                        <a href="#" class="footer-item-link footer-item-link-is">
                                             <i class="footer-item-icon fab fa-instagram-square"></i>
                                             Instagram
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://vk.com/funnydonutvn" class="footer-item-link footer-item-link-li">
+                                        <a href="#" class="footer-item-link footer-item-link-li">
                                             <i class="footer-item-icon fab fa-telegram"></i>
                                             Telegram
                                         </a>
@@ -1605,10 +1569,6 @@
                 loadProduct("", "<?=base_url('/viewshop/fetch')?>?sellerID="+curl.searchParams.get('sellerID'));
             }
         });
-    }
-    function changeIcon() {
-        document.getElementById("follow").classList.add("fa-check");
-        document.getElementById("follow").classList.remove("fa-plus");
     }
 </script>
 

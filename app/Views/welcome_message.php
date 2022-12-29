@@ -640,78 +640,80 @@
                             <!-- thông báo -->
                             <div class="header__notifi">
                                 <header class="header__notifi-header">
-                                    <h3>New notification received</h3>
+                                    <h3>New notifications received</h3>
                                 </header>
                                 <ul class="header__notifi-list">
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src=" <?= base_url()?>/assets/img/sp/casio.png" class="header__notifi-img">
+                                            <img src=" <?= base_url()?>/assets/img/sp/sp1.jpg" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
-                                                    Casio fx 580 VN Plus
+                                                    Banh mi
                                                 </div>
                                                 <div class="header__notifi-desc">
-                                                    Mua Casio 580 của LTP bao xịn, bao mượt, bao đẹp
+                                                    Traditional Vietnamese cake are waiting for you. Buy now!
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                <ul class="header__notifi-list">
+                                    <li class="header__notifi-item">
+                                        <a href="#" class="header__notifi-link">
+                                            <img src=" <?= base_url()?>/assets/img/sp/sp2.jpg" class="header__notifi-img">
+                                            <div class="header__notifi-info">
+                                                <div class="header__notifi-name">
+                                                    Red Velvet Cake
+                                                </div>
+                                                <div class="header__notifi-desc">
+                                                    You have received a 30% discount code. Buy now!
                                                 </div>
                                             </div>
                                         </a>
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src=" <?= base_url()?>/assets/img/sp/iphone.png" class="header__notifi-img">
+                                            <img src=" <?= base_url()?>/assets/img/sp/sp4.jpg" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
-                                                    Điện Thoại iPhone 13 Pro 128GB - Hàng Nhập Khẩu
+                                                    Pumpkin Spice Cake
                                                 </div>
                                                 <div class="header__notifi-desc">
-                                                    3 Camera: Ống kính góc rộng f/1.5 - Tele f/2.8 - Siêu rộng f/1.8
+                                                    Your order is still on hold. Let's finish it!
                                                 </div>
                                             </div>
                                         </a>
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src=" <?= base_url()?>/assets/img/sp/iphone2.png" class="header__notifi-img">
+                                            <img src=" <?= base_url()?>/assets/img/sp/sp5.jpg" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
-                                                    Apple iPhone 12 Pro Max 128GB
+                                                    New York baked cheesecake
                                                 </div>
                                                 <div class="header__notifi-desc">
-                                                    iPhone 12 Pro Max. Màn hình Super Retina XDR 6.7 inch
+                                                    Your order has been received. Please give feedback!
                                                 </div>
                                             </div>
                                         </a>
                                     </li>
                                     <li class="header__notifi-item">
                                         <a href="#" class="header__notifi-link">
-                                            <img src=" <?= base_url()?>/assets/img/sp/laptop.png" class="header__notifi-img">
+                                            <img src=" <?= base_url()?>/assets/img/sp/sp6.jpg" class="header__notifi-img">
                                             <div class="header__notifi-info">
                                                 <div class="header__notifi-name">
-                                                    Laptop HP 650 g1 siêu khỏe bền
+                                                    Chocolate mud cupcakes
                                                 </div>
                                                 <div class="header__notifi-desc">
-                                                    Laptop siêu bền, HP 650 g1 siêu khỏe bền ssd 120gb 15,6inh FULL HD
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="header__notifi-item">
-                                        <a href="#" class="header__notifi-link">
-                                            <img src=" <?= base_url()?>/assets/img/sp/laptop2.png" class="header__notifi-img">
-                                            <div class="header__notifi-info">
-                                                <div class="header__notifi-name">
-                                                    Laptop thinkpad x240 chất mỏng nhẹ i5 4300u Ram 4gb Ssd 128gb
-                                                </div>
-                                                <div class="header__notifi-desc">
-                                                    HP 650 g1 chip M đời 4, cpu i5 4200M ram 4gb -8gb
+                                                They say good things come in small packages and cupcakes are the proof. 
+                                                Unleash your creative side with these mini works of art that are as fun to make as they are to eat.
                                                 </div>
                                             </div>
                                         </a>
                                     </li>
                                 </ul>
-                                <!-- <footer class="header__notifi-footer">
+                                <footer class="header__notifi-footer">
                                     <a href="#" class="header__notifi-footer-btn">See all</a>
-                                </footer> -->
+                                </footer>
                             </div>
                         </li>
                         <li class="header__nav-item">
