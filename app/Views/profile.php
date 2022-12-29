@@ -8,10 +8,12 @@
     <link rel="icon" href=" <?= base_url()?>/assets/img/logo/logo-web.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/Huan-base.css">
+    <link rel="stylesheet" href=" <?= base_url()?>/assets/css/base.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/Nga-base.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/header-footer.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/grid.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/css/profile.css">
+    <link rel="stylesheet" href=" <?= base_url()?>/assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url()?>/assets/font/fontawesome-free-6.2.0-web/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
