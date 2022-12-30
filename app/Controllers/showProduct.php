@@ -9,6 +9,7 @@ use App\Models\comment;
 use App\Models\CartShopping;
 use App\Models\imgComment;
 use App\Models\Favorite;
+use App\Models\report;
 class showproduct extends Controller
 {
 	private $data;
@@ -228,6 +229,18 @@ class showproduct extends Controller
 			}
 			$answer['numberOfLikes'] = $favorite->where(['productid'=>$tmp_post['productid']])->countAllResults();
 			return $this->response->setJSON($answer);
+		}
+	}
+	public function report()
+	{
+		if($this->request->getMethod()=='post') {
+			$product = new Product();
+			$ur = session()->get('logged_user');
+			$p = $_POST['id'];
+			
+			$t = $product->getWhere(['pid'=>$p])->getRowArray();
+			$product->set(['reported'=> $t['reported']+1]);
+			$product->where('pid',$p)->update();
 		}
 	}
 }

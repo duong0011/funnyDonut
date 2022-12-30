@@ -639,7 +639,7 @@
                             </div>
                             <!-- </div> -->
                         </div>
-                        <div class="icon-block"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <div class="icon-block" ><i class="fa-solid fa-triangle-exclamation"></i></div>
                     </div>
                 </div>
                 <div class="row sm-gutter product__background magazin__box" style="margin-bottom: 20px; padding-bottom: 10px;">
@@ -1778,6 +1778,22 @@
             });
     });
     notification();
+    $('.icon-block').on('click', function () {
+        
+        $.ajax({
+                url: '<?=base_url('showproduct/report') ?>',
+                type: 'post',
+                data: {
+                    id :<?= $dataproduct['pid']?>
+                },
+                success: function (data) {
+                    Swal.fire({
+                        icon : 'success',
+                        title: 'Reported'
+                    });
+                }
+            });
+    });
 </script>
 
 <script>
